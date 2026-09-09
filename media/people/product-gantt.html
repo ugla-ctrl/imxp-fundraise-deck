@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+  SOURCE for media/people/product-gantt.png (slide 8, Product).
+  Edit here, then re-render with:  node scripts/render-gantt.js
+
+  Rendered as a TRANSPARENT png so it sits on the slide rather than on a
+  panel of its own. Text is dark: the slide behind it is white.
+
+  Timeline runs Aug '26 -> Aug '27 across four equal bands. Helper percentages:
+    Aug'26 0.0   Sep 8.3   Oct 16.7  | Nov 25.0  Dec 31.25  Jan 37.5  Feb 43.75
+    Mar'27 50.0  Apr 56.25 May 62.5  Jun 68.75  | Jul 75.0  Aug 87.5  end 100
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --indigo:#4b3fae; --indigo-d:#2b1f5e;
+    --teal:#9fe0da; --amber:#ffd75e; --lav:#c3bdf2; --coral:#ffbe7d;
+    --ink:#14141a; --grey:#7c7c8a; --rule:#e6e6ee;
+    --disp:'Archivo',Arial,sans-serif; --sans:'Inter',Arial,sans-serif;
+    --lab:214px; --rowh:52px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1800px;background:transparent;font-family:var(--sans);color:var(--ink);padding:6px 10px 10px}
+  .grid{position:relative}
+
+  /* ---- period header ---- */
+  .bands{display:grid;grid-template-columns:var(--lab) repeat(4,1fr);gap:8px;align-items:end;
+         padding-bottom:11px;border-bottom:1.5px solid var(--rule);margin-bottom:6px}
+  .axislab{font-family:var(--disp);font-weight:800;font-size:15px;letter-spacing:.15em;
+           text-transform:uppercase;color:var(--grey)}
+  .band{text-align:center;font-family:var(--disp);font-weight:800;font-size:19px;color:var(--indigo-d);
+        background:#f2f1f8;border-radius:7px;padding:8px 0}
+
+  /* ---- rows ---- */
+  .row{display:grid;grid-template-columns:var(--lab) 1fr;align-items:center;min-height:var(--rowh);
+       position:relative}
+  .row.band-alt::before{content:'';position:absolute;inset:0;background:rgba(20,20,26,.028);border-radius:8px}
+  .rlab{font-family:var(--disp);font-weight:800;font-size:19px;line-height:1.12;position:relative;padding-left:4px}
+  .rlab small{display:block;font-family:var(--sans);font-weight:400;font-size:12.5px;color:var(--grey);margin-top:2px}
+  .track{position:relative;height:var(--rowh)}
+  .bar{position:absolute;top:50%;transform:translateY(-50%);height:31px;border-radius:8px;
+       display:flex;align-items:center;padding:0 13px;
+       font-family:var(--disp);font-weight:700;font-size:14.5px;white-space:nowrap;color:var(--ink)}
+  /* proving events are points in time, plotted at their true dates:
+     a marker of the real duration, with the name centred above it */
+  .pevlab{position:absolute;top:2px;transform:translateX(-50%);white-space:nowrap;
+          font-family:var(--disp);font-weight:800;font-size:13.5px;letter-spacing:.055em;
+          color:var(--indigo-d)}
+  .pevbar{position:absolute;bottom:9px;height:15px;min-width:8px;
+          background:var(--indigo);border-radius:3px}
+  .bar.cap{background:var(--teal)} .bar.bld{background:var(--amber)}
+  .bar.prv{background:var(--lav)}  .bar.hrv{background:var(--coral)}
+
+  /* ---- vertical period rules ---- */
+  .rules{position:absolute;left:var(--lab);right:0;top:58px;bottom:0;pointer-events:none}
+  .rule{position:absolute;top:0;bottom:0;width:1px;background:var(--rule)}
+
+  /* ---- gates ---- */
+  .gate{position:absolute;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:8px;
+        color:var(--ink);font-family:var(--sans);font-weight:600;font-size:14px;white-space:nowrap}
+  .dia{width:12px;height:12px;background:var(--amber);transform:rotate(45deg);flex:none;border-radius:2px}
+</style>
+</head>
+<body>
+<div class="grid">
+
+  <div class="rules">
+    <div class="rule" style="left:25%"></div>
+    <div class="rule" style="left:50%"></div>
+    <div class="rule" style="left:75%"></div>
+  </div>
+
+  <div class="bands">
+    <div class="axislab">Build calendar</div>
+    <div class="band">AUG &ndash; OCT '26</div>
+    <div class="band">NOV '26 &ndash; FEB '27</div>
+    <div class="band">MAR &ndash; JUN '27</div>
+    <div class="band">JUL &ndash; AUG '27</div>
+  </div>
+
+  <div class="row" style="min-height:62px">
+    <div class="rlab">Proving events<small>the events that test it live</small></div>
+    <div class="track" style="height:62px">
+      <div class="pevlab" style="left:54.03%">COHERENCE</div>
+      <div class="pevbar" style="left:53.63%;width:0.81%"></div>
+      <div class="pevlab" style="left:64.01%">ATOMIKA</div>
+      <div class="pevbar" style="left:63.71%;width:0.60%"></div>
+      <div class="pevlab" style="left:78.83%">MIDNIGHT SUN</div>
+      <div class="pevbar" style="left:78.23%;width:1.21%"></div>
+      <div class="pevlab" style="left:88.91%">EGYPT</div>
+      <div class="pevbar" style="left:86.69%;width:4.44%"></div>
+    </div>
+  </div>
+
+  <div class="row band-alt">
+    <div class="rlab">Capture<small>event data pipelines</small></div>
+    <div class="track">
+      <div class="bar cap" style="left:2.5%;width:11%">Iceland</div>
+      <div class="bar cap" style="left:15%;width:31%">Coherence</div>
+      <div class="bar cap" style="left:56%;width:12%">Atomika</div>
+      <div class="bar cap" style="left:69.5%;width:24%">M.Sun + Egypt</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="rlab">Build<small>platform tooling</small></div>
+    <div class="track">
+      <div class="bar bld" style="left:5%;width:22%">Insights engine</div>
+      <div class="bar bld" style="left:28%;width:23%">Marketing tooling v1</div>
+    </div>
+  </div>
+  <div class="row" style="min-height:44px">
+    <div class="rlab"></div>
+    <div class="track" style="height:44px">
+      <div class="bar bld" style="left:11.5%;width:27%">Plan stage + PM tooling</div>
+      <div class="bar bld" style="left:39.5%;width:44%">Auto coaching</div>
+    </div>
+  </div>
+
+  <div class="row band-alt">
+    <div class="rlab">Prove<small>festival-in-a-box</small></div>
+    <div class="track">
+      <div class="bar prv" style="left:5%;width:47%">Coherence: FIAB testing &rarr; live demand ladder</div>
+      <div class="bar prv" style="left:60%;width:29%">Egypt: end-to-end</div>
+    </div>
+  </div>
+  <div class="row band-alt" style="min-height:44px">
+    <div class="rlab"></div>
+    <div class="track" style="height:44px">
+      <div class="bar prv" style="left:47%;width:29%">Midnight Sun: full FIAB cycle</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="rlab">Harvest<small>templates for the next event</small></div>
+    <div class="track">
+      <div class="bar hrv" style="left:14%;width:15.5%">Iceland &rarr; template</div>
+      <div class="bar hrv" style="left:54.6%;width:8.6%">Coherence</div>
+      <div class="bar hrv" style="left:64.5%;width:13%">Atomika</div>
+      <div class="bar hrv" style="left:91.2%;width:8.8%">M.Sun + Egypt</div>
+    </div>
+  </div>
+
+  <div class="row" style="min-height:40px;border-top:1.5px solid var(--rule);margin-top:6px">
+    <div class="rlab" style="font-size:15px;letter-spacing:.15em;text-transform:uppercase;color:var(--grey)">Gates</div>
+    <div class="track" style="height:40px">
+      <div class="gate" style="left:20.43%;transform:translate(-50%,-50%)"><span class="dia"></span>OCT 15 &middot; Iceland corpus freeze</div>
+      <div class="gate" style="left:54.23%;transform:translate(-50%,-50%)"><span class="dia"></span>Coherence: FIAB beta</div>
+    </div>
+  </div>
+  <div class="row" style="min-height:38px">
+    <div class="rlab"></div>
+    <div class="track" style="height:38px">
+      <div class="gate" style="left:34.07%;transform:translate(-50%,-50%)"><span class="dia"></span>DEC 15 &middot; Go/no-go: Plan module</div>
+      <div class="gate" style="left:64.11%;transform:translate(-50%,-50%)"><span class="dia"></span>Atomika: FIAB release</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
