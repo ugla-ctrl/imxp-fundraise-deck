@@ -168,21 +168,21 @@
   .dcev b{color:var(--paper);font-weight:600}
 
   /* team */
-  .leads{display:flex;gap:clamp(22px,4.4cqw,68px);align-items:flex-start}
-  .member{display:flex;flex-direction:column;align-items:center;text-align:center;
-    width:clamp(96px,14cqw,148px)}
-  .member img{width:clamp(96px,14cqw,148px);height:clamp(96px,14cqw,148px);object-fit:cover;
+  .leads{display:flex;gap:clamp(26px,3.6cqw,58px);align-items:flex-start}
+  .member{display:flex;flex-direction:column;align-items:center;text-align:center}
+  .member img{width:clamp(90px,11.5cqw,128px);height:clamp(90px,11.5cqw,128px);object-fit:cover;
     border-radius:50%;display:block;border:2px solid rgba(236,192,100,.55);
     box-shadow:0 10px 28px rgba(0,0,0,.45);filter:saturate(1) contrast(1.05)}
   .member .nm{font-family:var(--disp);font-weight:450;font-variation-settings:'opsz' 40;
-    font-size:clamp(.98rem,1.5cqw,1.28rem);color:var(--paper);margin-top:.7em;line-height:1.05}
+    font-size:clamp(.95rem,1.4cqw,1.22rem);color:var(--paper);margin-top:.75em;line-height:1.1;white-space:nowrap}
   .member .rl{font-family:var(--sans);font-weight:600;letter-spacing:.12em;text-transform:uppercase;
-    font-size:clamp(.56rem,.8cqw,.7rem);color:var(--gold-2);margin-top:.4em}
+    font-size:clamp(.56rem,.8cqw,.7rem);color:var(--gold-2);margin-top:.45em;white-space:nowrap}
   .explabel{font-family:var(--sans);font-weight:600;letter-spacing:.2em;text-transform:uppercase;
     font-size:clamp(.52rem,.74cqw,.64rem);color:rgba(239,231,214,.55);margin-top:clamp(14px,2.4cqh,28px);margin-bottom:.9em}
-  .explogos{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(18px,2.9cqw,48px);max-width:min(1080px,94cqw)}
-  .explogos img{height:clamp(19px,2.7cqh,29px);width:auto;display:block;opacity:.9}
-  .explogos img.tall{height:clamp(30px,4.5cqh,48px)}
+  .explogos{display:flex;flex-wrap:nowrap;align-items:center;justify-content:space-between;
+    gap:clamp(10px,1.8cqw,30px);width:100%}
+  .explogos img{height:clamp(15px,2.1cqh,24px);width:auto;display:block;opacity:.9;flex:0 0 auto}
+  .explogos img.tall{height:clamp(24px,3.5cqh,40px)}
 
   /* video */
   .videowrap{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--line-dd);
@@ -360,7 +360,7 @@
     <div class="bg kb" style="background-image:url('media/photos/biz-stage.jpg')"></div>
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
-    <div class="pad mid">
+    <div class="pad">
       <div class="r kick">The Business</div>
       <h2 class="r sm mt-xs">People pay a year ahead to be somewhere that happens once.</h2>
       <div class="r sub mt-s">High prices, cash upfront, and the same community.</div>
@@ -397,7 +397,7 @@
     <div class="bg kb" style="background-image:url('media/photos/fiab-stage2.jpg')"></div>
     <div class="tone"></div><div class="veil" style="background:linear-gradient(180deg,rgba(9,8,6,.82),rgba(9,8,6,.6) 40%,rgba(9,8,6,.82))"></div><div class="grain"></div>
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
-    <div class="pad top" style="padding-top:calc(var(--topgap) + clamp(14px,2.6cqh,34px))">
+    <div class="pad">
       <div class="r kick">The Solution</div>
       <h2 class="r sm mt-xs">Festival in a Box</h2>
       <div class="r sub mt-s" style="color:var(--paper)">The production system for our gatherings. Every event it runs makes the next one easier.</div>
@@ -424,7 +424,7 @@
     <div class="bg kb" style="background-image:url('media/photos/stands-build.jpg')"></div>
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
-    <div class="pad mid">
+    <div class="pad">
       <div class="r kick">Where it Stands</div>
       <h2 class="r sm mt-xs">Running now, and getting sharper.</h2>
       <div class="r split">
@@ -447,7 +447,7 @@
     <div class="bg kb" style="background-image:url('media/photos/team-speaker.jpg');background-position:center 40%"></div>
     <div class="tone"></div><div class="veil" style="background:linear-gradient(180deg,rgba(9,8,6,.8),rgba(9,8,6,.4) 40%,rgba(9,8,6,.62) 78%,rgba(9,8,6,.93))"></div><div class="grain"></div>
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
-    <div class="pad mid">
+    <div class="pad">
       <div class="r kick">The Team</div>
       <h2 class="r sm mt-xs">The people who have already done this.</h2>
       <div class="r sub mt-s">A decade of building the experiences that unite music, art, technology and community.</div>
