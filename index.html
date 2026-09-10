@@ -178,9 +178,11 @@
     font-size:clamp(.98rem,1.5cqw,1.28rem);color:var(--paper);margin-top:.7em;line-height:1.05}
   .member .rl{font-family:var(--sans);font-weight:600;letter-spacing:.12em;text-transform:uppercase;
     font-size:clamp(.56rem,.8cqw,.7rem);color:var(--gold-2);margin-top:.4em}
-  .expstrip{margin-top:clamp(14px,2.4cqh,30px);overflow:visible}
-  .expstrip img{width:min(1120px,95cqw);height:auto;display:block;opacity:1;
-    mix-blend-mode:screen;filter:brightness(1.4) contrast(1.08)}
+  .explabel{font-family:var(--sans);font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+    font-size:clamp(.52rem,.74cqw,.64rem);color:rgba(239,231,214,.55);margin-top:clamp(14px,2.4cqh,28px);margin-bottom:.9em}
+  .explogos{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(18px,2.9cqw,48px);max-width:min(1080px,94cqw)}
+  .explogos img{height:clamp(19px,2.7cqh,29px);width:auto;display:block;opacity:.9}
+  .explogos img.tall{height:clamp(30px,4.5cqh,48px)}
 
   /* video */
   .videowrap{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--line-dd);
@@ -442,8 +444,8 @@
 
   <!-- 12 · THE TEAM -->
   <section class="slide ph">
-    <div class="bg kb" style="background-image:url('media/photos/team-crowd.jpg')"></div>
-    <div class="tone"></div><div class="veil" style="background:linear-gradient(180deg,rgba(9,8,6,.88),rgba(9,8,6,.62) 44%,rgba(9,8,6,.82))"></div><div class="grain"></div>
+    <div class="bg kb" style="background-image:url('media/photos/team-speaker.jpg');background-position:center 40%"></div>
+    <div class="tone"></div><div class="veil" style="background:linear-gradient(180deg,rgba(9,8,6,.8),rgba(9,8,6,.4) 40%,rgba(9,8,6,.62) 78%,rgba(9,8,6,.93))"></div><div class="grain"></div>
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad mid">
       <div class="r kick">The Team</div>
@@ -456,7 +458,17 @@
       </div>
       <div class="r names sm mt-s"><span>Ari Eisenstat</span><i>·</i><span>Andrew Glenn</span><i>·</i><span>Patrick Kronfli</span><i>·</i><span>Holly Wood</span></div>
       <div class="r lead mt-s" style="max-width:none">Texas Eclipse: $20M revenue, 38,000 people, nine months to production · Euphoria: 20,000 a day · 360training: grown $2M to $200M, exited.</div>
-      <div class="r expstrip"><img src="media/people/logos-strip-clean.jpg" alt="Texas Eclipse, Electric Forest, Trail Blazers, Euphoria, Everfest, Space for Humanity, Cosmic Perspective, Everyday Astronaut" /></div>
+      <div class="r explabel">Experience across</div>
+      <div class="explogos">
+        <img class="tall" src="media/people/exp/texas-eclipse.png" alt="Texas Eclipse" />
+        <img class="tall" src="media/people/exp/electric-forest.png" alt="Electric Forest" />
+        <img src="media/people/exp/trailblazers.png" alt="Trail Blazers" />
+        <img class="tall" src="media/people/exp/euphoria.png" alt="Euphoria" />
+        <img src="media/people/exp/everfest.png" alt="Everfest" />
+        <img class="tall" src="media/people/exp/space-for-humanity.png" alt="Space for Humanity" />
+        <img class="tall" src="media/people/exp/cosmic-perspective.png" alt="Cosmic Perspective" />
+        <img class="tall" src="media/people/exp/everyday-astronaut.png" alt="Everyday Astronaut" />
+      </div>
     </div>
   </section>
 
