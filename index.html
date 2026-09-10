@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>IMXP · Fundraise</title>
-<meta name="description" content="IMXP — Immersive Experiences at Global Scale. We create human experiences, and the system that runs them." />
+<title>IMXP · Info Deck</title>
+<meta name="description" content="IMXP — Immersive Experiences at Global Scale." />
 <meta property="og:title" content="IMXP — Immersive Experiences at Global Scale" />
-<meta property="og:description" content="We create human experiences, and the system that runs them." />
+<meta property="og:description" content="Immersive Experiences at Global Scale." />
 <meta property="og:image" content="media/photos/cover.jpg" />
 <meta name="theme-color" content="#0d0c0a" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230d0c0a'/><circle cx='50' cy='50' r='24' fill='none' stroke='%23dca63a' stroke-width='6'/><circle cx='58' cy='44' r='16' fill='%230d0c0a'/></svg>" />
@@ -16,7 +16,7 @@
 <style>
   :root{
     --ink:#0d0c0a; --ink-2:#17140f; --paper:#efe7d6; --paper-2:#e6dbc5; --paper-ink:#221d15;
-    --gold:#d99f34; --gold-2:#ecc064; --rust:#b0491f; --sky:#8593ad; --sage:#9aa887;
+    --gold:#d99f34; --gold-2:#ecc064; --rust:#b0491f; --sky:#8593ad; --sage:#9aa887; --indigo:#2b1f5e;
     --line-d:rgba(239,231,214,.24); --line-dd:rgba(239,231,214,.14);
     --line-l:rgba(34,29,21,.20); --line-ll:rgba(34,29,21,.11);
     --dim-d:rgba(239,231,214,.74); --dim-l:rgba(34,29,21,.66);
@@ -35,41 +35,34 @@
     box-shadow:0 40px 100px rgba(0,0,0,.6),0 6px 20px rgba(0,0,0,.4)}
   #deck{position:absolute;inset:0}
 
-  /* ---------- slide base ---------- */
   .slide{position:absolute;inset:0;opacity:0;visibility:hidden;
     transition:opacity .6s ease,visibility .6s;pointer-events:none}
   .slide.on{opacity:1;visibility:visible;pointer-events:auto}
   .pad{position:absolute;inset:0;padding:calc(var(--topgap) + clamp(12px,2cqh,26px)) var(--edge) clamp(52px,8cqh,86px);
     display:flex;flex-direction:column;justify-content:flex-end;z-index:3}
   .pad.mid{justify-content:center}
-  /* staged reveal */
   .slide.on .r{animation:rise .7s cubic-bezier(.2,.6,.3,1) both}
-  .slide.on .r:nth-child(2){animation-delay:.05s}
-  .slide.on .r:nth-child(3){animation-delay:.11s}
-  .slide.on .r:nth-child(4){animation-delay:.17s}
-  .slide.on .r:nth-child(5){animation-delay:.23s}
-  .slide.on .r:nth-child(6){animation-delay:.29s}
+  .slide.on .r:nth-child(2){animation-delay:.05s} .slide.on .r:nth-child(3){animation-delay:.11s}
+  .slide.on .r:nth-child(4){animation-delay:.17s} .slide.on .r:nth-child(5){animation-delay:.23s}
+  .slide.on .r:nth-child(6){animation-delay:.29s} .slide.on .r:nth-child(7){animation-delay:.35s}
   @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
   @media (prefers-reduced-motion:reduce){.slide.on .r{animation:none}}
 
-  /* ---------- photo slides ---------- */
   .ph{color:var(--paper);background:var(--ink)}
   .ph .bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0;
     filter:saturate(.9) contrast(1.06) brightness(.88);transform:scale(1.04);transform-origin:50% 45%}
   .slide.on .bg.kb{animation:kb 30s ease-in-out infinite alternate}
   @keyframes kb{from{transform:scale(1.04) translate3d(-.6%,.4%,0)}to{transform:scale(1.11) translate3d(.7%,-.7%,0)}}
   @media (prefers-reduced-motion:reduce){.slide.on .bg.kb{animation:none}}
-  /* warm duotone unifier + grain, so 13 different photos read as one deck */
   .ph .tone{position:absolute;inset:0;z-index:1;pointer-events:none;mix-blend-mode:soft-light;
     background:linear-gradient(150deg,rgba(217,159,52,.34),rgba(13,12,10,0) 46%,rgba(133,147,173,.22))}
   .ph .veil{position:absolute;inset:0;z-index:1;pointer-events:none;
-    background:linear-gradient(103deg,rgba(9,8,6,.86) 0%,rgba(9,8,6,.52) 40%,rgba(9,8,6,.14) 66%,rgba(9,8,6,.34) 100%)}
-  .ph.center .veil{background:radial-gradient(120% 90% at 50% 52%,rgba(9,8,6,.28),rgba(9,8,6,.66) 76%,rgba(9,8,6,.86))}
+    background:linear-gradient(103deg,rgba(9,8,6,.88) 0%,rgba(9,8,6,.55) 40%,rgba(9,8,6,.16) 66%,rgba(9,8,6,.36) 100%)}
+  .ph.center .veil{background:radial-gradient(120% 90% at 50% 52%,rgba(9,8,6,.3),rgba(9,8,6,.68) 76%,rgba(9,8,6,.88))}
   .grain{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.06;mix-blend-mode:overlay;
     background-size:190px 190px;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='190' height='190'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.86' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='190' height='190' filter='url(%23n)'/%3E%3C/svg%3E")}
 
-  /* ---------- masthead + foot (magazine chrome) ---------- */
   .hd{position:absolute;top:0;left:0;right:0;z-index:6;height:var(--topgap);
     display:flex;align-items:center;justify-content:space-between;gap:1em;
     padding:0 var(--edge);border-bottom:1px solid var(--line-d)}
@@ -79,33 +72,33 @@
   .hd .mk{font-family:var(--disp);font-weight:800;letter-spacing:.02em;font-size:clamp(.9rem,1.5cqw,1.25rem);
     font-variation-settings:'opsz' 40}
   .pp .hd{border-color:var(--line-l)} .pp .hd .sec{color:var(--dim-l)} .pp .hd .mk{color:var(--paper-ink)}
+  .dk .hd{border-color:var(--line-d)} .dk .hd .sec{color:var(--dim-d)} .dk .hd .mk{color:var(--paper)}
   .ph .hd .sec{color:var(--dim-d)} .ph .hd .mk{color:var(--paper)}
   .foot{position:absolute;left:0;right:0;bottom:0;z-index:6;height:clamp(30px,4.6cqh,48px);
     display:flex;align-items:center;justify-content:space-between;gap:1em;
     padding:0 var(--edge);border-top:1px solid var(--line-dd);
     font-family:var(--sans);font-weight:500;letter-spacing:.2em;text-transform:uppercase;
     font-size:clamp(.5rem,.72cqw,.62rem)}
-  .ph .foot{color:rgba(239,231,214,.56)} .pp .foot{color:var(--dim-l);border-color:var(--line-ll)}
+  .ph .foot,.dk .foot{color:rgba(239,231,214,.56)} .pp .foot{color:var(--dim-l);border-color:var(--line-ll)}
   .foot .credit b{color:var(--gold-2);font-weight:600;letter-spacing:.14em}
   .pp .foot .credit b{color:var(--rust)}
 
-  /* giant faint index numeral */
   .bignum-idx{position:absolute;z-index:2;font-family:var(--disp);font-weight:300;
     font-variation-settings:'opsz' 144;line-height:.8;pointer-events:none;
     top:calc(var(--topgap) + .1em);right:var(--edge);font-size:clamp(4rem,13cqw,12rem);
     color:rgba(239,231,214,.09)}
   .pp .bignum-idx{color:rgba(34,29,21,.07)}
 
-  /* ---------- type ---------- */
   .kick{font-family:var(--sans);font-weight:600;letter-spacing:.26em;text-transform:uppercase;
     font-size:clamp(.58rem,.86cqw,.76rem);color:var(--gold-2)}
   .pp .kick{color:var(--rust)}
   h1{font-family:var(--disp);font-weight:400;line-height:1.0;letter-spacing:-.012em;
-    font-variation-settings:'opsz' 144,'SOFT' 0;font-size:clamp(2.4rem,7cqw,6.6rem)}
+    font-variation-settings:'opsz' 144;font-size:clamp(2.4rem,7cqw,6.6rem)}
   h2{font-family:var(--disp);font-weight:420;line-height:1.03;letter-spacing:-.01em;
     font-variation-settings:'opsz' 144;font-size:clamp(1.9rem,4.6cqw,4rem);max-width:19ch}
+  h2.sm{font-size:clamp(1.4rem,3.1cqw,2.6rem);max-width:26ch}
   h2 em{font-style:italic;font-weight:400;color:var(--gold-2)}
-  .ph h1,.ph h2{color:var(--paper)}
+  .ph h1,.ph h2,.dk h1,.dk h2{color:var(--paper)}
   .statement{font-family:var(--disp);font-weight:400;font-variation-settings:'opsz' 144;
     line-height:1.1;font-size:clamp(1.7rem,4.4cqw,3.9rem);max-width:20ch;letter-spacing:-.01em}
   .statement em{font-style:italic;color:var(--gold-2)}
@@ -118,20 +111,15 @@
     color:rgba(239,231,214,.52);max-width:none}
   .pp .cite{color:rgba(34,29,21,.5)}
 
-  /* ---------- figures (big serif numbers) ---------- */
   .figs{display:flex;flex-wrap:wrap;gap:clamp(20px,3.6cqw,64px) clamp(24px,4.4cqw,72px);align-items:flex-start}
   .fig{position:relative}
   .fig .n{font-family:var(--disp);font-weight:340;font-variation-settings:'opsz' 144;line-height:.92;
     letter-spacing:-.02em;font-size:clamp(2rem,5.2cqw,4.6rem);color:var(--gold-2)}
-  .pp .fig .n{color:var(--rust)}
   .fig .n.sky{color:var(--sky)} .fig .n.paper{color:var(--paper)} .fig .n.sage{color:var(--sage)}
   .fig .l{font-family:var(--sans);font-weight:400;font-size:clamp(.62rem,.9cqw,.82rem);line-height:1.4;
     margin-top:.5em;max-width:16ch;color:var(--dim-d)}
-  .pp .fig .l{color:var(--dim-l)}
   .fig::before{content:'';position:absolute;top:-.7em;left:0;width:clamp(20px,2.4cqw,34px);height:2px;background:var(--gold)}
-  .pp .fig::before{background:var(--rust)}
 
-  /* ---------- ruled name rows (coverage / partners) ---------- */
   .names{display:flex;flex-wrap:wrap;gap:.35em clamp(12px,1.8cqw,26px);align-items:baseline}
   .names span{font-family:var(--disp);font-weight:440;font-variation-settings:'opsz' 40;
     font-size:clamp(.82rem,1.35cqw,1.16rem);color:var(--paper);white-space:nowrap}
@@ -139,24 +127,49 @@
   .names i{color:var(--gold);font-style:normal;opacity:.7}
   .lab{font-family:var(--sans);font-weight:600;letter-spacing:.2em;text-transform:uppercase;
     font-size:clamp(.52rem,.76cqw,.66rem);color:var(--gold-2);margin-bottom:.7em}
-  .pp .lab{color:var(--rust)}
+  .pp .lab,.dk .lab{color:var(--gold-2)}
 
-  /* ---------- paper editorial layout ---------- */
+  /* tag pills (outline, editorial) */
+  .tags{display:flex;flex-wrap:wrap;gap:clamp(8px,1.2cqw,14px)}
+  .tag{font-family:var(--sans);font-weight:500;letter-spacing:.06em;
+    font-size:clamp(.62rem,.92cqw,.84rem);color:var(--paper);
+    border:1px solid var(--line-d);border-radius:999px;padding:clamp(6px,.9cqh,11px) clamp(12px,1.7cqw,22px)}
+  .tag b{color:var(--gold-2);font-weight:600}
+
+  /* two-column body (Iceland) */
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3.4cqw,56px);max-width:none}
+  .col .ct{font-family:var(--sans);font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+    font-size:clamp(.6rem,.9cqw,.82rem);color:var(--gold-2)}
+  .col .cs{font-family:var(--sans);font-weight:500;font-size:clamp(.58rem,.82cqw,.74rem);color:var(--dim-d);
+    margin-top:.35em;letter-spacing:.02em}
+  .col p{font-family:var(--sans);font-weight:400;font-size:clamp(.72rem,1cqw,.92rem);line-height:1.5;
+    color:var(--dim-d);margin-top:.7em;max-width:38ch}
+  .col ul{list-style:none;margin-top:.6em}
+  .col li{position:relative;padding:.32em 0 .32em 1.1em;font-family:var(--sans);font-weight:400;
+    font-size:clamp(.66rem,.92cqw,.84rem);line-height:1.4;color:var(--dim-d)}
+  .col li::before{content:'';position:absolute;left:0;top:.85em;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+
+  /* glass cards over photo */
+  .eventbadge{position:absolute;top:calc(var(--topgap) + clamp(10px,2.2cqh,26px));left:0;right:0;text-align:center;z-index:4}
+  .eventbadge img{height:clamp(78px,15cqh,150px);width:auto;display:inline-block}
+  .gcards{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.6cqw,40px)}
+  .gcard{background:rgba(9,8,6,.5);border:1px solid rgba(239,231,214,.18);border-radius:6px;
+    padding:clamp(15px,2cqw,30px) clamp(17px,2.2cqw,34px);backdrop-filter:blur(8px)}
+  .gcard .gt{font-family:var(--disp);font-weight:460;font-variation-settings:'opsz' 72;
+    font-size:clamp(1.1rem,2cqw,1.7rem);color:var(--paper)}
+  .gcard .gd{font-family:var(--sans);font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+    font-size:clamp(.54rem,.8cqw,.7rem);color:var(--gold-2);margin-top:.5em}
+  .gcard ul{list-style:none;margin-top:.85em}
+  .gcard li{position:relative;padding:.34em 0 .34em 1.1em;font-family:var(--sans);font-weight:400;
+    font-size:clamp(.66rem,.94cqw,.86rem);line-height:1.4;color:var(--dim-d)}
+  .gcard li::before{content:'';position:absolute;left:0;top:.8em;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+
+  /* paper editorial */
   .pp{background:var(--paper);color:var(--paper-ink)}
   .pp .pad{justify-content:flex-start;padding-top:calc(var(--topgap) + clamp(24px,4.2cqh,58px))}
-  .rule{height:1px;background:var(--line-l);margin:clamp(14px,2.2cqh,26px) 0}
   .rule.gold{height:2px;background:var(--rust);width:clamp(38px,5cqw,66px);margin:0 0 clamp(12px,1.8cqh,22px)}
 
-  /* business comps */
-  .comps{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2.2cqw,34px)}
-  .comp{border-top:2px solid var(--rust);padding-top:clamp(8px,1.3cqh,15px)}
-  .comp:nth-child(2){border-color:var(--gold)} .comp:nth-child(3){border-color:var(--sky)} .comp:nth-child(4){border-color:var(--sage)}
-  .comp .n{font-family:var(--disp);font-weight:360;font-variation-settings:'opsz' 144;line-height:.95;
-    font-size:clamp(1.7rem,4cqw,3.3rem);letter-spacing:-.02em;color:var(--paper-ink)}
-  .comp .l{font-family:var(--sans);font-weight:400;font-size:clamp(.62rem,.88cqw,.8rem);line-height:1.42;
-    margin-top:.6em;color:var(--dim-l)}
-
-  /* upcoming events — editorial index list */
+  /* upcoming events slate */
   .slate{display:flex;flex-direction:column}
   .ev{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(14px,2.4cqw,40px);align-items:center;
     padding:clamp(9px,1.5cqh,17px) 0;border-top:1px solid var(--line-l)}
@@ -169,57 +182,33 @@
   .ev .dt{font-family:var(--sans);font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-align:right;
     font-size:clamp(.58rem,.86cqw,.8rem);color:var(--rust);white-space:nowrap}
 
-  /* solution — module index (paper-on-photo) */
-  .mods{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.5cqw,22px) clamp(16px,2.6cqw,40px)}
-  .mod{border-top:1px solid var(--line-d);padding-top:clamp(7px,1.1cqh,13px)}
-  .mod .k{font-family:var(--disp);font-weight:340;font-variation-settings:'opsz' 40;
-    font-size:clamp(.7rem,1cqw,.9rem);color:var(--gold-2)}
-  .mod .h{font-family:var(--disp);font-weight:460;font-variation-settings:'opsz' 72;
-    font-size:clamp(.98rem,1.7cqw,1.5rem);margin:.15em 0 .28em;color:var(--paper)}
-  .mod p{font-family:var(--sans);font-weight:400;font-size:clamp(.6rem,.84cqw,.78rem);line-height:1.42;color:var(--dim-d)}
-
-  /* status ledger */
-  .ledger{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.6cqw,42px)}
-  .led{border-top:2px solid var(--line-d);padding-top:.9em}
-  .led.live{border-color:var(--sage)} .led.build{border-color:var(--gold)} .led.next{border-color:var(--sky)}
-  .led .t{font-family:var(--sans);font-weight:600;letter-spacing:.2em;text-transform:uppercase;
-    font-size:clamp(.52rem,.74cqw,.64rem)}
-  .led.live .t{color:var(--sage)} .led.build .t{color:var(--gold-2)} .led.next .t{color:var(--sky)}
-  .led .h{font-family:var(--disp);font-weight:440;font-variation-settings:'opsz' 72;
-    font-size:clamp(1rem,1.7cqw,1.5rem);margin:.28em 0 .3em;color:var(--paper)}
-  .led p{font-family:var(--sans);font-weight:400;font-size:clamp(.62rem,.86cqw,.8rem);line-height:1.42;color:var(--dim-d)}
-  .gantt{margin-top:clamp(12px,2cqh,24px);border:1px solid var(--line-dd);border-radius:4px;
-    background:rgba(9,8,6,.4);padding:clamp(8px,1.2cqw,16px);text-align:center}
-  .gantt img{width:auto;max-width:100%;max-height:26cqh;display:block;margin:0 auto}
-
-  /* team roster */
-  .roster{display:grid;grid-template-columns:repeat(7,1fr);gap:clamp(9px,1.3cqw,20px)}
-  .person img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:3px;display:block;filter:grayscale(.28) contrast(1.02)}
-  .person .nm{font-family:var(--disp);font-weight:460;font-variation-settings:'opsz' 40;
-    font-size:clamp(.62rem,.95cqw,.9rem);margin-top:.5em;line-height:1.1;color:var(--paper-ink)}
-  .person .rl{font-family:var(--sans);font-weight:400;font-size:clamp(.5rem,.72cqw,.66rem);color:var(--dim-l);
-    line-height:1.32;margin-top:.25em}
-  .track{display:flex;flex-wrap:wrap;gap:clamp(16px,3cqw,52px)}
-  .track .n{font-family:var(--disp);font-weight:360;font-variation-settings:'opsz' 96;
-    font-size:clamp(1.2rem,2.3cqw,2.1rem);color:var(--paper-ink);line-height:.95;letter-spacing:-.01em}
-  .track .l{font-family:var(--sans);font-weight:400;font-size:clamp(.58rem,.82cqw,.74rem);color:var(--dim-l);
-    margin-top:.42em;max-width:20ch;line-height:1.4}
-  .expo{margin-top:clamp(14px,2.2cqh,26px)}
-  .expo .cap{font-family:var(--sans);font-weight:600;letter-spacing:.2em;text-transform:uppercase;
-    font-size:clamp(.52rem,.74cqw,.64rem);color:var(--rust);margin-bottom:.7em}
-  .expo .strip{border-radius:3px;overflow:hidden;background:var(--ink)}
-  .expo .strip img{width:100%;height:auto;display:block}
-
-  /* cover / close */
-  .cover-stats{display:flex;flex-wrap:wrap;gap:clamp(18px,3.4cqw,56px);margin-top:clamp(20px,3.4cqh,42px)}
-  .cover-stats .s .n{font-family:var(--disp);font-weight:360;font-variation-settings:'opsz' 96;
-    font-size:clamp(1.15rem,2.2cqw,2rem);line-height:1;color:var(--paper)}
-  .cover-stats .s.hero .n{color:var(--gold-2)}
-  .cover-stats .s .l{font-family:var(--sans);font-weight:400;font-size:clamp(.58rem,.82cqw,.74rem);
-    color:var(--dim-d);margin-top:.4em;letter-spacing:.02em}
-  .coverlogo{height:clamp(30px,4.6cqh,52px);width:auto;margin-bottom:clamp(14px,2.4cqh,28px);filter:brightness(0) invert(1)}
-  .contact{font-family:var(--sans);font-weight:500;font-size:clamp(.82rem,1.3cqw,1.1rem);letter-spacing:.02em}
-  .contact a{color:var(--gold-2);text-decoration:none;border-bottom:1px solid rgba(236,192,100,.4)}
+  /* dark product slide */
+  .dk{background:#0c0b14;color:var(--paper)}
+  .dk .pad{justify-content:flex-start;padding-top:calc(var(--topgap) + clamp(18px,3cqh,40px))}
+  .prodgrid{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(20px,3.4cqw,54px);align-items:start;margin-top:clamp(12px,2cqh,24px)}
+  .devcal{display:flex;flex-direction:column;gap:clamp(6px,1cqh,12px)}
+  .dcrow{display:grid;grid-template-columns:clamp(52px,7cqw,88px) 1fr;gap:clamp(10px,1.6cqw,22px);align-items:baseline;
+    padding-bottom:clamp(5px,.9cqh,10px);border-bottom:1px solid var(--line-dd)}
+  .dcyr{font-family:var(--disp);font-weight:400;font-variation-settings:'opsz' 72;
+    font-size:clamp(.9rem,1.5cqw,1.3rem);color:var(--gold-2)}
+  .dcev{font-family:var(--sans);font-weight:400;font-size:clamp(.66rem,.94cqw,.88rem);color:var(--dim-d);line-height:1.4}
+  .dcev b{color:var(--paper);font-weight:600}
+  .prodgrid .gantt img{width:100%;height:auto;display:block;border:1px solid var(--line-dd);border-radius:4px;background:rgba(0,0,0,.3)}
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.9cqw,26px);margin-top:clamp(14px,2.4cqh,28px)}
+  .pil{border-top:2px solid var(--gold);padding-top:.6em}
+  .pil .ph2{font-family:var(--disp);font-weight:460;font-variation-settings:'opsz' 40;
+    font-size:clamp(.82rem,1.25cqw,1.1rem);color:var(--paper)}
+  .pil .pd{font-family:var(--sans);font-weight:400;font-size:clamp(.58rem,.82cqw,.74rem);color:var(--dim-d);margin-top:.3em;line-height:1.35}
+  .osband{margin-top:clamp(12px,2cqh,22px);background:var(--indigo);border-radius:6px;
+    padding:clamp(11px,1.6cqw,22px) clamp(14px,2cqw,28px);
+    display:grid;grid-template-columns:auto repeat(5,1fr);gap:clamp(10px,1.6cqw,24px);align-items:center}
+  .osband .oslab{border-right:1px solid rgba(239,231,214,.24);padding-right:clamp(10px,1.5cqw,20px)}
+  .osband .osk{font-family:var(--sans);font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+    font-size:clamp(.46rem,.66cqw,.58rem);color:var(--gold-2)}
+  .osband .osn{font-family:var(--disp);font-weight:440;font-variation-settings:'opsz' 40;
+    font-size:clamp(.82rem,1.2cqw,1.05rem);color:var(--paper);margin-top:.3em;line-height:1.05}
+  .osmod .n{font-family:var(--sans);font-weight:600;font-size:clamp(.6rem,.86cqw,.78rem);color:var(--paper);line-height:1.15}
+  .osmod .d{font-family:var(--sans);font-weight:400;font-size:clamp(.5rem,.68cqw,.6rem);color:rgba(239,231,214,.6);margin-top:.35em;line-height:1.3}
 
   /* video */
   .videowrap{position:relative;width:min(880px,72cqw);aspect-ratio:16/9;overflow:hidden;border:1px solid var(--line-d);
@@ -233,26 +222,33 @@
   .playbtn span::after{content:'';margin-left:5px;border-style:solid;border-width:12px 0 12px 20px;
     border-color:transparent transparent transparent #0d0c0a}
 
-  /* nav */
+  /* cover / close */
+  .cover-stats{display:flex;flex-wrap:wrap;gap:clamp(18px,3.4cqw,56px);margin-top:clamp(20px,3.4cqh,42px)}
+  .cover-stats .s .n{font-family:var(--disp);font-weight:360;font-variation-settings:'opsz' 96;
+    font-size:clamp(1.15rem,2.2cqw,2rem);line-height:1;color:var(--paper)}
+  .cover-stats .s.hero .n{color:var(--gold-2)}
+  .cover-stats .s .l{font-family:var(--sans);font-weight:400;font-size:clamp(.58rem,.82cqw,.74rem);
+    color:var(--dim-d);margin-top:.4em;letter-spacing:.02em}
+  .coverlogo{height:clamp(30px,4.6cqh,52px);width:auto;margin-bottom:clamp(14px,2.4cqh,28px);filter:brightness(0) invert(1)}
+  .contact{font-family:var(--sans);font-weight:500;font-size:clamp(.82rem,1.3cqw,1.1rem);letter-spacing:.02em}
+  .contact a{color:var(--gold-2);text-decoration:none;border-bottom:1px solid rgba(236,192,100,.4)}
+
   #rail{position:fixed;bottom:clamp(9px,1.8vh,17px);left:50%;transform:translateX(-50%);z-index:9;
     display:flex;gap:7px;max-width:82vw;flex-wrap:wrap;justify-content:center}
-  #rail button{width:20px;height:3px;border-radius:0;border:0;padding:0;cursor:pointer;
-    background:rgba(180,170,150,.34);transition:.3s}
+  #rail button{width:22px;height:3px;border:0;padding:0;cursor:pointer;background:rgba(180,170,150,.34);transition:.3s}
   #rail button.on{background:var(--gold)}
 
   @media (max-width:1024px) and (orientation:portrait){
     #frame{padding:1.2vh 2.6vw}
     #stage{aspect-ratio:auto;width:100%;height:calc(100dvh - 2.4vh - 36px)}
     .pad{overflow-y:auto;-webkit-overflow-scrolling:touch}
-    .comps,.mods{grid-template-columns:repeat(2,1fr)}
-    .roster{grid-template-columns:repeat(4,1fr)}
-    .ledger{grid-template-columns:1fr}
+    .cols,.gcards,.prodgrid,.pillars{grid-template-columns:1fr}
+    .osband{grid-template-columns:1fr 1fr}
     .figs{gap:16px 30px}
   }
   @media (max-width:820px){
-    .comps,.mods{grid-template-columns:repeat(2,1fr)} .roster{grid-template-columns:repeat(4,1fr)}
-    .ledger{grid-template-columns:1fr} h2,.statement{max-width:none}
-    .ev{grid-template-columns:1fr auto} .ev .thumb{display:none}
+    .cols,.gcards,.prodgrid,.pillars{grid-template-columns:1fr} .osband{grid-template-columns:1fr}
+    h2,.statement{max-width:none} .ev{grid-template-columns:1fr auto} .ev .thumb{display:none}
   }
 </style>
 </head>
@@ -264,133 +260,113 @@
   <section class="slide ph center on">
     <div class="bg kb" style="background-image:url('media/photos/cover.jpg')"></div>
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
-    <div class="hd"><div class="sec">Fundraise · 2026</div><div class="mk">IMXP</div></div>
+    <div class="hd"><div class="sec">Info Deck · 2026</div><div class="mk">IMXP</div></div>
     <div class="pad mid" style="align-items:flex-start">
       <img class="r coverlogo" src="imxp-logo.png" alt="IMXP" />
       <h1 class="r">Immersive Experiences<br/>at Global Scale</h1>
-      <div class="r lead mt-s" style="font-size:clamp(1rem,1.6cqw,1.4rem);max-width:34ch;color:var(--paper)">We create human experiences, and the system that runs them.</div>
       <div class="r cover-stats">
-        <div class="s hero"><div class="n">$4.2M</div><div class="l">revenue, last 10 months</div></div>
+        <div class="s hero"><div class="n">$4.2M</div><div class="l">revenue in the last 10 months</div></div>
         <div class="s"><div class="n">50K+</div><div class="l">destination-event community</div></div>
-        <div class="s"><div class="n">The Trilogy</div><div class="l">organizers of the Eclipse Trilogy</div></div>
         <div class="s"><div class="n">75+</div><div class="l">countries contributing</div></div>
       </div>
     </div>
     <div class="foot"><div class="credit">Photo — <b>Whitney Petters</b></div><div>Iceland Eclipse 2026</div></div>
   </section>
 
-  <!-- 2 · THE ECLIPSE -->
-  <section class="slide ph center">
+  <!-- 2 · ICELAND -->
+  <section class="slide ph">
     <div class="bg kb" style="background-image:url('media/photos/eclipse.jpg')"></div>
-    <div class="tone"></div><div class="veil"></div><div class="grain"></div>
-    <div class="hd"><div class="sec"><b>02</b> — The Eclipse</div><div class="mk">IMXP</div></div>
-    <div class="bignum-idx">02</div>
-    <div class="pad mid" style="align-items:flex-start">
-      <div class="r kick">Iceland Eclipse · 12 August 2026 · Snæfellsnes Peninsula</div>
-      <div class="r statement mt">For two minutes, thousands of strangers <em>witnessed</em> the sun fade to darkness — and re-emerge.</div>
-      <div class="r names sm mt">
-        <span>17:47 UTC</span><i>/</i><span>2 min 7 sec of totality</span><i>/</i>
-        <span>Iceland's first since 1954</span><i>/</i><span>next in 2196</span>
+    <div class="tone"></div><div class="veil" style="background:linear-gradient(180deg,rgba(9,8,6,.5),rgba(9,8,6,.34) 34%,rgba(9,8,6,.7) 62%,rgba(9,8,6,.9))"></div><div class="grain"></div>
+    <div class="hd"><div class="sec"><b>02</b> — Iceland</div><div class="mk">IMXP</div></div>
+    <div class="pad">
+      <h2 class="r sm">Iceland, Under Totality</h2>
+      <div class="r cols mt">
+        <div class="col">
+          <div class="ct">Iceland Eclipse</div>
+          <div class="cs">Snæfellsnes Peninsula · 11 to 15 August 2026</div>
+          <p>A five-day immersive experience where visionaries, artists, and seekers gather at the intersection of space, music, exploration, and wellness.</p>
+          <ul><li>Over 60 countries represented</li><li>United Nations, NASA, OpenAI, MAPS, Playing for Change &amp; many more</li></ul>
+        </div>
+        <div class="col">
+          <div class="ct">The Portal</div>
+          <div class="cs">At Iceland Eclipse · month-long</div>
+          <p>A month-long immersive pop-up village and field lab for cultural evolution — a catalyst for radical co-creation.</p>
+          <ul><li>571 applicants globally</li><li>Launched Patron Program (3 confirmed)</li><li>Framework for future highly-skilled, community-led events</li></ul>
+        </div>
       </div>
     </div>
     <div class="foot"><div class="credit">Photo — <b>The Bailey Perspective</b></div><div>Eclipse Stage</div></div>
   </section>
 
-  <!-- 3 · THE PROOF -->
+  <!-- 3 · ACCOMPLISHMENTS -->
   <section class="slide ph">
     <div class="bg kb" style="background-image:url('media/photos/proof.jpg')"></div>
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
-    <div class="hd"><div class="sec"><b>03</b> — The Proof</div><div class="mk">IMXP</div></div>
+    <div class="hd"><div class="sec"><b>03</b> — Accomplishments</div><div class="mk">IMXP</div></div>
     <div class="pad">
-      <div class="r kick">Proof before thesis</div>
-      <h2 class="r mt-xs">Iceland Eclipse, delivered.</h2>
+      <div class="r kick">Accomplishments</div>
       <div class="r figs mt">
-        <div class="fig"><div class="n">4,200</div><div class="l">participants across five days</div></div>
-        <div class="fig"><div class="n sky">75</div><div class="l">countries represented</div></div>
-        <div class="fig"><div class="n paper">$4.2M</div><div class="l">revenue — festival + The Portal</div></div>
-        <div class="fig"><div class="n sage">571</div><div class="l">applicants to The Portal, a month-long residency</div></div>
+        <div class="fig"><div class="n">4,200</div><div class="l">participants</div></div>
+        <div class="fig"><div class="n sky">75</div><div class="l">countries</div></div>
+        <div class="fig"><div class="n paper">$4.2M</div><div class="l">revenue · sold out</div></div>
+        <div class="fig"><div class="n sage">50M</div><div class="l">impressions</div></div>
       </div>
-      <div class="r names sm mt"><span>250 artists &amp; speakers</span><i>/</i><span>300 children</span><i>/</i><span>5 days</span><i>/</i><span>The Portal ran on the IMXP platform</span></div>
-      <div class="r mt-s">
-        <div class="lab">On site, building rather than sponsoring</div>
-        <div class="names"><span>United Nations</span><i>·</i><span>NASA</span><i>·</i><span>OpenAI</span><i>·</i><span>MAPS</span><i>·</i><span>Playing for Change</span></div>
+      <div class="r mt">
+        <div class="lab">Featured in</div>
+        <div class="names"><span>The New York Times</span><i>·</i><span>CNN</span></div>
       </div>
     </div>
     <div class="foot"><div class="credit">Photo — <b>Andrianna Kaimis</b></div><div>Eclipse Stage</div></div>
   </section>
 
-  <!-- 4 · THE REACH -->
+  <!-- 4 · DEMAND FOR EVENTS IS REAL -->
+  <section class="slide ph">
+    <div class="bg kb" style="background-image:url('media/photos/problem.jpg')"></div>
+    <div class="tone"></div><div class="veil"></div><div class="grain"></div>
+    <div class="hd"><div class="sec"><b>04</b> — The Platform</div><div class="mk">IMXP</div></div>
+    <div class="pad">
+      <div class="r kick">Demand for events is real</div>
+      <h2 class="r sm mt-xs">We are building the platform for rapidly deploying festivals and transformative gatherings globally.</h2>
+      <div class="r lead mt-s" style="max-width:52ch;color:var(--paper)">The next generation of complex, distributed experiences and work will require both aligned people and systems.</div>
+      <div class="r tags mt">
+        <div class="tag">Rapid deployment</div>
+        <div class="tag">Globally distributed</div>
+        <div class="tag">People <b>+</b> systems aligned</div>
+      </div>
+    </div>
+    <div class="foot"><div class="credit">Photo — <b>Andrianna Kaimis</b></div><div>Site build, Iceland</div></div>
+  </section>
+
+  <!-- 5 · WHY IMXP IS DIFFERENT -->
   <section class="slide ph">
     <div class="bg kb" style="background-image:url('media/photos/reach.jpg')"></div>
-    <div class="tone"></div><div class="veil"></div><div class="grain"></div>
-    <div class="hd"><div class="sec"><b>04</b> — The Reach</div><div class="mk">IMXP</div></div>
-    <div class="pad">
-      <div class="r kick">Third-party validation</div>
-      <h2 class="r mt-xs">Our story traveled the world.</h2>
-      <div class="r lead mt-xs" style="max-width:46ch;color:var(--paper)">From The New York Times to a live SETI broadcast — and totality captured from the edge of space.</div>
-      <div class="r figs mt">
-        <div class="fig"><div class="n">50M</div><div class="l">estimated impressions</div></div>
-        <div class="fig"><div class="n sky">1.5M</div><div class="l">page views · 750K unique visitors</div></div>
-        <div class="fig"><div class="n paper">100K+</div><div class="l">email list</div></div>
-        <div class="fig"><div class="n sage">44K+</div><div class="l">Instagram audience</div></div>
-      </div>
-      <div class="r mt-s">
-        <div class="lab">Named coverage</div>
-        <div class="names sm"><span>The New York Times</span><i>·</i><span>CNN</span><i>·</i><span>SETI Institute</span><i>·</i><span>Billboard</span><i>·</i><span>Space.com</span><i>·</i><span>Condé Nast Traveler</span><i>·</i><span>Live Science</span><i>·</i><span>Dazed</span><i>·</i><span>Schön!</span></div>
-      </div>
-      <div class="r mt-xs">
-        <div class="lab">Partners who built, not sponsored</div>
-        <div class="names sm"><span>Icelandic Glacial</span><i>·</i><span>66°NORTH</span><i>·</i><span>Interplanetary Records</span><i>·</i><span>MakeSoil</span><i>·</i><span>+18 more</span></div>
+    <div class="tone"></div><div class="veil" style="background:linear-gradient(180deg,rgba(9,8,6,.62),rgba(9,8,6,.42) 42%,rgba(9,8,6,.72))"></div><div class="grain"></div>
+    <div class="hd"><div class="sec"><b>05</b> — Why IMXP is Different</div><div class="mk">IMXP</div></div>
+    <div class="eventbadge r"><img src="media/iceland-eclipse-logo.png" alt="Iceland Eclipse · 11–15 August 2026" /></div>
+    <div class="pad" style="justify-content:flex-end">
+      <div class="r gcards">
+        <div class="gcard">
+          <div class="gt">Iceland Eclipse</div>
+          <div class="gd">Delivered · 11–15 Aug 2026</div>
+          <ul><li>4,200 participants across five days</li><li>60+ countries represented</li><li>Partners on site: UN, NASA, OpenAI, MAPS, Playing for Change</li></ul>
+        </div>
+        <div class="gcard">
+          <div class="gt">The Portal</div>
+          <div class="gd">On the IMXP platform · month-long</div>
+          <ul><li>571 applicants globally</li><li>Patron Program launched (3 confirmed)</li><li>A framework for future community-led events</li></ul>
+        </div>
       </div>
     </div>
     <div class="foot"><div class="credit">Photo — <b>Daniel</b></div><div>Ceremony Garden</div></div>
   </section>
 
-  <!-- 5 · THE DEMAND -->
-  <section class="slide ph">
-    <div class="bg kb" style="background-image:url('media/photos/demand.jpg')"></div>
-    <div class="tone"></div><div class="veil"></div><div class="grain"></div>
-    <div class="hd"><div class="sec"><b>05</b> — The Demand</div><div class="mk">IMXP</div></div>
-    <div class="pad">
-      <div class="r kick">A category, not a hobby</div>
-      <h2 class="r mt-xs">People are choosing <em>real life</em>, again.</h2>
-      <div class="r lead mt-xs" style="max-width:50ch;color:var(--paper)">Shared ritual is the oldest answer we have to disconnection. A total solar eclipse is the rarest, most powerful reason to gather — and travel for it is growing fast.</div>
-      <div class="r figs mt">
-        <div class="fig"><div class="n">1 in 6</div><div class="l">people worldwide report loneliness</div></div>
-        <div class="fig"><div class="n sky">+25%</div><div class="l">flight bookings into the eclipse path, year on year</div></div>
-        <div class="fig"><div class="n paper">75,000</div><div class="l">foreign visitors to Iceland vs. fewer than 13,000 hotel rooms</div></div>
-      </div>
-      <div class="r cite mt">WHO Commission on Social Connection, Jun 2025 (1 in 6 affected; ~871,000 deaths a year linked to it). Amadeus, Aug 2026 (eclipse-path air bookings +25% YoY, peaking +39% on 10 Aug). Skift, Aug 2026 (~75,000 foreign tourists plus ~53,000 cruise passengers vs. &lt;13,000 hotel rooms).</div>
-    </div>
-    <div class="foot"><div class="credit">Photo — <b>Monica Cazes</b></div><div>Iceland Eclipse 2026</div></div>
-  </section>
-
-  <!-- 6 · WHAT'S NEXT · EGYPT -->
-  <section class="slide ph">
-    <div class="bg kb" style="background-image:url('media/events/egypt.jpg')"></div>
-    <div class="tone"></div><div class="veil"></div><div class="grain"></div>
-    <div class="hd"><div class="sec"><b>06</b> — What's Next</div><div class="mk">IMXP</div></div>
-    <div class="pad">
-      <div class="r kick">Egypt Eclipse · Luxor &amp; the Nile · 30 July – 9 August 2027</div>
-      <h2 class="r mt-xs">The longest totality of our lifetimes, in Egypt.</h2>
-      <div class="r lead mt-xs" style="max-width:50ch;color:var(--paper)">A seven-night voyage down the Nile from Aswan to Luxor. Historic hotels and private residences on the West Bank, chartered boats for families and groups, and three nights at the pyramids after.</div>
-      <div class="r figs mt">
-        <div class="fig"><div class="n">6:23</div><div class="l">minutes of totality at maximum</div></div>
-        <div class="fig"><div class="n sky">~89M</div><div class="l">people live in the path</div></div>
-        <div class="fig"><div class="n paper">~80%</div><div class="l">clear-sky probability at Luxor in August</div></div>
-      </div>
-      <div class="r cite mt">The longest total solar eclipse over easily accessible land in the 21st century; nothing longer until 3 June 2114. Source: NASA eclipse catalogue.</div>
-    </div>
-    <div class="foot"><div class="credit">Egypt Eclipse 2027</div><div>Luxor &amp; the Nile</div></div>
-  </section>
-
-  <!-- 7 · UPCOMING EVENTS (paper) -->
+  <!-- 6 · UPCOMING EVENTS -->
   <section class="slide pp">
-    <div class="hd"><div class="sec"><b>07</b> — Upcoming Events</div><div class="mk">IMXP</div></div>
-    <div class="bignum-idx">07</div>
+    <div class="hd"><div class="sec"><b>06</b> — Upcoming Events</div><div class="mk">IMXP</div></div>
+    <div class="bignum-idx">06</div>
     <div class="pad">
       <div class="r rule gold"></div>
-      <h2 class="r" style="color:var(--paper-ink)">Our complete events slate, 2027 and beyond</h2>
+      <h2 class="r" style="color:var(--paper-ink)">Our forward slate, 2027 and beyond</h2>
       <div class="r slate mt">
         <div class="ev"><div class="thumb"><img src="media/events/coherence.jpg" alt="Coherence"/></div><div><div class="en">Coherence</div><div class="lo">Texas Hill Country</div></div><div class="dt">Mar 19–22, 2027</div></div>
         <div class="ev"><div class="thumb"><img src="media/events/atomika.jpg" alt="Atomika"/></div><div><div class="en">Atomika</div><div class="lo">Roswell, New Mexico</div></div><div class="dt">7–9 May 2027</div></div>
@@ -400,77 +376,68 @@
       </div>
       <div class="r cite mt-s" style="color:var(--dim-l)">Beyond 2028: South Africa Eclipse, Apophis, and the Antarctic Expedition (2029–30+), continuing IMXP's global expansion.</div>
     </div>
-    <div class="foot"><div class="credit">The forward slate</div><div>IMXP · Fundraise</div></div>
+    <div class="foot"><div class="credit">The forward slate</div><div>IMXP · Info Deck</div></div>
   </section>
 
-  <!-- 8 · THE BUSINESS (paper) -->
-  <section class="slide pp">
-    <div class="hd"><div class="sec"><b>08</b> — The Business</div><div class="mk">IMXP</div></div>
-    <div class="bignum-idx">08</div>
-    <div class="pad">
-      <div class="r rule gold"></div>
-      <h2 class="r" style="color:var(--paper-ink);max-width:24ch">People pay a year ahead to be somewhere that happens <em style="color:var(--rust)">once</em>.</h2>
-      <div class="r lead mt-s" style="max-width:66ch"><b>High prices, cash upfront, and the same community.</b> Egypt pathways run to $9,999, and deposits land a year before the build. Iceland's Seekers are the demand for Egypt — so we never pay to find them twice.</div>
-      <div class="r comps mt">
-        <div class="comp"><div class="n">$3.3B</div><div class="l">Live Nation deferred revenue into 2025 — proof that ticket presales work as float</div></div>
-        <div class="comp"><div class="n">€1.3B</div><div class="l">KKR's price for Superstruct's 80+ festivals, ~10.8× EBITDA</div></div>
-        <div class="comp"><div class="n">$41.5B</div><div class="l">live-music market by 2030 (PwC)</div></div>
-        <div class="comp"><div class="n">~$1T</div><div class="l">wellness tourism, approaching a trillion a year</div></div>
-      </div>
-      <div class="r cite mt">Live Nation FY2024 (SEC, Feb 2025) — $23.16B revenue, 151M fans, year-end deferred revenue $3.3B, up 11%. Superstruct → KKR, ~€1.3B (~10.8× EV/EBITDA, 80+ festivals, ~7M attendees). PwC Global Entertainment &amp; Media Outlook, Jun 2026 — live music tops US$41.5B by 2030. Global Wellness Institute, Nov 2024 — wellness tourism ~$894B in 2024.</div>
-    </div>
-    <div class="foot"><div class="credit">The model</div><div>IMXP · Fundraise</div></div>
-  </section>
-
-  <!-- 9 · THE PROBLEM -->
+  <!-- 7 · ATOMIKA -->
   <section class="slide ph">
-    <div class="bg kb" style="background-image:url('media/photos/problem.jpg')"></div>
+    <div class="bg kb" style="background-image:url('media/events/atomika.jpg')"></div>
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
-    <div class="hd"><div class="sec"><b>09</b> — The Problem</div><div class="mk">IMXP</div></div>
+    <div class="hd"><div class="sec"><b>07</b> — Experience Expansion</div><div class="mk">IMXP</div></div>
     <div class="pad">
-      <div class="r kick">The honest slide</div>
-      <h2 class="r mt-xs">Then production <em>eats</em> it.</h2>
-      <div class="r lead mt-xs" style="max-width:52ch;color:var(--paper)">Every event rebuilds the same machine, in a brand-new country. Texas Eclipse and Iceland Eclipse each took years of planning. Every site makes our crew faster — then teardown scatters them, and the next event starts slow again.</div>
-      <div class="r figs mt">
-        <div class="fig"><div class="n">2.8%</div><div class="l">Live Nation's concerts operating margin, 2024</div></div>
-        <div class="fig"><div class="n sky">78 → 43</div><div class="l">UK festivals lost in 2024, then again in 2025</div></div>
-        <div class="fig"><div class="n paper">45–80%</div><div class="l">of an event budget consumed by talent &amp; production alone</div></div>
-      </div>
-      <div class="r cite mt">Live Nation FY2024 (Concerts segment $19.0B revenue, ~2.8% adjusted operating margin). Association of Independent Festivals (192+ UK festivals lost since 2019; 78 in 2024, 43 in 2025). Industry cost mix: talent 30–50%, production 15–30%.</div>
+      <div class="r kick">7–9 May 2027 · Twistflower Rd · Roswell, New Mexico</div>
+      <h1 class="r mt-xs" style="font-size:clamp(2.2rem,6cqw,5rem)">ATOMIKA</h1>
+      <div class="r lead mt-s" style="max-width:50ch;color:var(--paper);font-family:var(--disp);font-style:italic;font-weight:400;font-size:clamp(1rem,1.7cqw,1.45rem);line-height:1.35">Together we will transform a doomsday weapon into a hub of interstellar imagination — fostering a cross-disciplinary exploration of contact, consciousness, and cosmic culture.</div>
+      <div class="r lead mt-s" style="max-width:56ch">ATOMIKA is an experimental, annual gathering that fuses immersive art, deep inquiry, and powerful music within and around a Cold War-era nuclear missile silo near Roswell, New Mexico.</div>
     </div>
-    <div class="foot"><div class="credit">Photo — <b>Andrianna Kaimis</b></div><div>Stage build, Iceland</div></div>
+    <div class="foot"><div class="credit">Atomika · Spring 2027</div><div>Roswell, New Mexico</div></div>
   </section>
 
-  <!-- 10 · THE SOLUTION -->
-  <section class="slide ph">
-    <div class="bg kb" style="background-image:url('media/photos/solution.jpg')"></div>
-    <div class="tone"></div><div class="veil"></div><div class="grain"></div>
-    <div class="hd"><div class="sec"><b>10</b> — The Solution</div><div class="mk">IMXP</div></div>
+  <!-- 8 · PRODUCT -->
+  <section class="slide dk">
+    <div class="hd"><div class="sec"><b>08</b> — Product</div><div class="mk">IMXP</div></div>
     <div class="pad">
-      <div class="r kick">The production system for our gatherings</div>
-      <h2 class="r mt-xs" style="max-width:none">Festival in a Box</h2>
-      <div class="r lead mt-xs" style="max-width:52ch;color:var(--paper)">Every event it runs makes the next one easier.</div>
-      <div class="r mods mt">
-        <div class="mod"><div class="k">01</div><div class="h">Ideate</div><p>Turns an idea into a claim you can test.</p></div>
-        <div class="mod"><div class="k">02</div><div class="h">Validate</div><p>Vets real demand and economics before the money goes out.</p></div>
-        <div class="mod"><div class="k">03</div><div class="h">Plan</div><p>Builds the schedule from real lead times, then tracks every dependency.</p></div>
-        <div class="mod"><div class="k">04</div><div class="h">Market</div><p>Spins up the campaign off the same record.</p></div>
-        <div class="mod"><div class="k">05</div><div class="h">Run</div><p>Carries the build, the crew and the vendors through the event.</p></div>
-        <div class="mod"><div class="k">06</div><div class="h">Vault</div><p>Every decision, its reasoning, and later its outcome.</p></div>
-        <div class="mod"><div class="k">07</div><div class="h">Coach</div><p>Reads the plan each morning; tells each team what to do today.</p></div>
+      <h2 class="r sm" style="font-size:clamp(1.1rem,2.35cqw,2rem);max-width:none;line-height:1.1">Our vertically-integrated platform increases margins by growing revenue, aligning globally-distributed operations, and automating production.</h2>
+      <div class="r prodgrid">
+        <div>
+          <div class="lab">Where we go · 2026 – 2030</div>
+          <div class="devcal">
+            <div class="dcrow"><div class="dcyr">2026</div><div class="dcev"><b>The Portal</b> · Iceland Eclipse</div></div>
+            <div class="dcrow"><div class="dcyr">2027</div><div class="dcev"><b>ATOMIKA</b> · Coherence · Egypt Eclipse</div></div>
+            <div class="dcrow"><div class="dcyr">2028</div><div class="dcev"><b>New Zealand Eclipse</b> · Antarctic Expedition</div></div>
+            <div class="dcrow" style="border:0"><div class="dcyr">’29–30+</div><div class="dcev"><b>South Africa Eclipse</b> · Apophis</div></div>
+          </div>
+        </div>
+        <div>
+          <div class="lab">What we build · Aug 2026 – Aug 2027</div>
+          <div class="gantt"><img src="media/people/product-gantt-dark.png" alt="IMXP build roadmap, Aug 2026 to Aug 2027, across Atomika, Coherence, Midnight Sun and Egypt" /></div>
+        </div>
+      </div>
+      <div class="r pillars">
+        <div class="pil"><div class="ph2">Event Growth Engine</div><div class="pd">Community-led sales &amp; marketing</div></div>
+        <div class="pil"><div class="ph2">Experience as a Service</div><div class="pd">Participation management &amp; incentivization</div></div>
+        <div class="pil"><div class="ph2">Festival-in-a-Box</div><div class="pd">Planning &amp; production automation</div></div>
+      </div>
+      <div class="r osband">
+        <div class="oslab"><div class="osk">In build</div><div class="osn">IMXP Operating System</div></div>
+        <div class="osmod"><div class="n">Participation Layer</div><div class="d">Volunteer, ritual, contribution</div></div>
+        <div class="osmod"><div class="n">Unified Profile</div><div class="d">Identity + behavior + reputation</div></div>
+        <div class="osmod"><div class="n">Reputation Graph</div><div class="d">Trust scores, role progression</div></div>
+        <div class="osmod"><div class="n">Agent Crew</div><div class="d">Programmable AI workflows</div></div>
+        <div class="osmod"><div class="n">Portal</div><div class="d">Member surface, personalization</div></div>
       </div>
     </div>
-    <div class="foot"><div class="credit">Photo — <b>Daniel</b></div><div>Aurora Stage</div></div>
+    <div class="foot"><div class="credit">The platform</div><div>IMXP · Info Deck</div></div>
   </section>
 
-  <!-- 11 · FIAB DEMO VIDEO -->
+  <!-- 9 · FIAB DEMO VIDEO -->
   <section class="slide ph center">
     <div class="bg" style="background-image:url('media/photos/fiab-stage.jpg')"></div>
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
-    <div class="hd"><div class="sec"><b>11</b> — The Solution</div><div class="mk">IMXP</div></div>
+    <div class="hd"><div class="sec"><b>09</b> — Product</div><div class="mk">IMXP</div></div>
     <div class="pad mid" style="align-items:flex-start">
       <div class="r kick">Live at Iceland Eclipse 2026</div>
-      <h2 class="r mt-xs" style="max-width:none">Festival in a Box — <em>the demo</em></h2>
+      <h2 class="r sm mt-xs" style="max-width:none">Festival in a Box — <em>Technology Demo</em></h2>
       <div class="r lead mt-xs" style="max-width:46ch;color:var(--paper)">AI-enabled festival production, by IMXP.</div>
       <div class="r videowrap">
         <video id="fiab" src="media/fiab.mp4" poster="media/fiab-poster.png" playsinline preload="none"></video>
@@ -480,60 +447,24 @@
     <div class="foot"><div class="credit">Photo — <b>The Bailey Perspective</b></div><div>Eclipse Stage</div></div>
   </section>
 
-  <!-- 12 · WHERE IT STANDS -->
+  <!-- 10 · WHY EXPERIENCES -->
   <section class="slide ph">
-    <div class="bg kb" style="background-image:url('media/photos/stands.jpg')"></div>
+    <div class="bg kb" style="background-image:url('media/photos/demand.jpg')"></div>
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
-    <div class="hd"><div class="sec"><b>12</b> — Where it Stands</div><div class="mk">IMXP</div></div>
-    <div class="pad">
-      <div class="r kick">Iceland put it in the field</div>
-      <h2 class="r mt-xs">Running now, and getting sharper.</h2>
-      <div class="r lead mt-xs" style="max-width:46ch;color:var(--paper)">Four events between here and Egypt.</div>
-      <div class="r ledger mt">
-        <div class="led live"><div class="t">Live</div><div class="h">Capture &amp; the Vault</div><p>Running in production. Every decision recorded with its reasoning.</p></div>
-        <div class="led build"><div class="t">In build</div><div class="h">Plan</div><p>Schedules from real lead times, tracking every dependency.</p></div>
-        <div class="led next"><div class="t">Proving ground</div><div class="h">Coherence &amp; Atomika</div><p>Run it end to end. Egypt is the one it was built for.</p></div>
-      </div>
-      <div class="r gantt"><img src="media/people/product-gantt-dark.png" alt="IMXP platform build roadmap, Aug 2026 to Aug 2027, across Atomika, Coherence, Midnight Sun and Egypt" /></div>
+    <div class="hd"><div class="sec"><b>10</b> — Why Experiences</div><div class="mk">IMXP</div></div>
+    <div class="pad mid" style="align-items:flex-start">
+      <h2 class="r">We are advancing technologically, but losing <em>coherence</em> as a species.</h2>
+      <div class="r lead mt" style="max-width:56ch;color:var(--paper)">IMXP is addressing this at the most fundamental level. We reconnect the human network through shared experience, and build the systems that allow that network to coordinate at planetary scale. This is how large-scale coordination begins.</div>
+      <div class="r lead mt-s" style="max-width:56ch">Our experiences serve as the human foundation required to organize what comes next.</div>
     </div>
-    <div class="foot"><div class="credit">Photo — <b>Andrianna Kaimis</b></div><div>Dome build, Iceland</div></div>
+    <div class="foot"><div class="credit">Photo — <b>Monica Cazes</b></div><div>Iceland Eclipse 2026</div></div>
   </section>
 
-  <!-- 13 · THE TEAM (paper) -->
-  <section class="slide pp">
-    <div class="hd"><div class="sec"><b>13</b> — The Team</div><div class="mk">IMXP</div></div>
-    <div class="bignum-idx">13</div>
-    <div class="pad">
-      <div class="r rule gold"></div>
-      <h2 class="r" style="color:var(--paper-ink);max-width:22ch">The people who have <em style="color:var(--rust)">already</em> done this.</h2>
-      <div class="r lead mt-xs" style="max-width:54ch">A decade of building the experiences that unite music, art, technology and community.</div>
-      <div class="r roster mt-s">
-        <div class="person"><img src="media/people/mitch.jpg" alt="Mitch Morales"/><div class="nm">Mitch Morales</div><div class="rl">Founder &amp; CEO · Texas Eclipse</div></div>
-        <div class="person"><img src="media/people/maryliz.jpg" alt="MaryLiz Bender"/><div class="nm">MaryLiz Bender</div><div class="rl">CXO · Cosmic Perspective</div></div>
-        <div class="person"><img src="media/people/jon.jpg" alt="Jon Shapiro"/><div class="nm">Jon Shapiro</div><div class="rl">CTO · PlantWave, Mantle</div></div>
-        <div class="person"><img src="media/people/ari.jpg" alt="Ari Eisenstat"/><div class="nm">Ari Eisenstat</div><div class="rl">Program · Space for Humanity</div></div>
-        <div class="person"><img src="media/people/andrew.jpg" alt="Andrew Glenn"/><div class="nm">Andrew Glenn</div><div class="rl">Creative · KAMMOK</div></div>
-        <div class="person"><img src="media/people/patrick.jpg" alt="Patrick Kronfli"/><div class="nm">Patrick Kronfli</div><div class="rl">Partnerships · Unify.org</div></div>
-        <div class="person"><img src="media/people/holly.jpg" alt="Holly Wood"/><div class="nm">Holly Wood</div><div class="rl">Admin · Texas Eclipse</div></div>
-      </div>
-      <div class="r track mt">
-        <div><div class="n">$20M · 38,000</div><div class="l">Texas Eclipse revenue &amp; attendance — nine months, inception to production</div></div>
-        <div><div class="n">20,000 / day</div><div class="l">Euphoria, founded by Mitch</div></div>
-        <div><div class="n">$2M → $200M</div><div class="l">360training, grown and exited</div></div>
-      </div>
-      <div class="r expo">
-        <div class="cap">Our experience</div>
-        <div class="strip"><img src="media/people/logos-strip.jpg" alt="Texas Eclipse, Electric Forest, Trail Blazers, Euphoria, Everfest, Space for Humanity, Cosmic Perspective, Everyday Astronaut and more"/></div>
-      </div>
-    </div>
-    <div class="foot"><div class="credit">The team</div><div>IMXP · Fundraise</div></div>
-  </section>
-
-  <!-- 14 · THE HORIZON -->
+  <!-- 11 · VISION -->
   <section class="slide ph center">
     <div class="bg kb" style="background-image:url('media/photos/horizon.jpg')"></div>
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
-    <div class="hd"><div class="sec"><b>14</b> — The Horizon</div><div class="mk">IMXP</div></div>
+    <div class="hd"><div class="sec"><b>11</b> — Vision</div><div class="mk">IMXP</div></div>
     <div class="pad mid center" style="align-items:center;text-align:center">
       <div class="r statement" style="max-width:22ch;margin:0 auto">IMXP brings humans into alignment with themselves, our planet, and the <em>Cosmos</em>.</div>
       <div class="r lead mt" style="max-width:40ch;margin:0 auto;color:var(--paper);text-align:center">We are building the systems to one day see a total solar eclipse from the Moon.</div>
@@ -541,13 +472,13 @@
     <div class="foot"><div class="credit">Photo — <b>The Bailey Perspective</b></div><div>Cosmic Connection</div></div>
   </section>
 
-  <!-- 15 · CLOSE -->
+  <!-- 12 · THANK YOU -->
   <section class="slide ph center">
     <div class="bg kb" style="background-image:url('media/photos/close.jpg')"></div>
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
-    <div class="hd"><div class="sec"><b>15</b> — Thank you</div><div class="mk">IMXP</div></div>
+    <div class="hd"><div class="sec"><b>12</b> — Thank You</div><div class="mk">IMXP</div></div>
     <div class="pad mid" style="align-items:flex-start">
-      <div class="r kick">Realigning our civilization with the Cosmos</div>
+      <div class="r kick">Immersive Experiences at Global Scale</div>
       <h1 class="r mt-s" style="font-size:clamp(2.6rem,7cqw,6rem)">Thank you.</h1>
       <div class="r contact mt">Mitch Morales · <a href="mailto:mitch@im-xp.com">mitch@im-xp.com</a></div>
     </div>

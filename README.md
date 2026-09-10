@@ -1,4 +1,4 @@
-# IMXP — Fundraise Deck
+# IMXP — Info Deck
 
 A hand-coded, editorial web deck for IMXP's raise. Built verbatim from the
 storyboard tab of the IMXP Content Editor (Google Sheet): the full investor
