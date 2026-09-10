@@ -1,26 +1,36 @@
 # IMXP — Fundraise Deck
 
-A hand-coded, cinematic web deck for IMXP's raise. Built from the strategist's
-storyboard (Google Sheet, IMXP Content Editor), it carries the full investor
-narrative: hook → proof → reach → market → problem → solution → business →
+A hand-coded, editorial web deck for IMXP's raise. Built verbatim from the
+storyboard tab of the IMXP Content Editor (Google Sheet): the full investor
+narrative — hook → proof → reach → market → problem → solution → business →
 team → horizon.
 
+## Design — its own identity
+
+Deliberately distinct from IMXP's other decks (which run Archivo + a pastel
+"Canva pill" palette on dark cinematic photo slides). This one is an
+**editorial / archival-cosmic** system:
+
+- **Type:** Fraunces (high-contrast display serif, italic accents) + Space
+  Grotesk (labels & body). Big figures set in the serif.
+- **Palette:** warm bone paper, near-black ink, and a single solar-gold accent
+  (with muted sky-blue / rust / sage for data), photography carrying the rest.
+- **Layout:** magazine masthead + running foot, hairline rules, a giant index
+  numeral, big serif numbers, and a **photographer credit** on every photo
+  slide. A warm duotone grade unifies many different images into one deck.
 - **15 slides**, 16:9, self-contained (one CDN dependency: Google Fonts).
-- **Design:** IMXP's source design language — Archivo headlines, Inter body,
-  the Canva pill palette (teal / green / yellow / lavender / orange), eyebrow
-  labels, imxp logo top-right, cinematic full-bleed photo slides mixed with
-  clean data slides.
-- **Photos:** real Iceland Eclipse 2026 press photos (`media/photos/`), no
-  generated imagery. Team headshots in `media/people/`.
-- **Video:** the Festival-in-a-Box demo plays inline as a native slide.
-- **Facts:** figures and citations verbatim from the storyboard's researched
-  sources (WHO, Amadeus, Skift, NASA, Live Nation FY2024, PwC, KKR/Superstruct).
-- **No ask on the page**, per Mitch — the close is contact only.
+
+## Photography
+
+Fresh curation from the **IE26 Media Finder** library (7,752-file Iceland
+Eclipse 2026 archive) — no images recycled from the other decks. Credited to
+the original photographers (Whitney Petters, The Bailey Perspective, Andrianna
+Kaimis, Monica Cazes, Daniel, and more). Team headshots in `media/people/`.
 
 ## View
 
 ```
-https://<account>.github.io/<repo>/
+https://ugla-ctrl.github.io/imxp-fundraise-deck/
 ```
 
 ## Navigation
@@ -47,18 +57,19 @@ https://<account>.github.io/<repo>/
 14. The Horizon — a total solar eclipse from the Moon
 15. Close — thank you
 
+No funding ask on the page, per Mitch — the close is contact only.
+
 ## Editing
 
-Content lives directly in `index.html` (the `.slide` sections). Hand-coded, so
-text edits are immediate and reflow cleanly — no image regeneration required.
+Content lives directly in `index.html` (the `.slide` sections). To swap a
+photo, drop a new file into `media/photos/` and update the slide's `background-image`
+and its footer credit.
 
 ## Open items (blanks from the storyboard, to fill from IMXP's own numbers)
 
-These were flagged in the source as "blanks you must fill" and are **not**
-invented in the deck:
+Flagged in the source as "blanks you must fill" — **not** invented here:
 
-- Engineering headcount today (Team slide).
+- Engineering headcount today (Team).
 - IMXP's own presale curve, repeat-purchase rate, blended acquisition cost
-  (Business slide).
-- The before-picture: production hours / headcount for Texas Eclipse (Problem
-  slide).
+  (Business).
+- The before-picture: production hours / headcount for Texas Eclipse (Problem).
