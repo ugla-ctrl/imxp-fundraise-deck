@@ -149,7 +149,9 @@
   .dk{background:#0c0b14;color:var(--paper)}
   .split{display:grid;grid-template-columns:1fr 1.08fr;gap:clamp(22px,3.6cqw,58px);align-items:center;margin-top:clamp(12px,2cqh,24px)}
   .split.mods-v{grid-template-columns:1.05fr 1fr;align-items:start}
-  .gantt img{width:100%;height:auto;display:block;border:1px solid var(--line-dd);border-radius:6px;background:rgba(0,0,0,.3)}
+  .gantt{background:rgba(6,6,10,.86);border:1px solid var(--line-dd);border-radius:8px;
+    padding:clamp(7px,1cqw,14px);box-shadow:0 18px 50px rgba(0,0,0,.5)}
+  .gantt img{width:100%;height:auto;display:block;border-radius:4px}
   .frame{position:relative;border:1px solid var(--line-dd);border-radius:10px;overflow:hidden;
     box-shadow:0 26px 70px rgba(0,0,0,.55)}
   .frame img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;filter:saturate(1.03) contrast(1.03)}
@@ -166,15 +168,19 @@
   .dcev b{color:var(--paper);font-weight:600}
 
   /* team */
-  .leads{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.6cqw,42px);max-width:70%}
-  .member img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;display:block;filter:saturate(.96) contrast(1.03)}
+  .leads{display:flex;gap:clamp(22px,4.4cqw,68px);align-items:flex-start}
+  .member{display:flex;flex-direction:column;align-items:center;text-align:center;
+    width:clamp(96px,14cqw,148px)}
+  .member img{width:clamp(96px,14cqw,148px);height:clamp(96px,14cqw,148px);object-fit:cover;
+    border-radius:50%;display:block;border:2px solid rgba(236,192,100,.55);
+    box-shadow:0 10px 28px rgba(0,0,0,.45);filter:saturate(1) contrast(1.05)}
   .member .nm{font-family:var(--disp);font-weight:450;font-variation-settings:'opsz' 40;
-    font-size:clamp(1rem,1.55cqw,1.32rem);color:var(--paper);margin-top:.6em;line-height:1.05}
+    font-size:clamp(.98rem,1.5cqw,1.28rem);color:var(--paper);margin-top:.7em;line-height:1.05}
   .member .rl{font-family:var(--sans);font-weight:600;letter-spacing:.12em;text-transform:uppercase;
-    font-size:clamp(.58rem,.82cqw,.72rem);color:var(--gold-2);margin-top:.4em}
-  .expstrip{margin-top:clamp(14px,2.4cqh,30px)}
-  .expstrip img{width:min(1040px,96cqw);height:auto;display:block;opacity:1;
-    mix-blend-mode:screen;filter:brightness(1.35) contrast(1.08)}
+    font-size:clamp(.56rem,.8cqw,.7rem);color:var(--gold-2);margin-top:.4em}
+  .expstrip{margin-top:clamp(14px,2.4cqh,30px);overflow:visible}
+  .expstrip img{width:min(1120px,95cqw);height:auto;display:block;opacity:1;
+    mix-blend-mode:screen;filter:brightness(1.4) contrast(1.08)}
 
   /* video */
   .videowrap{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--line-dd);
@@ -348,13 +354,15 @@
   </section>
 
   <!-- 8 · THE BUSINESS -->
-  <section class="slide dk">
+  <section class="slide ph">
+    <div class="bg kb" style="background-image:url('media/photos/biz-stage.jpg')"></div>
+    <div class="tone"></div><div class="veil"></div><div class="grain"></div>
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
-    <div class="pad">
+    <div class="pad mid">
       <div class="r kick">The Business</div>
       <h2 class="r sm mt-xs">People pay a year ahead to be somewhere that happens once.</h2>
-      <div class="r sub mt-s" style="color:var(--paper)">High prices, cash upfront, and the same community.</div>
-      <div class="r lead mt-s">Egypt pathways run to $9,999 and deposits land a year before the build. Iceland's Seekers are the demand for Egypt, so we never pay to find them twice.</div>
+      <div class="r sub mt-s">High prices, cash upfront, and the same community.</div>
+      <div class="r lead mt-s" style="color:var(--paper)">Egypt pathways run to $9,999 and deposits land a year before the build. Iceland's Seekers are the demand for Egypt, so we never pay to find them twice.</div>
       <div class="r figs biz mt">
         <div class="fig"><div class="n">$3.3B</div><div class="l">Live Nation deferred revenue into 2025</div><div class="src">SEC filing, Feb 2025</div></div>
         <div class="fig"><div class="n">€1.3B</div><div class="l">KKR for 80 festivals, ~10.8× EBITDA</div><div class="src">Superstruct acquisition</div></div>
@@ -383,7 +391,9 @@
   </section>
 
   <!-- 10 · THE SOLUTION · FESTIVAL IN A BOX (modules + demo video) -->
-  <section class="slide dk">
+  <section class="slide ph">
+    <div class="bg kb" style="background-image:url('media/photos/fiab-stage2.jpg')"></div>
+    <div class="tone"></div><div class="veil" style="background:linear-gradient(180deg,rgba(9,8,6,.82),rgba(9,8,6,.6) 40%,rgba(9,8,6,.82))"></div><div class="grain"></div>
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad top" style="padding-top:calc(var(--topgap) + clamp(14px,2.6cqh,34px))">
       <div class="r kick">The Solution</div>
@@ -408,9 +418,11 @@
   </section>
 
   <!-- 11 · WHERE IT STANDS -->
-  <section class="slide dk">
+  <section class="slide ph">
+    <div class="bg kb" style="background-image:url('media/photos/stands-build.jpg')"></div>
+    <div class="tone"></div><div class="veil"></div><div class="grain"></div>
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
-    <div class="pad top" style="padding-top:calc(var(--topgap) + clamp(16px,3cqh,40px))">
+    <div class="pad mid">
       <div class="r kick">Where it Stands</div>
       <h2 class="r sm mt-xs">Running now, and getting sharper.</h2>
       <div class="r split">
@@ -429,20 +441,22 @@
   </section>
 
   <!-- 12 · THE TEAM -->
-  <section class="slide dk">
+  <section class="slide ph">
+    <div class="bg kb" style="background-image:url('media/photos/team-crowd.jpg')"></div>
+    <div class="tone"></div><div class="veil" style="background:linear-gradient(180deg,rgba(9,8,6,.88),rgba(9,8,6,.62) 44%,rgba(9,8,6,.82))"></div><div class="grain"></div>
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
-    <div class="pad top" style="padding-top:calc(var(--topgap) + clamp(14px,2.6cqh,34px))">
+    <div class="pad mid">
       <div class="r kick">The Team</div>
       <h2 class="r sm mt-xs">The people who have already done this.</h2>
       <div class="r sub mt-s">A decade of building the experiences that unite music, art, technology and community.</div>
       <div class="r leads mt">
-        <div class="member"><img src="media/people/mitch.jpg" alt="Mitch Morales"/><div class="nm">Mitch Morales</div><div class="rl">Founder &amp; CEO</div></div>
-        <div class="member"><img src="media/people/maryliz.jpg" alt="MaryLiz Bender"/><div class="nm">MaryLiz Bender</div><div class="rl">CXO</div></div>
-        <div class="member"><img src="media/people/jon.jpg" alt="Jon Shapiro"/><div class="nm">Jon Shapiro</div><div class="rl">CTO</div></div>
+        <div class="member"><img src="media/people/mitch-hs.jpg" alt="Mitch Morales"/><div class="nm">Mitch Morales</div><div class="rl">Founder &amp; CEO</div></div>
+        <div class="member"><img src="media/people/maryliz-hs.jpg" alt="MaryLiz Bender"/><div class="nm">MaryLiz Bender</div><div class="rl">CXO</div></div>
+        <div class="member"><img src="media/people/jon-hs.jpg" alt="Jon Shapiro"/><div class="nm">Jon Shapiro</div><div class="rl">CTO</div></div>
       </div>
       <div class="r names sm mt-s"><span>Ari Eisenstat</span><i>·</i><span>Andrew Glenn</span><i>·</i><span>Patrick Kronfli</span><i>·</i><span>Holly Wood</span></div>
       <div class="r lead mt-s" style="max-width:none">Texas Eclipse: $20M revenue, 38,000 people, nine months to production · Euphoria: 20,000 a day · 360training: grown $2M to $200M, exited.</div>
-      <div class="r expstrip"><img src="media/people/logos-strip.jpg" alt="Texas Eclipse, Electric Forest, Trail Blazers, Euphoria, Everfest, Space for Humanity, Cosmic Perspective, Everyday Astronaut" /></div>
+      <div class="r expstrip"><img src="media/people/logos-strip-clean.jpg" alt="Texas Eclipse, Electric Forest, Trail Blazers, Euphoria, Everfest, Space for Humanity, Cosmic Perspective, Everyday Astronaut" /></div>
     </div>
   </section>
 
