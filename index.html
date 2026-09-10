@@ -149,6 +149,13 @@
   .split{display:grid;grid-template-columns:1fr 1.08fr;gap:clamp(22px,3.6cqw,58px);align-items:center;margin-top:clamp(12px,2cqh,24px)}
   .split.mods-v{grid-template-columns:1.05fr 1fr;align-items:start}
   .gantt img{width:100%;height:auto;display:block;border:1px solid var(--line-dd);border-radius:6px;background:rgba(0,0,0,.3)}
+  .frame{position:relative;border:1px solid var(--line-dd);border-radius:10px;overflow:hidden;
+    box-shadow:0 26px 70px rgba(0,0,0,.55)}
+  .frame img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;filter:saturate(1.03) contrast(1.03)}
+  .frame figcaption{position:absolute;left:0;right:0;bottom:0;padding:.6em .9em;
+    font-family:var(--sans);font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+    font-size:clamp(.5rem,.7cqw,.62rem);color:rgba(239,231,214,.86);
+    background:linear-gradient(0deg,rgba(9,8,6,.7),rgba(9,8,6,0))}
   .devcal{display:flex;flex-direction:column;gap:clamp(7px,1.1cqh,13px);margin-top:clamp(12px,2cqh,22px)}
   .dcrow{display:grid;grid-template-columns:clamp(58px,7cqw,92px) 1fr;gap:clamp(10px,1.6cqw,22px);align-items:baseline;
     padding-bottom:clamp(6px,1cqh,11px);border-bottom:1px solid var(--line-dd)}
@@ -303,16 +310,23 @@
   </section>
 
   <!-- 6 · WHAT'S NEXT · EGYPT -->
-  <section class="slide ph">
-    <div class="bg kb" style="background-image:url('media/events/egypt.jpg');background-position:center 28%"></div>
-    <div class="tone"></div><div class="veil" style="background:linear-gradient(180deg,rgba(9,8,6,.6),rgba(9,8,6,.56) 28%,rgba(9,8,6,.8) 58%,rgba(9,8,6,.95))"></div><div class="grain"></div>
+  <section class="slide dk">
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
-    <div class="pad">
+    <div class="pad top" style="padding-top:calc(var(--topgap) + clamp(16px,3cqh,40px))">
       <div class="r kick">What's Next</div>
       <h2 class="r sm mt-xs">The longest totality of our lifetimes, in Egypt.</h2>
       <div class="r sub mt-s">Egypt Eclipse · Luxor and the Nile · 30 July to 9 August 2027</div>
-      <div class="r lead mt-s" style="color:var(--paper);max-width:58ch">A seven-night voyage down the Nile from Aswan to Luxor. Historic hotels and private residences on the West Bank, chartered boats for families and groups, and three nights at the pyramids after.</div>
-      <div class="r names sm mt"><span>6 min 23 sec of totality</span><i>·</i><span>longest over accessible land this century</span><i>·</i><span>~80% clear-sky in Luxor</span></div>
+      <div class="r split">
+        <div>
+          <div class="lead">A seven-night voyage down the Nile from Aswan to Luxor. Historic hotels and private residences on the West Bank, chartered boats for families and groups, and three nights at the pyramids after.</div>
+          <div class="figs mt">
+            <div class="fig"><div class="n">6:23</div><div class="l">minutes of totality</div></div>
+            <div class="fig"><div class="n sky">~80%</div><div class="l">clear-sky probability in Luxor</div></div>
+          </div>
+          <div class="names sm mt-s"><span>The longest total eclipse over accessible land this century</span></div>
+        </div>
+        <figure class="frame"><img src="media/photos/egypt.jpg" alt="Total solar eclipse over the Luxor temple, Egypt" /><figcaption>Totality over Luxor · egypt-eclipse.com</figcaption></figure>
+      </div>
     </div>
   </section>
 
