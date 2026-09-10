@@ -4,8 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>IMXP · Info Deck</title>
-<meta name="description" content="IMXP — Immersive Experiences at Global Scale." />
-<meta property="og:title" content="IMXP — Immersive Experiences at Global Scale" />
+<meta name="description" content="IMXP · Immersive Experiences at Global Scale." />
+<meta property="og:title" content="IMXP · Immersive Experiences at Global Scale" />
 <meta property="og:description" content="Immersive Experiences at Global Scale." />
 <meta property="og:image" content="media/photos/cover.jpg" />
 <meta name="theme-color" content="#0d0c0a" />
@@ -65,21 +65,20 @@
 
   .hd{position:absolute;top:0;left:0;right:0;z-index:6;height:var(--topgap);
     display:flex;align-items:center;justify-content:space-between;gap:1em;
-    padding:0 var(--edge);border-bottom:1px solid var(--line-d)}
-  .hd .sec{font-family:var(--sans);font-weight:600;letter-spacing:.28em;text-transform:uppercase;
+    padding:0 var(--edge)}
+  .hd .sec{font-family:var(--sans);font-weight:500;letter-spacing:.28em;text-transform:uppercase;
     font-size:clamp(.56rem,.82cqw,.72rem);display:flex;align-items:center;gap:.9em}
-  .hd .sec b{color:var(--gold-2);font-weight:700}
-  .hd .mk{font-family:var(--disp);font-weight:800;letter-spacing:.02em;font-size:clamp(.9rem,1.5cqw,1.25rem);
-    font-variation-settings:'opsz' 40}
-  .pp .hd{border-color:var(--line-l)} .pp .hd .sec{color:var(--dim-l)} .pp .hd .mk{color:var(--paper-ink)}
-  .dk .hd{border-color:var(--line-d)} .dk .hd .sec{color:var(--dim-d)} .dk .hd .mk{color:var(--paper)}
-  .ph .hd .sec{color:var(--dim-d)} .ph .hd .mk{color:var(--paper)}
+  .hd .sec b{color:var(--gold-2);font-weight:600}
+  .hd .mk{height:clamp(13px,2cqh,21px);width:auto;display:block}
+  .pp .hd .sec{color:var(--dim-l)} .pp .hd .mk{filter:brightness(0) opacity(.82)}
+  .dk .hd .sec{color:var(--dim-d)}
+  .ph .hd .sec{color:var(--dim-d)}
   .foot{position:absolute;left:0;right:0;bottom:0;z-index:6;height:clamp(30px,4.6cqh,48px);
     display:flex;align-items:center;justify-content:space-between;gap:1em;
-    padding:0 var(--edge);border-top:1px solid var(--line-dd);
+    padding:0 var(--edge);
     font-family:var(--sans);font-weight:500;letter-spacing:.2em;text-transform:uppercase;
     font-size:clamp(.5rem,.72cqw,.62rem)}
-  .ph .foot,.dk .foot{color:rgba(239,231,214,.56)} .pp .foot{color:var(--dim-l);border-color:var(--line-ll)}
+  .ph .foot,.dk .foot{color:rgba(239,231,214,.56)} .pp .foot{color:var(--dim-l)}
   .foot .credit b{color:var(--gold-2);font-weight:600;letter-spacing:.14em}
   .pp .foot .credit b{color:var(--rust)}
 
@@ -260,7 +259,7 @@
   <section class="slide ph center on">
     <div class="bg kb" style="background-image:url('media/photos/cover.jpg')"></div>
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
-    <div class="hd"><div class="sec">Info Deck · 2026</div><div class="mk">IMXP</div></div>
+    <div class="hd"><div class="sec">Info Deck · 2026</div><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad mid" style="align-items:flex-start">
       <img class="r coverlogo" src="imxp-logo.png" alt="IMXP" />
       <h1 class="r">Immersive Experiences<br/>at Global Scale</h1>
@@ -270,14 +269,14 @@
         <div class="s"><div class="n">75+</div><div class="l">countries contributing</div></div>
       </div>
     </div>
-    <div class="foot"><div class="credit">Photo — <b>Whitney Petters</b></div><div>Iceland Eclipse 2026</div></div>
+    <div class="foot"><div class="credit">Photo · <b>Whitney Petters</b></div><div>Iceland Eclipse 2026</div></div>
   </section>
 
   <!-- 2 · ICELAND -->
   <section class="slide ph">
     <div class="bg kb" style="background-image:url('media/photos/eclipse.jpg')"></div>
     <div class="tone"></div><div class="veil" style="background:linear-gradient(180deg,rgba(9,8,6,.5),rgba(9,8,6,.34) 34%,rgba(9,8,6,.7) 62%,rgba(9,8,6,.9))"></div><div class="grain"></div>
-    <div class="hd"><div class="sec"><b>02</b> — Iceland</div><div class="mk">IMXP</div></div>
+    <div class="hd"><div class="sec"><b>02</b> · Iceland</div><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad">
       <h2 class="r sm">Iceland, Under Totality</h2>
       <div class="r cols mt">
@@ -290,19 +289,19 @@
         <div class="col">
           <div class="ct">The Portal</div>
           <div class="cs">At Iceland Eclipse · month-long</div>
-          <p>A month-long immersive pop-up village and field lab for cultural evolution — a catalyst for radical co-creation.</p>
+          <p>A month-long immersive pop-up village and field lab for cultural evolution, a catalyst for radical co-creation.</p>
           <ul><li>571 applicants globally</li><li>Launched Patron Program (3 confirmed)</li><li>Framework for future highly-skilled, community-led events</li></ul>
         </div>
       </div>
     </div>
-    <div class="foot"><div class="credit">Photo — <b>The Bailey Perspective</b></div><div>Eclipse Stage</div></div>
+    <div class="foot"><div class="credit">Photo · <b>The Bailey Perspective</b></div><div>Eclipse Stage</div></div>
   </section>
 
   <!-- 3 · ACCOMPLISHMENTS -->
   <section class="slide ph">
     <div class="bg kb" style="background-image:url('media/photos/proof.jpg')"></div>
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
-    <div class="hd"><div class="sec"><b>03</b> — Accomplishments</div><div class="mk">IMXP</div></div>
+    <div class="hd"><div class="sec"><b>03</b> · Accomplishments</div><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad">
       <div class="r kick">Accomplishments</div>
       <div class="r figs mt">
@@ -316,14 +315,14 @@
         <div class="names"><span>The New York Times</span><i>·</i><span>CNN</span></div>
       </div>
     </div>
-    <div class="foot"><div class="credit">Photo — <b>Andrianna Kaimis</b></div><div>Eclipse Stage</div></div>
+    <div class="foot"><div class="credit">Photo · <b>Andrianna Kaimis</b></div><div>Eclipse Stage</div></div>
   </section>
 
   <!-- 4 · DEMAND FOR EVENTS IS REAL -->
   <section class="slide ph">
     <div class="bg kb" style="background-image:url('media/photos/problem.jpg')"></div>
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
-    <div class="hd"><div class="sec"><b>04</b> — The Platform</div><div class="mk">IMXP</div></div>
+    <div class="hd"><div class="sec"><b>04</b> · The Platform</div><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad">
       <div class="r kick">Demand for events is real</div>
       <h2 class="r sm mt-xs">We are building the platform for rapidly deploying festivals and transformative gatherings globally.</h2>
@@ -334,14 +333,14 @@
         <div class="tag">People <b>+</b> systems aligned</div>
       </div>
     </div>
-    <div class="foot"><div class="credit">Photo — <b>Andrianna Kaimis</b></div><div>Site build, Iceland</div></div>
+    <div class="foot"><div class="credit">Photo · <b>Andrianna Kaimis</b></div><div>Site build, Iceland</div></div>
   </section>
 
   <!-- 5 · WHY IMXP IS DIFFERENT -->
   <section class="slide ph">
     <div class="bg kb" style="background-image:url('media/photos/reach.jpg')"></div>
     <div class="tone"></div><div class="veil" style="background:linear-gradient(180deg,rgba(9,8,6,.62),rgba(9,8,6,.42) 42%,rgba(9,8,6,.72))"></div><div class="grain"></div>
-    <div class="hd"><div class="sec"><b>05</b> — Why IMXP is Different</div><div class="mk">IMXP</div></div>
+    <div class="hd"><div class="sec"><b>05</b> · Why IMXP is Different</div><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="eventbadge r"><img src="media/iceland-eclipse-logo.png" alt="Iceland Eclipse · 11–15 August 2026" /></div>
     <div class="pad" style="justify-content:flex-end">
       <div class="r gcards">
@@ -357,12 +356,12 @@
         </div>
       </div>
     </div>
-    <div class="foot"><div class="credit">Photo — <b>Daniel</b></div><div>Ceremony Garden</div></div>
+    <div class="foot"><div class="credit">Photo · <b>Daniel</b></div><div>Ceremony Garden</div></div>
   </section>
 
   <!-- 6 · UPCOMING EVENTS -->
   <section class="slide pp">
-    <div class="hd"><div class="sec"><b>06</b> — Upcoming Events</div><div class="mk">IMXP</div></div>
+    <div class="hd"><div class="sec"><b>06</b> · Upcoming Events</div><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="bignum-idx">06</div>
     <div class="pad">
       <div class="r rule gold"></div>
@@ -383,11 +382,11 @@
   <section class="slide ph">
     <div class="bg kb" style="background-image:url('media/events/atomika.jpg')"></div>
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
-    <div class="hd"><div class="sec"><b>07</b> — Experience Expansion</div><div class="mk">IMXP</div></div>
+    <div class="hd"><div class="sec"><b>07</b> · Experience Expansion</div><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad">
       <div class="r kick">7–9 May 2027 · Twistflower Rd · Roswell, New Mexico</div>
       <h1 class="r mt-xs" style="font-size:clamp(2.2rem,6cqw,5rem)">ATOMIKA</h1>
-      <div class="r lead mt-s" style="max-width:50ch;color:var(--paper);font-family:var(--disp);font-style:italic;font-weight:400;font-size:clamp(1rem,1.7cqw,1.45rem);line-height:1.35">Together we will transform a doomsday weapon into a hub of interstellar imagination — fostering a cross-disciplinary exploration of contact, consciousness, and cosmic culture.</div>
+      <div class="r lead mt-s" style="max-width:50ch;color:var(--paper);font-family:var(--disp);font-style:italic;font-weight:400;font-size:clamp(1rem,1.7cqw,1.45rem);line-height:1.35">Together we will transform a doomsday weapon into a hub of interstellar imagination, fostering a cross-disciplinary exploration of contact, consciousness, and cosmic culture.</div>
       <div class="r lead mt-s" style="max-width:56ch">ATOMIKA is an experimental, annual gathering that fuses immersive art, deep inquiry, and powerful music within and around a Cold War-era nuclear missile silo near Roswell, New Mexico.</div>
     </div>
     <div class="foot"><div class="credit">Atomika · Spring 2027</div><div>Roswell, New Mexico</div></div>
@@ -395,7 +394,7 @@
 
   <!-- 8 · PRODUCT -->
   <section class="slide dk">
-    <div class="hd"><div class="sec"><b>08</b> — Product</div><div class="mk">IMXP</div></div>
+    <div class="hd"><div class="sec"><b>08</b> · Product</div><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad">
       <h2 class="r sm" style="font-size:clamp(1.1rem,2.35cqw,2rem);max-width:none;line-height:1.1">Our vertically-integrated platform increases margins by growing revenue, aligning globally-distributed operations, and automating production.</h2>
       <div class="r prodgrid">
@@ -434,55 +433,55 @@
   <section class="slide ph center">
     <div class="bg" style="background-image:url('media/photos/fiab-stage.jpg')"></div>
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
-    <div class="hd"><div class="sec"><b>09</b> — Product</div><div class="mk">IMXP</div></div>
+    <div class="hd"><div class="sec"><b>09</b> · Product</div><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad mid" style="align-items:flex-start">
       <div class="r kick">Live at Iceland Eclipse 2026</div>
-      <h2 class="r sm mt-xs" style="max-width:none">Festival in a Box — <em>Technology Demo</em></h2>
+      <h2 class="r sm mt-xs" style="max-width:none">Festival in a Box · <em>Technology Demo</em></h2>
       <div class="r lead mt-xs" style="max-width:46ch;color:var(--paper)">AI-enabled festival production, by IMXP.</div>
       <div class="r videowrap">
         <video id="fiab" src="media/fiab.mp4" poster="media/fiab-poster.png" playsinline preload="none"></video>
         <button class="playbtn" id="playbtn" aria-label="Play demo"><span></span></button>
       </div>
     </div>
-    <div class="foot"><div class="credit">Photo — <b>The Bailey Perspective</b></div><div>Eclipse Stage</div></div>
+    <div class="foot"><div class="credit">Photo · <b>The Bailey Perspective</b></div><div>Eclipse Stage</div></div>
   </section>
 
   <!-- 10 · WHY EXPERIENCES -->
   <section class="slide ph">
     <div class="bg kb" style="background-image:url('media/photos/demand.jpg')"></div>
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
-    <div class="hd"><div class="sec"><b>10</b> — Why Experiences</div><div class="mk">IMXP</div></div>
+    <div class="hd"><div class="sec"><b>10</b> · Why Experiences</div><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad mid" style="align-items:flex-start">
       <h2 class="r">We are advancing technologically, but losing <em>coherence</em> as a species.</h2>
       <div class="r lead mt" style="max-width:56ch;color:var(--paper)">IMXP is addressing this at the most fundamental level. We reconnect the human network through shared experience, and build the systems that allow that network to coordinate at planetary scale. This is how large-scale coordination begins.</div>
       <div class="r lead mt-s" style="max-width:56ch">Our experiences serve as the human foundation required to organize what comes next.</div>
     </div>
-    <div class="foot"><div class="credit">Photo — <b>Monica Cazes</b></div><div>Iceland Eclipse 2026</div></div>
+    <div class="foot"><div class="credit">Photo · <b>Monica Cazes</b></div><div>Iceland Eclipse 2026</div></div>
   </section>
 
   <!-- 11 · VISION -->
   <section class="slide ph center">
     <div class="bg kb" style="background-image:url('media/photos/horizon.jpg')"></div>
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
-    <div class="hd"><div class="sec"><b>11</b> — Vision</div><div class="mk">IMXP</div></div>
+    <div class="hd"><div class="sec"><b>11</b> · Vision</div><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad mid center" style="align-items:center;text-align:center">
       <div class="r statement" style="max-width:22ch;margin:0 auto">IMXP brings humans into alignment with themselves, our planet, and the <em>Cosmos</em>.</div>
       <div class="r lead mt" style="max-width:40ch;margin:0 auto;color:var(--paper);text-align:center">We are building the systems to one day see a total solar eclipse from the Moon.</div>
     </div>
-    <div class="foot"><div class="credit">Photo — <b>The Bailey Perspective</b></div><div>Cosmic Connection</div></div>
+    <div class="foot"><div class="credit">Photo · <b>The Bailey Perspective</b></div><div>Cosmic Connection</div></div>
   </section>
 
   <!-- 12 · THANK YOU -->
   <section class="slide ph center">
     <div class="bg kb" style="background-image:url('media/photos/close.jpg')"></div>
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
-    <div class="hd"><div class="sec"><b>12</b> — Thank You</div><div class="mk">IMXP</div></div>
+    <div class="hd"><div class="sec"><b>12</b> · Thank You</div><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad mid" style="align-items:flex-start">
       <div class="r kick">Immersive Experiences at Global Scale</div>
       <h1 class="r mt-s" style="font-size:clamp(2.6rem,7cqw,6rem)">Thank you.</h1>
       <div class="r contact mt">Mitch Morales · <a href="mailto:mitch@im-xp.com">mitch@im-xp.com</a></div>
     </div>
-    <div class="foot"><div class="credit">Photo — <b>The Bailey Perspective</b></div><div>Iceland Eclipse 2026</div></div>
+    <div class="foot"><div class="credit">Photo · <b>The Bailey Perspective</b></div><div>Iceland Eclipse 2026</div></div>
   </section>
 
 </div>
