@@ -38,7 +38,7 @@
   .slide{position:absolute;inset:0;opacity:0;visibility:hidden;
     transition:opacity .6s ease,visibility .6s;pointer-events:none}
   .slide.on{opacity:1;visibility:visible;pointer-events:auto}
-  .pad{position:absolute;inset:0;padding:calc(var(--topgap) + clamp(10px,1.6cqh,22px)) var(--edge) clamp(34px,5cqh,60px);
+  .pad{position:absolute;inset:0;padding:calc(var(--topgap) + clamp(10px,1.6cqh,22px)) var(--edge) clamp(48px,7.4cqh,88px);
     display:flex;flex-direction:column;justify-content:flex-end;z-index:3}
   .pad.mid{justify-content:center}
   .pad.top{justify-content:flex-start}
@@ -58,7 +58,8 @@
   .ph .tone{position:absolute;inset:0;z-index:1;pointer-events:none;mix-blend-mode:soft-light;
     background:linear-gradient(150deg,rgba(217,159,52,.3),rgba(13,12,10,0) 46%,rgba(133,147,173,.2))}
   .ph .veil{position:absolute;inset:0;z-index:1;pointer-events:none;
-    background:linear-gradient(103deg,rgba(9,8,6,.9) 0%,rgba(9,8,6,.6) 40%,rgba(9,8,6,.2) 66%,rgba(9,8,6,.4) 100%)}
+    background:linear-gradient(180deg,rgba(9,8,6,0) 34%,rgba(9,8,6,.42) 62%,rgba(9,8,6,.82) 88%,rgba(9,8,6,.92) 100%),
+      linear-gradient(103deg,rgba(9,8,6,.9) 0%,rgba(9,8,6,.6) 40%,rgba(9,8,6,.2) 66%,rgba(9,8,6,.4) 100%)}
   .ph .veil.btm{background:linear-gradient(180deg,rgba(9,8,6,.34),rgba(9,8,6,.2) 30%,rgba(9,8,6,.72) 72%,rgba(9,8,6,.94))}
   .ph.center .veil{background:radial-gradient(120% 90% at 50% 52%,rgba(9,8,6,.32),rgba(9,8,6,.7) 76%,rgba(9,8,6,.9))}
   .grain{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.06;mix-blend-mode:overlay;
@@ -91,17 +92,17 @@
     max-width:52ch;color:var(--dim-d)}
   .pp .lead{color:var(--dim-l)}
   .lead b,.lead strong{font-weight:600;color:var(--paper)} .pp .lead b{color:var(--paper-ink)}
-  .mt{margin-top:clamp(14px,2.2cqh,28px)} .mt-s{margin-top:clamp(8px,1.3cqh,15px)} .mt-xs{margin-top:clamp(5px,.9cqh,10px)}
-  .cite{font-family:var(--sans);font-weight:400;font-size:clamp(.62rem,.84cqw,.78rem);line-height:1.5;
+  .mt{margin-top:clamp(18px,3.4cqh,44px)} .mt-s{margin-top:clamp(12px,2.1cqh,26px)} .mt-xs{margin-top:clamp(7px,1.3cqh,15px)}
+  .cite{font-family:var(--sans);font-weight:400;font-size:clamp(.68rem,.92cqw,.86rem);line-height:1.6;
     color:rgba(239,231,214,.62);max-width:none}
   .dk .cite{color:rgba(239,231,214,.6)}
 
-  .figs{display:flex;flex-wrap:wrap;gap:clamp(18px,3cqw,52px) clamp(24px,4.2cqw,66px);align-items:flex-start}
+  .figs{display:flex;flex-wrap:wrap;gap:clamp(22px,3.8cqh,46px) clamp(24px,4.2cqw,66px);align-items:flex-start}
   .fig{position:relative}
   .fig .n{font-family:var(--disp);font-weight:350;font-variation-settings:'opsz' 144;line-height:.92;
     letter-spacing:-.02em;font-size:clamp(2.2rem,5.4cqw,4.8rem);color:var(--gold-2)}
   .fig .n.sky{color:var(--sky)} .fig .n.paper{color:var(--paper)} .fig .n.sage{color:var(--sage)}
-  .fig .l{font-family:var(--sans);font-weight:400;font-size:clamp(.72rem,1.02cqw,.94rem);line-height:1.4;
+  .fig .l{font-family:var(--sans);font-weight:400;font-size:clamp(.78rem,1.12cqw,1.04rem);line-height:1.45;
     margin-top:.55em;max-width:17ch;color:var(--dim-d)}
   .fig .src{font-family:var(--sans);font-weight:400;font-size:clamp(.56rem,.76cqw,.7rem);line-height:1.45;
     margin-top:.5em;max-width:20ch;color:rgba(239,231,214,.5)}
@@ -322,7 +323,7 @@
   <!-- 6 · WHAT'S NEXT · EGYPT -->
   <section class="slide ph">
     <div class="bg kb" style="background-image:url('media/photos/egypt.jpg');background-position:center 42%"></div>
-    <div class="tone"></div><div class="veil" style="background:linear-gradient(103deg,rgba(9,8,6,.86) 0%,rgba(9,8,6,.5) 42%,rgba(9,8,6,.12) 70%,rgba(9,8,6,.3) 100%)"></div><div class="grain"></div>
+    <div class="tone"></div><div class="veil" style="background:linear-gradient(180deg,rgba(9,8,6,0) 34%,rgba(9,8,6,.42) 62%,rgba(9,8,6,.82) 88%,rgba(9,8,6,.92) 100%),linear-gradient(103deg,rgba(9,8,6,.86) 0%,rgba(9,8,6,.5) 42%,rgba(9,8,6,.12) 70%,rgba(9,8,6,.3) 100%)"></div><div class="grain"></div>
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad">
       <div class="r kick">What's Next</div>
@@ -427,17 +428,8 @@
     <div class="pad">
       <div class="r kick">Where it Stands</div>
       <h2 class="r sm mt-xs">Iceland put it in the field. Four events between here and Egypt.</h2>
-      <div class="r split">
-        <div>
-          <div class="lead">Capture and the Vault are live. Plan is in build. Coherence and Atomika run it end to end. Egypt is the one it was built for.</div>
-          <div class="devcal">
-            <div class="dcrow"><div class="dcyr">2026</div><div class="dcev"><b>The Portal</b> · Iceland Eclipse</div></div>
-            <div class="dcrow"><div class="dcyr">2027</div><div class="dcev"><b>Coherence</b> · Atomika · Egypt Eclipse</div></div>
-            <div class="dcrow" style="border:0"><div class="dcyr">2028+</div><div class="dcev"><b>Australasia Eclipse</b> · Antarctic Expedition</div></div>
-          </div>
-        </div>
-        <div class="gantt"><img src="media/people/product-gantt-dark.png" alt="IMXP build roadmap, Aug 2026 to Aug 2027, across Coherence, Atomika, Midnight Sun and Egypt" /></div>
-      </div>
+      <div class="r lead mt-s" style="max-width:58ch">Capture and the Vault are live. Plan is in build. Coherence and Atomika run it end to end. Egypt is the one it was built for.</div>
+      <div class="r gantt mt"><img src="media/people/product-gantt-dark.png" alt="IMXP build roadmap, Aug 2026 to Aug 2027, across Coherence, Atomika, Midnight Sun and Egypt" /></div>
     </div>
   </section>
 
@@ -456,7 +448,7 @@
         <div class="member"><img src="media/people/jon-hs.jpg" alt="Jon Shapiro"/><div class="nm">Jon Shapiro</div><div class="rl">CTO</div></div>
       </div>
       <div class="r names sm mt-s"><span>Ari Eisenstat</span><i>·</i><span>Andrew Glenn</span><i>·</i><span>Patrick Kronfli</span><i>·</i><span>Holly Wood</span></div>
-      <div class="r lead mt-s" style="max-width:none">Texas Eclipse: $20M revenue, 38,000 people, nine months to production · Euphoria: 20,000 a day · 360training: grown $2M to $200M, exited.</div>
+      <div class="r lead mt-s" style="max-width:62ch">Texas Eclipse: $20M revenue, 38,000 people, nine months to production · Euphoria: 20,000 a day · 360training: grown $2M to $200M, exited.</div>
       <div class="r explabel">Experience across</div>
       <div class="explogos">
         <img class="tall" src="media/people/exp/texas-eclipse.png" alt="Texas Eclipse" />
