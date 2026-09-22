@@ -151,6 +151,15 @@
   .dk{background:#0c0b14;color:var(--paper)}
   .split{display:grid;grid-template-columns:1fr 1.08fr;gap:clamp(22px,3.6cqw,58px);align-items:center;margin-top:clamp(12px,2cqh,24px)}
   .split.mods-v{grid-template-columns:1.05fr 1fr;align-items:start}
+  .statchips{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(10px,1.5cqw,22px);width:100%}
+  .sc{border:1px solid var(--line-dd);border-radius:10px;background:rgba(6,6,10,.62);
+    padding:clamp(12px,1.6cqh,20px) clamp(12px,1.4cqw,20px)}
+  .sc .scn{font-family:var(--disp);font-weight:450;font-variation-settings:'opsz' 40;
+    font-size:clamp(.95rem,1.4cqw,1.22rem);color:var(--paper);line-height:1.15}
+  .sc .scs{font-family:var(--sans);font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    font-size:clamp(.56rem,.8cqw,.7rem);margin-top:.7em;display:flex;align-items:center;gap:.6em}
+  .sc .scs::before{content:'';width:.5em;height:.5em;border-radius:50%;background:currentColor;flex:none}
+  .sc.done .scs{color:var(--sage)} .sc.prog .scs{color:var(--gold-2)}
   .gantt{background:rgba(6,6,10,.86);border:1px solid var(--line-dd);border-radius:8px;
     padding:clamp(7px,1cqw,14px);box-shadow:0 18px 50px rgba(0,0,0,.5)}
   .gantt img{width:100%;height:auto;display:block;border-radius:4px}
@@ -242,7 +251,6 @@
     <div class="pad mid" style="align-items:flex-start">
       <img class="r coverlogo" src="imxp-logo.png" alt="IMXP" />
       <h1 class="r">Scaling Human<br/>Experiences</h1>
-      <div class="r sub mt-s">We create human experiences, and the system that runs them.</div>
       <div class="r cover-stats">
         <div class="s hero"><div class="n">$4.2M</div><div class="l">revenue in the last 10 months</div></div>
         <div class="s"><div class="n">50K+</div><div class="l">destination-event community</div></div>
@@ -264,9 +272,9 @@
       <div class="r figs mt">
         <div class="fig"><div class="n">+25%</div><div class="l">flight bookings into the eclipse path, year on year</div></div>
         <div class="fig"><div class="n sky">75K</div><div class="l">foreign visitors to Iceland, against fewer than 13K hotel rooms</div></div>
-        <div class="fig"><div class="n paper">1 in 6</div><div class="l">people worldwide affected by loneliness</div></div>
+        <div class="fig"><div class="n paper">1 in 2</div><div class="l">US adults report loneliness</div></div>
       </div>
-      <div class="r cite mt-s">Amadeus, Aug 2026 · Skift, Aug 2026 · WHO Commission on Social Connection, Jun 2025</div>
+      <div class="r cite mt-s">Amadeus, Aug 2026 · Skift, Aug 2026 · US Surgeon General advisory, May 2023 · WHO Commission on Social Connection, Jun 2025</div>
     </div>
   </section>
 
@@ -321,9 +329,15 @@
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad">
       <div class="r kick">Where it Stands</div>
-      <h2 class="r sm mt-xs">Iceland put it in the field. Four events between here and Egypt.</h2>
-      <div class="r lead mt-s" style="max-width:58ch">Capture and the Vault are live. Plan is in build. Coherence and Atomika run it end to end. Egypt is the one it was built for.</div>
-      <div class="r gantt mt"><img src="media/people/product-gantt-dark.png" alt="IMXP build roadmap, Aug 2026 to Aug 2027, across Coherence, Atomika, Midnight Sun and Egypt" /></div>
+      <h2 class="r sm mt-xs" style="max-width:none">Orion is capturing data, ideating and validating events.</h2>
+      <div class="r lead mt-s" style="max-width:62ch">Iceland provided data needed to improve the system. Feedback is stored, realistic festival insights are generated.</div>
+      <div class="r statchips mt">
+        <div class="sc done"><div class="scn">Ideate &amp; Validate</div><div class="scs">Finalized</div></div>
+        <div class="sc prog"><div class="scn">Plan</div><div class="scs">In progress</div></div>
+        <div class="sc prog"><div class="scn">Market &amp; Grow</div><div class="scs">In progress</div></div>
+        <div class="sc done"><div class="scn">Vault</div><div class="scs">Working</div></div>
+        <div class="sc prog"><div class="scn">Coach</div><div class="scs">In progress</div></div>
+      </div>
     </div>
   </section>
 
