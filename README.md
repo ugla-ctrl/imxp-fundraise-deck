@@ -1,9 +1,8 @@
 # IMXP — Info Deck
 
 A hand-coded, editorial web deck for IMXP's raise. Built verbatim from the
-storyboard tab of the IMXP Content Editor (Google Sheet): the full investor
-narrative — hook → proof → reach → market → problem → solution → business →
-team → horizon.
+storyboard tab of the IMXP Content Editor (Google Sheet): cover → thesis →
+problem → solution (Orion) → where it stands → upcoming events → team → close.
 
 ## Design — its own identity
 
@@ -18,7 +17,7 @@ Deliberately distinct from IMXP's other decks (which run Archivo + a pastel
 - **Layout:** magazine masthead + running foot, hairline rules, a giant index
   numeral, big serif numbers, and a **photographer credit** on every photo
   slide. A warm duotone grade unifies many different images into one deck.
-- **15 slides**, 16:9, self-contained (one CDN dependency: Google Fonts).
+- **8 slides**, 16:9, self-contained (one CDN dependency: Google Fonts).
 
 ## Photography
 
