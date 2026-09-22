@@ -1,4 +1,5 @@
-// Renders media/people/product-gantt.html -> media/people/product-gantt.png (transparent)
+// Renders media/people/product-gantt.html -> product-gantt.png + product-gantt-dark.png
+// (both transparent). The deck's "Where it Stands" slide uses the -dark one.
 // Usage: node scripts/render-gantt.js
 const { chromium } = require('playwright');
 const path = require('path');
@@ -11,6 +12,12 @@ const path = require('path');
   await page.waitForTimeout(1200); // webfonts
   const el = await page.$('body');
   await el.screenshot({ path: path.join(root, 'media/people/product-gantt.png'), omitBackground: true });
-  await browser.close();
   console.log('rendered media/people/product-gantt.png');
+
+  await page.evaluate(() => document.body.classList.add('dark'));
+  await page.waitForTimeout(200);
+  await el.screenshot({ path: path.join(root, 'media/people/product-gantt-dark.png'), omitBackground: true });
+  console.log('rendered media/people/product-gantt-dark.png');
+
+  await browser.close();
 })();

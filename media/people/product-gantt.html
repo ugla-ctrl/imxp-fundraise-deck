@@ -62,6 +62,15 @@
   .gate{position:absolute;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:8px;
         color:var(--ink);font-family:var(--sans);font-weight:600;font-size:14px;white-space:nowrap}
   .dia{width:12px;height:12px;background:var(--amber);transform:rotate(45deg);flex:none;border-radius:2px}
+
+  /* ---- dark variant ----
+     Rendered to product-gantt-dark.png for the dark "Where it Stands" slide.
+     Only the text that sits directly on the slide is lightened; labels that sit
+     on their own light chips (bars, band headers, GATES) keep the dark ink. */
+  body.dark .rlab{color:#eef2fb}
+  body.dark .rlab small{color:#aab3c8}
+  body.dark .gate{color:#e9ecf5}
+  body.dark .pevlab{color:#d3cef5}
 </style>
 </head>
 <body>
@@ -121,16 +130,16 @@
   </div>
 
   <div class="row band-alt">
-    <div class="rlab">Prove<small>festival-in-a-box</small></div>
+    <div class="rlab">Prove<small>orion</small></div>
     <div class="track">
-      <div class="bar prv" style="left:5%;width:47%">Coherence: FIAB testing &rarr; live demand ladder</div>
+      <div class="bar prv" style="left:5%;width:47%">Coherence: Orion testing &rarr; live demand ladder</div>
       <div class="bar prv" style="left:60%;width:29%">Egypt: end-to-end</div>
     </div>
   </div>
   <div class="row band-alt" style="min-height:44px">
     <div class="rlab"></div>
     <div class="track" style="height:44px">
-      <div class="bar prv" style="left:47%;width:29%">Midnight Sun: full FIAB cycle</div>
+      <div class="bar prv" style="left:47%;width:29%">Midnight Sun: full Orion cycle</div>
     </div>
   </div>
 
@@ -148,14 +157,14 @@
     <div class="rlab" style="font-size:15px;letter-spacing:.15em;text-transform:uppercase;color:var(--grey)">Gates</div>
     <div class="track" style="height:40px">
       <div class="gate" style="left:20.43%;transform:translate(-50%,-50%)"><span class="dia"></span>OCT 15 &middot; Iceland corpus freeze</div>
-      <div class="gate" style="left:54.23%;transform:translate(-50%,-50%)"><span class="dia"></span>Coherence: FIAB beta</div>
+      <div class="gate" style="left:54.23%;transform:translate(-50%,-50%)"><span class="dia"></span>Coherence: Orion beta</div>
     </div>
   </div>
   <div class="row" style="min-height:38px">
     <div class="rlab"></div>
     <div class="track" style="height:38px">
       <div class="gate" style="left:34.07%;transform:translate(-50%,-50%)"><span class="dia"></span>DEC 15 &middot; Go/no-go: Plan module</div>
-      <div class="gate" style="left:64.11%;transform:translate(-50%,-50%)"><span class="dia"></span>Atomika: FIAB release</div>
+      <div class="gate" style="left:64.11%;transform:translate(-50%,-50%)"><span class="dia"></span>Atomika: Orion release</div>
     </div>
   </div>
 

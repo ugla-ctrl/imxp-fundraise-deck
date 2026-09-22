@@ -1,8 +1,9 @@
 # IMXP — Info Deck
 
 A hand-coded, editorial web deck for IMXP's raise. Built verbatim from the
-storyboard tab of the IMXP Content Editor (Google Sheet): cover → thesis →
-problem → solution (Orion) → where it stands → upcoming events → team → close.
+storyboard tab of the IMXP Content Editor (Google Sheet): the full investor
+narrative — hook → proof → reach → market → problem → solution → business →
+team → horizon.
 
 ## Design — its own identity
 
@@ -17,7 +18,7 @@ Deliberately distinct from IMXP's other decks (which run Archivo + a pastel
 - **Layout:** magazine masthead + running foot, hairline rules, a giant index
   numeral, big serif numbers, and a **photographer credit** on every photo
   slide. A warm duotone grade unifies many different images into one deck.
-- **8 slides**, 16:9, self-contained (one CDN dependency: Google Fonts).
+- **14 slides**, 16:9, self-contained (one CDN dependency: Google Fonts).
 
 ## Photography
 
@@ -40,21 +41,20 @@ https://ugla-ctrl.github.io/imxp-fundraise-deck/
 
 ## Slide order
 
-1. Cover — Immersive Experiences at Global Scale
+1. Cover — IMXP: Scaling Human Experiences
 2. The Eclipse — the emotional beat
 3. The Proof — Iceland Eclipse, delivered
 4. The Reach — press & audience
-5. The Demand — why this is a category
+5. Thesis — why this is a category
 6. What's Next — Egypt, the longest totality
 7. Upcoming Events — the full slate
 8. The Business — presale float, comps
-9. The Problem — production eats the margin
-10. The Solution — Festival in a Box
-11. FIAB — technology demo (video)
-12. Where it Stands — live / in build / proving ground
-13. The Team — the people who have already done this
-14. The Horizon — a total solar eclipse from the Moon
-15. Close — thank you
+9. The Problem — tools aren't growing to match demand
+10. The Solution — Orion, with the technology demo video
+11. Where it Stands — live / in build / proving ground
+12. The Team — the people who have already done this
+13. The Horizon — a total solar eclipse from the Moon
+14. Close — thank you
 
 No funding ask on the page, per Mitch — the close is contact only.
 
