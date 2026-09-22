@@ -18,7 +18,7 @@ Deliberately distinct from IMXP's other decks (which run Archivo + a pastel
 - **Layout:** magazine masthead + running foot, hairline rules, a giant index
   numeral, big serif numbers, and a **photographer credit** on every photo
   slide. A warm duotone grade unifies many different images into one deck.
-- **14 slides**, 16:9, self-contained (one CDN dependency: Google Fonts).
+- **8 slides**, 16:9, self-contained (one CDN dependency: Google Fonts).
 
 ## Photography
 
@@ -41,20 +41,14 @@ https://ugla-ctrl.github.io/imxp-fundraise-deck/
 
 ## Slide order
 
-1. Cover — IMXP: Scaling Human Experiences
-2. The Eclipse — the emotional beat
-3. The Proof — Iceland Eclipse, delivered
-4. The Reach — press & audience
-5. Thesis — why this is a category
-6. What's Next — Egypt, the longest totality
-7. Upcoming Events — the full slate
-8. The Business — presale float, comps
-9. The Problem — tools aren't growing to match demand
-10. The Solution — Orion, with the technology demo video
-11. Where it Stands — live / in build / proving ground
-12. The Team — the people who have already done this
-13. The Horizon — a total solar eclipse from the Moon
-14. Close — thank you
+1. Cover — Scaling Human Experiences
+2. Thesis — demand for real world experiences is growing
+3. The Problem — tools aren't growing to match demand
+4. The Solution — Orion, with the technology demo video
+5. Where it Stands — live / in build / proving ground
+6. All Upcoming Events — the full slate
+7. The Team — the people who have already done this
+8. Close — thank you
 
 No funding ask on the page, per Mitch — the close is contact only.
 
