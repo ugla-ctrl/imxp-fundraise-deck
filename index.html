@@ -59,6 +59,9 @@
   .slide.on .bg.kb{animation:kb 32s ease-in-out infinite alternate}
   @keyframes kb{from{transform:scale(1.04) translate3d(-.6%,.4%,0)}to{transform:scale(1.11) translate3d(.7%,-.7%,0)}}
   @media (prefers-reduced-motion:reduce){.slide.on .bg.kb{animation:none}}
+  .bgvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0;transition:opacity .9s ease}
+  .bgvid.on{opacity:1}
+  @media (prefers-reduced-motion:reduce){.bgvid{display:none}}
   .ph .tone{position:absolute;inset:0;z-index:1;pointer-events:none;mix-blend-mode:soft-light;
     background:linear-gradient(150deg,rgba(217,159,52,.3),rgba(13,12,10,0) 46%,rgba(133,147,173,.2))}
   .ph .veil{position:absolute;inset:0;z-index:1;pointer-events:none;
@@ -265,7 +268,7 @@
 
   <!-- 2 · THESIS -->
   <section class="slide ph">
-    <div class="bg kb" style="background-image:url('media/photos/demand.jpg')"></div>
+    <div class="bg kb" style="background-image:url('media/photos/eclipse-sky.jpg')"></div>
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad">
@@ -283,7 +286,8 @@
 
   <!-- 3 · THE PROBLEM -->
   <section class="slide ph">
-    <div class="bg" style="background-image:url('media/photos/problem.jpg');transform:scale(1);transform-origin:center;background-position:center"></div>
+    <div class="bg" style="background-image:url('media/challenge-bg-poster.jpg');transform:scale(1);transform-origin:center;background-position:center"></div>
+    <video class="bgvid" src="media/challenge-bg.mp4" poster="media/challenge-bg-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad">
@@ -301,7 +305,8 @@
 
   <!-- 4 · THE SOLUTION · ORION -->
   <section class="slide ph">
-    <div class="bg kb" style="background-image:url('media/photos/fiab-stage2.jpg')"></div>
+    <div class="bg" style="background-image:url('media/solution-bg-poster.jpg')"></div>
+    <video class="bgvid" src="media/solution-bg.mp4" poster="media/solution-bg-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
     <div class="tone"></div><div class="veil" style="background:linear-gradient(180deg,rgba(9,8,6,.82),rgba(9,8,6,.6) 40%,rgba(9,8,6,.82))"></div><div class="grain"></div>
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad">
@@ -416,6 +421,10 @@ function go(n){
   [...rail.children].forEach((d,k)=>d.classList.toggle('on',k===i));
   if(location.hash!=='#'+(i+1))history.replaceState(null,'','#'+(i+1));
   if(vid && !slides[i].contains(vid)){vid.pause();}
+  document.querySelectorAll('.bgvid').forEach(v=>{
+    if(slides[i].contains(v)){v.play().then(()=>v.classList.add('on')).catch(()=>{});}
+    else{v.pause();v.classList.remove('on');}
+  });
 }
 const next=()=>go(i+1),prev=()=>go(i-1);
 addEventListener('keydown',e=>{
@@ -432,7 +441,7 @@ addEventListener('wheel',e=>{const t=Date.now();if(t-wl<760)return;
   if(Math.abs(e.deltaY)>26||Math.abs(e.deltaX)>26){wl=t;(e.deltaY+e.deltaX)>0?next():prev();}},{passive:true});
 const start=parseInt((location.hash||'').replace('#',''),10);
 go(start>=1&&start<=slides.length?start-1:0);
-['media/photos/demand.jpg','media/photos/problem.jpg','media/photos/fiab-stage2.jpg'].forEach(u=>{const im=new Image();im.src=u;});
+['media/photos/eclipse-sky.jpg','media/challenge-bg-poster.jpg','media/solution-bg-poster.jpg'].forEach(u=>{const im=new Image();im.src=u;});
 (function(){const pb=document.getElementById('playbtn');if(!pb||!vid)return;
   pb.addEventListener('click',()=>{vid.controls=true;pb.classList.add('gone');vid.play();});})();
 </script>
