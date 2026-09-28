@@ -156,9 +156,15 @@
 
   /* dark slide */
   .dk{background:#0c0b14;color:var(--paper)}
+  .flybg{position:absolute;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(90% 70% at 82% 8%,rgba(217,159,52,.16),rgba(12,11,20,0) 58%),
+      radial-gradient(70% 60% at 8% 96%,rgba(133,147,173,.14),rgba(12,11,20,0) 62%)}
   .split{display:grid;grid-template-columns:1fr 1.08fr;gap:clamp(22px,3.6cqw,58px);align-items:center;margin-top:clamp(12px,2cqh,24px)}
   .split.mods-v{grid-template-columns:1.05fr 1fr;align-items:start}
   .statchips{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(10px,1.5cqw,22px);width:100%}
+  .statchips.c7{display:flex;flex-wrap:wrap}
+  .statchips.c7 .sc{flex:1 1 clamp(120px,15cqw,180px)}
+  @media (max-width:860px){.statchips.c7 .sc{flex:1 1 calc(50% - 10px)}}
   .sc{border:1px solid var(--line-dd);border-radius:10px;background:rgba(6,6,10,.62);
     padding:clamp(12px,1.6cqh,20px) clamp(12px,1.4cqw,20px)}
   .sc .scn{font-family:var(--disp);font-weight:450;font-variation-settings:'opsz' 40;
@@ -167,6 +173,34 @@
     font-size:clamp(.56rem,.8cqw,.7rem);margin-top:.7em;display:flex;align-items:center;gap:.6em}
   .sc .scs::before{content:'';width:.5em;height:.5em;border-radius:50%;background:currentColor;flex:none}
   .sc.done .scs{color:var(--sage)} .sc.prog .scs{color:var(--gold-2)}
+  .flywrap{grid-template-columns:1.15fr .85fr;align-items:stretch}
+  .flywrap .flyside{border-top:1px solid var(--line-dd);padding-top:.6em;margin-top:clamp(10px,1.6cqh,18px);
+    display:flex;flex-direction:column;justify-content:center}
+  .loop{display:flex;flex-direction:column;gap:clamp(10px,1.6cqh,18px)}
+  .loopnode{display:grid;grid-template-columns:clamp(88px,10cqw,130px) 1fr;gap:clamp(12px,1.8cqw,22px);
+    align-items:baseline;border-top:1px solid var(--line-dd);padding-top:.6em}
+  .loopnode .lnn{font-family:var(--disp);font-weight:460;font-variation-settings:'opsz' 40;
+    font-size:clamp(.98rem,1.5cqw,1.3rem);color:var(--gold-2)}
+  .loopnode .lnd{font-family:var(--sans);font-weight:400;font-size:clamp(.72rem,1cqw,.92rem);
+    color:var(--dim-d);line-height:1.42}
+  .loopopen{border-top:1px dashed var(--line-dd);padding-top:.7em;margin-top:.2em}
+  .loopopen .lolabel{font-family:var(--sans);font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    font-size:clamp(.56rem,.8cqw,.68rem);color:var(--gold-2)}
+  .loopopen .lopath{font-family:var(--sans);font-weight:500;letter-spacing:.01em;
+    font-size:clamp(.74rem,1.05cqw,.96rem);color:var(--paper);margin-top:.45em}
+  .loopopen .lopath span{color:var(--gold-2);margin:0 .3em}
+  .looptag{font-family:var(--disp);font-style:italic;font-weight:400;font-variation-settings:'opsz' 40;
+    font-size:clamp(.86rem,1.3cqw,1.12rem);color:var(--paper);margin-top:.3em;line-height:1.4;max-width:44ch}
+  .flyside{display:flex;flex-direction:column;justify-content:center;gap:clamp(8px,1.4cqh,16px)}
+  .marbars{display:flex;flex-direction:column;gap:clamp(10px,1.6cqh,16px)}
+  .mbrow{display:grid;grid-template-columns:clamp(70px,8cqw,100px) 1fr clamp(40px,5cqw,56px);
+    gap:clamp(8px,1.2cqw,14px);align-items:center}
+  .mbl{font-family:var(--sans);font-weight:500;font-size:clamp(.66rem,.92cqw,.84rem);color:var(--dim-d)}
+  .mbtrack{height:clamp(7px,1cqh,11px);border-radius:5px;background:rgba(239,231,214,.14);overflow:hidden}
+  .mbfill{height:100%;border-radius:5px;background:var(--gold-2)}
+  .mbfill.sky{background:var(--sky)} .mbfill.paper{background:var(--paper)}
+  .mbv{font-family:var(--disp);font-weight:450;font-variation-settings:'opsz' 40;
+    font-size:clamp(.86rem,1.3cqw,1.1rem);color:var(--paper);text-align:right}
   .gantt{background:rgba(6,6,10,.86);border:1px solid var(--line-dd);border-radius:8px;
     padding:clamp(7px,1cqw,14px);box-shadow:0 18px 50px rgba(0,0,0,.5)}
   .gantt img{width:100%;height:auto;display:block;border-radius:4px}
@@ -330,26 +364,67 @@
     </div>
   </section>
 
-  <!-- 5 · WHERE IT STANDS -->
+  <!-- 5 · TRACTION -->
   <section class="slide ph">
     <div class="bg kb" style="background-image:url('media/photos/stands-build.jpg')"></div>
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad">
-      <div class="r kick">Where it Stands</div>
-      <h2 class="r sm mt-xs" style="max-width:none">Orion is capturing data, ideating and validating events.</h2>
-      <div class="r lead mt-s" style="max-width:62ch">Iceland provided data needed to improve the system. Feedback is stored, realistic festival insights are generated.</div>
-      <div class="r statchips mt">
-        <div class="sc done"><div class="scn">Ideate &amp; Validate</div><div class="scs">Finalized</div></div>
-        <div class="sc prog"><div class="scn">Plan</div><div class="scs">In progress</div></div>
-        <div class="sc prog"><div class="scn">Market &amp; Grow</div><div class="scs">In progress</div></div>
-        <div class="sc done"><div class="scn">Vault</div><div class="scs">Working</div></div>
-        <div class="sc prog"><div class="scn">Coach</div><div class="scs">In progress</div></div>
+      <div class="r kick">Traction</div>
+      <h2 class="r sm mt-xs" style="max-width:none">Orion already runs inside IMXP.</h2>
+      <div class="r lead mt-s" style="max-width:62ch">First live test: Iceland Eclipse 2026. 4,200 participants from 75+ countries.</div>
+      <div class="r figs mt">
+        <div class="fig"><div class="n">120+</div><div class="l">decisions on record in the Vault</div></div>
+        <div class="fig"><div class="n sky">2 of 4</div><div class="l">2027 events vetted by Orion</div></div>
+      </div>
+      <div class="r statchips c7 mt">
+        <div class="sc done"><div class="scn">Ideate</div><div class="scs">Live</div></div>
+        <div class="sc done"><div class="scn">Validate</div><div class="scs">Live (financial)</div></div>
+        <div class="sc done"><div class="scn">Vault</div><div class="scs">Live</div></div>
+        <div class="sc prog"><div class="scn">Plan</div><div class="scs">In build</div></div>
+        <div class="sc prog"><div class="scn">Market</div><div class="scs">Next</div></div>
+        <div class="sc prog"><div class="scn">Coach</div><div class="scs">Next</div></div>
+        <div class="sc prog"><div class="scn">Run</div><div class="scs">Next</div></div>
       </div>
     </div>
   </section>
 
-  <!-- 6 · ALL UPCOMING EVENTS -->
+  <!-- 6 · THE FLYWHEEL -->
+  <section class="slide dk">
+    <div class="flybg"></div><div class="grain"></div>
+    <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
+    <div class="pad">
+      <div class="r kick">The Flywheel</div>
+      <h2 class="r sm mt-xs" style="max-width:none">Every event makes the next one easier.</h2>
+      <div class="r sub mt-s" style="max-width:none">Orion turns what crews learn into institutional memory that grows with each one.</div>
+      <div class="r split flywrap">
+        <div class="loop">
+          <div class="loopnode"><div class="lnn">Capture</div><div class="lnd">Decisions, costs and vendor calls land on record as the team works.</div></div>
+          <div class="loopnode"><div class="lnn">Remember</div><div class="lnd">The Vault keeps each decision with its reason and outcome.</div></div>
+          <div class="loopnode"><div class="lnn">Start ahead</div><div class="lnd">The next event opens with real lead times, known costs and early flags.</div></div>
+          <div class="loopopen">
+            <div class="lolabel">What this round opens. Then other producers run on it.</div>
+            <div class="lopath">Our events (now) <span>&gt;</span> Partner events (2027+) <span>&gt;</span> The long tail (vision)</div>
+          </div>
+          <div class="looptag">The first event runs on estimates. The tenth runs on nine events of evidence.</div>
+        </div>
+        <div class="flyside">
+          <div class="lab">Live Nation 2025 margin by business</div>
+          <div class="marbars">
+            <div class="mbrow"><div class="mbl">Concerts</div><div class="mbtrack"><div class="mbfill" style="width:3.3%"></div></div><div class="mbv">3.3%</div></div>
+            <div class="mbrow"><div class="mbl">Ticketing</div><div class="mbtrack"><div class="mbfill sky" style="width:37%"></div></div><div class="mbv">37%</div></div>
+            <div class="mbrow"><div class="mbl">Sponsorship</div><div class="mbtrack"><div class="mbfill paper" style="width:64%"></div></div><div class="mbv">64%</div></div>
+          </div>
+          <div class="r figs mt">
+            <div class="fig"><div class="n">4.7M</div><div class="l">events on Eventbrite alone in 2024: the long tail</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="r cite mt-s">Live Nation FY2025 · Eventbrite, 2025</div>
+    </div>
+  </section>
+
+  <!-- 7 · ALL UPCOMING EVENTS -->
   <section class="slide ph">
     <div class="bg kb" style="background-image:url('media/photos/panorama.jpg');background-position:center 50%"></div>
     <div class="tone"></div><div class="veil btm"></div><div class="grain"></div>
@@ -368,7 +443,7 @@
     </div>
   </section>
 
-  <!-- 7 · THE FOUNDER -->
+  <!-- 8 · THE FOUNDER -->
   <section class="slide ph">
     <div class="bg kb" style="background-image:url('media/photos/founder-interview.jpg');background-position:center 40%"></div>
     <div class="tone"></div><div class="veil" style="background:linear-gradient(180deg,rgba(9,8,6,.8),rgba(9,8,6,.4) 40%,rgba(9,8,6,.62) 78%,rgba(9,8,6,.93))"></div><div class="grain"></div>
@@ -392,7 +467,7 @@
     </div>
   </section>
 
-  <!-- 8 · CLOSE -->
+  <!-- 9 · CLOSE -->
   <section class="slide ph center">
     <div class="bg kb" style="background-image:url('media/photos/golden-hug.jpg')"></div>
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
