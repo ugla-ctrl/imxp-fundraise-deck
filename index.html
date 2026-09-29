@@ -46,6 +46,7 @@
     display:flex;flex-direction:column;justify-content:flex-end;z-index:3}
   .pad.mid{justify-content:center}
   .pad.top{justify-content:flex-start}
+  .pad.anchor-top{justify-content:flex-start!important}
   .slide.on .r{animation:rise .7s cubic-bezier(.2,.6,.3,1) both}
   .slide.on .r:nth-child(2){animation-delay:.05s} .slide.on .r:nth-child(3){animation-delay:.11s}
   .slide.on .r:nth-child(4){animation-delay:.17s} .slide.on .r:nth-child(5){animation-delay:.23s}
@@ -126,6 +127,7 @@
   .figs.biz .fig .n{font-size:clamp(1.9rem,4.4cqw,3.8rem);color:var(--paper)}
   .figs.biz .fig:nth-child(1) .n{color:var(--gold-2)}
   .figs.grid2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3cqh,36px) 80px;max-width:60%}
+  .figs.grid2 .fig .l{max-width:none;min-width:22ch}
 
   .names{display:flex;flex-wrap:wrap;gap:.35em clamp(12px,1.8cqw,26px);align-items:baseline}
   .names span{font-family:var(--disp);font-weight:440;font-variation-settings:'opsz' 40;
@@ -208,6 +210,22 @@
   .loopopen .lopath span{color:var(--gold-2);margin:0 .3em}
   .looptag{font-family:var(--disp);font-style:italic;font-weight:400;font-variation-settings:'opsz' 40;
     font-size:clamp(.86rem,1.3cqw,1.12rem);color:var(--paper);margin-top:.3em;line-height:1.4;max-width:44ch}
+  .loopstack{display:none;flex-direction:column;gap:0;padding-left:5px}
+  .loopstacktag{display:flex;align-items:center;gap:10px;margin-bottom:0;margin-left:-2px;padding-bottom:10px;
+    border-left:2px solid rgba(236,192,100,.35);padding-left:3px}
+  .loopstacktag svg{width:22px;height:22px;flex:none;margin-left:-13px;background:#0c0b14}
+  .loopstacktag span{font-family:var(--sans);font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    font-size:max(12px,.68rem);color:var(--gold-2)}
+  .loopstackrow{display:flex;align-items:flex-start;gap:18px;padding:16px 0;border-left:2px solid rgba(236,192,100,.35);
+    margin-left:0;padding-left:31px}
+  .loopstackrow:last-child{border-left-color:transparent}
+  .lsdot{width:12px;height:12px;border-radius:50%;background:var(--gold-2);flex:none;
+    margin-left:-38px;margin-top:.3em;box-shadow:0 0 0 4px #0c0b14}
+  .loopstackcard{text-align:left}
+  .loopstackcard .lnn{font-family:var(--disp);font-weight:460;font-variation-settings:'opsz' 40;
+    font-size:1.05rem;color:var(--gold-2)}
+  .loopstackcard .lnd{font-family:var(--sans);font-weight:400;font-size:max(14px,.82rem);
+    color:var(--dim-d);line-height:1.4;margin-top:.3em}
   .flyside{display:flex;flex-direction:column;justify-content:flex-start;gap:clamp(8px,1.4cqh,16px);
     padding-top:clamp(10px,1.6cqh,18px)}
   .marbars{display:flex;flex-direction:column;gap:clamp(10px,1.6cqh,16px)}
@@ -265,13 +283,14 @@
     font-size:clamp(.48rem,.66cqw,.58rem);color:var(--gold-2)}
   .ringcap{margin-top:clamp(10px,1.6cqh,18px);text-align:center}
   .ringcap .rcn{font-family:var(--disp);font-weight:450;font-variation-settings:'opsz' 40;color:var(--paper);
-    font-size:clamp(.68rem,1cqw,.86rem)}
+    font-size:clamp(.86rem,1.15cqw,1rem)}
   .ringcap .rct{font-family:var(--sans);font-weight:600;letter-spacing:.1em;text-transform:uppercase;
-    font-size:clamp(.44rem,.62cqw,.54rem);color:var(--gold-2);margin-top:.2em}
+    font-size:clamp(.62rem,.76cqw,.7rem);color:var(--gold-2);margin-top:.25em}
   .ringcap .rcd{font-family:var(--sans);font-weight:400;font-size:clamp(.56rem,.76cqw,.68rem);color:var(--dim-d);
     margin-top:.2em;line-height:1.3}
   .ringcaps{display:flex;justify-content:space-between;gap:clamp(10px,1.6cqw,18px);margin-top:clamp(8px,1.3cqh,14px)}
   .ringcaps .ringcap{flex:1}
+  .ringcaps-mobile{display:none}
 
   /* roadmap gantt cards */
   .rmcards{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.5cqw,20px);margin-top:clamp(12px,2cqh,20px)}
@@ -282,14 +301,14 @@
   .rmcard .rmd{font-family:var(--sans);font-weight:600;letter-spacing:.05em;font-size:clamp(.58rem,.78cqw,.7rem);color:var(--gold-2);margin-top:.35em}
 
   /* team */
-  .leads{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,2.6cqw,34px) clamp(14px,2cqw,26px);
+  .leads{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,2cqh,34px) clamp(14px,2cqw,26px);
     align-items:start;max-width:78%}
   .leads .member{width:auto;margin:0 auto}
   .member{display:flex;flex-direction:column;align-items:center;text-align:center;width:clamp(90px,11.5cqw,128px)}
-  .member img{width:clamp(64px,8cqw,92px);height:clamp(64px,8cqw,92px);object-fit:cover;
+  .member img{width:clamp(50px,7cqw,92px);height:clamp(50px,7cqw,92px);object-fit:cover;
     border-radius:50%;display:block;border:2px solid rgba(236,192,100,.55);
     box-shadow:0 10px 28px rgba(0,0,0,.45);filter:saturate(1) contrast(1.05)}
-  .member .ph-init{width:clamp(64px,8cqw,92px);height:clamp(64px,8cqw,92px);border-radius:50%;
+  .member .ph-init{width:clamp(50px,7cqw,92px);height:clamp(50px,7cqw,92px);border-radius:50%;
     display:flex;align-items:center;justify-content:center;background:rgba(236,192,100,.14);
     border:2px solid rgba(236,192,100,.55);font-family:var(--disp);font-size:clamp(1.1rem,2cqw,1.6rem);
     color:var(--gold-2)}
@@ -300,7 +319,7 @@
   .member .cr{font-family:var(--sans);font-weight:400;font-size:clamp(.5rem,.68cqw,.6rem);color:var(--dim-d);
     margin-top:.3em;line-height:1.25}
   .explabel{font-family:var(--sans);font-weight:600;letter-spacing:.2em;text-transform:uppercase;
-    font-size:clamp(.52rem,.74cqw,.64rem);color:rgba(239,231,214,.55);margin-top:clamp(14px,2.4cqh,28px);margin-bottom:.9em}
+    font-size:clamp(.52rem,.74cqw,.64rem);color:rgba(239,231,214,.55);margin-top:clamp(8px,1.4cqh,28px);margin-bottom:.6em}
   .explogos{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
     gap:clamp(10px,1.8cqw,30px);width:100%}
   .explogos img{height:clamp(15px,2.1cqh,24px);width:auto;display:block;opacity:.9;flex:0 0 auto}
@@ -317,18 +336,24 @@
     display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(0,0,0,.4)}
   .playbtn span::after{content:'';margin-left:5px;border-style:solid;border-width:12px 0 12px 20px;
     border-color:transparent transparent transparent #0d0c0a}
+  .playbtn.sm{z-index:2}
+  .playbtn.sm span{width:64px;height:64px}
+  .playbtn.sm span::after{border-width:11px 0 11px 18px}
+  @container (max-width:480px){.playbtn.sm span{width:44px;height:44px}.playbtn.sm span::after{border-width:8px 0 8px 13px}}
   /* solution outcome cards */
   .solsplit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3.6cqw,56px);margin-top:clamp(20px,3cqh,34px);
     align-items:stretch}
   .solcards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2cqw,28px);margin-top:clamp(16px,2.4cqh,26px)}
   .solcards-col{display:flex;flex-direction:column;justify-content:space-between;margin-top:0;gap:clamp(10px,1.6cqh,18px)}
   .solcard{border-top:2px solid var(--gold-2);padding-top:.6em}
+  .democol{display:flex;flex-direction:column;gap:clamp(8px,1.2cqh,14px);align-self:start}
   .demopanel{position:relative;border:1px solid var(--line-dd);border-radius:12px;overflow:hidden;
-    aspect-ratio:16/9;align-self:start;background:linear-gradient(160deg,#141018,#0a0810);
+    aspect-ratio:16/9;background:linear-gradient(160deg,#141018,#0a0810) center/cover;
+    background-size:cover;background-position:center;
     display:flex;align-items:center;justify-content:center;box-shadow:0 24px 64px rgba(0,0,0,.5)}
-  .demolabel-c{position:absolute;bottom:clamp(14px,2cqh,24px);left:0;right:0;text-align:center;z-index:2;
-    font-family:var(--sans);font-weight:600;letter-spacing:.06em;color:var(--dim-d);
-    font-size:clamp(.66rem,.9cqw,.82rem)}
+  .demopanel::before{content:'';position:absolute;inset:0;background:rgba(9,8,6,.22);z-index:1}
+  .demolabel-u{text-align:center;font-family:var(--sans);font-weight:600;letter-spacing:.06em;
+    color:var(--dim-d);font-size:clamp(.66rem,.9cqw,.82rem)}
   .solcard .sct{font-family:var(--disp);font-weight:460;font-variation-settings:'opsz' 40;color:var(--paper);
     font-size:clamp(.9rem,1.35cqw,1.15rem);line-height:1.15}
   .solcard .scd{font-family:var(--sans);font-weight:400;font-size:clamp(.68rem,.94cqw,.86rem);color:var(--dim);
@@ -393,18 +418,66 @@
   #rail button{width:20px;height:3px;border:0;padding:0;cursor:pointer;background:rgba(180,170,150,.34);transition:.3s}
   #rail button.on{background:var(--gold)}
 
-  @media (max-width:1024px) and (orientation:portrait){
-    #frame{padding:1.2vh 2.6vw}
-    #stage{aspect-ratio:auto;width:100%;height:calc(100dvh - 2.4vh - 34px)}
-    .pad{overflow-y:auto;-webkit-overflow-scrolling:touch}
-    .split,.mods,.tiles,.leads,.fr-cols,.figs.grid2,.rmcards{grid-template-columns:1fr;max-width:none}
-    .figs{gap:16px 30px}
+  /* Safety net for very short/cramped stages (e.g. tall-narrow tablet portrait windows):
+     tighten vertical rhythm on the two content-densest slides so nothing needed for
+     the story gets clipped by #stage's overflow:hidden. */
+  @container (max-height:460px){
+    .pad{padding-top:calc(var(--topgap) * .55);padding-bottom:clamp(20px,3cqh,40px)}
+    .mt{margin-top:clamp(8px,1.6cqh,20px)} .mt-s{margin-top:clamp(6px,1.1cqh,14px)} .mt-xs{margin-top:clamp(4px,.8cqh,9px)}
+    .leads{gap:clamp(8px,1.2cqh,16px) clamp(10px,1.6cqw,20px)}
+    .member img,.member .ph-init{width:clamp(38px,5.5cqw,60px);height:clamp(38px,5.5cqw,60px)}
+    .explabel{margin-top:4px;margin-bottom:.3em}
+    .explogos img{height:clamp(11px,1.6cqh,18px)}
+    .explogos img.tall{height:clamp(17px,2.6cqh,28px)}
+    .member .nm{margin-top:.4em} .member .rl{margin-top:.2em} .member .cr{margin-top:.15em}
+    .rings{max-width:clamp(140px,22cqw,300px)}
+    .ringcap{margin-top:4px}
+    .ring.tam .rl2-outer .rt,.ring.som .rt{font-size:clamp(.34rem,.46cqw,.4rem)}
   }
-  @media (max-width:860px){
-    .split,.mods,.fr-cols{grid-template-columns:1fr}
-    .tiles,.rmcards{grid-template-columns:1fr 1fr} .leads{max-width:none}
-    h2,.statement,.sub{max-width:none}
-    .figs.grid2{grid-template-columns:1fr 1fr}
+
+  /* ---- Mobile portrait (<768px): vertical scroll per slide, natural height, nothing fixed ---- */
+  @media (max-width:767px){
+    html,body{overflow-y:auto;height:auto}
+    body{overflow:visible}
+    #frame{position:static;display:block;padding:0;background:#0d0c0a;min-height:100dvh}
+    #stage{position:static;width:100%;aspect-ratio:auto;overflow:visible;box-shadow:none;container-type:inline-size}
+    #deck{position:static}
+    .slide{position:static;display:none;opacity:1;visibility:visible;transition:none;pointer-events:auto}
+    .slide.on{display:block}
+    .bg,.bgvid,.flybg,.tone,.veil,.grain{position:absolute}
+    .slide.ph,.slide.dk{position:relative;min-height:100dvh}
+    .pad{position:relative;inset:auto;height:auto;min-height:100dvh;display:flex;flex-direction:column;
+      justify-content:flex-start;padding:calc(var(--topgap) + 14px) 20px 48px;overflow:visible;z-index:3}
+    .pad.mid{justify-content:center}
+    .pad.mid,.pad.top{justify-content:flex-start}
+    .hd{position:relative;z-index:4}
+    h2,.statement,.sub,.lead{max-width:none!important}
+    .split,.mods,.tiles,.fr-cols,.rmcards,.solsplit,.flywrap,.mods-v{
+      display:flex;flex-direction:column;max-width:none;gap:22px}
+    .leads{display:grid;grid-template-columns:1fr 1fr;max-width:none;gap:22px 14px}
+    .figs.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px;max-width:none}
+    .figs.grid2 .fig .l{min-width:0}
+    .statchips,.statchips.c8{grid-template-columns:repeat(2,1fr)}
+    .tiles,.rmcards{display:grid;grid-template-columns:1fr 1fr}
+    /* type minimums */
+    body{font-size:14px}
+    .sub,.lead,.mbl,.scd,.lnd{font-size:max(14px,.9rem)}
+    .kick,.cite,.src,.sctags,.scs{font-size:max(12px,.72rem)}
+    .fig .l{font-size:max(14px,.85rem)}
+    /* rings: scale to width; labels move below since two lines no longer fit inside at this size */
+    .rings{max-width:min(60vw,240px);margin-bottom:4px}
+    .ring.tam .rl2,.ring.som .rl2{display:none}
+    .ringcaps-mobile{display:flex;justify-content:space-between;gap:14px;margin-top:14px;text-align:center}
+    .ringcaps-mobile .ringcap{flex:1;margin-top:0}
+    .ringcaps-mobile .rcn{font-size:max(13px,.78rem)}
+    .ringcaps-mobile .rct{font-size:12px;letter-spacing:.04em;line-height:1.3}
+    /* gantt: scroll sideways in its own box, image keeps real size so labels stay legible */
+    .gantt{overflow-x:auto;-webkit-overflow-scrolling:touch}
+    .gantt img{width:auto;max-width:none;height:220px}
+    /* flywheel loop: stack vertically, return arc up the left side */
+    .loop{display:none}
+    .loopstack{display:flex}
+    .flyside{padding-top:0}
   }
 </style>
 </head>
@@ -500,10 +573,12 @@
             <div class="sctags">Capture &middot; Vault</div>
           </div>
         </div>
-        <div class="demopanel">
-          <button class="playbtn" id="playbtn" aria-label="Play demo"><span></span></button>
-          <div class="demolabel-c">Project Orion demo &middot; 2 min</div>
-          <video id="fiab" src="media/fiab.mp4" playsinline preload="none" style="display:none"></video>
+        <div class="democol">
+          <div class="demopanel" style="background-image:url('media/demo-thumb.jpg')">
+            <button class="playbtn sm" id="playbtn" aria-label="Play Project Orion demo video"><span></span></button>
+            <video id="fiab" src="media/fiab.mp4" playsinline preload="none" style="display:none"></video>
+          </div>
+          <div class="demolabel-u">Project Orion demo &middot; 2 min</div>
         </div>
       </div>
     </div>
@@ -568,24 +643,33 @@
       <div class="r sub mt-s" style="max-width:none">Orion turns what crews learn into institutional memory that grows with each one.</div>
       <div class="r split flywrap">
         <div class="loop">
-          <svg class="loopsvg" viewBox="0 0 400 190" preserveAspectRatio="xMidYMid meet">
+          <svg class="loopsvg" viewBox="0 0 400 210" preserveAspectRatio="xMidYMid meet">
             <defs>
               <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
                 <path d="M0,0 L6,3 L0,6 Z" fill="var(--gold-2)" />
               </marker>
             </defs>
-            <path d="M 75 30 L 175 30" fill="none" stroke="var(--gold-2)" stroke-width="1.5" marker-end="url(#arrow)" />
-            <path d="M 225 30 L 325 30" fill="none" stroke="var(--gold-2)" stroke-width="1.5" marker-end="url(#arrow)" />
-            <path d="M 350 45 A 190 130 0 0 1 50 45" fill="none" stroke="var(--gold-2)" stroke-width="1.5" marker-end="url(#arrow)" />
-            <text x="200" y="158" text-anchor="middle" fill="var(--gold-2)" font-family="Space Grotesk, sans-serif"
-              font-size="11" font-weight="600" letter-spacing="1">NEXT EVENT</text>
-            <circle cx="50" cy="30" r="4" fill="var(--gold-2)" />
-            <circle cx="200" cy="30" r="4" fill="var(--gold-2)" />
-            <circle cx="350" cy="30" r="4" fill="var(--gold-2)" />
+            <path d="M 68 98 L 182 98" fill="none" stroke="var(--gold-2)" stroke-width="1.5" marker-end="url(#arrow)" />
+            <path d="M 218 98 L 332 98" fill="none" stroke="var(--gold-2)" stroke-width="1.5" marker-end="url(#arrow)" />
+            <path d="M 350 85 A 175 50 0 0 0 50 85" fill="none" stroke="var(--gold-2)" stroke-width="1.5" marker-end="url(#arrow)" />
+            <text x="200" y="18" text-anchor="middle" fill="var(--gold-2)" font-family="Space Grotesk, sans-serif"
+              font-size="10.5" font-weight="600" letter-spacing="1.6">NEXT EVENT</text>
+            <circle cx="50" cy="98" r="4" fill="var(--gold-2)" />
+            <circle cx="200" cy="98" r="4" fill="var(--gold-2)" />
+            <circle cx="350" cy="98" r="4" fill="var(--gold-2)" />
           </svg>
-          <div class="loopcard" style="left:12.5%;top:29%"><div class="lnn">Capture</div><div class="lnd">Decisions and costs, recorded as work happens</div></div>
-          <div class="loopcard" style="left:50%;top:29%"><div class="lnn">Remember</div><div class="lnd">Each decision linked to what happened next</div></div>
-          <div class="loopcard" style="left:87.5%;top:29%"><div class="lnn">Start ahead</div><div class="lnd">Real lead times and early flags, day one</div></div>
+          <div class="loopcard" style="left:12.5%;top:47%"><div class="lnn">Capture</div><div class="lnd">Decisions and costs, recorded as work happens</div></div>
+          <div class="loopcard" style="left:50%;top:47%"><div class="lnn">Remember</div><div class="lnd">Each decision linked to what happened next</div></div>
+          <div class="loopcard" style="left:87.5%;top:47%"><div class="lnn">Start ahead</div><div class="lnd">Real lead times and early flags, day one</div></div>
+        </div>
+        <div class="loopstack">
+          <div class="loopstacktag">
+            <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M 30 34 A 15 15 0 1 1 30 6" fill="none" stroke="var(--gold-2)" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowvtag)" /><defs><marker id="arrowvtag" markerWidth="7" markerHeight="7" refX="3" refY="3.5" orient="auto"><path d="M0,0 L6,3.5 L0,7 Z" fill="var(--gold-2)" /></marker></defs></svg>
+            <span>Next event</span>
+          </div>
+          <div class="loopstackrow"><span class="lsdot"></span><div class="loopstackcard"><div class="lnn">Capture</div><div class="lnd">Decisions and costs, recorded as work happens</div></div></div>
+          <div class="loopstackrow"><span class="lsdot"></span><div class="loopstackcard"><div class="lnn">Remember</div><div class="lnd">Each decision linked to what happened next</div></div></div>
+          <div class="loopstackrow"><span class="lsdot"></span><div class="loopstackcard"><div class="lnn">Start ahead</div><div class="lnd">Real lead times and early flags, day one</div></div></div>
         </div>
         <div class="flyside">
           <div class="lab">Two ways this wins</div>
@@ -603,7 +687,7 @@
   <section class="slide dk">
     <div class="flybg"></div><div class="grain"></div>
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
-    <div class="pad">
+    <div class="pad anchor-top">
       <div class="r kick">Market</div>
       <h2 class="r sm mt-xs" style="max-width:none">Real&#8209;world experience is in demand.</h2>
       <div class="r sub mt-s" style="max-width:none">In the midst of a loneliness epidemic, people want to spend more time IRL.</div>
@@ -618,9 +702,14 @@
           <div class="rings">
             <div class="ring tam"><div class="rl2 rl2-outer"><div class="rn">$1.1-1.3T</div><div class="rt">Traveler spend on experiences</div></div></div>
             <div class="ring som"><div class="rl2"><div class="rn">$250-310B</div><div class="rt">Paid experiences like concerts</div></div></div>
-            <div class="ring core"><div class="rl2"><div class="rn">Destination festivals<br/>Where IMXP starts</div></div></div>
+            <div class="ring core"></div>
           </div>
-          <div class="r cite" style="margin-top:.6em;text-align:center">Live music alone: $38B in 2025, $42-53B by 2030.</div>
+          <div class="ringcaps-mobile">
+            <div class="ringcap"><div class="rcn">$1.1-1.3T</div><div class="rct">Traveler spend on experiences</div></div>
+            <div class="ringcap"><div class="rcn">$250-310B</div><div class="rct">Paid experiences like concerts</div></div>
+          </div>
+          <div class="ringcap"><div class="rcn">Destination festivals</div><div class="rct">Where IMXP starts</div></div>
+          <div class="r cite" style="margin-top:.4em;text-align:center">Live music alone: $38B in 2025, $42-53B by 2030.</div>
         </div>
       </div>
       <div class="r cite mt-s">Recent deals: KKR bought Superstruct's 80+ festivals for ~€1.3B &nbsp;·&nbsp; Fever (owner of DICE) raised $250M at a reported ~$5.2B valuation &nbsp;·&nbsp; Penske took full ownership of SXSW</div>
@@ -633,7 +722,7 @@
     <div class="bg kb" style="background-image:url('media/photos/founder-interview.jpg');background-position:center 40%"></div>
     <div class="tone"></div><div class="veil" style="background:linear-gradient(180deg,rgba(9,8,6,.85),rgba(9,8,6,.45) 34%,rgba(9,8,6,.78) 70%,rgba(9,8,6,.96) 100%)"></div><div class="grain"></div>
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
-    <div class="pad">
+    <div class="pad anchor-top">
       <div class="r kick">The Team</div>
       <h2 class="r sm mt-xs" style="max-width:none">The people who have already done this.</h2>
       <div class="r sub mt-s" style="max-width:none">A product&#8209;first team that runs its own events. Orion's first customer is us.</div>
@@ -743,13 +832,12 @@ addEventListener('wheel',e=>{const t=Date.now();if(t-wl<760)return;
   if(Math.abs(e.deltaY)>26||Math.abs(e.deltaX)>26){wl=t;(e.deltaY+e.deltaX)>0?next():prev();}},{passive:true});
 const start=parseInt((location.hash||'').replace('#',''),10);
 go(start>=1&&start<=slides.length?start-1:0);
-['media/photos/eclipse-sky.jpg','media/challenge-bg-poster.jpg','media/solution-bg-poster.jpg'].forEach(u=>{const im=new Image();im.src=u;});
+['media/photos/eclipse-sky.jpg','media/challenge-bg-poster.jpg','media/solution-bg-poster.jpg','media/demo-thumb.jpg'].forEach(u=>{const im=new Image();im.src=u;});
 (function(){const pb=document.getElementById('playbtn');if(!pb||!vid)return;
   pb.addEventListener('click',()=>{
     vid.controls=true;vid.style.display='block';vid.style.position='absolute';vid.style.inset='0';
     vid.style.width='100%';vid.style.height='100%';vid.style.objectFit='cover';
     pb.classList.add('gone');
-    const lbl=document.querySelector('.demolabel-c');if(lbl)lbl.style.display='none';
     vid.play();
   });})();
 </script>
