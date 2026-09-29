@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <!--
-  SOURCE for media/people/product-gantt.png (slide 8, Product).
+  SOURCE for media/people/product-gantt.png (Roadmap slide).
   Edit here, then re-render with:  node scripts/render-gantt.js
 
   Rendered as a TRANSPARENT png so it sits on the slide rather than on a
   panel of its own. Text is dark: the slide behind it is white.
 
-  Timeline runs Aug '26 -> Aug '27 across four equal bands. Helper percentages:
-    Aug'26 0.0   Sep 8.3   Oct 16.7  | Nov 25.0  Dec 31.25  Jan 37.5  Feb 43.75
-    Mar'27 50.0  Apr 56.25 May 62.5  Jun 68.75  | Jul 75.0  Aug 87.5  end 100
+  Timeline runs Aug '26 -> Aug '27 (end of band) across four equal bands.
+  Helper percentages (Aug26=0 .. Sep27=100):
+    Aug26 0.0  Sep26 7.83  Oct26 15.4 | Nov26 23.23 Dec26 30.81 Jan27 38.64 Feb27 46.46
+    Mar27 53.54 Apr27 61.36 May27 68.94 Jun27 76.77 | Jul27 84.34 Aug27 92.17 end(Sep27) 100
+  Today line: late Sep 2026 = 13.64%.
 -->
 <html lang="en">
 <head>
@@ -23,7 +25,7 @@
     --lab:214px; --rowh:52px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  body{width:1800px;background:transparent;font-family:var(--sans);color:var(--ink);padding:6px 10px 10px}
+  body{width:1800px;background:transparent;font-family:var(--sans);color:var(--ink);padding:6px 90px 10px 10px}
   .grid{position:relative}
 
   /* ---- period header ---- */
@@ -44,19 +46,23 @@
   .bar{position:absolute;top:50%;transform:translateY(-50%);height:31px;border-radius:8px;
        display:flex;align-items:center;padding:0 13px;
        font-family:var(--disp);font-weight:700;font-size:14.5px;white-space:nowrap;color:var(--ink)}
-  /* proving events are points in time, plotted at their true dates:
-     a marker of the real duration, with the name centred above it */
-  .pevlab{position:absolute;top:2px;transform:translateX(-50%);white-space:nowrap;
-          font-family:var(--disp);font-weight:800;font-size:13.5px;letter-spacing:.055em;
-          color:var(--indigo-d)}
-  .pevbar{position:absolute;bottom:9px;height:15px;min-width:8px;
-          background:var(--indigo);border-radius:3px}
-  .bar.cap{background:var(--teal)} .bar.bld{background:var(--amber)}
+  .bar.lbl-out{background:transparent!important;padding:0}
+  .bar.lbl-out span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    background:var(--coral);border-radius:8px;padding:0 13px;height:31px;display:flex;align-items:center;
+    white-space:nowrap;z-index:1}
+  .bar.lbl-above span{top:-22px;transform:translate(-50%,0)}
+  .bar.bld{background:var(--amber)}
   .bar.prv{background:var(--lav)}  .bar.hrv{background:var(--coral)}
 
   /* ---- vertical period rules ---- */
   .rules{position:absolute;left:var(--lab);right:0;top:58px;bottom:0;pointer-events:none}
   .rule{position:absolute;top:0;bottom:0;width:1px;background:var(--rule)}
+
+  /* ---- today line ---- */
+  .today{position:absolute;top:0;bottom:0;width:2px;background:var(--indigo);z-index:2}
+  .todaylab{position:absolute;top:-2px;left:8px;font-family:var(--disp);font-weight:800;font-size:12.5px;
+            letter-spacing:.08em;text-transform:uppercase;color:var(--indigo-d);white-space:nowrap;
+            background:rgba(255,255,255,.9);padding:0 4px;border-radius:3px}
 
   /* ---- gates ---- */
   .gate{position:absolute;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:8px;
@@ -64,13 +70,14 @@
   .dia{width:12px;height:12px;background:var(--amber);transform:rotate(45deg);flex:none;border-radius:2px}
 
   /* ---- dark variant ----
-     Rendered to product-gantt-dark.png for the dark "Where it Stands" slide.
+     Rendered to product-gantt-dark.png for the dark Roadmap slide.
      Only the text that sits directly on the slide is lightened; labels that sit
      on their own light chips (bars, band headers, GATES) keep the dark ink. */
   body.dark .rlab{color:#eef2fb}
   body.dark .rlab small{color:#aab3c8}
   body.dark .gate{color:#e9ecf5}
-  body.dark .pevlab{color:#d3cef5}
+  body.dark .todaylab{color:#c3bdf2;background:rgba(20,20,26,.85)}
+  body.dark .today{background:#c3bdf2}
 </style>
 </head>
 <body>
@@ -80,6 +87,8 @@
     <div class="rule" style="left:25%"></div>
     <div class="rule" style="left:50%"></div>
     <div class="rule" style="left:75%"></div>
+    <div class="today" style="left:13.64%"></div>
+    <div class="todaylab" style="left:calc(13.64% + 6px)">Today</div>
   </div>
 
   <div class="bands">
@@ -90,81 +99,63 @@
     <div class="band">JUL &ndash; AUG '27</div>
   </div>
 
-  <div class="row" style="min-height:62px">
-    <div class="rlab">Proving events<small>the events that test it live</small></div>
-    <div class="track" style="height:62px">
-      <div class="pevlab" style="left:54.03%">COHERENCE</div>
-      <div class="pevbar" style="left:53.63%;width:0.81%"></div>
-      <div class="pevlab" style="left:64.01%">ATOMIKA</div>
-      <div class="pevbar" style="left:63.71%;width:0.60%"></div>
-      <div class="pevlab" style="left:78.83%">MIDNIGHT SUN</div>
-      <div class="pevbar" style="left:78.23%;width:1.21%"></div>
-      <div class="pevlab" style="left:88.91%">EGYPT</div>
-      <div class="pevbar" style="left:86.69%;width:4.44%"></div>
-    </div>
-  </div>
-
   <div class="row band-alt">
-    <div class="rlab">Capture<small>event data pipelines</small></div>
-    <div class="track">
-      <div class="bar cap" style="left:2.5%;width:11%">Iceland</div>
-      <div class="bar cap" style="left:15%;width:31%">Coherence</div>
-      <div class="bar cap" style="left:56%;width:12%">Atomika</div>
-      <div class="bar cap" style="left:69.5%;width:24%">M.Sun + Egypt</div>
-    </div>
-  </div>
-
-  <div class="row">
     <div class="rlab">Build<small>platform tooling</small></div>
     <div class="track">
-      <div class="bar bld" style="left:5%;width:22%">Insights engine</div>
-      <div class="bar bld" style="left:28%;width:23%">Marketing tooling v1</div>
-    </div>
-  </div>
-  <div class="row" style="min-height:44px">
-    <div class="rlab"></div>
-    <div class="track" style="height:44px">
-      <div class="bar bld" style="left:11.5%;width:27%">Plan stage + PM tooling</div>
-      <div class="bar bld" style="left:39.5%;width:44%">Auto coaching</div>
-    </div>
-  </div>
-
-  <div class="row band-alt">
-    <div class="rlab">Prove<small>orion</small></div>
-    <div class="track">
-      <div class="bar prv" style="left:5%;width:47%">Coherence: Orion testing &rarr; live demand ladder</div>
-      <div class="bar prv" style="left:60%;width:29%">Egypt: end-to-end</div>
+      <div class="bar bld" style="left:0%;width:22.98%">Validate + insights engine</div>
+      <div class="bar bld" style="left:23.23%;width:30.05%">Market v1</div>
     </div>
   </div>
   <div class="row band-alt" style="min-height:44px">
     <div class="rlab"></div>
     <div class="track" style="height:44px">
-      <div class="bar prv" style="left:47%;width:29%">Midnight Sun: full Orion cycle</div>
+      <div class="bar bld" style="left:7.83%;width:38.38%">Plan</div>
+      <div class="bar bld" style="left:38.64%;width:45.45%">Coach</div>
     </div>
   </div>
 
   <div class="row">
-    <div class="rlab">Harvest<small>templates for the next event</small></div>
+    <div class="rlab">Prove<small>the events that test it live</small></div>
     <div class="track">
-      <div class="bar hrv" style="left:14%;width:15.5%">Iceland &rarr; template</div>
-      <div class="bar hrv" style="left:54.6%;width:8.6%">Coherence</div>
-      <div class="bar hrv" style="left:64.5%;width:13%">Atomika</div>
-      <div class="bar hrv" style="left:91.2%;width:8.8%">M.Sun + Egypt</div>
+      <div class="bar prv" style="left:7.83%;width:53.28%">Coherence: live demand test</div>
+    </div>
+  </div>
+  <div class="row" style="min-height:44px">
+    <div class="rlab"></div>
+    <div class="track" style="height:44px">
+      <div class="bar prv" style="left:76.77%;width:15.15%">Midnight Sun: memory test</div>
+      <div class="bar prv" style="left:61.36%;width:38.38%">Egypt: full lifecycle at scale</div>
+    </div>
+  </div>
+
+  <div class="row band-alt" style="min-height:66px">
+    <div class="rlab">Learn<small>templates for the next event</small></div>
+    <div class="track" style="height:66px">
+      <div class="bar hrv" style="left:7.83%;width:22.73%">Iceland &rarr; template</div>
+      <div class="bar hrv lbl-out lbl-above" style="left:61.36%;width:7.32%"><span>Coherence harvest</span></div>
+      <div class="bar hrv" style="left:68.94%;width:15.15%">Atomika harvest</div>
+      <div class="bar hrv lbl-out" style="left:89.5%;width:10.5%"><span style="left:auto;right:0;transform:translate(0,-50%)">M.Sun + Egypt harvest</span></div>
     </div>
   </div>
 
   <div class="row" style="min-height:40px;border-top:1.5px solid var(--rule);margin-top:6px">
     <div class="rlab" style="font-size:15px;letter-spacing:.15em;text-transform:uppercase;color:var(--grey)">Gates</div>
     <div class="track" style="height:40px">
-      <div class="gate" style="left:20.43%;transform:translate(-50%,-50%)"><span class="dia"></span>OCT 15 &middot; Iceland corpus freeze</div>
-      <div class="gate" style="left:54.23%;transform:translate(-50%,-50%)"><span class="dia"></span>Coherence: Orion beta</div>
+      <div class="gate" style="left:18.94%;transform:translate(-50%,-50%)"><span class="dia"></span>OCT 15 &middot; Iceland corpus freeze</div>
+      <div class="gate" style="left:53.54%;transform:translate(-50%,-50%)"><span class="dia"></span>MAR &middot; Orion beta at Coherence</div>
     </div>
   </div>
   <div class="row" style="min-height:38px">
     <div class="rlab"></div>
     <div class="track" style="height:38px">
-      <div class="gate" style="left:34.07%;transform:translate(-50%,-50%)"><span class="dia"></span>DEC 15 &middot; Go/no-go: Plan module</div>
-      <div class="gate" style="left:64.11%;transform:translate(-50%,-50%)"><span class="dia"></span>Atomika: Orion release</div>
+      <div class="gate" style="left:34.34%;transform:translate(-50%,-50%)"><span class="dia"></span>DEC 15 &middot; Plan go/no-go</div>
+      <div class="gate" style="left:68.94%;transform:translate(-50%,-50%)"><span class="dia"></span>MAY &middot; Orion release at Atomika</div>
+    </div>
+  </div>
+  <div class="row" style="min-height:38px">
+    <div class="rlab"></div>
+    <div class="track" style="height:38px">
+      <div class="gate" style="right:0%;transform:translate(0,-50%);left:auto"><span class="dia"></span>AFTER EGYPT, AUG '27 &middot; Decision point: scale IMXP or offer Orion</div>
     </div>
   </div>
 
