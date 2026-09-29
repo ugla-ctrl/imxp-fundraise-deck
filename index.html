@@ -69,6 +69,9 @@
       linear-gradient(103deg,rgba(9,8,6,.9) 0%,rgba(9,8,6,.6) 40%,rgba(9,8,6,.2) 66%,rgba(9,8,6,.4) 100%)}
   .ph .veil.btm{background:linear-gradient(180deg,rgba(9,8,6,.5),rgba(9,8,6,.46) 26%,rgba(9,8,6,.66) 54%,rgba(9,8,6,.86) 78%,rgba(9,8,6,.93))}
   .ph .veil.lr{background:linear-gradient(90deg,rgba(9,8,6,.85) 0%,rgba(9,8,6,.3) 50%,rgba(9,8,6,.28) 100%)}
+  .ph .veil.lr.strong{background:
+    linear-gradient(90deg,rgba(9,8,6,.93) 0%,rgba(9,8,6,.62) 55%,rgba(9,8,6,.4) 100%),
+    linear-gradient(180deg,rgba(9,8,6,.25) 0%,rgba(9,8,6,.55) 45%,rgba(9,8,6,.7) 100%)}
   .ph.center .veil{background:linear-gradient(180deg,rgba(9,8,6,0) 40%,rgba(9,8,6,.34) 66%,rgba(9,8,6,.72) 90%,rgba(9,8,6,.84) 100%),
     radial-gradient(120% 90% at 50% 52%,rgba(9,8,6,.32),rgba(9,8,6,.7) 76%,rgba(9,8,6,.9))}
   .grain{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.06;mix-blend-mode:overlay;
@@ -105,6 +108,7 @@
   .cite{font-family:var(--sans);font-weight:400;font-size:clamp(.68rem,.92cqw,.86rem);line-height:1.6;
     color:rgba(239,231,214,.62);max-width:none}
   .dk .cite{color:rgba(239,231,214,.6)}
+  .cite.bright{color:rgba(239,231,214,.92);text-shadow:0 1px 6px rgba(0,0,0,.85)}
 
   .figs{display:flex;flex-wrap:wrap;gap:clamp(22px,3.8cqh,46px) clamp(24px,4.2cqw,66px);align-items:flex-start}
   .fig{position:relative}
@@ -117,6 +121,8 @@
   .fig .src{font-family:var(--sans);font-weight:400;font-size:clamp(.56rem,.76cqw,.7rem);line-height:1.45;
     margin-top:.5em;max-width:20ch;color:rgba(239,231,214,.5)}
   .fig::before{content:'';position:absolute;top:-.7em;left:0;width:clamp(20px,2.4cqw,34px);height:2px;background:var(--gold)}
+  .ph .veil.lr ~ .pad .fig .n{text-shadow:0 2px 14px rgba(0,0,0,.65),0 1px 3px rgba(0,0,0,.8)}
+  .ph .veil.lr ~ .pad .fig .l{text-shadow:0 1px 6px rgba(0,0,0,.7)}
   .figs.biz .fig .n{font-size:clamp(1.9rem,4.4cqw,3.8rem);color:var(--paper)}
   .figs.biz .fig:nth-child(1) .n{color:var(--gold-2)}
   .figs.grid2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3cqh,36px) 80px;max-width:60%}
@@ -451,9 +457,8 @@
 
   <!-- 4 · THE PROBLEM -->
   <section class="slide ph">
-    <div class="bg" style="background-image:url('media/challenge-bg-poster.jpg');transform:scale(1);transform-origin:center;background-position:center"></div>
-    <video class="bgvid" src="media/challenge-bg.mp4" poster="media/challenge-bg-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
-    <div class="tone"></div><div class="veil"></div><div class="grain"></div>
+    <div class="bg kb" style="background-image:url('media/photos/build-crew.jpg');background-position:38% 58%;transform:scale(1.15)"></div>
+    <div class="tone"></div><div class="veil lr strong"></div><div class="grain"></div>
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad">
       <div class="r kick">The Problem</div>
@@ -463,8 +468,8 @@
         <div class="fig"><div class="n">121</div><div class="l">UK festivals cancelled, postponed or closed in 2024 and 2025</div></div>
         <div class="fig"><div class="n paper">35%</div><div class="l">Australian music festivals that lost money in 2022-23</div></div>
       </div>
-      <div class="r lead mt-s" style="font-size:clamp(.78rem,1.1cqw,.98rem);font-family:var(--disp);font-style:italic;font-weight:400;max-width:70%;text-wrap:balance">In 2026, WOMAD cancelled its first Glasgow edition on low ticket sales.</div>
-      <div class="r cite mt-s">Association of Independent Festivals, 2026 · Creative Australia, Soundcheck, 2024</div>
+      <div class="r lead mt-s" style="font-size:clamp(.78rem,1.1cqw,.98rem);font-family:var(--disp);font-style:italic;font-weight:400;max-width:70%;text-wrap:balance;color:rgba(239,231,214,.92);text-shadow:0 1px 6px rgba(0,0,0,.8)">In 2026, WOMAD cancelled its first Glasgow edition on low ticket sales.</div>
+      <div class="r cite bright mt-s">Association of Independent Festivals, 2026 · Creative Australia, Soundcheck, 2024</div>
     </div>
   </section>
 
