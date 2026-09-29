@@ -117,6 +117,7 @@
   .fig::before{content:'';position:absolute;top:-.7em;left:0;width:clamp(20px,2.4cqw,34px);height:2px;background:var(--gold)}
   .figs.biz .fig .n{font-size:clamp(1.9rem,4.4cqw,3.8rem);color:var(--paper)}
   .figs.biz .fig:nth-child(1) .n{color:var(--gold-2)}
+  .figs.grid2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3cqh,36px) clamp(24px,4.2cqw,66px)}
 
   .names{display:flex;flex-wrap:wrap;gap:.35em clamp(12px,1.8cqw,26px);align-items:baseline}
   .names span{font-family:var(--disp);font-weight:440;font-variation-settings:'opsz' 40;
@@ -223,19 +224,59 @@
   .dcev{font-family:var(--sans);font-weight:400;font-size:clamp(.74rem,1.02cqw,.96rem);color:var(--dim-d);line-height:1.4}
   .dcev b{color:var(--paper);font-weight:600}
 
+  /* market rings */
+  .rings{position:relative;width:100%;aspect-ratio:1/1;max-width:clamp(280px,36cqw,460px);margin:0 auto}
+  .ring{position:absolute;border-radius:50%;border:1px solid var(--line-dd)}
+  .ring.tam{inset:0;background:radial-gradient(circle at 50% 30%,rgba(217,159,52,.08),transparent 70%)}
+  .ring.sam{inset:22%;background:rgba(9,8,6,.35)}
+  .ring.som{inset:44%;background:rgba(217,159,52,.18);display:flex;align-items:center;justify-content:center}
+  .ring.som .rl2{text-align:center}
+  .ring.som .rn{font-family:var(--disp);font-weight:450;font-variation-settings:'opsz' 40;color:var(--paper);
+    font-size:clamp(.7rem,1.15cqw,.94rem);line-height:1.1}
+  .ring.som .rt{font-family:var(--sans);font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+    font-size:clamp(.42rem,.58cqw,.5rem);color:var(--gold-2);margin-top:.25em}
+  .ringlabel{position:absolute;left:50%;transform:translateX(-50%);text-align:center;white-space:nowrap}
+  .ringlabel.l-tam{top:2%}
+  .ringlabel.l-sam{top:24%}
+  .ringlabel .rt{font-family:var(--sans);font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    font-size:clamp(.48rem,.66cqw,.58rem);color:var(--gold-2)}
+  .ringcap{margin-top:clamp(10px,1.6cqh,18px);text-align:center}
+  .ringcap .rcn{font-family:var(--disp);font-weight:450;font-variation-settings:'opsz' 40;color:var(--paper);
+    font-size:clamp(.68rem,1cqw,.86rem)}
+  .ringcap .rct{font-family:var(--sans);font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+    font-size:clamp(.44rem,.62cqw,.54rem);color:var(--gold-2);margin-top:.2em}
+  .ringcap .rcd{font-family:var(--sans);font-weight:400;font-size:clamp(.56rem,.76cqw,.68rem);color:var(--dim-d);
+    margin-top:.2em;line-height:1.3}
+  .ringcaps{display:flex;justify-content:space-between;gap:clamp(10px,1.6cqw,18px);margin-top:clamp(8px,1.3cqh,14px)}
+  .ringcaps .ringcap{flex:1}
+
+  /* roadmap gantt cards */
+  .rmcards{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.5cqw,20px);margin-top:clamp(12px,2cqh,20px)}
+  .rmcard{border-top:2px solid var(--gold-2);padding-top:.5em}
+  .rmcard .rmn{font-family:var(--disp);font-weight:460;font-variation-settings:'opsz' 40;
+    font-size:clamp(.86rem,1.25cqw,1.08rem);color:var(--paper)}
+  .rmcard .rmp{font-family:var(--sans);font-weight:400;font-size:clamp(.6rem,.82cqw,.74rem);color:var(--dim-d);margin-top:.25em}
+  .rmcard .rmd{font-family:var(--sans);font-weight:600;letter-spacing:.05em;font-size:clamp(.58rem,.78cqw,.7rem);color:var(--gold-2);margin-top:.35em}
+
   /* team */
-  .leads{display:flex;gap:clamp(26px,3.6cqw,58px);align-items:flex-start}
-  .member{display:flex;flex-direction:column;align-items:center;text-align:center}
-  .member img{width:clamp(90px,11.5cqw,128px);height:clamp(90px,11.5cqw,128px);object-fit:cover;
+  .leads{display:flex;flex-wrap:wrap;gap:clamp(18px,2.6cqw,34px);align-items:flex-start}
+  .member{display:flex;flex-direction:column;align-items:center;text-align:center;width:clamp(90px,11.5cqw,128px)}
+  .member img{width:clamp(64px,8cqw,92px);height:clamp(64px,8cqw,92px);object-fit:cover;
     border-radius:50%;display:block;border:2px solid rgba(236,192,100,.55);
     box-shadow:0 10px 28px rgba(0,0,0,.45);filter:saturate(1) contrast(1.05)}
+  .member .ph-init{width:clamp(64px,8cqw,92px);height:clamp(64px,8cqw,92px);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;background:rgba(236,192,100,.14);
+    border:2px solid rgba(236,192,100,.55);font-family:var(--disp);font-size:clamp(1.1rem,2cqw,1.6rem);
+    color:var(--gold-2)}
   .member .nm{font-family:var(--disp);font-weight:450;font-variation-settings:'opsz' 40;
-    font-size:clamp(.95rem,1.4cqw,1.22rem);color:var(--paper);margin-top:.75em;line-height:1.1;white-space:nowrap}
-  .member .rl{font-family:var(--sans);font-weight:600;letter-spacing:.12em;text-transform:uppercase;
-    font-size:clamp(.56rem,.8cqw,.7rem);color:var(--gold-2);margin-top:.45em;white-space:nowrap}
+    font-size:clamp(.76rem,1.05cqw,.94rem);color:var(--paper);margin-top:.7em;line-height:1.15}
+  .member .rl{font-family:var(--sans);font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+    font-size:clamp(.48rem,.66cqw,.58rem);color:var(--gold-2);margin-top:.4em;line-height:1.3}
+  .member .cr{font-family:var(--sans);font-weight:400;font-size:clamp(.5rem,.68cqw,.6rem);color:var(--dim-d);
+    margin-top:.3em;line-height:1.25}
   .explabel{font-family:var(--sans);font-weight:600;letter-spacing:.2em;text-transform:uppercase;
     font-size:clamp(.52rem,.74cqw,.64rem);color:rgba(239,231,214,.55);margin-top:clamp(14px,2.4cqh,28px);margin-bottom:.9em}
-  .explogos{display:flex;flex-wrap:nowrap;align-items:center;justify-content:space-between;
+  .explogos{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
     gap:clamp(10px,1.8cqw,30px);width:100%}
   .explogos img{height:clamp(15px,2.1cqh,24px);width:auto;display:block;opacity:.9;flex:0 0 auto}
   .explogos img.tall{height:clamp(24px,3.5cqh,40px)}
@@ -251,6 +292,36 @@
     display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(0,0,0,.4)}
   .playbtn span::after{content:'';margin-left:5px;border-style:solid;border-width:12px 0 12px 20px;
     border-color:transparent transparent transparent #0d0c0a}
+  .slackcard{position:absolute;right:clamp(10px,1.6cqw,20px);bottom:clamp(10px,1.6cqh,20px);z-index:4;
+    background:rgba(20,20,26,.92);border:1px solid rgba(239,231,214,.22);border-radius:8px;
+    padding:clamp(8px,1.1cqw,14px) clamp(10px,1.3cqw,16px);max-width:44%;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .slackcard .scl{font-family:var(--sans);font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+    font-size:clamp(.48rem,.66cqw,.58rem);color:var(--gold-2)}
+  .slackcard .sct{font-family:var(--sans);font-weight:400;font-size:clamp(.58rem,.8cqw,.72rem);
+    color:var(--dim-d);margin-top:.4em;line-height:1.35}
+
+  /* fundraise */
+  .fr-cols{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(24px,4cqw,60px);margin-top:clamp(14px,2.2cqh,26px)}
+  .fr-terms{display:flex;flex-direction:column;gap:clamp(10px,1.6cqh,16px)}
+  .fr-term{border-top:1px solid var(--line-dd);padding-top:.5em}
+  .fr-term .ftl{font-family:var(--sans);font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    font-size:clamp(.56rem,.78cqw,.68rem);color:var(--gold-2)}
+  .fr-term .ftv{font-family:var(--disp);font-weight:450;font-variation-settings:'opsz' 40;
+    font-size:clamp(1.02rem,1.5cqw,1.3rem);color:var(--paper);margin-top:.2em}
+  .fr-term .fts{font-family:var(--sans);font-weight:400;font-size:clamp(.62rem,.84cqw,.76rem);
+    color:var(--dim-d);margin-top:.25em}
+  .proceeds{display:flex;flex-direction:column;gap:clamp(9px,1.4cqh,14px)}
+  .prow{display:grid;grid-template-columns:1fr clamp(46px,6cqw,64px);gap:clamp(8px,1.2cqw,14px);align-items:center}
+  .prow .pl{font-family:var(--sans);font-weight:500;font-size:clamp(.68rem,.94cqw,.86rem);color:var(--paper)}
+  .prow .ptrack{height:clamp(8px,1.1cqh,12px);border-radius:5px;background:rgba(239,231,214,.14);overflow:hidden;margin-top:.35em}
+  .prow .pfill{height:100%;border-radius:5px;background:var(--gold-2)}
+  .prow .pv{font-family:var(--disp);font-weight:450;font-variation-settings:'opsz' 40;
+    font-size:clamp(.82rem,1.2cqw,1.02rem);color:var(--paper);text-align:right}
+  .milestones{display:flex;flex-wrap:wrap;gap:clamp(10px,1.6cqw,20px);margin-top:clamp(16px,2.6cqh,28px);
+    border-top:1px solid var(--line-dd);padding-top:clamp(10px,1.6cqh,16px)}
+  .mst{flex:1 1 clamp(140px,20cqw,220px)}
+  .mst .msd{font-family:var(--sans);font-weight:600;letter-spacing:.08em;font-size:clamp(.58rem,.8cqw,.7rem);color:var(--gold-2)}
+  .mst .mst-t{font-family:var(--sans);font-weight:400;font-size:clamp(.62rem,.86cqw,.78rem);color:var(--dim-d);margin-top:.3em;line-height:1.3}
 
   /* cover / close */
   .cover-stats{display:flex;flex-wrap:wrap;gap:clamp(18px,3.4cqw,54px);margin-top:clamp(18px,3cqh,38px)}
@@ -279,13 +350,14 @@
     #frame{padding:1.2vh 2.6vw}
     #stage{aspect-ratio:auto;width:100%;height:calc(100dvh - 2.4vh - 34px)}
     .pad{overflow-y:auto;-webkit-overflow-scrolling:touch}
-    .split,.mods,.tiles,.leads{grid-template-columns:1fr;max-width:none}
+    .split,.mods,.tiles,.leads,.fr-cols,.figs.grid2,.rmcards{grid-template-columns:1fr;max-width:none}
     .figs{gap:16px 30px}
   }
   @media (max-width:860px){
-    .split,.mods{grid-template-columns:1fr}
-    .tiles{grid-template-columns:1fr 1fr} .leads{grid-template-columns:repeat(3,1fr);max-width:none}
+    .split,.mods,.fr-cols{grid-template-columns:1fr}
+    .tiles,.rmcards{grid-template-columns:1fr 1fr} .leads{max-width:none}
     h2,.statement,.sub{max-width:none}
+    .figs.grid2{grid-template-columns:1fr 1fr}
   }
 </style>
 </head>
@@ -301,28 +373,42 @@
       <img class="r cover-lockup" src="media/logos/imxp-primary-lockup-white.png" alt="IMXP - Immersive Experiences" />
       <h1 class="r cover-h1">Scaling real-world experience.</h1>
     </div>
-    <div class="cover-subtitle r">ORION · SEED ROUND · CONFIDENTIAL · OCT 2026</div>
+    <div class="cover-subtitle r">PROJECT ORION · CONFIDENTIAL · OCT 2026</div>
   </section>
 
-  <!-- 2 · THESIS -->
+  <!-- 2 · MISSION -->
+  <section class="slide ph">
+    <div class="bg kb" style="background-image:url('media/photos/aurora-streak.jpg')"></div>
+    <div class="tone"></div><div class="veil"></div><div class="grain"></div>
+    <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
+    <div class="pad">
+      <div class="r kick">Mission</div>
+      <h2 class="r sm mt-xs" style="max-width:none">Orion is the operating system for real-world experiences.</h2>
+      <div class="r sub mt-s" style="max-width:56ch">What Cursor did for building software, Orion does for producing live events.</div>
+      <div class="r lead mt-s">Built by IMXP, the team behind Texas Eclipse and Iceland Eclipse.</div>
+    </div>
+  </section>
+
+  <!-- 3 · THESIS -->
   <section class="slide ph">
     <div class="bg kb" style="background-image:url('media/photos/eclipse-sky.jpg')"></div>
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad">
       <div class="r kick">Thesis</div>
-      <h2 class="r sm mt-xs" style="max-width:none">Demand for live events is growing. Producing them keeps getting harder.</h2>
-      <div class="r lead mt-s" style="color:var(--paper);max-width:56ch">Producers run multi-million-dollar builds on group chats and spreadsheets. Live events need an operating system.</div>
-      <div class="r figs mt">
+      <h2 class="r sm mt-xs" style="max-width:none">Demand for live events is growing.<br/>Producing them keeps getting harder.</h2>
+      <div class="r lead mt-s" style="color:var(--paper);max-width:56ch">Producers run multi-million-dollar builds on group chats and spreadsheets.</div>
+      <div class="r figs grid2 mt">
         <div class="fig"><div class="n">159M</div><div class="l">Live Nation fans in 2025, a record</div></div>
-        <div class="fig"><div class="n sky">4 years</div><div class="l">rising production costs are European festivals' top challenge</div></div>
-        <div class="fig"><div class="n paper">35%</div><div class="l">of Australian music festivals lost money in 2022-23</div></div>
+        <div class="fig"><div class="n sky">831</div><div class="l">applicants for places at The Portal, Iceland Eclipse</div></div>
+        <div class="fig"><div class="n paper">4 years running</div><div class="l">rising production costs are European festivals' top challenge</div></div>
+        <div class="fig"><div class="n sage">100%</div><div class="l">of 220+ European festivals surveyed report costs rising faster than inflation</div></div>
       </div>
-      <div class="r cite mt-s">Live Nation FY2025 · IQ Magazine + YOUROPE European Festival Report, 2025 · Creative Australia, Soundcheck, 2024</div>
+      <div class="r cite mt-s">Live Nation FY2025 · IMXP · IQ Magazine + YOUROPE European Festival Report, 2025</div>
     </div>
   </section>
 
-  <!-- 3 · THE PROBLEM -->
+  <!-- 4 · THE PROBLEM -->
   <section class="slide ph">
     <div class="bg" style="background-image:url('media/challenge-bg-poster.jpg');transform:scale(1);transform-origin:center;background-position:center"></div>
     <video class="bgvid" src="media/challenge-bg.mp4" poster="media/challenge-bg-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
@@ -332,15 +418,16 @@
       <div class="r kick">The Problem</div>
       <h2 class="r sm mt-xs" style="max-width:none">Events bet blind and build from scratch.</h2>
       <div class="r sub mt-s" style="max-width:none">Producers commit the money before they prove demand, then rebuild the same machine every time.</div>
-      <div class="r figs mt">
-        <div class="fig"><div class="n">161</div><div class="l">UK festivals lost since January 2024, many on weak ticket sales</div></div>
-        <div class="fig"><div class="n sky">3.3%</div><div class="l">Live Nation's concerts margin, even in its best year (2025)</div></div>
+      <div class="r figs grid2 mt">
+        <div class="fig"><div class="n">35%</div><div class="l">Australian music festivals that lost money in 2022-23</div></div>
+        <div class="fig"><div class="n sky">A$470K</div><div class="l">their median loss</div></div>
+        <div class="fig"><div class="n paper">161</div><div class="l">UK festivals lost since January 2024, many on weak ticket sales</div></div>
       </div>
-      <div class="r cite mt-s">Association of Independent Festivals, 2026 · Live Nation FY2025</div>
+      <div class="r cite mt-s">Creative Australia, Soundcheck, 2024 · Association of Independent Festivals, 2026 · IMXP</div>
     </div>
   </section>
 
-  <!-- 4 · THE SOLUTION · ORION -->
+  <!-- 5 · THE SOLUTION · ORION -->
   <section class="slide ph">
     <div class="bg" style="background-image:url('media/solution-bg-poster.jpg')"></div>
     <video class="bgvid" src="media/solution-bg.mp4" poster="media/solution-bg-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
@@ -348,8 +435,8 @@
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad">
       <div class="r kick">The Solution</div>
-      <h2 class="r sm mt-xs" style="max-width:none">Orion is the operating system for live events.</h2>
-      <div class="r sub mt-s" style="color:var(--paper);max-width:none">It helps producers shape, test, plan, market and run each event, and carries what it learns into the next.</div>
+      <h2 class="r sm mt-xs" style="max-width:none">From idea to live, in one system.</h2>
+      <div class="r sub mt-s" style="color:var(--paper);max-width:none">Orion helps producers shape, test, plan, market and run each event, and carries what it learns into the next.</div>
       <div class="r split mods-v">
         <div class="mods mods2">
           <div class="modcol">
@@ -362,19 +449,22 @@
           </div>
           <div class="modcol">
             <div class="modlab">Underneath</div>
+            <div class="mod"><div class="mn">Capture</div><div class="md">Chats and email, turned into records.</div></div>
             <div class="mod"><div class="mn">Vault</div><div class="md">Every decision, its reason, its outcome.</div></div>
             <div class="mod"><div class="mn">Coach</div><div class="md">What each team does today.</div></div>
           </div>
         </div>
-        <div class="videowrap">
-          <video id="fiab" src="media/fiab.mp4" poster="media/fiab-poster.png" playsinline preload="none"></video>
-          <button class="playbtn" id="playbtn" aria-label="Play demo"><span></span></button>
+        <div style="position:relative">
+          <div class="videowrap">
+            <video id="fiab" src="media/fiab.mp4" poster="media/fiab-poster.png" playsinline preload="none"></video>
+            <button class="playbtn" id="playbtn" aria-label="Play demo"><span></span></button>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 5 · TRACTION -->
+  <!-- 6 · TRACTION -->
   <section class="slide ph">
     <div class="bg kb" style="background-image:url('media/photos/stands-build.jpg')"></div>
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
@@ -382,12 +472,14 @@
     <div class="pad">
       <div class="r kick">Traction</div>
       <h2 class="r sm mt-xs" style="max-width:none">Orion already runs inside IMXP.</h2>
-      <div class="r lead mt-s" style="max-width:62ch">First live test: Iceland Eclipse 2026. 4,200 participants from 75+ countries.</div>
+      <div class="r lead mt-s" style="max-width:62ch">First live test: Iceland Eclipse 2026. 4,200 participants, $4.2M in revenue.</div>
+      <div class="r lead mt-xs" style="max-width:62ch;font-size:clamp(.78rem,1.1cqw,.98rem)">Ran live: support inbox · Slack approvals · meeting capture · decision logging.</div>
       <div class="r figs mt">
         <div class="fig"><div class="n">120+</div><div class="l">decisions on record in the Vault</div></div>
         <div class="fig"><div class="n sky">2 of 4</div><div class="l">2027 events vetted by Orion</div></div>
       </div>
       <div class="r statchips c7 mt">
+        <div class="sc done"><div class="scn">Capture</div><div class="scs">Live</div></div>
         <div class="sc done"><div class="scn">Ideate</div><div class="scs">Live</div></div>
         <div class="sc done"><div class="scn">Validate</div><div class="scs">Live (financial)</div></div>
         <div class="sc done"><div class="scn">Vault</div><div class="scs">Live</div></div>
@@ -396,10 +488,32 @@
         <div class="sc prog"><div class="scn">Coach</div><div class="scs">Next</div></div>
         <div class="sc prog"><div class="scn">Run</div><div class="scs">Next</div></div>
       </div>
+      <div class="r cite mt-s">IMXP, as of Sep 2026</div>
     </div>
   </section>
 
-  <!-- 6 · THE FLYWHEEL -->
+  <!-- 7 · ROADMAP -->
+  <section class="slide dk">
+    <div class="flybg"></div><div class="grain"></div>
+    <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
+    <div class="pad">
+      <div class="r kick">Roadmap</div>
+      <h2 class="r sm mt-xs" style="max-width:none">Four events in 2027. Four product deadlines.</h2>
+      <div class="r sub mt-s" style="max-width:none">Real users and hard dates force each part of Orion to ship and prove itself.</div>
+      <div class="r gantt mt">
+        <img src="media/people/product-gantt-dark.png" alt="Build calendar: Validate and insights engine, Plan, Market v1 and Coach shipping against Coherence, Egypt and Midnight Sun through 2027" />
+      </div>
+      <div class="r rmcards">
+        <div class="rmcard"><div class="rmn">Coherence</div><div class="rmp">Austin, TX</div><div class="rmd">Mar 19–22, 2027</div></div>
+        <div class="rmcard"><div class="rmn">Atomika</div><div class="rmp">Roswell, NM</div><div class="rmd">May 7–9, 2027</div></div>
+        <div class="rmcard"><div class="rmn">Midnight Sun</div><div class="rmp">Reykjavík</div><div class="rmd">Jul 9–11, 2027</div></div>
+        <div class="rmcard"><div class="rmn">Egypt Eclipse</div><div class="rmp">Luxor &amp; Greater Egypt</div><div class="rmd">Jul 30–Aug 9, 2027</div></div>
+      </div>
+      <div class="r cite mt-s">Beyond 2027: Australasia Eclipse 2028, Apophis 2029, South Africa Eclipse 2030, and the Antarctic Expedition.</div>
+    </div>
+  </section>
+
+  <!-- 8 · THE FLYWHEEL -->
   <section class="slide dk">
     <div class="flybg"></div><div class="grain"></div>
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
@@ -413,8 +527,8 @@
           <div class="loopnode"><div class="lnn">Remember</div><div class="lnd">The Vault keeps each decision with its reason and outcome.</div></div>
           <div class="loopnode"><div class="lnn">Start ahead</div><div class="lnd">The next event opens with real lead times, known costs and early flags.</div></div>
           <div class="loopopen">
-            <div class="lolabel">What this round opens. Then other producers run on it.</div>
-            <div class="lopath">Our events (now) <span>&gt;</span> Partner events (2027+) <span>&gt;</span> The long tail (vision)</div>
+            <div class="lolabel">What this round opens</div>
+            <div class="lopath">Our events (now) <span>&gt;</span> Partner events (next) <span>&gt;</span> The long tail (vision)</div>
           </div>
           <div class="looptag">The first event runs on estimates. The tenth runs on nine events of evidence.</div>
         </div>
@@ -425,59 +539,108 @@
             <div class="mbrow"><div class="mbl">Ticketing</div><div class="mbtrack"><div class="mbfill sky" style="width:37%"></div></div><div class="mbv">37%</div></div>
             <div class="mbrow"><div class="mbl">Sponsorship</div><div class="mbtrack"><div class="mbfill paper" style="width:64%"></div></div><div class="mbv">64%</div></div>
           </div>
-          <div class="r figs mt">
-            <div class="fig"><div class="n">4.7M</div><div class="l">events on Eventbrite alone in 2024: the long tail</div></div>
+        </div>
+      </div>
+      <div class="r cite mt-s">Live Nation FY2025</div>
+    </div>
+  </section>
+
+  <!-- 9 · MARKET -->
+  <section class="slide dk">
+    <div class="flybg"></div><div class="grain"></div>
+    <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
+    <div class="pad">
+      <div class="r kick">Market</div>
+      <h2 class="r sm mt-xs" style="max-width:none">Festivals first. Every gathering next.</h2>
+      <div class="r sub mt-s" style="max-width:none">The same system serves any team that assembles, builds and disbands, from festivals to expeditions.</div>
+      <div class="r split" style="margin-top:clamp(16px,2.6cqh,30px)">
+        <div class="r figs grid2">
+          <div class="fig"><div class="n">$430-530B</div><div class="l">traveler spend on live events and cultural experiences</div></div>
+          <div class="fig"><div class="n sky">8%</div><div class="l">annual growth in travel experiences through 2029, vs 5% for travel overall</div></div>
+          <div class="fig"><div class="n paper">4.7M</div><div class="l">events on Eventbrite in 2024</div></div>
+          <div class="fig"><div class="n sage">~1,800</div><div class="l">festivals in Germany alone</div></div>
+        </div>
+        <div>
+          <div class="rings">
+            <div class="ring tam"></div>
+            <div class="ring sam"></div>
+            <div class="ring som"><div class="rl2"><div class="rn">SOM</div></div></div>
+          </div>
+          <div class="ringcaps">
+            <div class="ringcap"><div class="rct">TAM</div><div class="rcn">$430-530B</div><div class="rcd">Live events &amp; cultural experiences</div></div>
+            <div class="ringcap"><div class="rct">SAM</div><div class="rcn">Destination festivals</div><div class="rcd">Large gatherings worldwide</div></div>
+            <div class="ringcap"><div class="rct">SOM · 2027-28</div><div class="rcn">IMXP + partners</div><div class="rcd">Events on Orion, 2026 base $4.2M</div></div>
           </div>
         </div>
       </div>
-      <div class="r cite mt-s">Live Nation FY2025 · Eventbrite, 2025</div>
+      <div class="r cite mt-s">McKinsey via Statista, 2025 · Arival + Phocuswright, 2026 · Eventbrite, 2025 · AVIXA, 2026</div>
     </div>
   </section>
 
-  <!-- 7 · ALL UPCOMING EVENTS -->
-  <section class="slide ph">
-    <div class="bg kb" style="background-image:url('media/photos/panorama.jpg');background-position:center 50%"></div>
-    <div class="tone"></div><div class="veil btm"></div><div class="grain"></div>
-    <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
-    <div class="pad">
-      <div class="r kick">All Upcoming Events</div>
-      <h2 class="r sm mt-xs" style="max-width:none">Our complete test bench, 2027 and beyond.</h2>
-      <div class="r sub mt-s" style="max-width:none">Running now, and getting sharper: Capture and the Vault are live.</div>
-      <div class="r tiles mt">
-        <div class="tile"><div class="th"><img src="media/events/coherence.jpg" alt="Coherence"/></div><div class="tb"><div class="tn">Coherence</div><div class="tp">Austin, TX</div><div class="td">Mar 19–22, 2027</div></div></div>
-        <div class="tile"><div class="th"><img src="media/events/atomika.jpg" alt="Atomika"/></div><div class="tb"><div class="tn">Atomika</div><div class="tp">Roswell, New Mexico</div><div class="td">May 7–9, 2027</div></div></div>
-        <div class="tile"><div class="th"><img src="media/events/midnight.jpg" alt="Midnight Sun Festival"/></div><div class="tb"><div class="tn">Midnight Sun</div><div class="tp">Reykjavík, Iceland</div><div class="td">Jul 9–11, 2027</div></div></div>
-        <div class="tile"><div class="th"><img src="media/events/egypt.jpg" alt="Egypt Eclipse"/></div><div class="tb"><div class="tn">Egypt Eclipse</div><div class="tp">Luxor &amp; Greater Egypt</div><div class="td">Jul 30 – Aug 9, 2027</div></div></div>
-</div>
-      <div class="r cite mt-s">Beyond 2027: Australasia Eclipse 2028, Apophis 2029, South Africa Eclipse 2030, and the Antarctic Expedition.</div>
-    </div>
-  </section>
-
-  <!-- 8 · THE FOUNDER -->
+  <!-- 10 · THE TEAM -->
   <section class="slide ph">
     <div class="bg kb" style="background-image:url('media/photos/founder-interview.jpg');background-position:center 40%"></div>
     <div class="tone"></div><div class="veil" style="background:linear-gradient(180deg,rgba(9,8,6,.8),rgba(9,8,6,.4) 40%,rgba(9,8,6,.62) 78%,rgba(9,8,6,.93))"></div><div class="grain"></div>
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad">
-      <div class="r kick">The Founder</div>
-      <h2 class="r sm mt-xs" style="max-width:none">The person who has already done this.</h2>
-      <div class="r sub mt-s" style="max-width:none">A decade of building the experiences that unite music, art, technology and community.</div>
+      <div class="r kick">The Team</div>
+      <h2 class="r sm mt-xs" style="max-width:none">The people who have already done this.</h2>
+      <div class="r sub mt-s" style="max-width:none">A decade of building experiences that unite music, art, technology and community.</div>
       <div class="r leads mt">
-        <div class="member"><img src="media/people/mitch-hs.jpg" alt="Mitch Morales"/><div class="nm">Mitch Morales</div><div class="rl">Founder &amp; CEO</div></div>
+        <div class="member"><img src="media/people/mitch-hs.jpg" alt="Mitch Morales"/><div class="nm">Mitch Morales</div><div class="rl">Founder &amp; CEO</div><div class="cr">Texas Eclipse, Unknown Ventures</div></div>
+        <div class="member"><img src="media/people/maryliz-hs.jpg" alt="MaryLiz Bender"/><div class="nm">MaryLiz Bender</div><div class="rl">CXO</div><div class="cr">Cosmic Perspective, Everyday Astronaut</div></div>
+        <div class="member"><img src="media/people/jon-hs.jpg" alt="Jon Shapiro"/><div class="nm">Jon Shapiro</div><div class="rl">CTO</div><div class="cr">PlantWave, Mantle, early multi-agent AI</div></div>
+        <div class="member"><div class="ph-init">BH</div><div class="nm">Benjamin Hill</div><div class="rl">AI Product Developer</div><div class="cr">4 years at Indeed</div></div>
+        <div class="member"><img src="media/people/ari.jpg" alt="Ari Eisenstat"/><div class="nm">Ari Eisenstat</div><div class="rl">Program Director</div><div class="cr">Space for Humanity</div></div>
+        <div class="member"><img src="media/people/andrew.jpg" alt="Andrew Glenn"/><div class="nm">Andrew Glenn</div><div class="rl">Creative Director</div><div class="cr">KAMMOK</div></div>
+        <div class="member"><img src="media/people/patrick.jpg" alt="Patrick Kronfli"/><div class="nm">Patrick Kronfli</div><div class="rl">Partnerships Director</div><div class="cr">Unify.org</div></div>
+        <div class="member"><img src="media/people/holly.jpg" alt="Holly Wood"/><div class="nm">Holly Wood</div><div class="rl">Admin Director</div><div class="cr">Texas Eclipse</div></div>
       </div>
-      <div class="r lead mt-s" style="max-width:62ch">Texas Eclipse: $20M revenue, 38,000 people · Euphoria: 20,000 a day · 360training: grown $2M to $200M, exited.</div>
-      <div class="r explabel">Experience across</div>
+      <div class="r lead mt-s" style="max-width:70ch">Investors &amp; advisors: Whitney Kroenke Silverstein · JT Marino · Chris Boshuizen · Ravé Mehta</div>
+      <div class="r lead mt-xs" style="max-width:70ch;font-size:clamp(.68rem,.92cqw,.8rem);color:var(--dim-d);line-height:1.6">Texas Eclipse: $20M revenue, 38,000 people&nbsp;&nbsp;·&nbsp;&nbsp;Euphoria: 20,000 a day&nbsp;&nbsp;·&nbsp;&nbsp;360training: grown $2M to $200M, exited</div>
+      <div class="explabel">Experience across</div>
       <div class="explogos">
         <img class="tall" src="media/people/exp/texas-eclipse.png" alt="Texas Eclipse" />
         <img class="tall" src="media/people/exp/electric-forest.png" alt="Electric Forest" />
         <img src="media/people/exp/trailblazers.png" alt="Trail Blazers" />
         <img class="tall" src="media/people/exp/euphoria.png" alt="Euphoria" />
         <img src="media/people/exp/everfest.png" alt="Everfest" />
+        <img src="media/people/exp/space-for-humanity.png" alt="Space for Humanity" />
+        <img src="media/people/exp/cosmic-perspective.png" alt="Cosmic Perspective" />
+        <img class="tall" src="media/people/exp/everyday-astronaut.png" alt="Everyday Astronaut" />
       </div>
     </div>
   </section>
 
-  <!-- 9 · CLOSE -->
+  <!-- 11 · FUNDRAISE -->
+  <section class="slide dk">
+    <div class="flybg"></div><div class="grain"></div>
+    <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
+    <div class="pad">
+      <div class="r kick">Fundraise</div>
+      <h2 class="r sm mt-xs" style="max-width:none">Raising $1M to grow our events and build Orion.</h2>
+      <div class="r sub mt-s" style="max-width:none">Half funds the events that test Orion. Half builds Orion.</div>
+      <div class="r fr-cols">
+        <div class="fr-terms">
+          <div class="fr-term"><div class="ftl">Raise</div><div class="ftv">$1M</div></div>
+          <div class="fr-term"><div class="ftl">Terms</div><div class="ftv">SAFE, $10M cap</div></div>
+          <div class="fr-term"><div class="ftl">Status</div><div class="ftv">$350K committed</div><div class="fts">from previous investors · previous: $750K pre-seed, 2025 ($5M post)</div></div>
+        </div>
+        <div class="proceeds">
+          <div class="prow"><div><div class="pl">Destination experience development</div><div class="ptrack"><div class="pfill" style="width:50%"></div></div></div><div class="pv">50% · $500K</div></div>
+          <div class="prow"><div><div class="pl">Dev team hires &amp; Orion training</div><div class="ptrack"><div class="pfill sky" style="width:30%;background:var(--sky)"></div></div></div><div class="pv">30% · $300K</div></div>
+          <div class="prow"><div><div class="pl">Orion build to unlock platform revenue</div><div class="ptrack"><div class="pfill" style="width:20%;background:var(--paper)"></div></div></div><div class="pv">20% · $200K</div></div>
+        </div>
+      </div>
+      <div class="r milestones">
+        <div class="mst"><div class="msd">Mar 2027</div><div class="mst-t">Orion beta at Coherence</div></div>
+        <div class="mst"><div class="msd">May 2027</div><div class="mst-t">Orion release at Atomika</div></div>
+        <div class="mst"><div class="msd">Aug 2027</div><div class="mst-t">Full lifecycle at Egypt</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 · CLOSE -->
   <section class="slide ph center">
     <div class="bg kb" style="background-image:url('media/photos/golden-hug.jpg')"></div>
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
@@ -485,7 +648,7 @@
     <div class="pad mid" style="align-items:flex-start">
       <h1 class="r">Thank you.</h1>
       <div class="r sub mt-s">Realigning our civilization with the Cosmos.</div>
-      <div class="r contact mt">Mitch Morales · <a href="mailto:mitch@imxp.org">mitch@imxp.org</a></div>
+      <div class="r contact mt">Mitch Morales · <a href="mailto:mitch@im-xp.com">mitch@im-xp.com</a></div>
     </div>
   </section>
 </div>
