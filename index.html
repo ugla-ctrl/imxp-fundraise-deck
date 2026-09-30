@@ -100,6 +100,7 @@
 
   .sub{font-family:var(--sans);font-weight:400;line-height:1.4;font-size:clamp(1.02rem,1.72cqw,1.55rem);
     max-width:40ch;color:var(--paper);text-wrap:balance}
+  .sub.one-line{white-space:nowrap;font-size:clamp(.86rem,1.5cqw,1.55rem);text-wrap:initial}
   .pp .sub{color:var(--paper-ink)}
   .lead{font-family:var(--sans);font-weight:400;line-height:1.5;font-size:clamp(.98rem,1.46cqw,1.34rem);
     max-width:52ch;color:var(--dim-d)}
@@ -485,6 +486,7 @@
     .pad.mid,.pad.top{justify-content:flex-start}
     .hd{position:relative;z-index:4}
     h2,.statement,.sub,.lead{max-width:none!important}
+    .sub.one-line{white-space:normal!important;font-size:max(14px,.9rem)!important}
     .split,.mods,.tiles,.fr-cols,.rmcards,.solsplit,.flywrap,.mods-v{
       display:flex;flex-direction:column;max-width:none;gap:22px}
     .leads{display:grid;grid-template-columns:1fr 1fr;max-width:none;gap:22px 14px}
@@ -536,8 +538,8 @@
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad">
       <div class="r kick">Mission</div>
-      <h2 class="r sm mt-xs" style="max-width:none">Project Orion is the operating system for real&#8209;world experiences.</h2>
-      <div class="r sub mt-s" style="max-width:56ch;text-wrap:balance">What Cursor did for building software, Orion does for producing live events.</div>
+      <h2 class="r sm mt-xs" style="max-width:none">Project Orion is end&#8209;to&#8209;end AI for event production.</h2>
+      <div class="r sub mt-s one-line" style="max-width:none">It plans, tracks and remembers the details every event depends on.</div>
       <div class="r lead mt-s">Built by IMXP, the team behind Texas Eclipse and Iceland Eclipse.</div>
     </div>
   </section>
