@@ -314,17 +314,24 @@
   .mkil{font-family:var(--sans);font-weight:400;font-size:clamp(.62rem,.86cqw,.78rem);color:var(--dim-d);
     margin-top:.3em;line-height:1.3;max-width:22ch}
 
-  /* problem: small costs-vs-tickets bar chart */
-  .probchart{max-width:clamp(220px,28cqw,300px);background:rgba(9,8,6,.5);border:1px solid rgba(239,231,214,.18);
-    border-radius:9px;padding:clamp(11px,1.6cqw,16px);backdrop-filter:blur(6px)}
-  .pcl{font-family:var(--sans);font-weight:600;font-size:clamp(.6rem,.82cqw,.72rem);color:var(--paper);
-    margin-bottom:.7em;line-height:1.3;text-shadow:0 1px 6px rgba(0,0,0,.7)}
-  .pcrow{display:grid;grid-template-columns:clamp(46px,6cqw,60px) 1fr;gap:clamp(8px,1.1cqw,12px);
-    align-items:center;margin-top:.5em}
-  .pcy{font-family:var(--sans);font-weight:500;font-size:clamp(.58rem,.8cqw,.7rem);color:var(--dim-d)}
-  .pctrack{height:clamp(8px,1.1cqh,12px);border-radius:4px;background:rgba(239,231,214,.14);overflow:hidden}
-  .pcfill{height:100%;border-radius:4px;background:var(--gold-2)}
-  .pcfill.dim{background:var(--dim-d)}
+  /* problem: Live Nation revenue-vs-costs bar chart */
+  .probchart{max-width:clamp(480px,46cqw,720px);background:rgba(9,8,6,.55);border:1px solid rgba(239,231,214,.16);
+    border-radius:10px;padding:clamp(14px,1.8cqw,20px) clamp(14px,1.8cqw,20px) clamp(8px,1.2cqw,12px);
+    backdrop-filter:blur(6px)}
+  .pctitle{font-family:var(--sans);font-weight:600;font-size:clamp(.68rem,.95cqw,.85rem);color:var(--paper);
+    line-height:1.35;margin-bottom:.5em;text-shadow:0 1px 6px rgba(0,0,0,.7)}
+  .pclegend{font-family:var(--sans);font-weight:500;font-size:clamp(.58rem,.8cqw,.7rem);color:var(--dim-d);
+    display:flex;align-items:center;gap:.5em;margin-bottom:.6em}
+  .lg-sw{display:inline-block;width:.8em;height:.8em;border-radius:2px;margin-right:.35em}
+  .lg-sw.lg-cost{background:var(--gold)}
+  .lg-sw.lg-rev{background:var(--dim-d);opacity:.6;margin-left:.9em}
+  .probchart svg{width:100%;height:auto;display:block}
+  .pcaxis{font-family:var(--sans);font-size:18px;fill:var(--dim-d)}
+  .pcband{font-family:var(--sans);font-size:17px;fill:rgba(239,231,214,.55);letter-spacing:.04em}
+  .pcval{font-family:var(--sans);font-weight:600;font-size:19px;fill:var(--paper)}
+  .pcval-rev{fill:var(--dim-d)}
+  .pcval-cost{fill:var(--gold-2)}
+  .pcnote{font-family:var(--sans);font-weight:600;font-size:18px;fill:var(--gold-2)}
 
   /* roadmap gantt cards */
   .rmcards{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.5cqw,20px);margin-top:clamp(12px,2cqh,20px)}
@@ -597,11 +604,44 @@
       <h2 class="r sm mt-xs" style="max-width:none">Multi&#8209;million&#8209;dollar events still run on group chats and spreadsheets.</h2>
       <div class="r sub mt-s" style="max-width:62ch">Demand is a guess. The plan starts from zero. What the crew learns leaves with them.</div>
       <div class="r probchart mt">
-        <div class="pcl">Costs up 50%. Ticket prices up 30%.</div>
-        <div class="pcrow"><div class="pcy">Costs</div><div class="pctrack"><div class="pcfill" style="width:100%"></div></div></div>
-        <div class="pcrow"><div class="pcy">Tickets</div><div class="pctrack"><div class="pcfill dim" style="width:60%"></div></div></div>
+        <div class="pctitle">Record revenue. Costs still take 97 cents of every dollar.</div>
+        <div class="pclegend"><span class="lg-sw lg-rev"></span>Revenue<span class="lg-sw lg-cost"></span>Costs</div>
+        <svg viewBox="0 0 720 360" width="720" height="360" role="img" aria-label="Live Nation concerts revenue and costs, 2020 to 2025. Both climbed from under $2.2 billion to about $20 billion; in 2025 costs were 97% of revenue.">
+          <rect x="56.0" y="60" width="214.7" height="230" fill="rgba(255,255,255,.06)"/>
+          <text x="163.3" y="52" text-anchor="middle" class="pcband">Pandemic</text>
+          <line x1="56" y1="290.0" x2="700" y2="290.0" stroke="rgba(239,231,214,.12)" stroke-width="1"/>
+          <text x="46" y="294.0" text-anchor="end" class="pcaxis">0</text>
+          <line x1="56" y1="237.7" x2="700" y2="237.7" stroke="rgba(239,231,214,.12)" stroke-width="1"/>
+          <text x="46" y="241.7" text-anchor="end" class="pcaxis">5</text>
+          <line x1="56" y1="185.5" x2="700" y2="185.5" stroke="rgba(239,231,214,.12)" stroke-width="1"/>
+          <text x="46" y="189.5" text-anchor="end" class="pcaxis">10</text>
+          <line x1="56" y1="133.2" x2="700" y2="133.2" stroke="rgba(239,231,214,.12)" stroke-width="1"/>
+          <text x="46" y="137.2" text-anchor="end" class="pcaxis">15</text>
+          <line x1="56" y1="80.9" x2="700" y2="80.9" stroke="rgba(239,231,214,.12)" stroke-width="1"/>
+          <text x="46" y="84.9" text-anchor="end" class="pcaxis">20</text>
+          <rect x="80.7" y="274.6" width="26" height="15.4" fill="var(--dim-d)" opacity=".6"/>
+          <rect x="112.7" y="267.9" width="26" height="22.1" fill="var(--gold)"/>
+          <text x="109.7" y="312" text-anchor="middle" class="pcaxis">2020</text>
+          <rect x="188.0" y="240.7" width="26" height="49.3" fill="var(--dim-d)" opacity=".6"/>
+          <rect x="220.0" y="238.4" width="26" height="51.6" fill="var(--gold)"/>
+          <text x="217.0" y="312" text-anchor="middle" class="pcaxis">2021</text>
+          <rect x="295.3" y="149.0" width="26" height="141.0" fill="var(--dim-d)" opacity=".6"/>
+          <rect x="327.3" y="150.7" width="26" height="139.3" fill="var(--gold)"/>
+          <text x="324.3" y="312" text-anchor="middle" class="pcaxis">2022</text>
+          <rect x="402.7" y="93.9" width="26" height="196.1" fill="var(--dim-d)" opacity=".6"/>
+          <rect x="434.7" y="97.2" width="26" height="192.8" fill="var(--gold)"/>
+          <text x="431.7" y="312" text-anchor="middle" class="pcaxis">2023</text>
+          <rect x="510.0" y="91.2" width="26" height="198.8" fill="var(--dim-d)" opacity=".6"/>
+          <rect x="542.0" y="96.7" width="26" height="193.3" fill="var(--gold)"/>
+          <text x="539.0" y="312" text-anchor="middle" class="pcaxis">2024</text>
+          <rect x="617.3" y="71.9" width="26" height="218.1" fill="var(--dim-d)" opacity=".6"/>
+          <rect x="649.3" y="79.1" width="26" height="210.9" fill="var(--gold)"/>
+          <text x="646.3" y="312" text-anchor="middle" class="pcaxis">2025</text>
+          <text x="580" y="48" text-anchor="end" class="pcval pcval-rev">Revenue $20.9B</text>
+          <text x="580" y="66" text-anchor="end" class="pcval pcval-cost">Costs $20.2B, 97% of revenue</text>
+        </svg>
       </div>
-      <div class="r cite bright mt-s">IMXP &middot; BDKV, May 2026</div>
+      <div class="r cite bright mt-s">IMXP &middot; Live Nation filings, Concerts segment, 2020-2025. Costs = revenue minus adjusted operating income.</div>
     </div>
   </section>
 
