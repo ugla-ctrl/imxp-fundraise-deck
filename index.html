@@ -257,7 +257,7 @@
   .dcev b{color:var(--paper);font-weight:600}
 
   /* market rings */
-  .rings{position:relative;width:100%;aspect-ratio:1/1;max-width:clamp(280px,36cqw,460px);margin:0 auto}
+  .rings{position:relative;width:100%;aspect-ratio:1/1;max-width:min(clamp(280px,36cqw,460px),34cqh);margin:0 auto}
   .ring{position:absolute;border-radius:50%;border:1px solid var(--line-dd)}
   .ring.tam{inset:0;background:radial-gradient(circle at 50% 30%,rgba(217,159,52,.08),transparent 70%);
     display:flex;align-items:flex-start;justify-content:center;padding-top:6%}
@@ -471,9 +471,33 @@
     .explogos img{height:clamp(11px,1.6cqh,18px)}
     .explogos img.tall{height:clamp(17px,2.6cqh,28px)}
     .member .nm{margin-top:.4em} .member .rl{margin-top:.2em} .member .cr{margin-top:.15em}
-    .rings{max-width:clamp(140px,22cqw,300px)}
+    .rings{max-width:min(clamp(140px,22cqw,300px),26cqh)}
     .ringcap{margin-top:4px}
     .ring.tam .rl2-outer .rt,.ring.som .rt{font-size:clamp(.34rem,.46cqw,.4rem)}
+    .mkticons{gap:clamp(10px,2cqw,24px);padding-top:6px;margin-top:6px}
+    .mkiico{margin-bottom:.2em}
+    .cite{line-height:1.4}
+  }
+
+  /* Market slide packs rings + bar chart + icon row + two citation lines into one
+     stage - that's more vertical content than most slides, so it needs its own,
+     higher threshold instead of waiting for the generic 460px safety net above. */
+  @container (max-height:600px){
+    .slide.market .split > div:first-child > .ringcap{display:none}
+    .slide.market .mkticons{padding-top:4px;margin-top:4px;gap:clamp(8px,1.8cqw,20px)}
+    .slide.market .mki{flex-basis:clamp(120px,18cqw,200px)}
+    .slide.market .mkiico{width:clamp(14px,1.8cqw,20px);height:clamp(14px,1.8cqw,20px);margin-bottom:.1em}
+    .slide.market .mkil{line-height:1.2}
+    .slide.market .cite.mt-s{margin-top:2px}
+    .slide.market .cite{line-height:1.25}
+  }
+  @container (max-height:730px){
+    .slide.market .ringcap{margin-top:clamp(3px,.6cqh,8px)}
+    .slide.market .split{margin-top:clamp(8px,1.2cqh,16px)!important}
+    .slide.market .mkticons{gap:clamp(12px,2.2cqw,30px);padding-top:6px;margin-top:6px}
+    .slide.market h2.sm.mt-xs{margin-top:clamp(2px,.5cqh,7px)}
+    .slide.market .sub.mt-s{margin-top:clamp(4px,.8cqh,10px)}
+    .slide.market .cite.mt-s{margin-top:clamp(4px,.8cqh,10px)}
   }
 
   /* ---- Mobile portrait (<768px): vertical scroll per slide, natural height, nothing fixed ---- */
@@ -552,7 +576,7 @@
   </section>
 
   <!-- 3 · MARKET -->
-  <section class="slide dk">
+  <section class="slide dk market">
     <div class="flybg"></div><div class="grain"></div>
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad anchor-top">
@@ -562,7 +586,7 @@
       <div class="r split" style="margin-top:clamp(16px,2.4cqh,26px);align-items:start">
         <div>
           <div class="lab">How big</div>
-          <div class="rings" style="max-width:clamp(220px,28cqw,340px);margin:0">
+          <div class="rings" style="max-width:max(275px,min(clamp(220px,28cqw,340px),30cqh));margin:0">
             <div class="ring tam"><div class="rl2 rl2-outer"><div class="rn">$1.1-1.3T</div><div class="rt">All traveler experiences</div></div></div>
             <div class="ring som"><div class="rl2"><div class="rn">$250-310B</div><div class="rt">Paid, like concerts</div></div></div>
             <div class="ring core"></div>
