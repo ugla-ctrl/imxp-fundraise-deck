@@ -292,6 +292,39 @@
   .ringcaps .ringcap{flex:1}
   .ringcaps-mobile{display:none}
 
+  /* market bar chart + icon stats */
+  .mktbars{display:flex;flex-direction:column;gap:clamp(9px,1.4cqh,14px);margin-top:clamp(6px,1cqh,10px)}
+  .mktbarlabel{font-family:var(--sans);font-weight:600;letter-spacing:.06em;font-size:clamp(.6rem,.82cqw,.72rem);
+    color:var(--dim-d);margin-bottom:.2em}
+  .mktbarrow{display:grid;grid-template-columns:clamp(46px,6cqw,64px) 1fr clamp(38px,5cqw,52px);
+    gap:clamp(8px,1.2cqw,14px);align-items:center}
+  .mbky{font-family:var(--sans);font-weight:500;font-size:clamp(.62rem,.86cqw,.78rem);color:var(--dim-d)}
+  .mbktrack{height:clamp(9px,1.3cqh,14px);border-radius:4px;background:rgba(239,231,214,.12);overflow:hidden}
+  .mbkfill{height:100%;border-radius:4px;background:var(--gold)}
+  .mbkfill.hi{background:var(--gold-2)}
+  .mbkv{font-family:var(--disp);font-weight:450;font-variation-settings:'opsz' 40;
+    font-size:clamp(.78rem,1.15cqw,1rem);color:var(--paper);text-align:right}
+  .mkticons{display:flex;flex-wrap:wrap;gap:clamp(18px,3cqw,44px);border-top:1px solid var(--line-dd);
+    padding-top:clamp(9px,1.4cqh,15px);margin-top:clamp(8px,1.2cqh,14px)}
+  .mki{flex:1 1 clamp(140px,20cqw,220px);display:flex;flex-direction:column}
+  .mkiico{width:clamp(18px,2.2cqw,24px);height:clamp(18px,2.2cqw,24px);color:var(--gold-2);margin-bottom:.4em}
+  .mkin{font-family:var(--disp);font-weight:450;font-variation-settings:'opsz' 40;color:var(--paper);
+    font-size:clamp(1rem,1.6cqw,1.35rem);line-height:1.1}
+  .mkil{font-family:var(--sans);font-weight:400;font-size:clamp(.62rem,.86cqw,.78rem);color:var(--dim-d);
+    margin-top:.3em;line-height:1.3;max-width:22ch}
+
+  /* problem: small costs-vs-tickets bar chart */
+  .probchart{max-width:clamp(220px,28cqw,300px);background:rgba(9,8,6,.5);border:1px solid rgba(239,231,214,.18);
+    border-radius:9px;padding:clamp(11px,1.6cqw,16px);backdrop-filter:blur(6px)}
+  .pcl{font-family:var(--sans);font-weight:600;font-size:clamp(.6rem,.82cqw,.72rem);color:var(--paper);
+    margin-bottom:.7em;line-height:1.3;text-shadow:0 1px 6px rgba(0,0,0,.7)}
+  .pcrow{display:grid;grid-template-columns:clamp(46px,6cqw,60px) 1fr;gap:clamp(8px,1.1cqw,12px);
+    align-items:center;margin-top:.5em}
+  .pcy{font-family:var(--sans);font-weight:500;font-size:clamp(.58rem,.8cqw,.7rem);color:var(--dim-d)}
+  .pctrack{height:clamp(8px,1.1cqh,12px);border-radius:4px;background:rgba(239,231,214,.14);overflow:hidden}
+  .pcfill{height:100%;border-radius:4px;background:var(--gold-2)}
+  .pcfill.dim{background:var(--dim-d)}
+
   /* roadmap gantt cards */
   .rmcards{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.5cqw,20px);margin-top:clamp(12px,2cqh,20px)}
   .rmcard{border-top:2px solid var(--gold-2);padding-top:.5em}
@@ -493,7 +526,7 @@
       <img class="r cover-lockup" src="media/logos/imxp-primary-lockup-white.png" alt="IMXP - Immersive Experiences" />
       <h1 class="r cover-h1">Scaling real&#8209;world experience.</h1>
     </div>
-    <div class="cover-subtitle r">ORION · CONFIDENTIAL · OCT 2026</div>
+    <div class="cover-subtitle r">PROJECT ORION · CONFIDENTIAL · OCT 2026</div>
   </section>
 
   <!-- 2 · MISSION -->
@@ -509,22 +542,46 @@
     </div>
   </section>
 
-  <!-- 3 · THESIS -->
-  <section class="slide ph">
-    <div class="bg kb" style="background-image:url('media/photos/eclipse-sky.jpg')"></div>
-    <div class="tone"></div><div class="veil"></div><div class="grain"></div>
+  <!-- 3 · MARKET -->
+  <section class="slide dk">
+    <div class="flybg"></div><div class="grain"></div>
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
-    <div class="pad">
-      <div class="r kick">Thesis</div>
-      <h2 class="r sm mt-xs" style="max-width:none">Demand for live events is growing.<br/>Producing them keeps getting harder.</h2>
-      <div class="r lead mt-s" style="color:var(--paper);max-width:70%;text-wrap:balance">Producers run multi&#8209;million&#8209;dollar builds on group chats and spreadsheets.</div>
-      <div class="r figs grid2 mt">
-        <div class="fig"><div class="n paper">159M</div><div class="l">Live Nation fans in 2025, a record</div></div>
-        <div class="fig"><div class="n paper">+12.3%</div><div class="l">top-100 tour grosses, H1 2026, a record</div></div>
-        <div class="fig"><div class="n">+50%</div><div class="l">German production, staff and artist costs since the pandemic</div></div>
-        <div class="fig"><div class="n mgray">+30%</div><div class="l">ticket prices over the same period</div></div>
+    <div class="pad anchor-top">
+      <div class="r kick">Market</div>
+      <h2 class="r sm mt-xs" style="max-width:none">Travelers spend over $1.1 trillion a year on experiences.</h2>
+      <div class="r sub mt-s" style="max-width:none">In the midst of a loneliness epidemic, people want to spend more time IRL.</div>
+      <div class="r split" style="margin-top:clamp(16px,2.4cqh,26px);align-items:start">
+        <div>
+          <div class="lab">How big</div>
+          <div class="rings" style="max-width:clamp(220px,28cqw,340px);margin:0">
+            <div class="ring tam"><div class="rl2 rl2-outer"><div class="rn">$1.1-1.3T</div><div class="rt">All traveler experiences</div></div></div>
+            <div class="ring som"><div class="rl2"><div class="rn">$250-310B</div><div class="rt">Paid, like concerts</div></div></div>
+            <div class="ring core"></div>
+          </div>
+          <div class="ringcaps-mobile">
+            <div class="ringcap"><div class="rcn">$1.1-1.3T</div><div class="rct">All traveler experiences</div></div>
+            <div class="ringcap"><div class="rcn">$250-310B</div><div class="rct">Paid, like concerts</div></div>
+          </div>
+          <div class="ringcap"><div class="rcn">Destination festivals</div><div class="rct">Where IMXP starts</div></div>
+        </div>
+        <div style="padding-top:clamp(6px,1cqh,10px)">
+          <div class="lab">How fast</div>
+          <div class="mktbars">
+            <div class="mktbarlabel">Live music revenue, $B</div>
+            <div class="mktbarrow"><div class="mbky">2024</div><div class="mbktrack"><div class="mbkfill" style="width:51%"></div></div><div class="mbkv">34.6</div></div>
+            <div class="mktbarrow"><div class="mbky">2025</div><div class="mbktrack"><div class="mbkfill" style="width:57%"></div></div><div class="mbkv">38.2</div></div>
+            <div class="mktbarrow"><div class="mbky">2030E</div><div class="mbktrack"><div class="mbkfill hi" style="width:78%"></div></div><div class="mbkv">52.6</div></div>
+            <div class="mktbarrow"><div class="mbky">2035E</div><div class="mbktrack"><div class="mbkfill hi" style="width:100%"></div></div><div class="mbkv">67.1</div></div>
+          </div>
+        </div>
       </div>
-      <div class="r cite mt-s">Live Nation FY2025 · Pollstar, Jun 2026 · BDKV, May 2026</div>
+      <div class="r mkticons mt-s">
+        <div class="mki"><svg class="mkiico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v1.5a1.5 1.5 0 0 0 0 3V15a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1.5a1.5 1.5 0 0 0 0-3V9Z"/><path d="M9 7v10" stroke-dasharray="1.6 1.6"/></svg><div class="mkin">159M</div><div class="mkil">Record fans at live shows, 2025</div></div>
+        <div class="mki"><svg class="mkiico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 20V11a8 8 0 0 1 16 0v9"/><path d="M2 20h20"/><path d="M9 11a3 3 0 0 1 6 0"/></svg><div class="mkin">170M</div><div class="mkil">New jobs by 2030, led by frontline roles</div></div>
+        <div class="mki"><svg class="mkiico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 20s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 5c-2.5 4.5-9.5 9-9.5 9Z"/></svg><div class="mkin">1 in 6</div><div class="mkil">People affected by loneliness</div></div>
+      </div>
+      <div class="r cite mt-s">Recent deals: KKR bought Superstruct (~€1.3B) &nbsp;·&nbsp; Fever, owner of DICE, raised at a reported ~$5.2B &nbsp;·&nbsp; Penske took full control of SXSW</div>
+      <div class="r cite mt-s">McKinsey &amp; Skift, 2024 &middot; Goldman Sachs, 2025 &middot; Live Nation FY2025 &middot; WEF, 2025 &middot; WHO, 2025 &middot; KKR / MBW / TheWrap</div>
     </div>
   </section>
 
@@ -535,14 +592,14 @@
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad">
       <div class="r kick">The Problem</div>
-      <h2 class="r sm mt-xs" style="max-width:none">Events bet blind and build from scratch.</h2>
-      <div class="r sub mt-s" style="max-width:none">Producers commit the money before they prove demand, then rebuild the same machine every time.</div>
-      <div class="r figs grid2 mt">
-        <div class="fig"><div class="n">121</div><div class="l">UK festivals cancelled, postponed or closed in 2024 and 2025</div></div>
-        <div class="fig"><div class="n paper">35%</div><div class="l">Australian music festivals that lost money in 2022-23</div></div>
+      <h2 class="r sm mt-xs" style="max-width:none">Multi&#8209;million&#8209;dollar events still run on group chats and spreadsheets.</h2>
+      <div class="r sub mt-s" style="max-width:62ch">Demand is a guess. The plan starts from zero. What the crew learns leaves with them.</div>
+      <div class="r probchart mt">
+        <div class="pcl">Costs up 50%. Ticket prices up 30%.</div>
+        <div class="pcrow"><div class="pcy">Costs</div><div class="pctrack"><div class="pcfill" style="width:100%"></div></div></div>
+        <div class="pcrow"><div class="pcy">Tickets</div><div class="pctrack"><div class="pcfill dim" style="width:60%"></div></div></div>
       </div>
-      <div class="r lead mt-s" style="font-size:clamp(.78rem,1.1cqw,.98rem);font-family:var(--disp);font-style:italic;font-weight:400;max-width:70%;text-wrap:balance;color:rgba(239,231,214,.92);text-shadow:0 1px 6px rgba(0,0,0,.8)">In 2026, WOMAD cancelled its first Glasgow edition on low ticket sales.</div>
-      <div class="r cite bright mt-s">Association of Independent Festivals, 2026 · Creative Australia, Soundcheck, 2024</div>
+      <div class="r cite bright mt-s">IMXP &middot; BDKV, May 2026</div>
     </div>
   </section>
 
@@ -587,26 +644,16 @@
   <!-- 6 · TRACTION -->
   <section class="slide ph">
     <div class="bg kb" style="background-image:url('media/photos/stands-build.jpg')"></div>
-    <div class="tone"></div><div class="veil lr"></div><div class="grain"></div>
+    <div class="tone"></div><div class="veil lr strong"></div><div class="grain"></div>
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad">
       <div class="r kick">Traction</div>
-      <h2 class="r sm mt-xs" style="max-width:none">Orion already runs inside IMXP.</h2>
-      <div class="r lead mt-s" style="max-width:62ch">First live test: Iceland Eclipse 2026. 4,200 participants, $4.2M in revenue.</div>
-      <div class="r lead mt-xs" style="max-width:62ch;font-size:clamp(.78rem,1.1cqw,.98rem)">Ran live: support inbox · Slack approvals · meeting capture · decision logging.</div>
+      <h2 class="r sm mt-xs" style="max-width:none">Orion already runs at Immersive Experiences.</h2>
+      <div class="r lead mt-s" style="max-width:62ch">First live test: Iceland Eclipse 2026, 4,200 participants from 75+ countries.</div>
+      <div class="r lead mt-xs" style="max-width:62ch;font-size:clamp(.78rem,1.1cqw,.98rem)">Ran live: support inbox · Slack approvals · meeting capture · decision log.</div>
       <div class="r figs mt">
-        <div class="fig"><div class="n">120+</div><div class="l">decisions on record in the Vault</div></div>
+        <div class="fig"><div class="n">120+</div><div class="l">decisions on record</div></div>
         <div class="fig"><div class="n paper">2 of 4</div><div class="l">2027 events vetted by Orion</div></div>
-      </div>
-      <div class="r statchips c8 mt">
-        <div class="sc done"><div class="scn">Capture</div><div class="scs">Live</div></div>
-        <div class="sc done"><div class="scn">Ideate</div><div class="scs">Live</div></div>
-        <div class="sc done"><div class="scn">Validate</div><div class="scs">Live (financial)</div></div>
-        <div class="sc done"><div class="scn">Vault</div><div class="scs">Live</div></div>
-        <div class="sc prog"><div class="scn">Plan</div><div class="scs">In build</div></div>
-        <div class="sc prog"><div class="scn">Market</div><div class="scs">Next</div></div>
-        <div class="sc prog"><div class="scn">Coach</div><div class="scs">Next</div></div>
-        <div class="sc prog"><div class="scn">Run</div><div class="scs">Next</div></div>
       </div>
       <div class="r cite mt-s">IMXP, as of Sep 2026</div>
     </div>
@@ -683,41 +730,7 @@
     </div>
   </section>
 
-  <!-- 9 · MARKET -->
-  <section class="slide dk">
-    <div class="flybg"></div><div class="grain"></div>
-    <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
-    <div class="pad anchor-top">
-      <div class="r kick">Market</div>
-      <h2 class="r sm mt-xs" style="max-width:none">Real&#8209;world experience is in demand.</h2>
-      <div class="r sub mt-s" style="max-width:none">In the midst of a loneliness epidemic, people want to spend more time IRL.</div>
-      <div class="r split" style="margin-top:clamp(16px,2.6cqh,30px)">
-        <div class="r figs grid2">
-          <div class="fig"><div class="n">52%</div><div class="l">of Gen Z splurge on experiences, vs 29% of boomers</div></div>
-          <div class="fig"><div class="n paper">4.7M</div><div class="l">events hosted on Eventbrite alone in 2024</div></div>
-          <div class="fig"><div class="n paper">170M</div><div class="l">new jobs by 2030, frontline roles growing most</div></div>
-          <div class="fig"><div class="n paper">1 in 6</div><div class="l">people worldwide affected by loneliness</div></div>
-        </div>
-        <div>
-          <div class="rings">
-            <div class="ring tam"><div class="rl2 rl2-outer"><div class="rn">$1.1-1.3T</div><div class="rt">Traveler spend on experiences</div></div></div>
-            <div class="ring som"><div class="rl2"><div class="rn">$250-310B</div><div class="rt">Paid experiences like concerts</div></div></div>
-            <div class="ring core"></div>
-          </div>
-          <div class="ringcaps-mobile">
-            <div class="ringcap"><div class="rcn">$1.1-1.3T</div><div class="rct">Traveler spend on experiences</div></div>
-            <div class="ringcap"><div class="rcn">$250-310B</div><div class="rct">Paid experiences like concerts</div></div>
-          </div>
-          <div class="ringcap"><div class="rcn">Destination festivals</div><div class="rct">Where IMXP starts</div></div>
-          <div class="r cite" style="margin-top:.4em;text-align:center">Live music alone: $38B in 2025, $42-53B by 2030.</div>
-        </div>
-      </div>
-      <div class="r cite mt-s">Recent deals: KKR bought Superstruct's 80+ festivals for ~€1.3B &nbsp;·&nbsp; Fever (owner of DICE) raised $250M at a reported ~$5.2B valuation &nbsp;·&nbsp; Penske took full ownership of SXSW</div>
-      <div class="r cite mt-s">McKinsey &amp; Skift, 2024 &middot; Goldman Sachs, 2025 &middot; PwC, 2026 &middot; Eventbrite, 2025 &middot; WEF, 2025 &middot; WHO, 2025 &middot; KKR / MBW / TheWrap</div>
-    </div>
-  </section>
-
-  <!-- 10 · THE TEAM -->
+  <!-- 9 · THE TEAM -->
   <section class="slide ph">
     <div class="bg kb" style="background-image:url('media/photos/founder-interview.jpg');background-position:center 40%"></div>
     <div class="tone"></div><div class="veil" style="background:linear-gradient(180deg,rgba(9,8,6,.85),rgba(9,8,6,.45) 34%,rgba(9,8,6,.78) 70%,rgba(9,8,6,.96) 100%)"></div><div class="grain"></div>
@@ -753,7 +766,7 @@
     </div>
   </section>
 
-  <!-- 11 · FUNDRAISE -->
+  <!-- 10 · FUNDRAISE -->
   <section class="slide dk">
     <div style="position:absolute;inset:0;z-index:0;background-image:url('media/photos/panorama.jpg');background-size:cover;background-position:center;opacity:.22"></div>
     <div class="flybg"></div><div class="grain"></div>
@@ -783,7 +796,7 @@
     </div>
   </section>
 
-  <!-- 12 · CLOSE -->
+  <!-- 11 · CLOSE -->
   <section class="slide ph center">
     <div class="bg kb" style="background-image:url('media/photos/golden-hug.jpg')"></div>
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
