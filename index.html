@@ -192,52 +192,6 @@
   .statchips.c8 .sc .scs{margin-top:.35em;font-size:clamp(.48rem,.66cqw,.58rem)}
   .sc .scs::before{content:'';width:.5em;height:.5em;border-radius:50%;background:currentColor;flex:none}
   .sc.done .scs{color:var(--sage)} .sc.prog .scs{color:var(--gold-2)}
-  .flywrap{grid-template-columns:1.15fr .85fr;align-items:start}
-  .flywrap .flyside{padding-top:0;margin-top:0;
-    display:flex;flex-direction:column;justify-content:flex-start}
-  .loop{position:relative;width:100%;max-width:clamp(420px,50cqw,620px);aspect-ratio:400/190;margin:0 auto;
-    padding-top:clamp(10px,1.6cqh,18px)}
-  .loopsvg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-  .loopcard{position:absolute;width:clamp(110px,15cqw,150px);transform:translateX(-50%);text-align:center;top:29%}
-  .loopcard .lnn{font-family:var(--disp);font-weight:460;font-variation-settings:'opsz' 40;
-    font-size:clamp(.92rem,1.4cqw,1.2rem);color:var(--gold-2)}
-  .loopcard .lnd{font-family:var(--sans);font-weight:400;font-size:clamp(.62rem,.86cqw,.78rem);
-    color:var(--dim-d);line-height:1.35;margin-top:.25em}
-  .loopopen{border-top:1px dashed var(--line-dd);padding-top:.7em;margin-top:.2em}
-  .loopopen .lolabel{font-family:var(--sans);font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-    font-size:clamp(.56rem,.8cqw,.68rem);color:var(--gold-2)}
-  .loopopen .lopath{font-family:var(--sans);font-weight:500;letter-spacing:.01em;
-    font-size:clamp(.74rem,1.05cqw,.96rem);color:var(--paper);margin-top:.45em}
-  .loopopen .lopath span{color:var(--gold-2);margin:0 .3em}
-  .looptag{font-family:var(--disp);font-style:italic;font-weight:400;font-variation-settings:'opsz' 40;
-    font-size:clamp(.86rem,1.3cqw,1.12rem);color:var(--paper);margin-top:.3em;line-height:1.4;max-width:44ch}
-  .loopstack{display:none;flex-direction:column;gap:0;padding-left:5px}
-  .loopstacktag{display:flex;align-items:center;gap:10px;margin-bottom:0;margin-left:-2px;padding-bottom:10px;
-    border-left:2px solid rgba(236,192,100,.35);padding-left:3px}
-  .loopstacktag svg{width:22px;height:22px;flex:none;margin-left:-13px;background:#0c0b14}
-  .loopstacktag span{font-family:var(--sans);font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-    font-size:max(12px,.68rem);color:var(--gold-2)}
-  .loopstackrow{display:flex;align-items:flex-start;gap:18px;padding:16px 0;border-left:2px solid rgba(236,192,100,.35);
-    margin-left:0;padding-left:31px}
-  .loopstackrow:last-child{border-left-color:transparent}
-  .lsdot{width:12px;height:12px;border-radius:50%;background:var(--gold-2);flex:none;
-    margin-left:-38px;margin-top:.3em;box-shadow:0 0 0 4px #0c0b14}
-  .loopstackcard{text-align:left}
-  .loopstackcard .lnn{font-family:var(--disp);font-weight:460;font-variation-settings:'opsz' 40;
-    font-size:1.05rem;color:var(--gold-2)}
-  .loopstackcard .lnd{font-family:var(--sans);font-weight:400;font-size:max(14px,.82rem);
-    color:var(--dim-d);line-height:1.4;margin-top:.3em}
-  .flyside{display:flex;flex-direction:column;justify-content:flex-start;gap:clamp(8px,1.4cqh,16px);
-    padding-top:clamp(10px,1.6cqh,18px)}
-  .marbars{display:flex;flex-direction:column;gap:clamp(10px,1.6cqh,16px)}
-  .mbrow{display:grid;grid-template-columns:clamp(70px,8cqw,100px) 1fr clamp(40px,5cqw,56px);
-    gap:clamp(8px,1.2cqw,14px);align-items:center}
-  .mbl{font-family:var(--sans);font-weight:500;font-size:clamp(.66rem,.92cqw,.84rem);color:var(--dim-d)}
-  .mbtrack{height:clamp(7px,1cqh,11px);border-radius:5px;background:rgba(239,231,214,.14);overflow:hidden}
-  .mbfill{height:100%;border-radius:5px;background:var(--gold-2)}
-  .mbfill.sky{background:var(--sky)} .mbfill.paper{background:var(--paper)}
-  .mbv{font-family:var(--disp);font-weight:450;font-variation-settings:'opsz' 40;
-    font-size:clamp(.86rem,1.3cqw,1.1rem);color:var(--paper);text-align:right}
   .gantt{background:rgba(6,6,10,.86);border:1px solid var(--line-dd);border-radius:8px;
     padding:clamp(7px,1cqw,14px);box-shadow:0 18px 50px rgba(0,0,0,.5)}
   .gantt img{width:100%;height:auto;display:block;border-radius:4px}
@@ -518,7 +472,7 @@
     .hd{position:relative;z-index:4}
     h2,.statement,.sub,.lead{max-width:none!important}
     .sub.one-line{white-space:normal!important;font-size:max(14px,.9rem)!important}
-    .split,.mods,.tiles,.fr-cols,.rmcards,.solsplit,.flywrap,.mods-v{
+    .split,.mods,.tiles,.fr-cols,.rmcards,.solsplit,.mods-v{
       display:flex;flex-direction:column;max-width:none;gap:22px}
     .leads{display:grid;grid-template-columns:1fr 1fr;max-width:none;gap:22px 14px}
     .figs.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px;max-width:none}
@@ -527,7 +481,7 @@
     .tiles,.rmcards{display:grid;grid-template-columns:1fr 1fr}
     /* type minimums */
     body{font-size:14px}
-    .sub,.lead,.mbl,.scd,.lnd{font-size:max(14px,.9rem)}
+    .sub,.lead,.scd{font-size:max(14px,.9rem)}
     .kick,.cite,.src,.sctags,.scs{font-size:max(12px,.72rem)}
     .fig .l{font-size:max(14px,.85rem)}
     /* rings: scale to width; labels move below since two lines no longer fit inside at this size */
@@ -540,10 +494,6 @@
     /* gantt: scroll sideways in its own box, image keeps real size so labels stay legible */
     .gantt{overflow-x:auto;-webkit-overflow-scrolling:touch}
     .gantt img{width:auto;max-width:none;height:220px}
-    /* flywheel loop: stack vertically, return arc up the left side */
-    .loop{display:none}
-    .loopstack{display:flex}
-    .flyside{padding-top:0}
   }
 </style>
 </head>
@@ -746,57 +696,7 @@
     </div>
   </section>
 
-  <!-- 8 · THE FLYWHEEL -->
-  <section class="slide dk">
-    <div class="flybg"></div><div class="grain"></div>
-    <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
-    <div class="pad">
-      <div class="r kick">The Flywheel</div>
-      <h2 class="r sm mt-xs" style="max-width:none">Every event makes the next one easier.</h2>
-      <div class="r sub mt-s" style="max-width:none">Orion turns what crews learn into institutional memory that grows with each one.</div>
-      <div class="r split flywrap">
-        <div class="loop">
-          <svg class="loopsvg" viewBox="0 0 400 210" preserveAspectRatio="xMidYMid meet">
-            <defs>
-              <marker id="arrow" markerWidth="7" markerHeight="7" refX="4.6" refY="2.5" orient="auto">
-                <path d="M0,0 L5,2.5 L0,5 Z" fill="var(--gold-2)" />
-              </marker>
-            </defs>
-            <path d="M 66 98 L 185 98" fill="none" stroke="var(--gold-2)" stroke-width="1.5" stroke-linecap="round" marker-end="url(#arrow)" />
-            <path d="M 215 98 L 335 98" fill="none" stroke="var(--gold-2)" stroke-width="1.5" stroke-linecap="round" marker-end="url(#arrow)" />
-            <path d="M 340 94.3 A 175 65 0 0 0 60 94.3" fill="none" stroke="var(--gold-2)" stroke-width="1.5" stroke-linecap="round" marker-end="url(#arrow)" />
-            <text x="200" y="14" text-anchor="middle" fill="var(--gold-2)" font-family="Space Grotesk, sans-serif"
-              font-size="10.5" font-weight="600" letter-spacing="1.6">NEXT EVENT</text>
-            <circle cx="50" cy="98" r="4" fill="var(--gold-2)" />
-            <circle cx="200" cy="98" r="4" fill="var(--gold-2)" />
-            <circle cx="350" cy="98" r="4" fill="var(--gold-2)" />
-          </svg>
-          <div class="loopcard" style="left:12.5%;top:47%"><div class="lnn">Capture</div><div class="lnd">Decisions and costs, recorded as work happens</div></div>
-          <div class="loopcard" style="left:50%;top:47%"><div class="lnn">Remember</div><div class="lnd">Each decision linked to what happened next</div></div>
-          <div class="loopcard" style="left:87.5%;top:47%"><div class="lnn">Start ahead</div><div class="lnd">Real lead times and early flags, day one</div></div>
-        </div>
-        <div class="loopstack">
-          <div class="loopstacktag">
-            <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M 30 34 A 15 15 0 1 1 30 6" fill="none" stroke="var(--gold-2)" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowvtag)" /><defs><marker id="arrowvtag" markerWidth="7" markerHeight="7" refX="3" refY="3.5" orient="auto"><path d="M0,0 L6,3.5 L0,7 Z" fill="var(--gold-2)" /></marker></defs></svg>
-            <span>Next event</span>
-          </div>
-          <div class="loopstackrow"><span class="lsdot"></span><div class="loopstackcard"><div class="lnn">Capture</div><div class="lnd">Decisions and costs, recorded as work happens</div></div></div>
-          <div class="loopstackrow"><span class="lsdot"></span><div class="loopstackcard"><div class="lnn">Remember</div><div class="lnd">Each decision linked to what happened next</div></div></div>
-          <div class="loopstackrow"><span class="lsdot"></span><div class="loopstackcard"><div class="lnn">Start ahead</div><div class="lnd">Real lead times and early flags, day one</div></div></div>
-        </div>
-        <div class="flyside">
-          <div class="lab">Two ways this wins</div>
-          <div class="marbars" style="gap:1.2em">
-            <div><div class="mbl" style="font-weight:600;color:var(--paper)">Scale IMXP</div><div class="mbl" style="margin-top:.2em">More of our own events, at better margins</div></div>
-            <div><div class="mbl" style="font-weight:600;color:var(--paper)">Offer Orion</div><div class="mbl" style="margin-top:.2em">Other producers pay to run on it</div></div>
-          </div>
-          <div class="looptag" style="margin-top:1em">We choose after Egypt, on what Orion saves per event.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 9 · THE TEAM -->
+  <!-- 8 · THE TEAM -->
   <section class="slide ph">
     <div class="bg kb" style="background-image:url('media/photos/founder-interview.jpg');background-position:center 40%"></div>
     <div class="tone"></div><div class="veil" style="background:linear-gradient(180deg,rgba(9,8,6,.85),rgba(9,8,6,.45) 34%,rgba(9,8,6,.78) 70%,rgba(9,8,6,.96) 100%)"></div><div class="grain"></div>
@@ -814,6 +714,9 @@
         <div class="member"><img src="media/people/andrew.jpg" alt="Andrew Glenn"/><div class="nm">Andrew Glenn</div><div class="rl">Creative Director</div><div class="cr">KAMMOK</div></div>
         <div class="member"><img src="media/people/patrick.jpg" alt="Patrick Kronfli"/><div class="nm">Patrick Kronfli</div><div class="rl">Partnerships Director</div><div class="cr">Unify.org</div></div>
         <div class="member"><img src="media/people/holly.jpg" alt="Holly Wood"/><div class="nm">Holly Wood</div><div class="rl">Admin Director</div><div class="cr">Texas Eclipse</div></div>
+        <div class="member"><img src="media/people/regan-hs.jpg" alt="Regan Heckscher"/><div class="nm">Regan Heckscher</div><div class="rl">Systems Admin</div></div>
+        <div class="member"><img src="media/people/tule-hs.jpg" alt="Tule Romeo"/><div class="nm">Tule Romeo</div><div class="rl">Lead Developer</div></div>
+        <div class="member"><img src="media/people/lee-hs.jpg" alt="Lee"/><div class="nm">Lee</div><div class="rl">Agent Coordinator</div></div>
       </div>
       <div class="r lead mt-s" style="max-width:70ch;font-size:clamp(.68rem,.92cqw,.8rem);color:var(--dim-d);line-height:1.6">Texas Eclipse: $20M revenue, 38,000 people&nbsp;&nbsp;·&nbsp;&nbsp;Euphoria: 20,000 a day&nbsp;&nbsp;·&nbsp;&nbsp;360training: grown $2M to $200M, exited</div>
       <div class="r lead mt-xs" style="max-width:70ch;font-size:clamp(.56rem,.74cqw,.64rem);color:var(--dim-d)">Investors &amp; advisors: Whitney Kroenke Silverstein · JT Marino · Chris Boshuizen · Ravé Mehta</div>
@@ -832,7 +735,7 @@
     </div>
   </section>
 
-  <!-- 10 · FUNDRAISE -->
+  <!-- 9 · FUNDRAISE -->
   <section class="slide dk">
     <div style="position:absolute;inset:0;z-index:0;background-image:url('media/photos/panorama.jpg');background-size:cover;background-position:center;opacity:.22"></div>
     <div class="flybg"></div><div class="grain"></div>
@@ -862,7 +765,7 @@
     </div>
   </section>
 
-  <!-- 11 · CLOSE -->
+  <!-- 10 · CLOSE -->
   <section class="slide ph center">
     <div class="bg kb" style="background-image:url('media/photos/golden-hug.jpg')"></div>
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
