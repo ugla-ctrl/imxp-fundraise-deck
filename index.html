@@ -825,7 +825,7 @@ const DEMO_URL = "";
   let cur = Math.min(Math.max((parseInt(q.get('slide') || '1', 10) || 1) - 1, 0), slides.length - 1);
 
   const wantMode = () => (innerWidth / innerHeight >= 1) ? 'deck' : 'portrait';
-  const fit = () => { const p = root.dataset.mode === 'portrait'; stage.style.setProperty('--s', Math.min(stage.clientWidth / (p ? 1080 : 1920), stage.clientHeight / (p ? 1920 : 1080))); };
+  const fit = () => { const p = root.dataset.mode === 'portrait'; const margin = Math.min(stage.clientWidth, stage.clientHeight) < 700 ? 0.94 : 0.88; stage.style.setProperty('--s', Math.min(stage.clientWidth / (p ? 1080 : 1920), stage.clientHeight / (p ? 1920 : 1080)) * margin); };
 
   function show(i, remember) {
     cur = Math.max(0, Math.min(slides.length - 1, i));
