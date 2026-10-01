@@ -1,827 +1,928 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>IMXP Operating System Fundraise Deck</title>
-<meta name="description" content="Scaling Real World Experience" />
-<meta property="og:title" content="IMXP Operating System Fundraise Deck" />
-<meta property="og:description" content="Scaling Real World Experience" />
-<meta property="og:image" content="media/photos/thumbnail.png" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="IMXP Operating System Fundraise Deck" />
-<meta name="twitter:description" content="Scaling Real World Experience" />
-<meta name="twitter:image" content="media/photos/thumbnail.png" />
-<meta name="theme-color" content="#0d0c0a" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230d0c0a'/><circle cx='50' cy='50' r='24' fill='none' stroke='%23dca63a' stroke-width='6'/><circle cx='58' cy='44' r='16' fill='%230d0c0a'/></svg>" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Project Orion · IMXP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400&family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
+<script>(function(){var w=innerWidth,h=innerHeight;document.documentElement.dataset.mode=(w/h>=1)?'deck':'portrait';})();</script>
 <style>
-  :root{
-    --ink:#0d0c0a; --ink-2:#17140f; --paper:#efe7d6; --paper-2:#e6dbc5; --paper-ink:#221d15;
-    --gold:#d99f34; --gold-2:#ecc064; --rust:#b0491f; --sky:#8593ad; --sage:#9aa887; --indigo:#2b1f5e;
-    --dim-d:rgba(239,231,214,.82); --dim-l:rgba(34,29,21,.72);
-    --line-dd:rgba(239,231,214,.16); --line-ll:rgba(34,29,21,.14);
-    --disp:'Geist',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
-    --sans:'Geist',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
-    --edge:clamp(30px,5cqw,92px);
-    --topgap:clamp(40px,6cqh,66px);
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html,body{height:100%}
-  body{background:#17171b;color:var(--ink);font-family:var(--sans);
-    overflow:hidden;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
-  #frame{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:3vh 2.2vw;
-    background:radial-gradient(130% 125% at 50% 6%,#42424a 0%,#2a2a30 46%,#17171b 100%)}
-  #stage{position:relative;aspect-ratio:16/9;width:min(95vw,calc(93vh*16/9));
-    overflow:hidden;container-type:size;background:var(--ink);
-    box-shadow:0 40px 100px rgba(0,0,0,.6),0 6px 20px rgba(0,0,0,.4)}
-  #deck{position:absolute;inset:0}
+/* ---------- IMXP brand tokens (IMXP Brand Guidelines v1.0) ---------- */
+:root{
+  --bg:#060E19; --shade:#1E1C47; --teal:#006865; --ink:#FCFAF7;
+  --muted:rgba(252,250,247,.68); --faint:rgba(252,250,247,.14);
+  --purple:#7264F1; --turq:#50E3FF; --green:#80FCA7;
+  --sans:"ABC Monument Grotesk","Geist Embedded","Geist",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:"ABC Monument Grotesk Mono","Geist Mono Embedded","Geist Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+/* The deck is dark by design in every viewer theme. */
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --bg:#060E19; --ink:#FCFAF7; } }
+:root[data-theme="dark"]{ --bg:#060E19; --ink:#FCFAF7; }
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg)}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,p,ul,ol,figure{margin:0;padding:0}
+ul,ol{list-style:none}
+b{font-weight:400}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--turq);outline-offset:3px}
+.tnum,b,.v,.y{font-variant-numeric:tabular-nums lining-nums}
+.eyebrow,.cap,.g-head,.g-lab,.tag,.role,.pnum,.cover-foot,.gate b,.ev-date,.ms-date{font-family:var(--mono);text-transform:uppercase;letter-spacing:0}
+.eyebrow{color:var(--turq)}
+.cap{color:var(--muted)}
+h1,h2,h3{font-weight:400;letter-spacing:-0.01em;text-wrap:balance}
+.muted{color:var(--muted)}
+img{max-width:100%}
 
-  .slide{position:absolute;inset:0;opacity:0;visibility:hidden;
-    transition:opacity .6s ease,visibility .6s;pointer-events:none}
-  .slide.on{opacity:1;visibility:visible;pointer-events:auto}
-  .pad{position:absolute;inset:0;padding:calc(var(--topgap) + clamp(10px,1.6cqh,22px)) var(--edge) clamp(48px,7.4cqh,88px);
-    display:flex;flex-direction:column;justify-content:flex-end;z-index:3}
-  .pad.mid{justify-content:center}
-  .pad.top{justify-content:flex-start}
-  .pad.anchor-top{justify-content:flex-start!important}
-  .slide.on .r{animation:rise .7s cubic-bezier(.2,.6,.3,1) both}
-  .slide.on .r:nth-child(2){animation-delay:.05s} .slide.on .r:nth-child(3){animation-delay:.11s}
-  .slide.on .r:nth-child(4){animation-delay:.17s} .slide.on .r:nth-child(5){animation-delay:.23s}
-  .slide.on .r:nth-child(6){animation-delay:.29s} .slide.on .r:nth-child(7){animation-delay:.35s}
-  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-  @media (prefers-reduced-motion:reduce){.slide.on .r{animation:none}}
+/* ---------- Backgrounds: blurred brand gradients + grain + plus-mark grid ---------- */
+.slide{position:relative;background:var(--bg);color:var(--ink)}
+.slide::before{content:"";position:absolute;inset:0;pointer-events:none}
+.bg-content::before{
+  background:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><path d='M80 74v12M74 80h12' stroke='%23FCFAF7' stroke-opacity='.09' stroke-width='1.5'/></svg>"),
+    radial-gradient(900px 600px at 100% 0%, rgba(114,100,241,.14), transparent 70%),
+    radial-gradient(700px 500px at 0% 100%, rgba(0,104,101,.16), transparent 70%);
+}
+.bg-cover::before,.bg-mission::before,.bg-close::before{
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='.07'/></svg>"),var(--tex);
+}
+.bg-cover{--tex:radial-gradient(60% 70% at 18% 28%, rgba(114,100,241,.55), transparent 70%),radial-gradient(55% 60% at 85% 75%, rgba(80,227,255,.30), transparent 70%),radial-gradient(50% 55% at 62% 12%, rgba(0,104,101,.55), transparent 70%)}
+.bg-mission{--tex:linear-gradient(118deg, transparent 38%, rgba(128,252,167,.20) 52%, rgba(80,227,255,.22) 60%, transparent 76%),radial-gradient(70% 80% at 80% 20%, rgba(30,28,71,.95), transparent 75%),radial-gradient(60% 60% at 10% 90%, rgba(0,104,101,.35), transparent 70%)}
+.bg-close{--tex:radial-gradient(70% 80% at 50% 110%, rgba(114,100,241,.50), transparent 70%),radial-gradient(50% 50% at 50% 40%, rgba(30,28,71,.9), transparent 75%),radial-gradient(40% 40% at 85% 15%, rgba(80,227,255,.18), transparent 70%)}
 
-  .ph{color:var(--paper);background:var(--ink)}
-  .ph .bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0;
-    filter:saturate(.92) contrast(1.05) brightness(.9);transform:scale(1.04);transform-origin:50% 45%}
-  .slide.on .bg.kb{animation:kb 32s ease-in-out infinite alternate}
-  @keyframes kb{from{transform:scale(1.04) translate3d(-.6%,.4%,0)}to{transform:scale(1.11) translate3d(.7%,-.7%,0)}}
-  @media (prefers-reduced-motion:reduce){.slide.on .bg.kb{animation:none}}
-  .bgvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0;transition:opacity .9s ease}
-  .bgvid.on{opacity:1}
-  @media (prefers-reduced-motion:reduce){.bgvid{display:none}}
-  .ph .tone{position:absolute;inset:0;z-index:1;pointer-events:none;mix-blend-mode:soft-light;
-    background:linear-gradient(150deg,rgba(217,159,52,.3),rgba(13,12,10,0) 46%,rgba(133,147,173,.2))}
-  .ph .veil{position:absolute;inset:0;z-index:1;pointer-events:none;
-    background:linear-gradient(180deg,rgba(9,8,6,0) 34%,rgba(9,8,6,.42) 62%,rgba(9,8,6,.82) 88%,rgba(9,8,6,.92) 100%),
-      linear-gradient(103deg,rgba(9,8,6,.9) 0%,rgba(9,8,6,.6) 40%,rgba(9,8,6,.2) 66%,rgba(9,8,6,.4) 100%)}
-  .ph .veil.btm{background:linear-gradient(180deg,rgba(9,8,6,.5),rgba(9,8,6,.46) 26%,rgba(9,8,6,.66) 54%,rgba(9,8,6,.86) 78%,rgba(9,8,6,.93))}
-  .ph .veil.lr{background:linear-gradient(90deg,rgba(9,8,6,.85) 0%,rgba(9,8,6,.3) 50%,rgba(9,8,6,.28) 100%)}
-  .ph .veil.lr.strong{background:
-    linear-gradient(90deg,rgba(9,8,6,.93) 0%,rgba(9,8,6,.62) 55%,rgba(9,8,6,.4) 100%),
-    linear-gradient(180deg,rgba(9,8,6,.25) 0%,rgba(9,8,6,.55) 45%,rgba(9,8,6,.7) 100%)}
-  .ph.center .veil{background:linear-gradient(180deg,rgba(9,8,6,0) 40%,rgba(9,8,6,.34) 66%,rgba(9,8,6,.72) 90%,rgba(9,8,6,.84) 100%),
-    radial-gradient(120% 90% at 50% 52%,rgba(9,8,6,.32),rgba(9,8,6,.7) 76%,rgba(9,8,6,.9))}
-  .grain{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.06;mix-blend-mode:overlay;
-    background-size:190px 190px;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='190' height='190'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.86' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='190' height='190' filter='url(%23n)'/%3E%3C/svg%3E")}
+/* ============================================================
+   DECK MODE: 1920x1080 artboard, scaled as a whole
+   ============================================================ */
+.stage{position:relative;height:100%}
+html[data-mode="deck"] body,html[data-mode="portrait"] body{overflow:hidden;overscroll-behavior:none}
+html[data-mode="deck"] .stage{overflow:hidden}
+html[data-mode="deck"] .slide{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform:translate(-50%,-50%) scale(var(--s,.5));display:none;overflow:hidden}
+html[data-mode="deck"] .slide.active{display:block;animation:fade .2s ease}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion: reduce){html[data-mode="deck"] .slide.active{animation:none}}
+html[data-mode="deck"] .slide > *{position:absolute}
 
-  .hd{position:absolute;top:0;left:0;right:0;z-index:6;height:var(--topgap);
-    display:flex;align-items:center;justify-content:flex-end;gap:1em;padding:0 var(--edge)}
-  .hd .mk{height:clamp(13px,1.9cqh,20px);width:auto;display:block}
-  .pp .hd .mk{filter:brightness(0) opacity(.82)}
+/* shared anchors */
+html[data-mode="deck"] .hd{left:120px;top:120px;width:1680px}
+html[data-mode="deck"] .eyebrow{font-size:20px;line-height:24px;margin-bottom:16px}
+html[data-mode="deck"] h2{font-size:72px;line-height:1.05}
+html[data-mode="deck"] .sub{font-size:32px;line-height:1.35;margin-top:24px}
+html[data-mode="deck"] .line{white-space:nowrap}
+html[data-mode="deck"] .logo-sm{right:120px;top:116px;height:24px;width:auto}
+html[data-mode="deck"] .foot{left:120px;right:360px;bottom:52px;font-size:18px;line-height:26px;color:var(--muted)}
+html[data-mode="deck"] .pnum{right:120px;bottom:52px;font-size:20px;line-height:28px;color:var(--muted)}
+html[data-mode="deck"] .cap{font-size:20px;line-height:24px}
+html[data-mode="deck"] .ic{width:32px;height:32px}
 
-  .kick{font-family:var(--sans);font-weight:600;letter-spacing:.24em;text-transform:uppercase;
-    font-size:clamp(.62rem,.92cqw,.82rem);color:var(--gold-2)}
-  .pp .kick{color:var(--rust)}
-  h1{font-family:var(--disp);font-weight:400;line-height:1.0;letter-spacing:-.012em;
-    font-variation-settings:'opsz' 144;font-size:clamp(2.6rem,7.4cqw,6.8rem)}
-  h2{font-family:var(--disp);font-weight:430;line-height:1.04;letter-spacing:-.01em;
-    font-variation-settings:'opsz' 144;font-size:clamp(2rem,4.9cqw,4.4rem);max-width:20ch;text-wrap:balance}
-  h2.sm{font-size:clamp(1.7rem,3.5cqw,3.1rem);max-width:24ch}
-  h2 em{font-style:italic;font-weight:400;color:var(--gold-2)}
-  .ph h1,.ph h2,.dk h1,.dk h2{color:var(--paper)}
-  .statement{font-family:var(--disp);font-weight:400;font-variation-settings:'opsz' 144;
-    line-height:1.1;font-size:clamp(2rem,4.7cqw,4.1rem);max-width:20ch;letter-spacing:-.01em}
-  .statement em{font-style:italic;color:var(--gold-2)}
+/* 1 cover */
+html[data-mode="deck"] .cover{left:0;right:0;top:0;height:900px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:48px}
+html[data-mode="deck"] .lockup{width:600px;height:auto}
+html[data-mode="deck"] .tagline{font-size:64px;line-height:1.1;font-weight:300}
+html[data-mode="deck"] .cover-kind{font-size:24px;line-height:1.3;margin-top:-16px}
+html[data-mode="deck"] .cover-foot{left:0;right:0;bottom:52px;text-align:center;font-size:20px;color:var(--muted)}
 
-  .sub{font-family:var(--sans);font-weight:400;line-height:1.4;font-size:clamp(1.02rem,1.72cqw,1.55rem);
-    max-width:40ch;color:var(--paper);text-wrap:balance}
-  .sub.one-line{white-space:nowrap;font-size:clamp(.86rem,1.5cqw,1.55rem);text-wrap:initial}
-  .pp .sub{color:var(--paper-ink)}
-  .lead{font-family:var(--sans);font-weight:400;line-height:1.5;font-size:clamp(.98rem,1.46cqw,1.34rem);
-    max-width:52ch;color:var(--dim-d)}
-  .pp .lead{color:var(--dim-l)}
-  .lead b,.lead strong{font-weight:600;color:var(--paper)} .pp .lead b{color:var(--paper-ink)}
-  .mt{margin-top:clamp(18px,3.4cqh,44px)} .mt-s{margin-top:clamp(12px,2.1cqh,26px)} .mt-xs{margin-top:clamp(7px,1.3cqh,15px)}
-  .cite{font-family:var(--sans);font-weight:400;font-size:clamp(.68rem,.92cqw,.86rem);line-height:1.6;
-    color:rgba(239,231,214,.62);max-width:none}
-  .dk .cite{color:rgba(239,231,214,.6)}
-  .cite.bright{color:rgba(239,231,214,.92);text-shadow:0 1px 6px rgba(0,0,0,.85)}
-  .pains{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.5em}
-  .pains li{font-family:var(--sans);font-weight:400;font-size:clamp(.86rem,1.3cqw,1.08rem);
-    line-height:1.4;color:var(--dim-d);padding-left:1.2em;position:relative;max-width:46ch}
-  .pains li::before{content:'';position:absolute;left:0;top:.55em;width:.6em;height:2px;background:var(--gold)}
-  .fmore{list-style:none;margin:.6em 0 0;padding:0;display:flex;flex-direction:column;gap:.35em}
-  .fmore li{font-family:var(--sans);font-weight:400;font-size:clamp(.62rem,.84cqw,.76rem);
-    line-height:1.4;color:var(--dim-d);max-width:48ch}
+/* 2 mission */
+html[data-mode="deck"] .hero{left:120px;bottom:170px;width:1560px}
+html[data-mode="deck"] .h-hero{font-size:76px;line-height:1.06}
+html[data-mode="deck"] .orion{margin-top:48px;padding-top:32px;width:1280px}
+html[data-mode="deck"] .orion-line{font-size:40px;line-height:1.3}
+html[data-mode="deck"] .orion-sub{font-size:28px;line-height:1.4;margin-top:10px}
+html[data-mode="deck"] .small{font-size:24px;line-height:1.45;color:var(--muted);margin-top:48px}
 
-  .figs{display:flex;flex-wrap:wrap;gap:clamp(22px,3.8cqh,46px) clamp(24px,4.2cqw,66px);align-items:flex-start}
-  .fig{position:relative}
-  .fig .n{font-family:var(--disp);font-weight:350;font-variation-settings:'opsz' 144;line-height:.92;
-    letter-spacing:-.02em;font-size:clamp(2.2rem,5.4cqw,4.8rem);color:var(--gold-2)}
-  .fig .n.sky{color:var(--sky)} .fig .n.paper{color:var(--paper)} .fig .n.sage{color:var(--sage)}
-  .fig .n.mgray{color:var(--dim-d)}
-  .fig .l{font-family:var(--sans);font-weight:400;font-size:clamp(.78rem,1.12cqw,1.04rem);line-height:1.45;
-    margin-top:.55em;max-width:17ch;color:var(--dim-d)}
-  .fig .src{font-family:var(--sans);font-weight:400;font-size:clamp(.56rem,.76cqw,.7rem);line-height:1.45;
-    margin-top:.5em;max-width:20ch;color:rgba(239,231,214,.5)}
-  .fig::before{content:'';position:absolute;top:-.7em;left:0;width:clamp(20px,2.4cqw,34px);height:2px;background:var(--gold)}
-  .ph .veil.lr ~ .pad .fig .n{text-shadow:0 2px 14px rgba(0,0,0,.65),0 1px 3px rgba(0,0,0,.8)}
-  .ph .veil.lr ~ .pad .fig .l{text-shadow:0 1px 6px rgba(0,0,0,.7)}
-  .figs.biz .fig .n{font-size:clamp(1.9rem,4.4cqw,3.8rem);color:var(--paper)}
-  .figs.biz .fig:nth-child(1) .n{color:var(--gold-2)}
-  .figs.grid2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3cqh,36px) 80px;max-width:60%}
-  .figs.grid2 .fig .l{max-width:none;min-width:22ch}
+/* 3 market */
+html[data-mode="deck"] .mk-band{left:120px;top:450px;width:1680px;height:400px;display:grid;grid-template-columns:820px 820px;column-gap:40px}
+html[data-mode="deck"] .rings{position:relative;height:330px;margin-top:24px}
+html[data-mode="deck"] .rings-svg{position:absolute;left:0;top:0;width:330px;height:330px}
+html[data-mode="deck"] .rings-leaders{position:absolute;left:0;top:0;width:820px;height:330px}
+html[data-mode="deck"] .ring-labels{position:absolute;left:420px;top:0;width:400px;height:330px}
+html[data-mode="deck"] .rl{position:absolute;left:0;display:flex;flex-direction:column}
+html[data-mode="deck"] .rl1{top:22px} html[data-mode="deck"] .rl2{top:126px} html[data-mode="deck"] .rl3{top:230px}
+html[data-mode="deck"] .rl b{font-size:32px;line-height:1.15}
+html[data-mode="deck"] .rl .d{font-size:20px;line-height:1.35;color:var(--muted)}
+html[data-mode="deck"] .sw{display:none}
+html[data-mode="deck"] .ctitle{font-size:24px;line-height:1.3;margin-top:8px}
+html[data-mode="deck"] .cols{--ch:230px;display:flex;justify-content:center;align-items:flex-end;gap:72px;height:330px;margin-top:8px}
+html[data-mode="deck"] .col{width:110px}
+html[data-mode="deck"] .col .v{font-size:36px;line-height:1.1;margin-bottom:10px}
+html[data-mode="deck"] .col .y{font-size:20px;margin-top:12px}
+html[data-mode="deck"] .col .tag{font-size:20px;line-height:24px}
+html[data-mode="deck"] .icons3{left:120px;top:846px;width:1680px;display:grid;grid-template-columns:repeat(3,1fr);column-gap:40px;padding-top:24px;border-top:1px solid var(--faint)}
+html[data-mode="deck"] .icons3 li{gap:20px}
+html[data-mode="deck"] .icons3 b{font-size:44px;line-height:1.05}
+html[data-mode="deck"] .icons3 .d{font-size:20px;margin-top:4px}
+html[data-mode="deck"] .deals{left:120px;width:1680px;top:930px;font-size:20px;line-height:28px;color:var(--muted)}
 
-  .names{display:flex;flex-wrap:wrap;gap:.35em clamp(12px,1.8cqw,26px);align-items:baseline}
-  .names span{font-family:var(--disp);font-weight:440;font-variation-settings:'opsz' 40;
-    font-size:clamp(.92rem,1.5cqw,1.28rem);color:var(--paper);white-space:nowrap}
-  .names.sm span{font-size:clamp(.82rem,1.18cqw,1.05rem);color:var(--dim-d);font-weight:420}
-  .names i{color:var(--gold);font-style:normal;opacity:.7}
-  .lab{font-family:var(--sans);font-weight:600;letter-spacing:.18em;text-transform:uppercase;
-    font-size:clamp(.6rem,.84cqw,.74rem);color:var(--gold-2);margin-bottom:.8em}
+/* 4 problem */
+html[data-mode="deck"] .pains{left:120px;top:400px;width:640px}
+html[data-mode="deck"] .pains li{font-size:32px;line-height:1.35;padding:22px 0;border-top:1px solid var(--faint)}
+html[data-mode="deck"] .pb-left .sub{margin-top:0}
+html[data-mode="deck"] .pb-left .line{display:block}
+html[data-mode="deck"] .hero-stat{margin-top:72px}
+html[data-mode="deck"] .hero-stat b{font-size:80px;line-height:1}
+html[data-mode="deck"] .hero-stat .d{font-size:24px;line-height:1.45;margin-top:16px;max-width:520px}
+html[data-mode="deck"] .pb-chart{left:840px;top:390px;width:960px;height:540px}
+html[data-mode="deck"] .legend{font-size:20px;gap:32px;margin-top:12px}
 
-  .tags{display:flex;flex-wrap:wrap;gap:clamp(8px,1.2cqw,14px)}
-  .tag{font-family:var(--sans);font-weight:500;letter-spacing:.05em;
-    font-size:clamp(.7rem,1cqw,.92rem);color:var(--paper);
-    border:1px solid var(--line-dd);border-radius:999px;padding:clamp(7px,1cqh,12px) clamp(13px,1.8cqw,24px)}
-  .tag b{color:var(--gold-2);font-weight:600}
+/* 5 solution */
+html[data-mode="deck"] .cards{left:120px;top:330px;width:640px;display:flex;flex-direction:column;gap:56px}
+html[data-mode="deck"] .cards h3{font-size:44px;line-height:1.1}
+html[data-mode="deck"] .cards p{font-size:24px;line-height:1.45;margin-top:12px}
+html[data-mode="deck"] .cards li{padding-top:24px;border-top:2px solid var(--turq)}
+html[data-mode="deck"] .flow{left:960px;top:330px;width:840px;height:560px}
+html[data-mode="deck"] .steps{gap:0;height:520px;justify-content:space-between}
+html[data-mode="deck"] .steps li{font-size:32px;gap:28px}
+html[data-mode="deck"] .steps i{width:22px;height:22px}
+html[data-mode="deck"] .steps::before{left:10px;top:20px;bottom:20px}
+html[data-mode="deck"] .memory{position:absolute;left:470px;top:10px;bottom:50px;width:370px;padding-left:36px}
+html[data-mode="deck"] .memory span{font-size:24px;line-height:1.45}
+html[data-mode="deck"] .demo-frame{left:880px;top:330px;width:920px}
+html[data-mode="deck"] .df-play{width:112px;height:112px}
+html[data-mode="deck"] .df-cap{font-size:20px;margin-top:16px}
 
-  /* event tiles (Upcoming, over flyboard) */
-  .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.5cqw,20px)}
-  .tile{background:rgba(9,8,6,.46);border:1px solid rgba(239,231,214,.16);border-radius:9px;
-    overflow:hidden;backdrop-filter:blur(9px)}
-  .tile .th{aspect-ratio:16/10;overflow:hidden;background:var(--ink)}
-  .tile .th img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.95) contrast(1.02)}
-  .tile .tb{padding:clamp(9px,1.15cqw,16px) clamp(10px,1.25cqw,17px) clamp(11px,1.4cqw,18px)}
-  .tile .tn{font-family:var(--disp);font-weight:450;font-variation-settings:'opsz' 40;
-    font-size:clamp(.92rem,1.42cqw,1.24rem);color:var(--paper);line-height:1.05}
-  .tile .tp{font-family:var(--sans);font-weight:400;font-size:clamp(.62rem,.86cqw,.78rem);
-    color:var(--dim-d);margin-top:.4em;line-height:1.3}
-  .tile .td{font-family:var(--sans);font-weight:600;letter-spacing:.06em;text-transform:uppercase;
-    font-size:clamp(.58rem,.8cqw,.72rem);color:var(--gold-2);margin-top:.6em}
+/* 6 traction */
+html[data-mode="deck"] .tr-left{left:120px;top:480px;width:1000px}
+html[data-mode="deck"] .live{display:grid;grid-template-columns:repeat(2,380px);gap:20px 40px;margin-top:20px}
+html[data-mode="deck"] .live li{font-size:28px;gap:14px}
+html[data-mode="deck"] .nums{display:flex;gap:120px;margin-top:80px}
+html[data-mode="deck"] .n b{font-size:96px;line-height:1}
+html[data-mode="deck"] .n .d{font-size:24px;margin-top:14px}
+html[data-mode="deck"] .s-cover .bg-photo{object-position:50% 38%}
+html[data-mode="deck"] .s-open .bg-photo{object-position:50% 45%}
+html[data-mode="deck"] .s-problem .bg-photo{object-position:50% 40%}
+html[data-mode="deck"] .tr-photo{left:auto;right:0;top:0;width:720px;height:1080px;object-position:50% 72%}
+html[data-mode="deck"] .tr-shade{left:auto;right:0;top:0;width:720px;height:1080px;background:linear-gradient(90deg, #060E19 0%, rgba(6,14,25,.55) 20%, rgba(6,14,25,.12) 48%, rgba(6,14,25,0) 70%),linear-gradient(180deg, rgba(6,14,25,.5) 0%, rgba(6,14,25,0) 20%, rgba(6,14,25,0) 80%, rgba(6,14,25,.6) 100%)}
+html[data-mode="deck"] .s-traction .hd{width:1040px}
+html[data-mode="deck"] .s-traction .hd .line{white-space:normal}
+html[data-mode="deck"] .credits{left:0;right:0;bottom:52px;text-align:center;font-size:18px}
 
-  /* FIAB modules */
-  .mods{display:grid;grid-template-columns:1fr 1fr;gap:clamp(11px,1.5cqh,18px) clamp(16px,2.4cqw,36px)}
-  .mods2{grid-template-columns:1.2fr 1fr;gap:0 clamp(20px,2.8cqw,40px)}
-  .modcol{display:flex;flex-direction:column;gap:clamp(7px,1cqh,12px)}
-  .modlab{font-family:var(--sans);font-weight:600;letter-spacing:.16em;text-transform:uppercase;
-    font-size:clamp(.54rem,.76cqw,.66rem);color:rgba(239,231,214,.5);margin-bottom:.2em}
-  .mod{border-top:1px solid var(--line-dd);padding-top:.4em}
-  .mod .mn{font-family:var(--disp);font-weight:460;font-variation-settings:'opsz' 40;
-    font-size:clamp(.92rem,1.32cqw,1.14rem);color:var(--gold-2)}
-  .mod .md{font-family:var(--sans);font-weight:400;font-size:clamp(.64rem,.88cqw,.8rem);
-    color:var(--dim-d);margin-top:.2em;line-height:1.3}
+/* 7 roadmap */
+html[data-mode="deck"] .gantt{left:120px;top:420px;width:1680px;height:390px}
+html[data-mode="deck"] .ptl,html[data-mode="deck"] .ptl-build,html[data-mode="deck"] .sx{display:none}
+html[data-mode="deck"] .events{left:120px;top:834px;width:1680px;display:grid;grid-template-columns:repeat(4,1fr);column-gap:40px}
+html[data-mode="deck"] .events li{padding-top:16px;border-top:2px solid var(--turq)}
+html[data-mode="deck"] .events b{font-size:32px;line-height:1.2}
+html[data-mode="deck"] .events .d,html[data-mode="deck"] .ev-date{font-size:20px;line-height:1.4}
 
-  /* dark slide */
-  .dk{background:#0c0b14;color:var(--paper)}
-  .flybg{position:absolute;inset:0;z-index:0;pointer-events:none;
-    background:radial-gradient(90% 70% at 82% 8%,rgba(217,159,52,.16),rgba(12,11,20,0) 58%),
-      radial-gradient(70% 60% at 8% 96%,rgba(133,147,173,.14),rgba(12,11,20,0) 62%)}
-  .split{display:grid;grid-template-columns:1fr 1.08fr;gap:clamp(22px,3.6cqw,58px);align-items:center;margin-top:clamp(12px,2cqh,24px)}
-  .split.mods-v{grid-template-columns:1.05fr 1fr;align-items:start}
-  .statchips{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(10px,1.5cqw,22px);width:100%}
-  .statchips.c8{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr);
-    gap:clamp(8px,1.1cqw,14px)}
-  @media (max-width:860px){.statchips.c8{grid-template-columns:repeat(2,1fr)}}
-  .sc{border:1px solid var(--line-dd);border-radius:10px;background:rgba(6,6,10,.62);
-    padding:clamp(12px,1.6cqh,20px) clamp(12px,1.4cqw,20px)}
-  .statchips.c8 .sc{padding:clamp(7px,.9cqh,11px) clamp(10px,1.2cqw,16px)}
-  .sc .scn{font-family:var(--disp);font-weight:450;font-variation-settings:'opsz' 40;
-    font-size:clamp(.95rem,1.4cqw,1.22rem);color:var(--paper);line-height:1.15}
-  .statchips.c8 .sc .scn{font-size:clamp(.8rem,1.1cqw,.98rem)}
-  .sc .scs{font-family:var(--sans);font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-    font-size:clamp(.56rem,.8cqw,.7rem);margin-top:.7em;display:flex;align-items:center;gap:.6em}
-  .statchips.c8 .sc .scs{margin-top:.35em;font-size:clamp(.48rem,.66cqw,.58rem)}
-  .sc .scs::before{content:'';width:.5em;height:.5em;border-radius:50%;background:currentColor;flex:none}
-  .sc.done .scs{color:var(--sage)} .sc.prog .scs{color:var(--gold-2)}
-  .gantt{background:rgba(6,6,10,.86);border:1px solid var(--line-dd);border-radius:8px;
-    padding:clamp(7px,1cqw,14px);box-shadow:0 18px 50px rgba(0,0,0,.5)}
-  .gantt img{width:100%;height:auto;display:block;border-radius:4px}
-  .frame{position:relative;border:1px solid var(--line-dd);border-radius:10px;overflow:hidden;
-    box-shadow:0 26px 70px rgba(0,0,0,.55)}
-  .frame img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;filter:saturate(1.03) contrast(1.03)}
-  .frame figcaption{position:absolute;left:0;right:0;bottom:0;padding:.6em .9em;
-    font-family:var(--sans);font-weight:500;letter-spacing:.14em;text-transform:uppercase;
-    font-size:clamp(.5rem,.7cqw,.62rem);color:rgba(239,231,214,.86);
-    background:linear-gradient(0deg,rgba(9,8,6,.7),rgba(9,8,6,0))}
-  .devcal{display:flex;flex-direction:column;gap:clamp(7px,1.1cqh,13px);margin-top:clamp(12px,2cqh,22px)}
-  .dcrow{display:grid;grid-template-columns:clamp(58px,7cqw,92px) 1fr;gap:clamp(10px,1.6cqw,22px);align-items:baseline;
-    padding-bottom:clamp(6px,1cqh,11px);border-bottom:1px solid var(--line-dd)}
-  .dcyr{font-family:var(--disp);font-weight:400;font-variation-settings:'opsz' 72;
-    font-size:clamp(1rem,1.6cqw,1.4rem);color:var(--gold-2)}
-  .dcev{font-family:var(--sans);font-weight:400;font-size:clamp(.74rem,1.02cqw,.96rem);color:var(--dim-d);line-height:1.4}
-  .dcev b{color:var(--paper);font-weight:600}
+/* 8 team */
+html[data-mode="deck"] .founder{left:120px;top:370px;width:560px}
+html[data-mode="deck"] .av{width:64px;height:64px}
+html[data-mode="deck"] .fav{width:96px;height:96px}
+html[data-mode="deck"] .fname{font-size:36px;line-height:1.15;margin-top:0}
+html[data-mode="deck"] .founder .role{font-size:20px;margin-top:4px}
+html[data-mode="deck"] .fstats{margin-top:32px;gap:24px}
+html[data-mode="deck"] .fstats b{font-size:44px;line-height:1.1}
+html[data-mode="deck"] .fstats .d{font-size:24px;margin-top:4px}
+html[data-mode="deck"] .crew{left:760px;top:370px;width:1040px}
+html[data-mode="deck"] .crew .people{display:grid;grid-template-columns:repeat(5,1fr);gap:28px 24px;margin-top:24px}
+html[data-mode="deck"] .crew .av{width:56px;height:56px;margin-bottom:12px}
+html[data-mode="deck"] .people b{font-size:22px;line-height:1.2}
+html[data-mode="deck"] .people .role{font-size:16px;margin-top:4px}
+html[data-mode="deck"] .people .cred{font-size:16px;line-height:1.4;margin-top:4px}
+html[data-mode="deck"] .creds{left:120px;top:880px;width:1680px;display:flex;flex-direction:column;gap:10px}
+html[data-mode="deck"] .creds p{font-size:24px;line-height:1.4}
+html[data-mode="deck"] .creds .xp{font-size:20px}
 
-  /* market rings */
-  .rings{position:relative;width:100%;aspect-ratio:1/1;max-width:min(clamp(280px,36cqw,460px),34cqh);margin:0 auto}
-  .ring{position:absolute;border-radius:50%;border:1px solid var(--line-dd)}
-  .ring.tam{inset:0;background:radial-gradient(circle at 50% 30%,rgba(217,159,52,.08),transparent 70%);
-    display:flex;align-items:flex-start;justify-content:center;padding-top:6%}
-  .ring.tam .rl2-outer{text-align:center}
-  .ring.tam .rl2-outer .rn{font-family:var(--disp);font-weight:450;font-variation-settings:'opsz' 40;color:var(--paper);
-    font-size:clamp(.66rem,1.05cqw,.86rem);line-height:1.1}
-  .ring.tam .rl2-outer .rt{font-family:var(--sans);font-weight:600;letter-spacing:.1em;text-transform:uppercase;
-    font-size:clamp(.4rem,.54cqw,.46rem);color:var(--gold-2);margin-top:.2em}
-  .ring.som{inset:26%;background:rgba(217,159,52,.18);display:flex;align-items:flex-start;justify-content:center;padding-top:3%}
-  .ring.som .rl2{text-align:center;max-width:94%}
-  .ring.som .rn{font-family:var(--disp);font-weight:450;font-variation-settings:'opsz' 40;color:var(--paper);
-    font-size:clamp(.7rem,1.15cqw,.94rem);line-height:1.1}
-  .ring.som .rt{font-family:var(--sans);font-weight:700;letter-spacing:.04em;text-transform:uppercase;
-    font-size:clamp(.32rem,.42cqw,.37rem);color:var(--paper);margin-top:.4em;line-height:1.4;white-space:nowrap}
-  .ring.core{inset:39%;background:var(--gold);border-color:var(--gold);display:flex;align-items:center;
-    justify-content:center;box-shadow:0 0 0 6px rgba(217,159,52,.14)}
-  .ring.core .rl2{text-align:center;padding:0 4%}
-  .ring.core .rn{font-family:var(--sans);font-weight:700;letter-spacing:0;color:var(--ink);
-    font-size:clamp(.34rem,.48cqw,.4rem);line-height:1.3}
-  .ringlabel{position:absolute;left:50%;transform:translateX(-50%);text-align:center;white-space:nowrap}
-  .ringlabel.l-tam{top:2%}
-  .ringlabel.l-sam{top:24%}
-  .ringlabel .rt{font-family:var(--sans);font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-    font-size:clamp(.48rem,.66cqw,.58rem);color:var(--gold-2)}
-  .ringcap{margin-top:clamp(10px,1.6cqh,18px);text-align:center}
-  .ringcap .rcn{font-family:var(--disp);font-weight:450;font-variation-settings:'opsz' 40;color:var(--paper);
-    font-size:clamp(.86rem,1.15cqw,1rem)}
-  .ringcap .rct{font-family:var(--sans);font-weight:600;letter-spacing:.1em;text-transform:uppercase;
-    font-size:clamp(.62rem,.76cqw,.7rem);color:var(--gold-2);margin-top:.25em}
-  .ringcap .rcd{font-family:var(--sans);font-weight:400;font-size:clamp(.56rem,.76cqw,.68rem);color:var(--dim-d);
-    margin-top:.2em;line-height:1.3}
-  .ringcaps{display:flex;justify-content:space-between;gap:clamp(10px,1.6cqw,18px);margin-top:clamp(8px,1.3cqh,14px)}
-  .ringcaps .ringcap{flex:1}
-  .ringcaps-mobile{display:none}
+/* 9 fundraise */
+html[data-mode="deck"] .terms{left:120px;top:424px;width:640px;display:flex;flex-direction:column;gap:28px}
+html[data-mode="deck"] .terms b{font-size:44px;line-height:1.1;margin-top:8px}
+html[data-mode="deck"] .terms .big{font-size:88px;line-height:1}
+html[data-mode="deck"] .terms .d{font-size:20px;line-height:1.4;margin-top:8px}
+html[data-mode="deck"] .uop{left:880px;top:424px;width:920px}
+html[data-mode="deck"] .uop li{margin-top:36px}
+html[data-mode="deck"] .uop .lab{font-size:24px}
+html[data-mode="deck"] .uop .amt{font-size:24px}
+html[data-mode="deck"] .uop .track{height:16px;margin-top:12px}
+html[data-mode="deck"] .ms{left:120px;top:846px;width:1680px;display:grid;grid-template-columns:repeat(4,1fr);column-gap:40px;padding-top:24px;border-top:1px solid var(--faint)}
+html[data-mode="deck"] .ms-date{font-size:20px}
+html[data-mode="deck"] .ms p{font-size:24px;line-height:1.4;margin-top:8px}
 
-  /* market bar chart + icon stats */
-  .mktbars{display:flex;flex-direction:column;gap:clamp(9px,1.4cqh,14px);margin-top:clamp(6px,1cqh,10px)}
-  .mktbarlabel{font-family:var(--sans);font-weight:600;letter-spacing:.06em;font-size:clamp(.6rem,.82cqw,.72rem);
-    color:var(--dim-d);margin-bottom:.2em}
-  .mktbarrow{display:grid;grid-template-columns:clamp(46px,6cqw,64px) 1fr clamp(38px,5cqw,52px);
-    gap:clamp(8px,1.2cqw,14px);align-items:center}
-  .mbky{font-family:var(--sans);font-weight:500;font-size:clamp(.62rem,.86cqw,.78rem);color:var(--dim-d)}
-  .mbktrack{height:clamp(9px,1.3cqh,14px);border-radius:4px;background:rgba(239,231,214,.12);overflow:hidden}
-  .mbkfill{height:100%;border-radius:4px;background:var(--gold)}
-  .mbkfill.hi{background:var(--gold-2)}
-  .mbkv{font-family:var(--disp);font-weight:450;font-variation-settings:'opsz' 40;
-    font-size:clamp(.78rem,1.15cqw,1rem);color:var(--paper);text-align:right}
-  .mkticons{display:flex;flex-wrap:wrap;gap:clamp(18px,3cqw,44px);border-top:1px solid var(--line-dd);
-    padding-top:clamp(9px,1.4cqh,15px);margin-top:clamp(8px,1.2cqh,14px)}
-  .mki{flex:1 1 clamp(140px,20cqw,220px);display:flex;flex-direction:column}
-  .mkiico{width:clamp(18px,2.2cqw,24px);height:clamp(18px,2.2cqw,24px);color:var(--gold-2);margin-bottom:.4em}
-  .mkin{font-family:var(--disp);font-weight:450;font-variation-settings:'opsz' 40;color:var(--paper);
-    font-size:clamp(1rem,1.6cqw,1.35rem);line-height:1.1}
-  .mkil{font-family:var(--sans);font-weight:400;font-size:clamp(.62rem,.86cqw,.78rem);color:var(--dim-d);
-    margin-top:.3em;line-height:1.3;max-width:22ch}
+/* 10 close */
+html[data-mode="deck"] .close{left:0;right:0;top:0;height:1000px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+html[data-mode="deck"] .close h2{font-size:80px}
+html[data-mode="deck"] .close .sub{margin-top:28px}
+html[data-mode="deck"] .close .small{margin-top:28px}
+html[data-mode="deck"] .close .contact{font-size:24px;margin-top:56px}
 
-  /* problem: Live Nation revenue-vs-costs bar chart */
-  .probchart{max-width:clamp(480px,46cqw,720px);background:rgba(9,8,6,.55);border:1px solid rgba(239,231,214,.16);
-    border-radius:10px;padding:clamp(14px,1.8cqw,20px) clamp(14px,1.8cqw,20px) clamp(8px,1.2cqw,12px);
-    backdrop-filter:blur(6px)}
-  .pctitle{font-family:var(--sans);font-weight:600;font-size:clamp(.68rem,.95cqw,.85rem);color:var(--paper);
-    line-height:1.35;margin-bottom:.5em;text-shadow:0 1px 6px rgba(0,0,0,.7)}
-  .pclegend{font-family:var(--sans);font-weight:500;font-size:clamp(.58rem,.8cqw,.7rem);color:var(--dim-d);
-    display:flex;align-items:center;gap:.5em;margin-bottom:.6em}
-  .lg-sw{display:inline-block;width:.8em;height:.8em;border-radius:2px;margin-right:.35em}
-  .lg-sw.lg-cost{background:var(--gold)}
-  .lg-sw.lg-rev{background:var(--dim-d);opacity:.6;margin-left:.9em}
-  .probchart svg{width:100%;height:auto;display:block}
-  .pcaxis{font-family:var(--sans);font-size:18px;fill:var(--dim-d)}
-  .pcband{font-family:var(--sans);font-size:17px;fill:rgba(239,231,214,.55);letter-spacing:.04em}
-  .pcval{font-family:var(--sans);font-weight:600;font-size:19px;fill:var(--paper)}
-  .pcval-rev{fill:var(--dim-d)}
-  .pcval-cost{fill:var(--gold-2)}
-  .pcnote{font-family:var(--sans);font-weight:600;font-size:18px;fill:var(--gold-2)}
+/* ============================================================
+   PORTRAIT MODE: 1080x1920 artboard for phones and tall windows,
+   scaled as a whole so every slide is the same size
+   ============================================================ */
+html[data-mode="portrait"] .stage{overflow:hidden}
+html[data-mode="portrait"] .slide{position:absolute;left:50%;top:50%;width:1080px;height:1920px;transform:translate(-50%,-50%) scale(var(--s,.35));display:none;overflow:hidden}
+html[data-mode="portrait"] .slide.active{display:block;animation:fade .2s ease}
+@media (prefers-reduced-motion: reduce){html[data-mode="portrait"] .slide.active{animation:none}}
+html[data-mode="portrait"] .slide > *{position:absolute}
+html[data-mode="portrait"] .lx,html[data-mode="portrait"] .pnum,html[data-mode="portrait"] .gantt,html[data-mode="portrait"] .events,html[data-mode="portrait"] .rings-leaders,html[data-mode="portrait"] .av,html[data-mode="portrait"] .people .cred,html[data-mode="portrait"] .creds .xp{display:none}
 
-  /* roadmap gantt cards */
-  .rmcards{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.5cqw,20px);margin-top:clamp(12px,2cqh,20px)}
-  .rmcard{border-top:2px solid var(--gold-2);padding-top:.5em}
-  .rmcard .rmn{font-family:var(--disp);font-weight:460;font-variation-settings:'opsz' 40;
-    font-size:clamp(.86rem,1.25cqw,1.08rem);color:var(--paper)}
-  .rmcard .rmp{font-family:var(--sans);font-weight:400;font-size:clamp(.6rem,.82cqw,.74rem);color:var(--dim-d);margin-top:.25em}
-  .rmcard .rmd{font-family:var(--sans);font-weight:600;letter-spacing:.05em;font-size:clamp(.58rem,.78cqw,.7rem);color:var(--gold-2);margin-top:.35em}
+/* shared anchors */
+html[data-mode="portrait"] .hd{left:72px;top:120px;width:936px}
+html[data-mode="portrait"] .eyebrow{font-size:36px;line-height:44px;margin-bottom:24px}
+html[data-mode="portrait"] h2{font-size:76px;line-height:1.08}
+html[data-mode="portrait"] .hd h2 .line{display:block}
+html[data-mode="portrait"] .sub{font-size:42px;line-height:1.35;margin-top:24px}
+html[data-mode="portrait"] .logo-sm{right:72px;top:124px;height:36px;width:auto}
+html[data-mode="portrait"] .foot{left:72px;width:936px;bottom:56px;font-size:36px;line-height:1.35;color:var(--muted)}
+html[data-mode="portrait"] .cap{font-size:36px;line-height:44px}
+html[data-mode="portrait"] .ic{width:44px;height:44px}
 
-  /* team */
-  .leads{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,2cqh,34px) clamp(14px,2cqw,26px);
-    align-items:start;max-width:78%}
-  .leads .member{width:auto;margin:0 auto}
-  .member{display:flex;flex-direction:column;align-items:center;text-align:center;width:clamp(90px,11.5cqw,128px)}
-  .member img{width:clamp(50px,7cqw,92px);height:clamp(50px,7cqw,92px);object-fit:cover;
-    border-radius:50%;display:block;border:2px solid rgba(236,192,100,.55);
-    box-shadow:0 10px 28px rgba(0,0,0,.45);filter:saturate(1) contrast(1.05)}
-  .member .ph-init{width:clamp(50px,7cqw,92px);height:clamp(50px,7cqw,92px);border-radius:50%;
-    display:flex;align-items:center;justify-content:center;background:rgba(236,192,100,.14);
-    border:2px solid rgba(236,192,100,.55);font-family:var(--disp);font-size:clamp(1.1rem,2cqw,1.6rem);
-    color:var(--gold-2)}
-  .member .nm{font-family:var(--disp);font-weight:450;font-variation-settings:'opsz' 40;
-    font-size:clamp(.76rem,1.05cqw,.94rem);color:var(--paper);margin-top:.7em;line-height:1.15}
-  .member .rl{font-family:var(--sans);font-weight:600;letter-spacing:.08em;text-transform:uppercase;
-    font-size:clamp(.48rem,.66cqw,.58rem);color:var(--gold-2);margin-top:.4em;line-height:1.3}
-  .member .cr{font-family:var(--sans);font-weight:400;font-size:clamp(.5rem,.68cqw,.6rem);color:var(--dim-d);
-    margin-top:.3em;line-height:1.25}
-  .explabel{font-family:var(--sans);font-weight:600;letter-spacing:.2em;text-transform:uppercase;
-    font-size:clamp(.52rem,.74cqw,.64rem);color:rgba(239,231,214,.55);margin-top:clamp(8px,1.4cqh,28px);margin-bottom:.6em}
-  .explogos{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
-    gap:clamp(10px,1.8cqw,30px);width:100%}
-  .explogos img{height:clamp(15px,2.1cqh,24px);width:auto;display:block;opacity:.9;flex:0 0 auto}
-  .explogos img.tall{height:clamp(24px,3.5cqh,40px)}
+/* 1 cover */
+html[data-mode="portrait"] .cover{left:72px;right:72px;top:0;height:1700px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:64px;text-align:center}
+html[data-mode="portrait"] .lockup{width:760px;height:auto}
+html[data-mode="portrait"] .tagline{font-size:76px;line-height:1.12;font-weight:300}
+html[data-mode="portrait"] .cover-kind{font-size:36px;line-height:1.35;margin-top:-24px}
+html[data-mode="portrait"] .cover-foot{left:0;right:0;bottom:120px;text-align:center;font-size:36px;color:var(--muted)}
 
-  /* video */
-  .videowrap{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--line-dd);
-    box-shadow:0 24px 64px rgba(0,0,0,.5);background:#000}
-  .videowrap video{width:100%;height:100%;object-fit:cover;display:block}
-  .playbtn{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-    background:rgba(9,8,6,.28);border:0;cursor:pointer;transition:.2s}
-  .playbtn:hover{background:rgba(9,8,6,.12)} .playbtn.gone{display:none}
-  .playbtn span{width:clamp(48px,7cqw,70px);height:clamp(48px,7cqw,70px);border-radius:50%;background:var(--gold);
-    display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(0,0,0,.4)}
-  .playbtn span::after{content:'';margin-left:5px;border-style:solid;border-width:12px 0 12px 20px;
-    border-color:transparent transparent transparent #0d0c0a}
-  .playbtn.sm{z-index:2}
-  .playbtn.sm span{width:64px;height:64px}
-  .playbtn.sm span::after{border-width:11px 0 11px 18px}
-  @container (max-width:480px){.playbtn.sm span{width:44px;height:44px}.playbtn.sm span::after{border-width:8px 0 8px 13px}}
-  /* solution outcome cards */
-  .solsplit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3.6cqw,56px);margin-top:clamp(20px,3cqh,34px);
-    align-items:stretch}
-  .solcards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2cqw,28px);margin-top:clamp(16px,2.4cqh,26px)}
-  .solcards-col{display:flex;flex-direction:column;justify-content:space-between;margin-top:0;gap:clamp(10px,1.6cqh,18px)}
-  .solcard{border-top:2px solid var(--gold-2);padding-top:.6em}
-  .democol{display:flex;flex-direction:column;gap:clamp(8px,1.2cqh,14px);align-self:start}
-  .demopanel{position:relative;border:1px solid var(--line-dd);border-radius:12px;overflow:hidden;
-    aspect-ratio:16/9;background:linear-gradient(160deg,#141018,#0a0810) center/cover;
-    background-size:cover;background-position:center;
-    display:flex;align-items:center;justify-content:center;box-shadow:0 24px 64px rgba(0,0,0,.5)}
-  .demopanel::before{content:'';position:absolute;inset:0;background:rgba(9,8,6,.22);z-index:1}
-  .demolabel-u{text-align:center;font-family:var(--sans);font-weight:600;letter-spacing:.06em;
-    color:var(--dim-d);font-size:clamp(.66rem,.9cqw,.82rem)}
-  .solcard .sct{font-family:var(--disp);font-weight:460;font-variation-settings:'opsz' 40;color:var(--paper);
-    font-size:clamp(.9rem,1.35cqw,1.15rem);line-height:1.15}
-  .solcard .scd{font-family:var(--sans);font-weight:400;font-size:clamp(.68rem,.94cqw,.86rem);color:var(--dim);
-    margin-top:.4em;line-height:1.35}
-  .solcard .sctags{font-family:var(--sans);font-weight:600;letter-spacing:.08em;text-transform:uppercase;
-    font-size:clamp(.52rem,.7cqw,.62rem);color:var(--gold-2);margin-top:.55em}
-  .demolabel{position:absolute;left:clamp(10px,1.6cqw,20px);top:clamp(10px,1.6cqh,20px);z-index:4;
-    background:rgba(9,8,6,.7);border:1px solid rgba(239,231,214,.22);border-radius:6px;
-    padding:.35em .7em;font-family:var(--sans);font-weight:600;letter-spacing:.04em;
-    font-size:clamp(.6rem,.82cqw,.76rem);color:var(--paper)}
-  .slackcard{position:absolute;right:clamp(10px,1.6cqw,20px);bottom:clamp(10px,1.6cqh,20px);z-index:4;
-    background:rgba(20,20,26,.92);border:1px solid rgba(239,231,214,.22);border-radius:8px;
-    padding:clamp(8px,1.1cqw,14px) clamp(10px,1.3cqw,16px);max-width:44%;box-shadow:0 14px 40px rgba(0,0,0,.5)}
-  .slackcard .scl{font-family:var(--sans);font-weight:600;letter-spacing:.1em;text-transform:uppercase;
-    font-size:clamp(.48rem,.66cqw,.58rem);color:var(--gold-2)}
-  .slackcard .sct{font-family:var(--sans);font-weight:400;font-size:clamp(.58rem,.8cqw,.72rem);
-    color:var(--dim-d);margin-top:.4em;line-height:1.35}
+/* 2 mission */
+html[data-mode="portrait"] .hero{left:72px;bottom:240px;width:936px}
+html[data-mode="portrait"] .h-hero{font-size:84px;line-height:1.07}
+html[data-mode="portrait"] .orion{margin-top:48px;padding-top:36px}
+html[data-mode="portrait"] .orion-line{font-size:46px;line-height:1.3}
+html[data-mode="portrait"] .orion-sub{font-size:38px;line-height:1.4;margin-top:14px}
+html[data-mode="portrait"] .hero .sub{font-size:48px}
+html[data-mode="portrait"] .small{font-size:40px;line-height:1.4;color:var(--muted);margin-top:40px}
 
-  /* fundraise */
-  .fr-cols{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(24px,4cqw,60px);margin-top:clamp(14px,2.2cqh,26px)}
-  .fr-terms{display:flex;flex-direction:column;gap:clamp(10px,1.6cqh,16px)}
-  .fr-term{border-top:1px solid var(--line-dd);padding-top:.5em}
-  .fr-term .ftl{font-family:var(--sans);font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-    font-size:clamp(.56rem,.78cqw,.68rem);color:var(--gold-2)}
-  .fr-term .ftv{font-family:var(--disp);font-weight:450;font-variation-settings:'opsz' 40;
-    font-size:clamp(1.02rem,1.5cqw,1.3rem);color:var(--paper);margin-top:.2em}
-  .fr-term .fts{font-family:var(--sans);font-weight:400;font-size:clamp(.62rem,.84cqw,.76rem);
-    color:var(--dim-d);margin-top:.25em}
-  .proceeds{display:flex;flex-direction:column;gap:clamp(9px,1.4cqh,14px)}
-  .prow{display:grid;grid-template-columns:1fr clamp(46px,6cqw,64px);gap:clamp(8px,1.2cqw,14px);align-items:center}
-  .prow .pl{font-family:var(--sans);font-weight:500;font-size:clamp(.68rem,.94cqw,.86rem);color:var(--paper)}
-  .prow .ptrack{height:clamp(8px,1.1cqh,12px);border-radius:5px;background:rgba(239,231,214,.14);overflow:hidden;margin-top:.35em}
-  .prow .pfill{height:100%;border-radius:5px;background:var(--gold-2)}
-  .prow .pv{font-family:var(--disp);font-weight:450;font-variation-settings:'opsz' 40;
-    font-size:clamp(.82rem,1.2cqw,1.02rem);color:var(--paper);text-align:right}
-  .milestones{display:flex;flex-wrap:wrap;gap:clamp(10px,1.6cqw,20px);margin-top:clamp(16px,2.6cqh,28px);
-    border-top:1px solid var(--line-dd);padding-top:clamp(10px,1.6cqh,16px)}
-  .mst{flex:1 1 clamp(140px,20cqw,220px)}
-  .mst .msd{font-family:var(--sans);font-weight:600;letter-spacing:.08em;font-size:clamp(.58rem,.8cqw,.7rem);color:var(--gold-2)}
-  .mst .mst-t{font-family:var(--sans);font-weight:400;font-size:clamp(.62rem,.86cqw,.78rem);color:var(--dim-d);margin-top:.3em;line-height:1.3}
+/* 3 market */
+html[data-mode="portrait"] .mk-band{left:72px;top:620px;width:936px}
+html[data-mode="portrait"] .rings{display:flex;align-items:center;gap:48px;height:320px;margin-top:20px}
+html[data-mode="portrait"] .rings-svg{width:320px;height:320px;flex:none}
+html[data-mode="portrait"] .ring-labels{display:grid;gap:22px}
+html[data-mode="portrait"] .rl{display:grid;grid-template-columns:26px 1fr;column-gap:20px;align-items:center}
+html[data-mode="portrait"] .sw{display:block;width:26px;height:26px;border-radius:50%;grid-row:span 2}
+html[data-mode="portrait"] .rl b{font-size:44px;line-height:1.1}
+html[data-mode="portrait"] .rl .d{grid-column:2;font-size:36px;line-height:1.3}
+html[data-mode="portrait"] .mk-fast{margin-top:64px}
+html[data-mode="portrait"] .ctitle{font-size:38px;line-height:1.3}
+html[data-mode="portrait"] .cols{--ch:200px;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;height:340px;margin-top:16px}
+html[data-mode="portrait"] .col{flex:1}
+html[data-mode="portrait"] .col .v{font-size:42px;line-height:1.1;margin-bottom:10px}
+html[data-mode="portrait"] .col .y{font-size:36px;margin-top:10px}
+html[data-mode="portrait"] .col .tag{font-size:36px;line-height:44px}
+html[data-mode="portrait"] .icons3{left:72px;top:1336px;width:936px;display:grid;grid-template-columns:repeat(3,1fr);column-gap:32px;padding-top:28px;border-top:1px solid var(--faint)}
+html[data-mode="portrait"] .icons3 li{flex-direction:column;gap:12px}
+html[data-mode="portrait"] .icons3 .ic{margin-top:0}
+html[data-mode="portrait"] .icons3 b{font-size:60px;line-height:1.1}
+html[data-mode="portrait"] .icons3 .d{font-size:36px;line-height:1.3;margin-top:4px}
+html[data-mode="portrait"] .deals{left:72px;width:936px;top:1560px;font-size:36px;line-height:1.35;color:var(--muted)}
 
-  /* cover / close */
-  .cover-stats{display:flex;flex-wrap:wrap;gap:clamp(18px,3.4cqw,54px);margin-top:clamp(18px,3cqh,38px)}
-  .cover-stats .s .n{font-family:var(--disp);font-weight:360;font-variation-settings:'opsz' 96;
-    font-size:clamp(1.3rem,2.5cqw,2.3rem);line-height:1;color:var(--paper)}
-  .cover-stats .s.hero .n{color:var(--gold-2)}
-  .cover-stats .s .l{font-family:var(--sans);font-weight:400;font-size:clamp(.66rem,.92cqw,.84rem);
-    color:var(--dim-d);margin-top:.45em;letter-spacing:.02em;max-width:15ch}
-  .coverlogo{height:clamp(40px,6cqh,72px);width:auto;margin-bottom:clamp(14px,2.4cqh,28px);filter:brightness(0) invert(1)}
-  .cover-lockup{height:clamp(90px,13.5cqh,170px);width:auto;margin-bottom:clamp(18px,2.8cqh,32px)}
-  .cover-h1{font-size:clamp(1.6rem,4cqw,3.4rem)}
-  .cover-kind{font-family:var(--sans);font-weight:500;letter-spacing:.1em;text-transform:uppercase;
-    font-size:clamp(.6rem,.85cqw,.78rem);color:var(--gold-2);margin-top:clamp(10px,1.8cqh,20px)}
-  .cover-subtitle{position:absolute;left:0;right:0;bottom:clamp(28px,5cqh,56px);text-align:center;
-    font-family:var(--sans);font-weight:500;letter-spacing:.16em;text-transform:uppercase;
-    font-size:clamp(.62rem,.9cqw,.8rem);color:var(--paper);opacity:.72;z-index:5}
-  .trilogy{font-family:var(--sans);font-weight:500;letter-spacing:.16em;text-transform:uppercase;
-    font-size:clamp(.6rem,.86cqw,.76rem);color:var(--gold-2);margin-top:clamp(12px,2cqh,20px)}
-  .contact{font-family:var(--sans);font-weight:500;font-size:clamp(.9rem,1.4cqw,1.2rem);letter-spacing:.02em}
-  .contact a{color:var(--gold-2);text-decoration:none;border-bottom:1px solid rgba(236,192,100,.4)}
+/* 4 problem */
+html[data-mode="portrait"] .pains{left:72px;top:540px;width:936px}
+html[data-mode="portrait"] .pains li{font-size:42px;line-height:1.35;padding:18px 0;border-top:1px solid var(--faint)}
+html[data-mode="portrait"] .pb-left .sub{margin-top:0}
+html[data-mode="portrait"] .pb-left .line{display:block}
+html[data-mode="portrait"] .hero-stat{margin-top:48px}
+html[data-mode="portrait"] .hero-stat b{font-size:140px;line-height:1}
+html[data-mode="portrait"] .hero-stat .d{font-size:38px;line-height:1.4;margin-top:12px}
+html[data-mode="portrait"] .pb-chart{left:72px;top:880px;width:936px}
+html[data-mode="portrait"] .pb-chart .ctitle{margin-top:6px}
+html[data-mode="portrait"] .legend{font-size:36px;gap:40px;margin-top:12px}
+html[data-mode="portrait"] .k{width:24px;height:24px}
+html[data-mode="portrait"] .lc{--yw:110px;--ph:380px;--pt:22px;margin-top:24px;font-size:36px}
+html[data-mode="portrait"] .lc-y span{right:16px}
+html[data-mode="portrait"] .lc-x{height:56px}
+html[data-mode="portrait"] .lc-x span{top:14px;font-size:36px}
+html[data-mode="portrait"] .val{font-size:40px}
+html[data-mode="portrait"] .val.r{margin-top:-20px}
+html[data-mode="portrait"] .val.c{margin-top:20px}
+html[data-mode="portrait"] .tip{padding:20px 24px;font-size:36px;line-height:1.45}
+html[data-mode="portrait"] .tip strong{font-size:36px;margin-bottom:8px}
 
-  #rail{position:fixed;bottom:clamp(9px,1.8vh,17px);left:50%;transform:translateX(-50%);z-index:9;
-    display:flex;gap:6px;max-width:82vw;flex-wrap:wrap;justify-content:center}
-  #rail button{width:20px;height:3px;border:0;padding:0;cursor:pointer;background:rgba(180,170,150,.34);transition:.3s}
-  #rail button.on{background:var(--gold)}
+/* 5 solution */
+html[data-mode="portrait"] .cards{left:72px;top:410px;width:936px;display:flex;flex-direction:column;gap:44px}
+html[data-mode="portrait"] .cards li{padding-top:28px;border-top:3px solid var(--turq)}
+html[data-mode="portrait"] .cards h3{font-size:56px;line-height:1.1}
+html[data-mode="portrait"] .cards p{font-size:38px;line-height:1.4;margin-top:12px}
+html[data-mode="portrait"] .demo-frame{left:72px;top:1190px;width:936px}
+html[data-mode="portrait"] .df-play{width:170px;height:170px;--pw:26px}
+html[data-mode="portrait"] .df-cap{font-size:36px;margin-top:20px}
+html[data-mode="portrait"] .steps{height:440px;justify-content:space-between}
+html[data-mode="portrait"] .steps li{font-size:44px;gap:32px}
+html[data-mode="portrait"] .steps i{width:32px;height:32px}
+html[data-mode="portrait"] .steps::before{left:15px;top:16px;bottom:16px}
+html[data-mode="portrait"] .memory{position:absolute;left:480px;top:20px;bottom:40px;width:456px;padding-left:36px}
+html[data-mode="portrait"] .memory span{font-size:38px;line-height:1.4}
+html[data-mode="portrait"] .demo{left:72px;top:1740px;font-size:38px;padding:20px 36px}
 
-  /* Safety net for very short/cramped stages (e.g. tall-narrow tablet portrait windows):
-     tighten vertical rhythm on the two content-densest slides so nothing needed for
-     the story gets clipped by #stage's overflow:hidden. */
-  @container (max-height:460px){
-    .pad{padding-top:calc(var(--topgap) * .55);padding-bottom:clamp(20px,3cqh,40px)}
-    .mt{margin-top:clamp(8px,1.6cqh,20px)} .mt-s{margin-top:clamp(6px,1.1cqh,14px)} .mt-xs{margin-top:clamp(4px,.8cqh,9px)}
-    .leads{gap:clamp(8px,1.2cqh,16px) clamp(10px,1.6cqw,20px)}
-    .member img,.member .ph-init{width:clamp(38px,5.5cqw,60px);height:clamp(38px,5.5cqw,60px)}
-    .explabel{margin-top:4px;margin-bottom:.3em}
-    .explogos img{height:clamp(11px,1.6cqh,18px)}
-    .explogos img.tall{height:clamp(17px,2.6cqh,28px)}
-    .member .nm{margin-top:.4em} .member .rl{margin-top:.2em} .member .cr{margin-top:.15em}
-    .rings{max-width:min(clamp(140px,22cqw,300px),26cqh)}
-    .ringcap{margin-top:4px}
-    .ring.tam .rl2-outer .rt,.ring.som .rt{font-size:clamp(.34rem,.46cqw,.4rem)}
-    .mkticons{gap:clamp(10px,2cqw,24px);padding-top:6px;margin-top:6px}
-    .mkiico{margin-bottom:.2em}
-    .cite{line-height:1.4}
-  }
+/* 6 traction */
+html[data-mode="portrait"] .tr-left{left:72px;top:550px;width:936px}
+html[data-mode="portrait"] .live{display:grid;grid-template-columns:1fr 1fr;gap:20px 32px;margin-top:20px}
+html[data-mode="portrait"] .live li{font-size:40px;gap:16px}
+html[data-mode="portrait"] .live .ic{width:40px;height:40px}
+html[data-mode="portrait"] .nums{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:64px}
+html[data-mode="portrait"] .n b{font-size:120px;line-height:1}
+html[data-mode="portrait"] .n .d{font-size:38px;line-height:1.35;margin-top:14px}
+html[data-mode="portrait"] .s-cover .bg-photo{object-position:74% 50%}
+html[data-mode="portrait"] .s-open .bg-photo{object-position:28% 50%}
+html[data-mode="portrait"] .s-problem .bg-photo{object-position:30% 50%}
+html[data-mode="portrait"] .tr-photo{left:0;top:1080px;width:1080px;height:840px;object-position:50% 70%}
+html[data-mode="portrait"] .tr-shade{left:0;top:1080px;width:1080px;height:840px;background:linear-gradient(180deg, #060E19 0%, rgba(6,14,25,0) 38%, rgba(6,14,25,.6) 100%)}
+html[data-mode="portrait"] .credits{left:72px;right:72px;bottom:110px;text-align:center;font-size:36px;line-height:1.35}
 
-  /* Market slide packs rings + bar chart + icon row + two citation lines into one
-     stage - that's more vertical content than most slides, so it needs its own,
-     higher threshold instead of waiting for the generic 460px safety net above. */
-  @container (max-height:600px){
-    .slide.market .split > div:first-child > .ringcap{display:none}
-    .slide.market .mkticons{padding-top:4px;margin-top:4px;gap:clamp(8px,1.8cqw,20px)}
-    .slide.market .mki{flex-basis:clamp(120px,18cqw,200px)}
-    .slide.market .mkiico{width:clamp(14px,1.8cqw,20px);height:clamp(14px,1.8cqw,20px);margin-bottom:.1em}
-    .slide.market .mkil{line-height:1.2}
-    .slide.market .cite.mt-s{margin-top:2px}
-    .slide.market .cite{line-height:1.25}
-  }
-  @container (max-height:730px){
-    .slide.market .ringcap{margin-top:clamp(3px,.6cqh,8px)}
-    .slide.market .split{margin-top:clamp(8px,1.2cqh,16px)!important}
-    .slide.market .mkticons{gap:clamp(12px,2.2cqw,30px);padding-top:6px;margin-top:6px}
-    .slide.market h2.sm.mt-xs{margin-top:clamp(2px,.5cqh,7px)}
-    .slide.market .sub.mt-s{margin-top:clamp(4px,.8cqh,10px)}
-    .slide.market .cite.mt-s{margin-top:clamp(4px,.8cqh,10px)}
-  }
+/* 7 roadmap */
+html[data-mode="portrait"] .ptl{left:72px;top:620px;width:936px;display:grid;gap:22px}
+html[data-mode="portrait"] .ptl li{display:grid;grid-template-columns:36px 340px 1fr;column-gap:24px;align-items:start;position:relative}
+html[data-mode="portrait"] .ptl li::before{content:"";grid-column:1;width:22px;height:22px;margin:12px 0 0 7px;background:var(--turq);transform:rotate(45deg)}
+html[data-mode="portrait"] .ptl li.e::before{transform:none;border-radius:50%;background:var(--purple);width:26px;height:26px;margin:10px 0 0 5px}
+html[data-mode="portrait"] .ptl .when{font-family:var(--mono);text-transform:uppercase;color:var(--turq);font-size:36px;line-height:1.35}
+html[data-mode="portrait"] .ptl .what{font-size:38px;line-height:1.35}
+html[data-mode="portrait"] .ptl-build{left:72px;top:1536px;width:936px;font-size:38px;line-height:1.4;color:var(--muted)}
 
-  /* ---- Mobile portrait (<768px): vertical scroll per slide, natural height, nothing fixed ---- */
-  @media (max-width:767px){
-    html,body{overflow-y:auto;height:auto}
-    body{overflow:visible}
-    #frame{position:static;display:block;padding:0;background:#0d0c0a;min-height:100dvh}
-    #stage{position:static;width:100%;aspect-ratio:auto;overflow:visible;box-shadow:none;container-type:inline-size}
-    #deck{position:static}
-    .slide{position:static;display:none;opacity:1;visibility:visible;transition:none;pointer-events:auto}
-    .slide.on{display:block}
-    .bg,.bgvid,.flybg,.tone,.veil,.grain{position:absolute}
-    .slide.ph,.slide.dk{position:relative;min-height:100dvh}
-    .pad{position:relative;inset:auto;height:auto;min-height:100dvh;display:flex;flex-direction:column;
-      justify-content:flex-start;padding:calc(var(--topgap) + 14px) 20px 48px;overflow:visible;z-index:3}
-    .pad.mid{justify-content:center}
-    .pad.mid,.pad.top{justify-content:flex-start}
-    .hd{position:relative;z-index:4}
-    h2,.statement,.sub,.lead{max-width:none!important}
-    .sub.one-line{white-space:normal!important;font-size:max(14px,.9rem)!important}
-    .split,.mods,.tiles,.fr-cols,.rmcards,.solsplit,.mods-v{
-      display:flex;flex-direction:column;max-width:none;gap:22px}
-    .leads{display:grid;grid-template-columns:1fr 1fr;max-width:none;gap:22px 14px}
-    .figs.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px;max-width:none}
-    .figs.grid2 .fig .l{min-width:0}
-    .statchips,.statchips.c8{grid-template-columns:repeat(2,1fr)}
-    .tiles,.rmcards{display:grid;grid-template-columns:1fr 1fr}
-    /* type minimums */
-    body{font-size:14px}
-    .sub,.lead,.scd{font-size:max(14px,.9rem)}
-    .kick,.cite,.src,.sctags,.scs{font-size:max(12px,.72rem)}
-    .fig .l{font-size:max(14px,.85rem)}
-    /* rings: scale to width; labels move below since two lines no longer fit inside at this size */
-    .rings{max-width:min(60vw,240px);margin-bottom:4px}
-    .ring.tam .rl2,.ring.som .rl2{display:none}
-    .ringcaps-mobile{display:flex;justify-content:space-between;gap:14px;margin-top:14px;text-align:center}
-    .ringcaps-mobile .ringcap{flex:1;margin-top:0}
-    .ringcaps-mobile .rcn{font-size:max(13px,.78rem)}
-    .ringcaps-mobile .rct{font-size:12px;letter-spacing:.04em;line-height:1.3}
-    /* gantt: scroll sideways in its own box, image keeps real size so labels stay legible */
-    .gantt{overflow-x:auto;-webkit-overflow-scrolling:touch}
-    .gantt img{width:auto;max-width:none;height:220px}
-  }
+/* 8 team */
+html[data-mode="portrait"] .founder{left:72px;top:540px;width:936px}
+html[data-mode="portrait"] .fname{font-size:60px;line-height:1.1;margin-top:24px}
+html[data-mode="portrait"] .founder .role{font-size:36px;margin-top:8px}
+html[data-mode="portrait"] .fstats{margin-top:36px;gap:22px}
+html[data-mode="portrait"] .fstats li{display:grid;grid-template-columns:420px 1fr;column-gap:24px;align-items:baseline}
+html[data-mode="portrait"] .fstats b{white-space:nowrap}
+html[data-mode="portrait"] .fstats b{font-size:60px;line-height:1.1}
+html[data-mode="portrait"] .fstats .d{font-size:36px;line-height:1.3}
+html[data-mode="portrait"] .crew{left:72px;top:1180px;width:936px}
+html[data-mode="portrait"] .crew .people{display:grid;grid-template-columns:1fr 1fr;gap:26px 40px;margin-top:24px}
+html[data-mode="portrait"] .people b{font-size:42px;line-height:1.15}
+html[data-mode="portrait"] .people .role{font-family:var(--sans);text-transform:none;font-size:36px;margin-top:6px}
+html[data-mode="portrait"] .people .cred{font-size:36px;line-height:1.3;margin-top:6px}
+html[data-mode="portrait"] .creds{left:72px;top:1750px;width:936px;display:grid;gap:16px}
+html[data-mode="portrait"] .creds p{font-size:36px;line-height:1.35}
+
+/* 9 fundraise */
+html[data-mode="portrait"] .terms{left:72px;top:620px;width:936px;display:grid;grid-template-columns:1fr 1fr;gap:28px 40px}
+html[data-mode="portrait"] .terms > div:last-child{grid-column:1 / -1}
+html[data-mode="portrait"] .terms b{font-size:52px;line-height:1.1;margin-top:8px}
+html[data-mode="portrait"] .terms .big{font-size:120px;line-height:1}
+html[data-mode="portrait"] .terms .d{font-size:36px;line-height:1.35;margin-top:10px}
+html[data-mode="portrait"] .uop{left:72px;top:1070px;width:936px}
+html[data-mode="portrait"] .uop li{margin-top:22px}
+html[data-mode="portrait"] .uop .lab,html[data-mode="portrait"] .uop .amt{font-size:38px;line-height:1.35}
+html[data-mode="portrait"] .uop .track{height:14px;margin-top:10px}
+html[data-mode="portrait"] .ms{left:72px;top:1490px;width:936px;display:grid;grid-template-columns:1fr 1fr;gap:24px 40px;padding-top:28px;border-top:1px solid var(--faint)}
+html[data-mode="portrait"] .ms-date{font-size:36px}
+html[data-mode="portrait"] .ms p{font-size:38px;line-height:1.35;margin-top:8px}
+
+/* 10 close */
+html[data-mode="portrait"] .close{left:72px;right:72px;top:0;height:1920px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+html[data-mode="portrait"] .close h2{font-size:110px}
+html[data-mode="portrait"] .close .sub{font-size:44px;margin-top:32px}
+html[data-mode="portrait"] .close .small{font-size:38px;margin-top:32px}
+html[data-mode="portrait"] .close .contact{font-size:40px;margin-top:64px}
+
+
+
+
+
+
+
+
+
+
+
+/* ---------- Components (both modes) ---------- */
+.rl .d{display:block}
+.sw1{border:1.5px solid rgba(252,250,247,.55);background:rgba(114,100,241,.10)}
+.sw2{background:rgba(114,100,241,.45);border:1.5px solid rgba(114,100,241,.9)}
+.sw3{background:var(--purple)}
+.col{display:flex;flex-direction:column;align-items:center}
+.col .bar{display:block;width:100%;height:calc(var(--v) / 67.1 * var(--ch));background:rgba(252,250,247,.86);border-radius:4px 4px 0 0}
+.col.fc .bar{background:rgba(252,250,247,.30)}
+.col.fc .v{color:var(--muted)}
+.col .tag{color:var(--muted)}
+.icons3 li{display:flex;align-items:flex-start}
+.icons3 .ic{color:var(--turq);flex:none;margin-top:6px}
+.icons3 b{display:block}
+.icons3 .d,.hero-stat .d,.n .d,.people .cred,.events .d{display:block;color:var(--muted)}
+.hero-stat b{display:block;color:var(--purple)}
+.legend{display:flex}
+.legend span{display:inline-flex;align-items:center;gap:10px;color:var(--muted)}
+.k{display:inline-block;width:14px;height:14px;border-radius:3px}
+.k-r{background:#8E8D93} .k-c{background:var(--purple)}
+.pb-chart .ctitle{display:block}
+.cards h3{color:var(--ink)}
+.cards p{color:var(--muted)}
+.steps{display:flex;flex-direction:column;position:relative}
+.steps::before{content:"";position:absolute;width:2px;background:var(--faint)}
+.steps li{display:flex;align-items:center;position:relative}
+.steps i{display:block;flex:none;border-radius:50%;border:2px solid var(--turq);background:var(--bg)}
+.steps li.end i{background:var(--purple);border-color:var(--purple)}
+.memory{border-left:2px solid var(--turq);display:flex;align-items:center}
+.memory span{color:var(--muted)}
+.demo{display:inline-flex;align-items:center;border:1.5px solid var(--turq);border-radius:999px;color:var(--ink);text-decoration:none}
+.demo[hidden]{display:none}
+.live li{display:flex;align-items:center}
+.live .ck{color:var(--green);flex:none}
+.n{flex:none}
+.n b{display:block;white-space:nowrap}
+.nw{white-space:nowrap}
+.n.lead b{color:var(--purple)}
+.gantt{font-size:20px}
+.g-head{display:grid;grid-template-columns:200px repeat(4,1fr);height:36px;align-items:center;color:var(--muted);font-size:20px;border-bottom:1px solid var(--faint)}
+.g-head span:not(.g-lab){padding-left:12px;border-left:1px solid var(--faint);height:100%;display:flex;align-items:center}
+.g-row{display:grid;grid-template-columns:200px 1fr;margin-top:14px}
+.g-row.r3 .g-track{height:104px} .g-row.r2 .g-track{height:66px} .g-row.r1 .g-track{height:28px} .g-row.rg .g-track{height:96px}
+.g-lab{color:var(--muted);font-size:20px;line-height:28px}
+.g-track{position:relative}
+.gb{position:absolute;height:28px;line-height:28px;padding:0 12px;border-radius:6px;white-space:nowrap;overflow:hidden;font-size:20px}
+.b-build{background:rgba(252,250,247,.9);color:var(--bg)}
+.b-prove{background:var(--shade);border:1.5px solid var(--purple);color:var(--ink);line-height:25px}
+.b-learn{background:var(--teal);color:var(--ink)}
+.gate{position:absolute;display:flex;align-items:center;gap:10px;white-space:nowrap;height:28px;font-size:20px;transform:translateX(-7px)}
+.gate i{display:block;width:14px;height:14px;background:var(--turq);transform:rotate(45deg);flex:none}
+.gate b{color:var(--turq);font-size:20px}
+.gate.right{transform:translateX(calc(-100% + 7px))}
+.g-today{position:absolute;top:-28px;bottom:0;left:calc(200px + (100% - 200px) * var(--t) / 100);width:0;border-left:2px dashed var(--turq)}
+.g-today span{position:absolute;top:0;left:8px;font-family:var(--mono);text-transform:uppercase;font-size:20px;line-height:22px;color:var(--turq)}
+.events b{display:block}
+.ev-date{display:block;color:var(--turq)}
+.people li{display:flex;flex-direction:column;align-items:flex-start}
+.av{display:block;border-radius:50%;object-fit:cover;object-position:center top;background:var(--shade);border:1.5px solid rgba(114,100,241,.7);flex:none}
+.fhead{display:flex;align-items:center;gap:24px}
+.people .role{color:var(--turq)}
+.creds .xp{color:var(--muted)}
+.terms .big{color:var(--purple)}
+.terms > div{display:flex;flex-direction:column}
+.terms b{display:block}
+.uop .row{display:flex;justify-content:space-between;gap:24px}
+.uop .amt{color:var(--muted);white-space:nowrap}
+.uop .track{background:var(--faint);border-radius:999px;overflow:hidden}
+.uop .fill{display:block;height:100%;width:var(--p);background:rgba(252,250,247,.86);border-radius:999px}
+.ms-date{display:block;color:var(--turq)}
+.close .contact a{color:var(--turq);text-decoration:none;border-bottom:1px solid rgba(80,227,255,.5)}
+
+
+.cover-kind{font-family:var(--mono);text-transform:uppercase;color:var(--turq)}
+.pains li{color:var(--ink)}
+.demo-frame{margin:0}
+.df-screen{position:relative;aspect-ratio:16/9;width:100%;border-radius:16px;overflow:hidden;border:1px solid rgba(252,250,247,.18);
+  background:radial-gradient(60% 80% at 30% 20%, rgba(114,100,241,.35), transparent 70%),radial-gradient(50% 70% at 85% 90%, rgba(80,227,255,.18), transparent 70%),#0B1424}
+.df-screen iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.df-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;border:2px solid var(--turq);background:rgba(6,14,25,.4)}
+.df-play::after{content:"";position:absolute;left:54%;top:50%;transform:translate(-50%,-50%);border-style:solid;border-color:transparent transparent transparent var(--ink);border-width:var(--pw,18px) 0 var(--pw,18px) calc(var(--pw,18px) * 1.6)}
+.df-cap{display:block;color:var(--muted)}
+.df-cap a{color:var(--turq)}
+.founder{display:flex;flex-direction:column}
+.fname{display:block;color:var(--ink)}
+.founder .role{display:block;color:var(--turq)}
+.fstats{display:grid}
+.fstats b{display:block;color:var(--purple)}
+.fstats .d{display:block;color:var(--muted)}
+.crew .people b{display:block}
+
+/* photos */
+.has-photo::before{display:none}
+.slide > .bg-photo{left:0;top:0;width:100%;height:100%;object-fit:cover}
+.slide > .shade{left:0;top:0;right:0;bottom:0;pointer-events:none}
+.s-cover .shade{background:radial-gradient(56% 50% at 50% 44%, rgba(6,14,25,.66), rgba(6,14,25,.26) 72%),linear-gradient(180deg, rgba(6,14,25,.35), rgba(6,14,25,.12) 45%, rgba(6,14,25,.85))}
+.s-open .shade{background:linear-gradient(0deg, rgba(6,14,25,.96) 0%, rgba(6,14,25,.72) 40%, rgba(6,14,25,.30) 72%, rgba(6,14,25,.55) 100%),linear-gradient(90deg, rgba(6,14,25,.55), rgba(6,14,25,0) 65%)}
+.s-problem .shade{background:linear-gradient(90deg, rgba(6,14,25,.94) 0%, rgba(6,14,25,.84) 45%, rgba(6,14,25,.91) 100%)}
+.slide > .tr-photo{object-fit:cover}
+.slide > .tr-shade{pointer-events:none}
+.df-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#0B1424}
+.df-play{cursor:pointer;padding:0}
+.df-play[hidden]{display:none}
+.credits{color:var(--muted)}
+.orion{border-top:1px solid rgba(252,250,247,.3)}
+.orion-line{color:var(--ink)}
+.orion-sub{color:var(--muted)}
+.horizon{color:var(--turq)}
+
+/* line chart (Problem slide) */
+.lc{display:grid;grid-template-columns:var(--yw) 1fr}
+.lc-y,.lc-plot,.lc-x{position:relative}
+.lc-y{height:var(--ph)}
+.lc-y span{position:absolute;right:12px;transform:translateY(-50%);color:var(--muted);font-variant-numeric:tabular-nums}
+.lc-plot{height:var(--ph)}
+.lc-plot svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.lc-x{grid-column:2}
+.lc-x span{position:absolute;top:0;transform:translateX(-50%);color:var(--ink)}
+.pt{position:absolute;width:var(--pt);height:var(--pt);border-radius:50%;transform:translate(-50%,-50%);pointer-events:none}
+.pt.r{background:#8E8D93;border:2px solid var(--bg)}
+.pt.c{background:var(--purple);border:2px solid var(--bg)}
+.val{position:absolute;transform:translateX(-50%);white-space:nowrap;pointer-events:none}
+.val.r{color:var(--muted);margin-top:calc(var(--pt) * -1)}
+.val.r{transform:translate(-50%,-100%)}
+.val.c{color:var(--ink);transform:translate(-50%,0)}
+.hit{position:absolute;top:0;bottom:0;width:16%;transform:translateX(-50%);background:transparent;border:0;padding:0;margin:0;cursor:pointer;font:inherit;color:inherit}
+.hit::before{content:"";position:absolute;left:50%;top:0;bottom:0;border-left:1.5px dashed transparent}
+.hit:hover::before,.hit:focus-visible::before,.hit.on::before{border-left-color:rgba(80,227,255,.55)}
+.hit:focus-visible{outline:none}
+.tip{display:none;position:absolute;left:50%;transform:translateX(-50%);min-width:max-content;text-align:left;background:#0D1729;border:1px solid rgba(252,250,247,.22);border-radius:10px;box-shadow:0 12px 32px rgba(0,0,0,.45);z-index:3}
+.tip.t{top:0}.tip.b{bottom:0}
+.hit.first .tip{left:calc(50% - 16px);transform:none}.hit.last .tip{left:auto;right:calc(50% - 16px);transform:none}
+.hit:hover .tip,.hit:focus-visible .tip,.hit.on .tip{display:block}
+.tip strong{display:block;font-family:var(--mono);font-weight:400;text-transform:uppercase;color:var(--turq)}
+.tip span{display:flex;align-items:center;gap:10px;white-space:nowrap}
+.tip .share{color:var(--muted)}
+html[data-mode="deck"] .lc{--yw:64px;--ph:330px;--pt:16px;margin-top:28px;font-size:20px}
+html[data-mode="deck"] .lc-x{height:40px}
+html[data-mode="deck"] .lc-x span{top:14px;font-size:20px}
+html[data-mode="deck"] .val{font-size:22px}
+html[data-mode="deck"] .val.r{margin-top:-14px}
+html[data-mode="deck"] .val.c{margin-top:14px}
+html[data-mode="deck"] .tip{padding:16px 20px;font-size:20px;line-height:1.5}
+html[data-mode="deck"] .tip strong{font-size:20px;margin-bottom:6px}
+
+/* navigation (deck mode only) */
+html[data-mode="portrait"] .dots button{width:28px}
+.dots{position:fixed;left:50%;bottom:calc(10px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;gap:4px;z-index:10}
+.dots button{width:36px;height:24px;padding:0;border:0;background:transparent;cursor:pointer}
+.dots button::before{content:"";display:block;height:3px;margin:0 6px;border-radius:2px;background:rgba(252,250,247,.25)}
+.dots button[aria-current="true"]::before{background:var(--turq)}
 </style>
 </head>
 <body>
-<div id="frame"><div id="stage">
-<div id="deck">
+<main class="stage" aria-roledescription="presentation" aria-label="Project Orion">
 
-  <!-- 1 · COVER -->
-  <section class="slide ph center on">
-    <div class="bg kb" style="background-image:url('media/photos/crowd-outdoors.jpg');background-position:center 82%;transform-origin:50% 88%"></div>
-    <div class="tone"></div><div class="veil"></div><div class="grain"></div>
-    <div class="pad mid" style="align-items:center;text-align:center">
-      <img class="r cover-lockup" src="media/logos/imxp-primary-lockup-white.png" alt="IMXP - Immersive Experiences" />
-      <h1 class="r cover-h1">Scaling Real&#8209;World Experience</h1>
-      <div class="r cover-kind">The Orion Product Fundraise Deck</div>
+<!-- 1 COVER -->
+<section class="slide bg-cover has-photo s-cover" data-slide="1" aria-label="Cover">
+  <img class="bg-photo" src="media/photos/crowd-outdoors.jpg" alt="">
+  <div class="shade"></div>
+  <div class="cover">
+    <img class="lockup" src="media/logos/imxp-primary-lockup-white.png" alt="IMXP, Immersive Experiences">
+    <h1 class="tagline">Scaling <span class="nw">real-world</span> experience.</h1>
+    <p class="cover-kind">Project Orion · Fundraise deck</p>
+  </div>
+  <p class="cover-foot">Confidential · October 2026</p>
+</section>
+
+<!-- 2 MISSION -->
+<section class="slide bg-mission has-photo s-open" data-slide="2" aria-label="The mission">
+  <img class="bg-photo" src="media/photos/aurora-streak.jpg" alt="">
+  <div class="shade"></div>
+  <img class="logo-sm" src="media/logos/imxp-primary-lockup-white.png" alt="IMXP">
+  <div class="hero">
+    <p class="eyebrow">The mission</p>
+    <h2 class="h-hero">IMXP will make it possible to create <span class="nw">real-world</span> experiences in real time.</h2>
+    <div class="orion">
+      <p class="orion-line">Project Orion is an <span class="nw">end-to-end</span> copilot for event production.</p>
+      <p class="orion-sub">It plans, tracks and remembers the details every event depends on.</p>
     </div>
-    <div class="cover-subtitle r">Confidential · October 2026</div>
-  </section>
+  </div>
+  <p class="pnum">02 / 10</p>
+</section>
 
-  <!-- 2 · MISSION -->
-  <section class="slide ph">
-    <div class="bg kb" style="background-image:url('media/photos/aurora-streak.jpg')"></div>
-    <div class="tone"></div><div class="veil"></div><div class="grain"></div>
-    <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
-    <div class="pad">
-      <div class="r kick">The mission</div>
-      <h2 class="r sm mt-xs" style="max-width:none">IMXP will make it possible to create real&#8209;world experiences in close to real time.</h2>
-      <div class="r sub mt-s" style="max-width:none">Orion will enable the ability to go from idea to event similarly to how Cursor revolutionized app development.</div>
-    </div>
-  </section>
-
-  <!-- 3 · MARKET -->
-  <section class="slide dk market">
-    <div class="flybg"></div><div class="grain"></div>
-    <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
-    <div class="pad anchor-top">
-      <div class="r kick">Market</div>
-      <h2 class="r sm mt-xs" style="max-width:none">People spend over $1.1 trillion a year on experiences.</h2>
-      <div class="r sub mt-s" style="max-width:none">In the midst of a loneliness epidemic, people want to spend more time IRL.</div>
-      <div class="r split" style="margin-top:clamp(16px,2.4cqh,26px);align-items:start">
-        <div>
-          <div class="lab">How big</div>
-          <div class="rings" style="max-width:max(275px,min(clamp(220px,28cqw,340px),30cqh));margin:0">
-            <div class="ring tam"><div class="rl2 rl2-outer"><div class="rn">$1.1-1.3T</div><div class="rt">Destination experiences</div></div></div>
-            <div class="ring som"><div class="rl2"><div class="rn">$250-310B</div><div class="rt">Paid experiences, like concerts</div></div></div>
-            <div class="ring core"></div>
-          </div>
-          <div class="ringcaps-mobile">
-            <div class="ringcap"><div class="rcn">$1.1-1.3T</div><div class="rct">Destination experiences</div></div>
-            <div class="ringcap"><div class="rcn">$250-310B</div><div class="rct">Paid experiences, like concerts</div></div>
-          </div>
-          <div class="ringcap"><div class="rcn">Destination festivals</div><div class="rct">Where IMXP starts</div></div>
-        </div>
-        <div style="padding-top:clamp(6px,1cqh,10px)">
-          <div class="lab">How fast</div>
-          <div class="mktbars">
-            <div class="mktbarlabel">Live music revenue ($B)</div>
-            <div class="mktbarrow"><div class="mbky">2024</div><div class="mbktrack"><div class="mbkfill" style="width:51%"></div></div><div class="mbkv">34.6</div></div>
-            <div class="mktbarrow"><div class="mbky">2025</div><div class="mbktrack"><div class="mbkfill" style="width:57%"></div></div><div class="mbkv">38.2</div></div>
-            <div class="mktbarrow"><div class="mbky">2030E</div><div class="mbktrack"><div class="mbkfill hi" style="width:78%"></div></div><div class="mbkv">52.6</div></div>
-            <div class="mktbarrow"><div class="mbky">2035E</div><div class="mbktrack"><div class="mbkfill hi" style="width:100%"></div></div><div class="mbkv">67.1</div></div>
-          </div>
-        </div>
-      </div>
-      <div class="r cite mt-s">Recent deals: KKR bought Superstruct's 80+ festivals (~€1.3B) &nbsp;·&nbsp; Fever, owner of DICE, raised at a reported ~$5.2B valuation &nbsp;·&nbsp; Penske took full control of SXSW.</div>
-      <div class="r cite mt-s">Sources: McKinsey &amp; Skift (2024) &middot; Goldman Sachs (2025) &middot; Live Nation (2026) &middot; WEF (2025) &middot; WHO (2025) &middot; Billboard, MBW, TheWrap</div>
-    </div>
-  </section>
-
-  <!-- 4 · THE PROBLEM -->
-  <section class="slide ph">
-    <div class="bg kb" style="background-image:url('media/photos/build-crew.jpg');background-position:38% 58%;transform:scale(1.15)"></div>
-    <div class="tone"></div><div class="veil lr strong"></div><div class="grain"></div>
-    <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
-    <div class="pad">
-      <div class="r kick">The Problem</div>
-      <h2 class="r sm mt-xs" style="max-width:none">The Entertainment Industry is stuck in the past.</h2>
-      <div class="r sub mt-s" style="max-width:62ch">Multi&#8209;million&#8209;dollar events still run on group chats and spreadsheets.</div>
-      <ul class="r pains mt-s">
-        <li>Demand is a guess.</li>
-        <li>The plan starts from zero.</li>
-        <li>What the crew learns leaves with them.</li>
-      </ul>
-      <div class="r probchart mt">
-        <div class="pctitle">Costs took 97&cent; of every dollar in 2025.</div>
-        <div class="pclegend"><span class="lg-sw lg-rev"></span>Revenue<span class="lg-sw lg-cost"></span>Costs</div>
-        <svg viewBox="0 0 720 360" width="720" height="360" role="img" aria-label="Live Nation concerts revenue and costs, 2022 to 2025. Both climbed toward $20 billion; in 2025 costs were 97% of revenue.">
-          <line x1="56" y1="290.0" x2="700" y2="290.0" stroke="rgba(239,231,214,.12)" stroke-width="1"/>
-          <text x="46" y="294.0" text-anchor="end" class="pcaxis">$12B</text>
-          <line x1="56" y1="170.0" x2="700" y2="170.0" stroke="rgba(239,231,214,.12)" stroke-width="1"/>
-          <text x="46" y="174.0" text-anchor="end" class="pcaxis">$16B</text>
-          <line x1="56" y1="50.0" x2="700" y2="50.0" stroke="rgba(239,231,214,.12)" stroke-width="1"/>
-          <text x="46" y="54.0" text-anchor="end" class="pcaxis">$20B</text>
-          <rect x="104.5" y="245.3" width="26" height="44.7" fill="var(--dim-d)" opacity=".6"/>
-          <rect x="142.5" y="250.4" width="26" height="39.6" fill="var(--gold)"/>
-          <text x="136.5" y="312" text-anchor="middle" class="pcaxis">2022</text>
-          <rect x="265.5" y="87.2" width="26" height="202.8" fill="var(--dim-d)" opacity=".6"/>
-          <rect x="303.5" y="96.8" width="26" height="193.2" fill="var(--gold)"/>
-          <text x="297.5" y="312" text-anchor="middle" class="pcaxis">2023</text>
-          <rect x="426.5" y="79.4" width="26" height="210.6" fill="var(--dim-d)" opacity=".6"/>
-          <rect x="464.5" y="95.3" width="26" height="194.7" fill="var(--gold)"/>
-          <text x="458.5" y="312" text-anchor="middle" class="pcaxis">2024</text>
-          <rect x="587.5" y="24.2" width="26" height="265.8" fill="var(--dim-d)" opacity=".6"/>
-          <rect x="625.5" y="44.9" width="26" height="245.1" fill="var(--gold)"/>
-          <text x="619.5" y="312" text-anchor="middle" class="pcaxis">2025</text>
-          <text x="660" y="20" text-anchor="end" class="pcval pcval-rev">Revenue $20.9B</text>
-          <text x="660" y="38" text-anchor="end" class="pcval pcval-cost">Costs $20.2B, 97% of revenue</text>
+<!-- 3 MARKET -->
+<section class="slide bg-content" data-slide="3" aria-label="Market">
+  <img class="logo-sm" src="media/logos/imxp-primary-lockup-white.png" alt="IMXP">
+  <header class="hd">
+    <p class="eyebrow">Market</p>
+    <h2>People spend over <span class="nw">$1.1 trillion</span> a year on experiences.</h2>
+    <p class="sub"><span class="line">In the midst of a loneliness epidemic, people want to spend more time IRL.</span></p>
+  </header>
+  <div class="mk-band">
+    <figure class="mk-size">
+      <figcaption class="cap">How big</figcaption>
+      <div class="rings">
+        <svg class="rings-svg" viewBox="0 0 330 330" role="img" aria-label="Nested rings: all traveler experiences, paid experiences, and destination festivals at the center.">
+          <circle cx="165" cy="165" r="160" fill="rgba(114,100,241,.08)" stroke="rgba(252,250,247,.30)" stroke-width="1.5"/>
+          <circle cx="165" cy="165" r="92" fill="rgba(114,100,241,.30)" stroke="rgba(114,100,241,.9)" stroke-width="1.5"/>
+          <circle cx="165" cy="165" r="38" fill="#7264F1"/>
         </svg>
+        <svg class="rings-leaders" viewBox="0 0 820 330" aria-hidden="true">
+          <g stroke="rgba(252,250,247,.5)" stroke-width="1" fill="none">
+            <path d="M267 42H408"/><path d="M255 146H408"/><path d="M192 192L300 250H408"/>
+          </g>
+          <g fill="#FCFAF7"><circle cx="267" cy="42" r="3"/><circle cx="255" cy="146" r="3"/><circle cx="192" cy="192" r="3"/></g>
+        </svg>
+        <ul class="ring-labels">
+          <li class="rl rl1"><span class="sw sw1"></span><b>$1.1–1.3T</b><span class="d">Destination experiences</span></li>
+          <li class="rl rl2"><span class="sw sw2"></span><b>$250–310B</b><span class="d">Paid experiences, like concerts</span></li>
+          <li class="rl rl3"><span class="sw sw3"></span><b>Destination festivals</b><span class="d">Where IMXP starts</span></li>
+        </ul>
       </div>
-      <div class="r cite bright mt-s">Source: Live Nation annual filings, Concerts segment, 2022&ndash;2025: a record 159M fans in 2025 at a 3.3% margin. Costs = revenue minus adjusted operating income. Axis starts at $12B.</div>
-    </div>
-  </section>
+    </figure>
+    <figure class="mk-fast">
+      <figcaption class="cap">How fast</figcaption>
+      <p class="ctitle">Live music revenue ($B)</p>
+      <div class="cols" role="img" aria-label="Live music revenue: 34.6 billion dollars in 2024 and 38.2 in 2025; forecast 52.6 in 2030 and 67.1 in 2035.">
+        <div class="col" style="--v:34.6"><span class="v">34.6</span><span class="bar"></span><span class="y">2024</span><span class="tag" aria-hidden="true" style="visibility:hidden">forecast</span></div>
+        <div class="col" style="--v:38.2"><span class="v">38.2</span><span class="bar"></span><span class="y">2025</span><span class="tag" aria-hidden="true" style="visibility:hidden">forecast</span></div>
+        <div class="col fc" style="--v:52.6"><span class="v">52.6</span><span class="bar"></span><span class="y">2030</span><span class="tag">forecast</span></div>
+        <div class="col fc" style="--v:67.1"><span class="v">67.1</span><span class="bar"></span><span class="y">2035</span><span class="tag">forecast</span></div>
+      </div>
+    </figure>
+  </div>
+  <p class="deals"><span class="lx">Recent deals: KKR bought Superstruct's 80+ festivals (~€1.3B) · Fever, owner of DICE, raised at a reported ~$5.2B valuation · Penske took full control of SXSW.</span><span class="sx">Deals: KKR bought Superstruct (~€1.3B) · Fever raised at ~$5.2B · Penske took over SXSW.</span></p>
+  <p class="foot"><span class="lx">Sources: McKinsey &amp; Skift (2024) · Goldman Sachs (2025) · Live Nation (2026) · WEF (2025) · WHO (2025) · Billboard, MBW, TheWrap</span><span class="sx">Sources: McKinsey &amp; Skift · Goldman Sachs · Live Nation · WEF · WHO · Billboard · MBW · TheWrap</span></p>
+  <p class="pnum">03 / 10</p>
+</section>
 
-  <!-- 5 · THE SOLUTION · ORION -->
-  <section class="slide ph">
-    <div class="bg" style="background-image:url('media/solution-bg-poster.jpg')"></div>
-    <video class="bgvid" src="media/solution-bg.mp4" poster="media/solution-bg-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
-    <div class="tone"></div><div class="veil" style="background:linear-gradient(180deg,rgba(9,8,6,.88),rgba(9,8,6,.72) 40%,rgba(9,8,6,.88))"></div><div class="grain"></div>
-    <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
-    <div class="pad">
-      <div class="r kick">The Solution</div>
-      <h2 class="r sm mt-xs" style="max-width:none">Project Orion is an end&#8209;to&#8209;end copilot for event production.</h2>
-      <div class="r sub mt-s" style="max-width:none">It plans, tracks and remembers the details every event depends on.</div>
-      <div class="r solsplit">
-        <div class="r solcards solcards-col">
-          <div class="solcard">
-            <div class="sct">Test demand first</div>
-            <div class="scd">Pre&#8209;sales prove the event before the big spend.</div>
-          </div>
-          <div class="solcard">
-            <div class="sct">Plan from real numbers</div>
-            <div class="scd">Real lead times and each team's work for today.</div>
-          </div>
-          <div class="solcard">
-            <div class="sct">Keep what crews learn</div>
-            <div class="scd">Every decision saved with its reason and outcome.</div>
-          </div>
-        </div>
-        <div class="democol">
-          <div class="demopanel" style="background-image:url('media/demo-thumb.jpg')">
-            <button class="playbtn sm" id="playbtn" aria-label="Play Project Orion demo video"><span></span></button>
-            <video id="fiab" src="media/fiab.mp4" playsinline preload="none" style="display:none"></video>
-          </div>
-          <div class="demolabel-u">Project Orion demo</div>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- 4 PROBLEM -->
+<section class="slide bg-content has-photo s-problem" data-slide="4" aria-label="The problem">
+  <img class="bg-photo" src="media/photos/build-crew.jpg" alt="">
+  <div class="shade"></div>
+  <img class="logo-sm" src="media/logos/imxp-primary-lockup-white.png" alt="IMXP">
+  <header class="hd">
+    <p class="eyebrow">The problem</p>
+    <h2><span class="line">Record crowds.</span> <span class="line">Three-cent margins.</span></h2>
+    <p class="sub"><span class="line">Multi-million-dollar events still run on group chats and spreadsheets.</span></p>
+  </header>
+  <ul class="pains">
+    <li>Demand is a guess.</li>
+    <li>The plan starts from zero.</li>
+    <li>What the crew learns leaves with them.</li>
+  </ul>
+  <figure class="pb-chart">
+    <figcaption><span class="cap">Live Nation concerts, revenue vs costs ($B)</span><span class="ctitle">Costs took 97¢ of every dollar in 2025.</span></figcaption>
+    <div class="legend"><span><i class="k k-r"></i>Revenue</span><span><i class="k k-c"></i>Costs</span></div>
+    <div class="lc" role="group" aria-label="Live Nation concerts revenue and costs, 2022 to 2025. Hover or tap a year for exact figures."><div class="lc-y" aria-hidden="true"><span style="top:100.00%">$12B</span><span style="top:60.00%">$16B</span><span style="top:20.00%">$20B</span></div><div class="lc-plot"><svg viewBox="0 0 1000 400" preserveAspectRatio="none" aria-hidden="true"><line x1="0" x2="1000" y1="400.0" y2="400.0" stroke="rgba(252,250,247,.10)" stroke-width="1" vector-effect="non-scaling-stroke"/><line x1="0" x2="1000" y1="240.0" y2="240.0" stroke="rgba(252,250,247,.10)" stroke-width="1" vector-effect="non-scaling-stroke"/><line x1="0" x2="1000" y1="80.0" y2="80.0" stroke="rgba(252,250,247,.10)" stroke-width="1" vector-effect="non-scaling-stroke"/><polyline points="80.0,340.4 360.0,129.6 640.0,119.2 920.0,45.6" fill="none" stroke="#8E8D93" stroke-width="3" vector-effect="non-scaling-stroke" stroke-linejoin="round"/><polyline points="80.0,347.2 360.0,142.4 640.0,140.4 920.0,73.2" fill="none" stroke="#7264F1" stroke-width="4" vector-effect="non-scaling-stroke" stroke-linejoin="round"/></svg><span class="pt r" style="left:8.00%;top:85.10%"></span><span class="pt c" style="left:8.00%;top:86.80%"></span><span class="pt r" style="left:36.00%;top:32.40%"></span><span class="pt c" style="left:36.00%;top:35.60%"></span><span class="pt r" style="left:64.00%;top:29.80%"></span><span class="pt c" style="left:64.00%;top:35.10%"></span><span class="pt r" style="left:92.00%;top:11.40%"></span><span class="pt c" style="left:92.00%;top:18.30%"></span><span class="val r" style="left:92.00%;top:11.40%">$20.9B</span><span class="val c" style="left:92.00%;top:18.30%">$20.2B</span><button type="button" class="hit first" style="left:8.00%" aria-label="2022: revenue $13.49 billion, costs $13.32 billion, costs 98.7% of revenue"><span class="tip t" aria-hidden="true"><strong>2022</strong><span><i class="k k-r"></i>Revenue $13.49B</span><span><i class="k k-c"></i>Costs $13.32B</span><span class="share">Costs: 98.7% of revenue</span></span></button><button type="button" class="hit" style="left:36.00%" aria-label="2023: revenue $18.76 billion, costs $18.44 billion, costs 98.3% of revenue"><span class="tip b" aria-hidden="true"><strong>2023</strong><span><i class="k k-r"></i>Revenue $18.76B</span><span><i class="k k-c"></i>Costs $18.44B</span><span class="share">Costs: 98.3% of revenue</span></span></button><button type="button" class="hit" style="left:64.00%" aria-label="2024: revenue $19.02 billion, costs $18.49 billion, costs 97.2% of revenue"><span class="tip b" aria-hidden="true"><strong>2024</strong><span><i class="k k-r"></i>Revenue $19.02B</span><span><i class="k k-c"></i>Costs $18.49B</span><span class="share">Costs: 97.2% of revenue</span></span></button><button type="button" class="hit last" style="left:92.00%" aria-label="2025: revenue $20.86 billion, costs $20.17 billion, costs 96.7% of revenue"><span class="tip b" aria-hidden="true"><strong>2025</strong><span><i class="k k-r"></i>Revenue $20.86B</span><span><i class="k k-c"></i>Costs $20.17B</span><span class="share">Costs: 96.7% of revenue</span></span></button></div><div class="lc-x" aria-hidden="true"><span style="left:8.00%">2022</span><span style="left:36.00%">2023</span><span style="left:64.00%">2024</span><span style="left:92.00%">2025</span></div></div>
+  </figure>
+  <p class="foot">Source: Live Nation annual filings, Concerts segment, 2022–2025: a record 159M fans in 2025 at a 3.3% margin. Costs = revenue minus adjusted operating income. Axis starts at $12B.</p>
+  <p class="pnum">04 / 10</p>
+</section>
 
-  <!-- 6 · TRACTION -->
-  <section class="slide ph">
-    <div class="bg kb" style="background-image:url('media/photos/stands-build.jpg')"></div>
-    <div class="tone"></div><div class="veil lr strong"></div><div class="grain"></div>
-    <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
-    <div class="pad">
-      <div class="r kick">Traction</div>
-      <h2 class="r sm mt-xs" style="max-width:none">Orion already runs at IMXP.</h2>
-      <div class="r lead mt-s" style="max-width:62ch">First live test: Iceland Eclipse 2026, 4,200 participants from 75+ countries.</div>
-      <div class="r lead mt-xs" style="max-width:62ch;font-size:clamp(.78rem,1.1cqw,.98rem)">Ran live at Iceland Eclipse: Support inbox · Slack approvals · Meeting capture · Decision log.</div>
-      <div class="r figs mt">
-        <div class="fig"><div class="n">120+</div><div class="l">decisions on record</div></div>
-        <div class="fig"><div class="n paper">2 of 4</div><div class="l">2027 events vetted by Orion</div></div>
-      </div>
-      <div class="r cite mt-s">IMXP, as of Sep 2026</div>
-    </div>
-  </section>
+<!-- 5 SOLUTION -->
+<section class="slide bg-content" data-slide="5" aria-label="The solution">
+  <img class="logo-sm" src="media/logos/imxp-primary-lockup-white.png" alt="IMXP">
+  <header class="hd">
+    <p class="eyebrow">The solution</p>
+    <h2>From idea to live, in one system.</h2>
+  </header>
+  <ul class="cards">
+    <li><h3>Test demand first</h3><p>Pre-sales prove the event before the big spend.</p></li>
+    <li><h3>Plan from real numbers</h3><p>Real lead times and each team's work for today.</p></li>
+    <li><h3>Keep what crews learn</h3><p>Every decision saved with its reason and outcome.</p></li>
+  </ul>
+  <figure class="demo-frame">
+    <div class="df-screen" data-demo-frame><video class="df-video" preload="metadata" playsinline poster="media/photos/orion-demo-poster.jpg" data-local="media/fiab.mp4" aria-label="Project Orion demo"></video><button type="button" class="df-play" aria-label="Play the demo" hidden></button></div>
+    <figcaption class="df-cap"><a data-demo-link hidden target="_blank" rel="noopener">Open the demo in a new tab</a><span data-demo-label>Project Orion demo</span></figcaption>
+  </figure>
+  <p class="pnum">05 / 10</p>
+</section>
 
-  <!-- 7 · ROADMAP -->
-  <section class="slide dk">
-    <div class="flybg"></div><div class="grain"></div>
-    <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
-    <div class="pad">
-      <div class="r kick">Roadmap</div>
-      <h2 class="r sm mt-xs" style="max-width:none">Four events in 2027. Four product deadlines.</h2>
-      <div class="r sub mt-s" style="max-width:none">Each one ships part of Orion and proves it on real users.</div>
-      <div class="r gantt mt">
-        <img src="media/people/product-gantt-dark.png" alt="Build calendar: Validate and insights engine, Plan, Market v1 and Coach build bars; Coherence live demand test, Midnight Sun memory test and Egypt full lifecycle prove bars; Iceland to template, Coherence, Atomika and Midnight Sun plus Egypt harvest learn bars; gates through the decision point after Egypt 2027; today marked late Sep 2026" />
-      </div>
-      <div class="r rmcards">
-        <div class="rmcard"><div class="rmn">Coherence</div><div class="rmp">Austin, TX</div><div class="rmd">Mar 19–22, 2027</div></div>
-        <div class="rmcard"><div class="rmn">Atomika</div><div class="rmp">Roswell, NM</div><div class="rmd">May 7–9, 2027</div></div>
-        <div class="rmcard"><div class="rmn">Midnight Sun</div><div class="rmp">Reykjavík</div><div class="rmd">Jul 9–11, 2027</div></div>
-        <div class="rmcard"><div class="rmn">Egypt Eclipse</div><div class="rmp">Luxor &amp; Greater Egypt</div><div class="rmd">Jul 30–Aug 9, 2027</div></div>
-      </div>
-      <div class="r cite mt-s">Beyond 2027: Australasia Eclipse 2028, Apophis 2029, South Africa Eclipse 2030, and the Antarctic Expedition. 2035: Watch Earth eclipse the Sun, from the Moon.</div>
+<!-- 6 TRACTION -->
+<section class="slide bg-content s-traction" data-slide="6" aria-label="Traction">
+  <img class="tr-photo" src="media/photos/stands-build.jpg" alt="Crew raising the geodesic dome at Iceland Eclipse">
+  <div class="tr-shade"></div>
+  <img class="logo-sm" src="media/logos/imxp-primary-lockup-white.png" alt="IMXP">
+  <header class="hd">
+    <p class="eyebrow">Traction</p>
+    <h2>Orion already runs at Immersive Experiences.</h2>
+    <p class="sub"><span class="line">First live test: Iceland Eclipse 2026, 4,200 participants from <span class="nw">75+ countries.</span></span></p>
+  </header>
+  <div class="tr-left">
+    <p class="cap">Ran live at Iceland Eclipse</p>
+    <ul class="live">
+      <li><svg class="ic ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Support inbox</li>
+      <li><svg class="ic ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Slack approvals</li>
+      <li><svg class="ic ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Meeting capture</li>
+      <li><svg class="ic ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Decision log</li>
+    </ul>
+    <div class="nums">
+      <div class="n lead"><b>120+</b><span class="d">decisions on record</span></div>
+      <div class="n"><b>2 of 4</b><span class="d">2027 events vetted by Orion</span></div>
     </div>
-  </section>
+  </div>
+  <p class="foot">Source: IMXP, as of Sep 2026.</p>
+  <p class="pnum">06 / 10</p>
+</section>
 
-  <!-- 8 · THE TEAM -->
-  <section class="slide ph">
-    <div class="bg kb" style="background-image:url('media/photos/founder-interview.jpg');background-position:center 40%"></div>
-    <div class="tone"></div><div class="veil" style="background:linear-gradient(180deg,rgba(9,8,6,.85),rgba(9,8,6,.45) 34%,rgba(9,8,6,.78) 70%,rgba(9,8,6,.96) 100%)"></div><div class="grain"></div>
-    <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
-    <div class="pad anchor-top">
-      <div class="r kick">The Team</div>
-      <h2 class="r sm mt-xs" style="max-width:none">The people who have already done this.</h2>
-      <div class="r sub mt-s" style="max-width:none">A product&#8209;first team that runs its own events. Orion's first customer is us.</div>
-      <div class="r leads mt">
-        <div class="member"><img src="media/people/mitch-hs.jpg" alt="Mitch Morales"/><div class="nm">Mitch Morales</div><div class="rl">Founder &amp; CEO</div><div class="cr">Texas Eclipse, Unknown Ventures</div></div>
-        <div class="member"><img src="media/people/maryliz-hs.jpg" alt="MaryLiz Bender"/><div class="nm">MaryLiz Bender</div><div class="rl">CXO</div><div class="cr">Cosmic Perspective, Everyday Astronaut</div></div>
-        <div class="member"><img src="media/people/jon-hs.jpg" alt="Jon Shapiro"/><div class="nm">Jon Shapiro</div><div class="rl">CTO</div><div class="cr">PlantWave, Mantle, early multi&#8209;agent AI systems</div></div>
-        <div class="member"><img src="media/people/benjamin-hs.jpg" alt="Benjamin Hill"/><div class="nm">Benjamin Hill</div><div class="rl">AI Product Developer</div><div class="cr">4 years at Indeed</div></div>
-        <div class="member"><img src="media/people/ari.jpg" alt="Ari Eisenstat"/><div class="nm">Ari Eisenstat</div><div class="rl">Program Director</div><div class="cr">Space for Humanity</div></div>
-        <div class="member"><img src="media/people/andrew.jpg" alt="Andrew Glenn"/><div class="nm">Andrew Glenn</div><div class="rl">Creative Director</div><div class="cr">KAMMOK</div></div>
-        <div class="member"><img src="media/people/patrick.jpg" alt="Patrick Kronfli"/><div class="nm">Patrick Kronfli</div><div class="rl">Partnerships Director</div><div class="cr">Unify.org</div></div>
-        <div class="member"><img src="media/people/holly.jpg" alt="Holly Wood"/><div class="nm">Holly Wood</div><div class="rl">Admin Director</div><div class="cr">Texas Eclipse</div></div>
-        <div class="member"><img src="media/people/regan-hs.jpg" alt="Regan Heckscher"/><div class="nm">Regan Heckscher</div><div class="rl">Systems Admin</div></div>
-        <div class="member"><img src="media/people/tule-hs.jpg" alt="Tule Romeo"/><div class="nm">Tule Romeo</div><div class="rl">Lead Developer</div></div>
-        <div class="member"><img src="media/people/lee-hs.jpg" alt="Lenette Cruz"/><div class="nm">Lenette Cruz</div><div class="rl">AI &amp; Tech Workflow Coordinator</div></div>
-      </div>
-      <ul class="r fmore">
-        <li>Deployed a $10M entertainment fund with Unknown Ventures</li>
-        <li>Risk&#8209;managed a $50M asset portfolio with Kona Energy (acquired)</li>
-      </ul>
-      <div class="r lead mt-s" style="max-width:70ch;font-size:clamp(.68rem,.92cqw,.8rem);color:var(--dim-d);line-height:1.6">Texas Eclipse: $20M revenue, 38,000 people&nbsp;&nbsp;·&nbsp;&nbsp;Euphoria: 20,000 a day&nbsp;&nbsp;·&nbsp;&nbsp;360training: grown $2M to $200M, exited</div>
-      <div class="r lead mt-xs" style="max-width:70ch;font-size:clamp(.56rem,.74cqw,.64rem);color:var(--dim-d)">Investors and advisors: Whitney Kroenke Silverstein · JT Marino · Chris Boshuizen · Ravé Mehta</div>
-      <div class="explabel">Experience across</div>
-      <div class="explogos">
-        <img class="tall" src="media/people/exp/texas-eclipse.png" alt="Texas Eclipse" />
-        <img class="tall" src="media/people/exp/electric-forest.png" alt="Electric Forest" />
-        <img src="media/people/exp/trailblazers.png" alt="Trail Blazers" />
-        <img class="tall" src="media/people/exp/euphoria.png" alt="Euphoria" />
-        <img src="media/people/exp/everfest.png" alt="Everfest" />
-        <img src="media/people/exp/space-for-humanity.png" alt="Space for Humanity" />
-        <img src="media/people/exp/cosmic-perspective.png" alt="Cosmic Perspective" />
-        <img class="tall" src="media/people/exp/everyday-astronaut.png" alt="Everyday Astronaut" />
-      </div>
-      <div class="r lead mt-xs" style="max-width:70ch;font-size:clamp(.52rem,.68cqw,.6rem);color:var(--dim-d)">Full founder bio in the data room.</div>
-    </div>
-  </section>
-
-  <!-- 9 · FUNDRAISE -->
-  <section class="slide dk">
-    <div style="position:absolute;inset:0;z-index:0;background-image:url('media/photos/panorama.jpg');background-size:cover;background-position:center;opacity:.22"></div>
-    <div class="flybg"></div><div class="grain"></div>
-    <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
-    <div class="pad">
-      <div class="r kick">Fundraise</div>
-      <h2 class="r sm mt-xs" style="max-width:none">$1M to create the best destination experiences on the planet.</h2>
-      <div class="r sub mt-s" style="max-width:none">Half funds the events. Half builds Orion, the system that scales them.</div>
-      <div class="r fr-cols">
-        <div class="fr-terms">
-          <div class="fr-term"><div class="ftl">Raise</div><div class="ftv">$1M</div></div>
-          <div class="fr-term"><div class="ftl">Terms</div><div class="ftv">SAFE, $10M cap</div></div>
-          <div class="fr-term"><div class="ftl">Status</div><div class="ftv">$350K committed</div><div class="fts">from previous investors · previous: $750K pre&#8209;seed, 2025 ($5M post)</div></div>
-        </div>
-        <div class="proceeds">
-          <div class="prow"><div><div class="pl">Destination experience development &middot; $500K</div><div class="ptrack"><div class="pfill" style="width:50%"></div></div></div><div class="pv">50%</div></div>
-          <div class="prow"><div><div class="pl">Dev team hires &amp; Orion training &middot; $300K</div><div class="ptrack"><div class="pfill sky" style="width:30%;background:var(--sky)"></div></div></div><div class="pv">30%</div></div>
-          <div class="prow"><div><div class="pl">Orion build to unlock platform revenue &middot; $200K</div><div class="ptrack"><div class="pfill" style="width:20%;background:var(--paper)"></div></div></div><div class="pv">20%</div></div>
-        </div>
-      </div>
-      <div class="r milestones">
-        <div class="mst"><div class="msd">Mar 2027</div><div class="mst-t">Orion beta at Coherence</div></div>
-        <div class="mst"><div class="msd">May 2027</div><div class="mst-t">Orion release at Atomika</div></div>
-        <div class="mst"><div class="msd">Aug 2027</div><div class="mst-t">Full lifecycle at Egypt</div></div>
-        <div class="mst"><div class="msd">After Egypt</div><div class="mst-t">Decision point: scale IMXP or offer Orion</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 10 · CLOSE -->
-  <section class="slide ph center">
-    <div class="bg kb" style="background-image:url('media/photos/golden-hug.jpg')"></div>
-    <div class="tone"></div><div class="veil"></div><div class="grain"></div>
-    <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
-    <div class="pad mid" style="align-items:flex-start">
-      <h1 class="r">Thank you.</h1>
-      <div class="r sub mt-s">Realigning our civilization with the Cosmos.</div>
-      <div class="r lead mt-s" style="font-size:clamp(.72rem,1cqw,.9rem)">We are building the systems to one day see a total solar eclipse from the Moon.</div>
-      <div class="r contact mt">Mitch Morales · <a href="mailto:mitch@im-xp.com">mitch@im-xp.com</a></div>
-    </div>
-    <div class="r cite bright" style="position:absolute;left:0;right:0;bottom:clamp(20px,3.6cqh,34px);text-align:center">Photos: Monica Cazes · Andrianna Kaimis · The Bailey Perspective · Kayla Pittman</div>
-  </section>
+<!-- 7 ROADMAP -->
+<section class="slide bg-content" data-slide="7" aria-label="Roadmap">
+  <img class="logo-sm" src="media/logos/imxp-primary-lockup-white.png" alt="IMXP">
+  <header class="hd">
+    <p class="eyebrow">Roadmap</p>
+    <h2><span class="line">Four events in 2027.</span> <span class="line">Four product deadlines.</span></h2>
+    <p class="sub"><span class="line">Each one ships part of Orion and proves it on real users.</span></p>
+  </header>
+  
+<div class="gantt" role="img" aria-label="Build calendar, August 2026 to August 2027. Build: demand testing, planning, marketing, then daily coaching. Prove: Coherence live demand test, Midnight Sun memory test, Egypt full lifecycle at scale. Learn: Iceland lessons into a template, then lessons from each 2027 event. Gates: Oct 15 Iceland data locked; Dec 15 planning go/no-go; March Orion beta at Coherence; May Orion release at Atomika; after Egypt, decide to scale IMXP or offer Orion.">
+  <div class="g-head"><span class="g-lab"></span><span>Aug–Oct 2026</span><span>Nov 2026–Feb 2027</span><span>Mar–Jun 2027</span><span>Jul–Aug 2027</span></div>
+  <div class="g-row r3"><span class="g-lab">Build</span><div class="g-track"><span class="gb b-build" style="left:0.000%;width:25.000%;top:0px">Demand testing</span><span class="gb b-build" style="left:25.000%;width:25.000%;top:0px">Marketing</span><span class="gb b-build" style="left:8.333%;width:35.417%;top:38px">Planning</span><span class="gb b-build" style="left:37.500%;width:37.500%;top:76px">Daily coaching</span></div></div>
+  <div class="g-row r2"><span class="g-lab">Prove</span><div class="g-track"><span class="gb b-prove" style="left:8.333%;width:47.917%;top:0px">Coherence: live demand test</span><span class="gb b-prove" style="left:56.250%;width:43.750%;top:0px">Egypt: full lifecycle at scale</span><span class="gb b-prove" style="left:68.750%;width:18.750%;top:38px">M. Sun: memory test</span></div></div>
+  <div class="g-row r1"><span class="g-lab">Learn</span><div class="g-track"><span class="gb b-learn" style="left:8.333%;width:22.917%;top:0px">Iceland → template</span><span class="gb b-learn" style="left:56.250%;width:18.750%;top:0px">Coherence + Atomika</span><span class="gb b-learn" style="left:87.500%;width:12.500%;top:0px">M. Sun + Egypt</span></div></div>
+  <div class="g-row rg"><span class="g-lab">Gates</span><div class="g-track"><span class="gate" style="left:20.833%;top:0px"><i></i><b>Oct 15</b> Iceland data locked</span><span class="gate" style="left:54.062%;top:0px"><i></i><b>Mar</b> Orion beta at Coherence</span><span class="gate" style="left:34.375%;top:34px"><i></i><b>Dec 15</b> Planning go/no-go</span><span class="gate" style="left:64.062%;top:34px"><i></i><b>May</b> Orion release at Atomika</span><span class="gate right" style="left:95.000%;top:68px"><b>After Egypt</b> Decide: scale IMXP or offer Orion <i></i></span></div></div>
+  <div class="g-today" style="--t:16.083"><span>Today</span></div>
 </div>
-</div></div>
+  <ol class="ptl">
+    <li class="g"><span class="when">Oct 15, 2026</span><span class="what">Iceland data locked</span></li>
+    <li class="g"><span class="when">Dec 15, 2026</span><span class="what">Planning go/no-go</span></li>
+    <li class="e"><span class="when">Mar 19–22, 2027</span><span class="what">Orion beta at Coherence, Austin</span></li>
+    <li class="e"><span class="when">May 7–9, 2027</span><span class="what">Orion release at Atomika, Roswell</span></li>
+    <li class="e"><span class="when">Jul 9–11, 2027</span><span class="what">Memory test at Midnight Sun, Reykjavík</span></li>
+    <li class="e"><span class="when">Jul 30–Aug 9, 2027</span><span class="what">Full lifecycle at Egypt Eclipse, Luxor</span></li>
+    <li class="g"><span class="when">After Egypt</span><span class="what">Decide: scale IMXP or offer Orion</span></li>
+  </ol>
+  <p class="ptl-build">Building alongside: demand testing, planning, marketing and daily coaching.</p>
+  <ul class="events">
+    <li><b>Coherence</b><span class="d">Austin, TX</span><span class="ev-date">Mar 19–22, 2027</span></li>
+    <li><b>Atomika</b><span class="d">Roswell, NM</span><span class="ev-date">May 7–9, 2027</span></li>
+    <li><b>Midnight Sun</b><span class="d">Reykjavík</span><span class="ev-date">Jul 9–11, 2027</span></li>
+    <li><b>Egypt Eclipse</b><span class="d">Luxor &amp; Greater Egypt</span><span class="ev-date">Jul 30–Aug 9, 2027</span></li>
+  </ul>
+  <p class="foot">Beyond 2027: Australasia Eclipse 2028, Apophis 2029, South Africa Eclipse 2030, and the Antarctic Expedition. <span class="horizon"><span class="nw">2035: Watch Earth eclipse the Sun,</span> <span class="nw">from the Moon.</span></span></p>
+  <p class="pnum">07 / 10</p>
+</section>
 
-<div id="rail"></div>
+<!-- 8 TEAM -->
+<section class="slide bg-content" data-slide="8" aria-label="The team">
+  <img class="logo-sm" src="media/logos/imxp-primary-lockup-white.png" alt="IMXP">
+  <header class="hd">
+    <p class="eyebrow">The team</p>
+    <h2>The people who have already done this.</h2>
+    <p class="sub"><span class="line">A product-first team that runs its own events.</span> <span class="line">Orion's first customer is us.</span></p>
+  </header>
+  <div class="founder">
+    <p class="cap">Founder</p>
+    <div class="fhead"><img class="av fav" src="media/people/mitch-hs.jpg" alt=""><div><b class="fname">Mitch Morales</b><span class="role">Founder &amp; CEO</span></div></div>
+    <ul class="fstats">
+      <li><b>$20M</b><span class="d">Texas Eclipse revenue, 38,000 people</span></li>
+      <li><b>20,000</b><span class="d">people a day at Euphoria</span></li>
+      <li><b>$2M → $200M</b><span class="d">360training, grown and exited</span></li>
+    </ul>
+  </div>
+  <div class="crew">
+    <p class="cap">The IMXP team: small and product-first</p>
+    <ul class="people"><li><img class="av" src="media/people/maryliz-hs.jpg" alt=""><b>MaryLiz Bender</b><span class="role">CXO</span><span class="cred">Cosmic Perspective, Everyday Astronaut</span></li><li><img class="av" src="media/people/jon-hs.jpg" alt=""><b>Jon Shapiro</b><span class="role">CTO</span><span class="cred">PlantWave, Mantle, early multi-agent AI systems</span></li><li><img class="av" src="media/people/benjamin-hs.jpg" alt=""><b>Benjamin Hill</b><span class="role">AI Product Developer</span><span class="cred">4 years at Indeed</span></li><li><img class="av" src="media/people/ari.jpg" alt=""><b>Ari Eisenstat</b><span class="role">Program Director</span><span class="cred">Space for Humanity</span></li><li><img class="av" src="media/people/andrew.jpg" alt=""><b>Andrew Glenn</b><span class="role">Creative Director</span><span class="cred">KAMMOK</span></li><li><img class="av" src="media/people/patrick.jpg" alt=""><b>Patrick Kronfli</b><span class="role">Partnerships Director</span><span class="cred">Unify.org</span></li><li><img class="av" src="media/people/holly.jpg" alt=""><b>Holly Wood</b><span class="role">Admin Director</span><span class="cred">Texas Eclipse</span></li><li><img class="av" src="media/people/regan-hs.jpg" alt=""><b>Regan Heckscher</b><span class="role">Systems Admin</span></li><li><img class="av" src="media/people/tule-hs.jpg" alt=""><b>Tule Romeo</b><span class="role">Lead Developer</span></li><li><img class="av" src="media/people/lee-hs.jpg" alt=""><b>Lenette Cruz</b><span class="role">AI & Tech Workflow Coordinator</span></li></ul>
+  </div>
+  <div class="creds">
+    <p class="muted">Investors and advisors: Whitney Kroenke Silverstein · JT Marino · Chris Boshuizen · Ravé Mehta</p>
+    <p class="xp">Experience across: Texas Eclipse · Electric Forest · Trail Blazers · Euphoria · Everfest · Space for Humanity · Cosmic Perspective · Everyday Astronaut</p>
+  </div>
+  <p class="pnum">08 / 10</p>
+</section>
+
+<!-- 9 FUNDRAISE -->
+<section class="slide bg-content" data-slide="9" aria-label="Fundraise">
+  <img class="logo-sm" src="media/logos/imxp-primary-lockup-white.png" alt="IMXP">
+  <header class="hd">
+    <p class="eyebrow">Fundraise</p>
+    <h2>$1M to create the best destination experiences on the planet.</h2>
+    <p class="sub"><span class="line">Half funds the events.</span> <span class="line">Half builds Orion, the system that scales them.</span></p>
+  </header>
+  <div class="terms">
+    <div><p class="cap">Raise</p><b class="big">$1M</b></div>
+    <div><p class="cap">Terms</p><b>SAFE, $10M cap</b></div>
+    <div><p class="cap">Status</p><b>$350K committed</b><span class="d muted">From previous investors. Previous round: $750K pre-seed, 2025 <span class="nw">($5M post)</span>.</span></div>
+  </div>
+  <div class="uop">
+    <p class="cap">Use of proceeds</p>
+    <ul>
+      <li><div class="row"><span class="lab">Destination experience development</span><span class="amt">$500K · 50%</span></div><div class="track"><span class="fill" style="--p:50%"></span></div></li>
+      <li><div class="row"><span class="lab">Dev team hires &amp; Orion training</span><span class="amt">$300K · 30%</span></div><div class="track"><span class="fill" style="--p:30%"></span></div></li>
+      <li><div class="row"><span class="lab">Orion build to unlock platform revenue</span><span class="amt">$200K · 20%</span></div><div class="track"><span class="fill" style="--p:20%"></span></div></li>
+    </ul>
+  </div>
+  <ol class="ms">
+    <li><span class="ms-date">Mar 2027</span><p>Orion beta at Coherence</p></li>
+    <li><span class="ms-date">May 2027</span><p>Orion release at Atomika</p></li>
+    <li><span class="ms-date">Aug 2027</span><p>Full lifecycle at Egypt</p></li>
+    <li><span class="ms-date">After Egypt</span><p>Decision point: scale IMXP or offer Orion</p></li>
+  </ol>
+  <p class="pnum">09 / 10</p>
+</section>
+
+<!-- 10 CLOSE -->
+<section class="slide bg-close" data-slide="10" aria-label="Close">
+  <img class="logo-sm" src="media/logos/imxp-primary-lockup-white.png" alt="IMXP">
+  <div class="close">
+    <h2>Thank you.</h2>
+    <p class="sub">Realigning our civilization with the Cosmos.</p>
+    <p class="small">We are building the systems to one day see a total solar eclipse from the Moon.</p>
+    <p class="contact">Mitch Morales · <a href="mailto:mitch@im-xp.com">mitch@im-xp.com</a></p>
+  </div>
+  <p class="credits">Photos: Monica Cazes · Andrianna Kaimis · The Bailey Perspective · Kayla Pittman</p>
+  <p class="pnum">10 / 10</p>
+</section>
+
+</main>
+<nav class="dots" aria-label="Slides"></nav>
 
 <script>
-const slides=[...document.querySelectorAll('.slide')];
-const rail=document.getElementById('rail');
-const vid=document.getElementById('fiab');
-let i=0;
-slides.forEach((_,n)=>{const b=document.createElement('button');b.setAttribute('aria-label','Slide '+(n+1));b.onclick=()=>go(n);rail.appendChild(b);});
-function go(n){
-  i=Math.max(0,Math.min(slides.length-1,n));
-  slides.forEach((s,k)=>s.classList.toggle('on',k===i));
-  [...rail.children].forEach((d,k)=>d.classList.toggle('on',k===i));
-  if(location.hash!=='#'+(i+1))history.replaceState(null,'','#'+(i+1));
-  if(vid && !slides[i].contains(vid)){vid.pause();}
-  document.querySelectorAll('.bgvid').forEach(v=>{
-    if(slides[i].contains(v)){v.play().then(()=>v.classList.add('on')).catch(()=>{});}
-    else{v.pause();v.classList.remove('on');}
+/* Paste the demo video link here to show the "Watch the 2-minute demo" button on the Solution slide. */
+const DEMO_URL = "";
+
+(function () {
+  const root = document.documentElement;
+  const stage = document.querySelector('.stage');
+  const slides = [...document.querySelectorAll('.slide')];
+  const dots = document.querySelector('.dots');
+  if (DEMO_URL) {
+    const u = DEMO_URL.trim();
+    let src = null, m;
+    if ((m = u.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]{6,})/))) src = 'https://www.youtube.com/embed/' + m[1];
+    else if ((m = u.match(/vimeo\.com\/(\d+)/))) src = 'https://player.vimeo.com/video/' + m[1];
+    else if ((m = u.match(/loom\.com\/share\/([\w-]+)/))) src = 'https://www.loom.com/embed/' + m[1];
+    const frame = document.querySelector('[data-demo-frame]');
+    if (src) {
+      const f = document.createElement('iframe');
+      f.src = src; f.title = 'Project Orion demo'; f.allow = 'autoplay; fullscreen; picture-in-picture'; f.allowFullscreen = true; f.loading = 'lazy';
+      frame.innerHTML = ''; frame.appendChild(f);
+    }
+    const link = document.querySelector('[data-demo-link]');
+    link.href = u; link.hidden = false;
+    document.querySelector('[data-demo-label]').hidden = true;
+  } else {
+    const vid = document.querySelector('.df-video'), play = document.querySelector('.df-play');
+    vid.addEventListener('loadedmetadata', () => { play.hidden = false; }, { once: true });
+    vid.src = vid.dataset.local;
+    play.addEventListener('click', e => { e.stopPropagation(); play.hidden = true; vid.controls = true; vid.play(); });
+  }
+
+  const q = new URLSearchParams(location.search);
+  let cur = Math.min(Math.max((parseInt(q.get('slide') || '1', 10) || 1) - 1, 0), slides.length - 1);
+
+  const wantMode = () => (innerWidth / innerHeight >= 1) ? 'deck' : 'portrait';
+  const fit = () => { const p = root.dataset.mode === 'portrait'; stage.style.setProperty('--s', Math.min(stage.clientWidth / (p ? 1080 : 1920), stage.clientHeight / (p ? 1920 : 1080))); };
+
+  function show(i, remember) {
+    cur = Math.max(0, Math.min(slides.length - 1, i));
+    slides.forEach((s, k) => s.classList.toggle('active', k === cur));
+    document.querySelectorAll('video').forEach(v => { if (!v.paused) v.pause(); });
+    [...dots.children].forEach((d, k) => d.setAttribute('aria-current', k === cur ? 'true' : 'false'));
+    if (remember) { const u = new URL(location.href); u.searchParams.set('slide', cur + 1); history.replaceState(null, '', u); }
+  }
+  function apply() {
+    const m = wantMode();
+    if (root.dataset.mode !== m) root.dataset.mode = m;
+    fit(); show(cur, false);
+  }
+
+  slides.forEach((s, i) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', 'Slide ' + (i + 1) + ': ' + s.getAttribute('aria-label'));
+    b.addEventListener('click', e => { e.stopPropagation(); show(i, true); });
+    dots.appendChild(b);
   });
-}
-const next=()=>go(i+1),prev=()=>go(i-1);
-addEventListener('keydown',e=>{
-  if(['ArrowRight','PageDown',' '].includes(e.key)){next();e.preventDefault();}
-  if(['ArrowLeft','PageUp'].includes(e.key)){prev();e.preventDefault();}
-  if(e.key==='Home')go(0); if(e.key==='End')go(slides.length-1);
-});
-let sx=0,sy=0;
-addEventListener('touchstart',e=>{sx=e.touches[0].clientX;sy=e.touches[0].clientY;},{passive:true});
-addEventListener('touchend',e=>{const t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy;
-  if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)){dx<0?next():prev();}},{passive:true});
-let wl=0;
-addEventListener('wheel',e=>{const t=Date.now();if(t-wl<760)return;
-  if(Math.abs(e.deltaY)>26||Math.abs(e.deltaX)>26){wl=t;(e.deltaY+e.deltaX)>0?next():prev();}},{passive:true});
-const start=parseInt((location.hash||'').replace('#',''),10);
-go(start>=1&&start<=slides.length?start-1:0);
-['media/photos/eclipse-sky.jpg','media/challenge-bg-poster.jpg','media/solution-bg-poster.jpg','media/demo-thumb.jpg'].forEach(u=>{const im=new Image();im.src=u;});
-(function(){const pb=document.getElementById('playbtn');if(!pb||!vid)return;
-  pb.addEventListener('click',()=>{
-    vid.controls=true;vid.style.display='block';vid.style.position='absolute';vid.style.inset='0';
-    vid.style.width='100%';vid.style.height='100%';vid.style.objectFit='cover';
-    pb.classList.add('gone');
-    vid.play();
-  });})();
+
+  addEventListener('keydown', e => {
+    if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); show(cur + 1, true); }
+    else if (['ArrowLeft', 'ArrowUp', 'PageUp'].includes(e.key)) { e.preventDefault(); show(cur - 1, true); }
+    else if (e.key === 'Home') show(0, true);
+    else if (e.key === 'End') show(slides.length - 1, true);
+  });
+  stage.addEventListener('click', e => {
+    if (swiped) { swiped = false; return; }
+    if (e.target.closest('a,button,video,iframe')) return;
+    show(cur + (e.clientX < innerWidth / 3 ? -1 : 1), true);
+  });
+  let tx = null, ty = null, swiped = false;
+  stage.addEventListener('touchstart', e => { tx = e.touches[0].clientX; ty = e.touches[0].clientY; swiped = false; }, { passive: true });
+  stage.addEventListener('touchend', e => {
+    if (tx === null) return;
+    const dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty;
+    const d = Math.abs(dx) > Math.abs(dy) ? dx : dy;
+    if (Math.abs(d) > 50) { swiped = true; show(cur + (d < 0 ? 1 : -1), true); }
+    tx = ty = null;
+  }, { passive: true });
+  stage.addEventListener('touchmove', e => { if (e.touches.length === 1 && e.cancelable) e.preventDefault(); }, { passive: false });
+
+  document.querySelectorAll('.hit').forEach(h => h.addEventListener('click', e => {
+    e.stopPropagation();
+    const on = !h.classList.contains('on');
+    document.querySelectorAll('.hit.on').forEach(x => x.classList.remove('on'));
+    if (on) h.classList.add('on');
+  }));
+  document.addEventListener('click', e => { if (!e.target.closest('.hit')) document.querySelectorAll('.hit.on').forEach(x => x.classList.remove('on')); });
+
+  addEventListener('resize', apply);
+  addEventListener('orientationchange', apply);
+  apply();
+})();
+</script>
+<script>
+/* QA mode: open the deck with ?qa=1 to outline anything cut off, too small or off-brief. */
+(function () {
+  if (!new URLSearchParams(location.search).has('qa')) return;
+  const panel = document.createElement('div');
+  panel.style.cssText = 'position:fixed;left:8px;bottom:8px;z-index:99999;max-width:360px;max-height:40vh;overflow:auto;background:#fff;color:#000;font:12px/1.4 system-ui;padding:8px;border:2px solid #c00;border-radius:6px';
+  document.body.appendChild(panel);
+  const WORDS = /\b(Ideate|Validate|Vault|Coach|harvest|corpus|Thesis)\b|\[GAP\]|\bTBD\b/;
+  function run() {
+    document.querySelectorAll('[data-qa-fail]').forEach(el => { el.style.outline = ''; el.removeAttribute('data-qa-fail'); });
+    const vw = innerWidth, vh = innerHeight, issues = [];
+    const flag = (el, n, msg) => { el.style.outline = '2px solid red'; el.setAttribute('data-qa-fail', ''); issues.push('Slide ' + n + ': ' + msg); };
+    document.querySelectorAll('[data-slide]').forEach(slide => {
+      const n = slide.dataset.slide, s = slide.getBoundingClientRect();
+      if (!s.width || !s.height || s.right < 0 || s.left > vw || s.bottom < 0 || s.top > vh) return;
+      const ss = getComputedStyle(slide);
+      if ((ss.overflow + ss.overflowY).includes('hidden') && slide.scrollHeight > slide.clientHeight + 1) flag(slide, n, 'content clipped by the slide box');
+      slide.querySelectorAll('*').forEach(el => {
+        if (![...el.childNodes].some(c => c.nodeType === 3 && c.textContent.trim())) return;
+        const cs = getComputedStyle(el);
+        if (cs.display === 'none' || cs.visibility === 'hidden') return;
+        const r = el.getBoundingClientRect();
+        if (!r.width || !r.height) return;
+        const t = el.textContent.trim().slice(0, 30);
+        const px = parseFloat(cs.fontSize) * (r.height / (el.offsetHeight || r.height));
+        if (px < 11.9) flag(el, n, 'text ' + px.toFixed(1) + 'px "' + t + '"');
+        if (!el.closest('[data-allow-scroll]') && (r.right > vw + 1 || r.left < -1 || r.right > s.right + 1 || r.bottom > s.bottom + 1 || r.top < s.top - 1)) flag(el, n, 'cut off "' + t + '"');
+        if (WORDS.test(el.textContent)) flag(el, n, 'banned word or placeholder "' + t + '"');
+      });
+    });
+    if (document.documentElement.scrollWidth > vw + 1) issues.push('Page scrolls sideways');
+    const mode = document.documentElement.dataset.mode;
+    const want = vw / vh >= 1 ? 'deck' : 'portrait';
+    if (mode !== want) issues.unshift('Mode is "' + mode + '", should be "' + want + '"');
+    panel.innerHTML = '<b>QA ' + vw + 'x' + vh + ' · ' + mode + '</b><br>' + (issues.length ? issues.map(i => '• ' + i).join('<br>') : '<span style="color:#070">All automatic checks pass on screen</span>');
+  }
+  let t; const later = () => { clearTimeout(t); t = setTimeout(run, 250); };
+  ['load', 'resize', 'scroll', 'keyup', 'click', 'touchend'].forEach(e => addEventListener(e, later, { passive: true }));
+  later();
+})();
 </script>
 </body>
 </html>
