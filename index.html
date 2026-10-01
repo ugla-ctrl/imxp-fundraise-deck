@@ -24,9 +24,9 @@
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --bg:#060E19; --ink:#FCFAF7; } }
 :root[data-theme="dark"]{ --bg:#060E19; --ink:#FCFAF7; }
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:#e9e9ec}
 html,body{height:100%;margin:0}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{background:#e9e9ec;color:var(--ink);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 h1,h2,h3,p,ul,ol,figure{margin:0;padding:0}
 ul,ol{list-style:none}
 b{font-weight:400}
@@ -62,7 +62,7 @@ img{max-width:100%}
 .stage{position:relative;height:100%}
 html[data-mode="deck"] body,html[data-mode="portrait"] body{overflow:hidden;overscroll-behavior:none}
 html[data-mode="deck"] .stage{overflow:hidden}
-html[data-mode="deck"] .slide{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform:translate(-50%,-50%) scale(var(--s,.5));display:none;overflow:hidden}
+html[data-mode="deck"] .slide{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform:translate(-50%,-50%) scale(var(--s,.5));display:none;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.35),0 2px 0 rgba(0,0,0,.08);border-radius:6px}
 html[data-mode="deck"] .slide.active{display:block;animation:fade .2s ease}
 @keyframes fade{from{opacity:0}to{opacity:1}}
 @media (prefers-reduced-motion: reduce){html[data-mode="deck"] .slide.active{animation:none}}
@@ -178,12 +178,12 @@ html[data-mode="deck"] .founder .role{font-size:20px;margin-top:4px}
 html[data-mode="deck"] .fstats{margin-top:32px;gap:24px}
 html[data-mode="deck"] .fstats b{font-size:44px;line-height:1.1}
 html[data-mode="deck"] .fstats .d{font-size:24px;margin-top:4px}
-html[data-mode="deck"] .crew{left:760px;top:370px;width:1040px}
-html[data-mode="deck"] .crew .people{display:grid;grid-template-columns:repeat(5,1fr);gap:28px 24px;margin-top:24px}
-html[data-mode="deck"] .crew .av{width:56px;height:56px;margin-bottom:12px}
-html[data-mode="deck"] .people b{font-size:22px;line-height:1.2}
-html[data-mode="deck"] .people .role{font-size:16px;margin-top:4px}
-html[data-mode="deck"] .people .cred{font-size:16px;line-height:1.4;margin-top:4px}
+html[data-mode="deck"] .crew{left:740px;top:370px;width:1080px}
+html[data-mode="deck"] .crew .people{display:grid;grid-template-columns:repeat(5,1fr);gap:26px 26px;margin-top:24px}
+html[data-mode="deck"] .crew .av{width:78px;height:78px;margin-bottom:14px}
+html[data-mode="deck"] .people b{font-size:25px;line-height:1.2}
+html[data-mode="deck"] .people .role{font-size:18px;margin-top:4px}
+html[data-mode="deck"] .people .cred{font-size:18px;line-height:1.35;margin-top:4px}
 html[data-mode="deck"] .creds{left:120px;top:880px;width:1680px;display:flex;flex-direction:column;gap:10px}
 html[data-mode="deck"] .creds p{font-size:24px;line-height:1.4}
 html[data-mode="deck"] .creds .xp{font-size:20px}
@@ -214,7 +214,7 @@ html[data-mode="deck"] .close .contact{font-size:24px;margin-top:56px}
    scaled as a whole so every slide is the same size
    ============================================================ */
 html[data-mode="portrait"] .stage{overflow:hidden}
-html[data-mode="portrait"] .slide{position:absolute;left:50%;top:50%;width:1080px;height:1920px;transform:translate(-50%,-50%) scale(var(--s,.35));display:none;overflow:hidden}
+html[data-mode="portrait"] .slide{position:absolute;left:50%;top:50%;width:1080px;height:1920px;transform:translate(-50%,-50%) scale(var(--s,.35));display:none;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.35);border-radius:4px}
 html[data-mode="portrait"] .slide.active{display:block;animation:fade .2s ease}
 @media (prefers-reduced-motion: reduce){html[data-mode="portrait"] .slide.active{animation:none}}
 html[data-mode="portrait"] .slide > *{position:absolute}
@@ -342,11 +342,11 @@ html[data-mode="portrait"] .fstats b{white-space:nowrap}
 html[data-mode="portrait"] .fstats b{font-size:60px;line-height:1.1}
 html[data-mode="portrait"] .fstats .d{font-size:36px;line-height:1.3}
 html[data-mode="portrait"] .crew{left:72px;top:1180px;width:936px}
-html[data-mode="portrait"] .crew .people{display:grid;grid-template-columns:1fr 1fr;gap:26px 40px;margin-top:24px}
-html[data-mode="portrait"] .people b{font-size:42px;line-height:1.15}
-html[data-mode="portrait"] .people .role{font-family:var(--sans);text-transform:none;font-size:36px;margin-top:6px}
-html[data-mode="portrait"] .people .cred{font-size:36px;line-height:1.3;margin-top:6px}
-html[data-mode="portrait"] .creds{left:72px;top:1750px;width:936px;display:grid;gap:16px}
+html[data-mode="portrait"] .crew .people{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 20px;margin-top:24px}
+html[data-mode="portrait"] .people b{font-size:30px;line-height:1.15}
+html[data-mode="portrait"] .people .role{font-family:var(--sans);text-transform:none;font-size:22px;margin-top:4px}
+html[data-mode="portrait"] .people .cred{font-size:22px;line-height:1.3;margin-top:4px}
+html[data-mode="portrait"] .creds{left:72px;top:1620px;width:936px;display:grid;gap:16px}
 html[data-mode="portrait"] .creds p{font-size:36px;line-height:1.35}
 
 /* 9 fundraise */
@@ -528,8 +528,8 @@ html[data-mode="deck"] .tip strong{font-size:20px;margin-bottom:6px}
 html[data-mode="portrait"] .dots button{width:28px}
 .dots{position:fixed;left:50%;bottom:calc(10px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;gap:4px;z-index:10}
 .dots button{width:36px;height:24px;padding:0;border:0;background:transparent;cursor:pointer}
-.dots button::before{content:"";display:block;height:3px;margin:0 6px;border-radius:2px;background:rgba(252,250,247,.25)}
-.dots button[aria-current="true"]::before{background:var(--turq)}
+.dots button::before{content:"";display:block;height:3px;margin:0 6px;border-radius:2px;background:rgba(20,20,22,.22)}
+.dots button[aria-current="true"]::before{background:var(--purple)}
 </style>
 </head>
 <body>
@@ -735,7 +735,7 @@ html[data-mode="portrait"] .dots button{width:28px}
   </div>
   <div class="crew">
     <p class="cap">The IMXP team: small and product-first</p>
-    <ul class="people"><li><img class="av" src="media/people/maryliz-hs.jpg" alt=""><b>MaryLiz Bender</b><span class="role">CXO</span><span class="cred">Cosmic Perspective, Everyday Astronaut</span></li><li><img class="av" src="media/people/jon-hs.jpg" alt=""><b>Jon Shapiro</b><span class="role">CTO</span><span class="cred">PlantWave, Mantle, early multi-agent AI systems</span></li><li><img class="av" src="media/people/benjamin-hs.jpg" alt=""><b>Benjamin Hill</b><span class="role">AI Product Developer</span><span class="cred">4 years at Indeed</span></li><li><img class="av" src="media/people/ari.jpg" alt=""><b>Ari Eisenstat</b><span class="role">Program Director</span><span class="cred">Space for Humanity</span></li><li><img class="av" src="media/people/andrew.jpg" alt=""><b>Andrew Glenn</b><span class="role">Creative Director</span><span class="cred">KAMMOK</span></li><li><img class="av" src="media/people/patrick.jpg" alt=""><b>Patrick Kronfli</b><span class="role">Partnerships Director</span><span class="cred">Unify.org</span></li><li><img class="av" src="media/people/holly.jpg" alt=""><b>Holly Wood</b><span class="role">Admin Director</span><span class="cred">Texas Eclipse</span></li><li><img class="av" src="media/people/regan-hs.jpg" alt=""><b>Regan Heckscher</b><span class="role">Systems Admin</span></li><li><img class="av" src="media/people/tule-hs.jpg" alt=""><b>Tule Romeo</b><span class="role">Lead Developer</span></li><li><img class="av" src="media/people/lee-hs.jpg" alt=""><b>Lenette Cruz</b><span class="role">AI & Tech Workflow Coordinator</span></li></ul>
+    <ul class="people"><li><img class="av" src="media/people/maryliz-hs.jpg" alt=""><b>MaryLiz Bender</b><span class="role">CXO</span><span class="cred">Cosmic Perspective, Everyday Astronaut</span></li><li><img class="av" src="media/people/jon-hs.jpg" alt=""><b>Jon Shapiro</b><span class="role">CTO</span><span class="cred">PlantWave, Mantle, early multi-agent AI systems</span></li><li><img class="av" src="media/people/benjamin-hs.jpg" alt=""><b>Benjamin Hill</b><span class="role">Product Developer</span><span class="cred">4 years at Indeed</span></li><li><img class="av" src="media/people/ari.jpg" alt=""><b>Ari Eisenstat</b><span class="role">Program Director</span><span class="cred">Space for Humanity</span></li><li><img class="av" src="media/people/andrew.jpg" alt=""><b>Andrew Glenn</b><span class="role">Creative Director</span><span class="cred">KAMMOK</span></li><li><img class="av" src="media/people/patrick.jpg" alt=""><b>Patrick Kronfli</b><span class="role">Partnerships Director</span><span class="cred">Unify.org</span></li><li><img class="av" src="media/people/holly.jpg" alt=""><b>Holly Wood</b><span class="role">Admin Director</span><span class="cred">Texas Eclipse</span></li><li><img class="av" src="media/people/regan-hs.jpg" alt=""><b>Regan Heckscher</b><span class="role">Systems Admin</span></li><li><img class="av" src="media/people/tule-hs.jpg" alt=""><b>Tule Romeo</b><span class="role">Lead Developer</span></li><li><img class="av" src="media/people/lee-hs.jpg" alt=""><b>Lenette Cruz</b><span class="role">AI & Tech Workflow Coordinator</span></li></ul>
   </div>
   <div class="creds">
     <p class="muted">Investors and advisors: Whitney Kroenke Silverstein · JT Marino · Chris Boshuizen · Ravé Mehta</p>
