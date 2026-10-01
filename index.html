@@ -34,7 +34,7 @@ a{color:inherit}
 a:focus-visible,button:focus-visible{outline:2px solid var(--turq);outline-offset:3px}
 .tnum,b,.v,.y{font-variant-numeric:tabular-nums lining-nums}
 .eyebrow,.cap,.g-head,.g-lab,.tag,.role,.pnum,.cover-foot,.gate b,.ev-date,.ms-date{font-family:var(--mono);text-transform:uppercase;letter-spacing:0}
-.eyebrow{color:var(--turq)}
+.eyebrow{color:var(--green)}
 .cap{color:var(--muted)}
 h1,h2,h3{font-weight:400;letter-spacing:-0.01em;text-wrap:balance}
 .muted{color:var(--muted)}
@@ -328,7 +328,7 @@ html[data-mode="portrait"] .ptl{left:72px;top:620px;width:936px;display:grid;gap
 html[data-mode="portrait"] .ptl li{display:grid;grid-template-columns:36px 340px 1fr;column-gap:24px;align-items:start;position:relative}
 html[data-mode="portrait"] .ptl li::before{content:"";grid-column:1;width:22px;height:22px;margin:12px 0 0 7px;background:var(--turq);transform:rotate(45deg)}
 html[data-mode="portrait"] .ptl li.e::before{transform:none;border-radius:50%;background:var(--purple);width:26px;height:26px;margin:10px 0 0 5px}
-html[data-mode="portrait"] .ptl .when{font-family:var(--mono);text-transform:uppercase;color:var(--turq);font-size:36px;line-height:1.35}
+html[data-mode="portrait"] .ptl .when{font-family:var(--mono);text-transform:uppercase;color:var(--green);font-size:36px;line-height:1.35}
 html[data-mode="portrait"] .ptl .what{font-size:38px;line-height:1.35}
 html[data-mode="portrait"] .ptl-build{left:72px;top:1536px;width:936px;font-size:38px;line-height:1.4;color:var(--muted)}
 
@@ -391,7 +391,7 @@ html[data-mode="portrait"] .close .contact{font-size:40px;margin-top:64px}
 .col.fc .v{color:var(--muted)}
 .col .tag{color:var(--muted)}
 .icons3 li{display:flex;align-items:flex-start}
-.icons3 .ic{color:var(--turq);flex:none;margin-top:6px}
+.icons3 .ic{color:var(--green);flex:none;margin-top:6px}
 .icons3 b{display:block}
 .icons3 .d,.hero-stat .d,.n .d,.people .cred,.events .d{display:block;color:var(--muted)}
 .hero-stat b{display:block;color:var(--purple)}
@@ -430,16 +430,16 @@ html[data-mode="portrait"] .close .contact{font-size:40px;margin-top:64px}
 .b-learn{background:var(--teal);color:var(--ink)}
 .gate{position:absolute;display:flex;align-items:center;gap:10px;white-space:nowrap;height:28px;font-size:20px;transform:translateX(-7px)}
 .gate i{display:block;width:14px;height:14px;background:var(--turq);transform:rotate(45deg);flex:none}
-.gate b{color:var(--turq);font-size:20px}
+.gate b{color:var(--green);font-size:20px}
 .gate.right{transform:translateX(calc(-100% + 7px))}
 .g-today{position:absolute;top:-28px;bottom:0;left:calc(200px + (100% - 200px) * var(--t) / 100);width:0;border-left:2px dashed var(--turq)}
-.g-today span{position:absolute;top:0;left:8px;font-family:var(--mono);text-transform:uppercase;font-size:20px;line-height:22px;color:var(--turq)}
+.g-today span{position:absolute;top:0;left:8px;font-family:var(--mono);text-transform:uppercase;font-size:20px;line-height:22px;color:var(--green)}
 .events b{display:block}
-.ev-date{display:block;color:var(--turq)}
+.ev-date{display:block;color:var(--green)}
 .people li{display:flex;flex-direction:column;align-items:flex-start}
 .av{display:block;border-radius:50%;object-fit:cover;object-position:center top;background:var(--shade);border:1.5px solid rgba(114,100,241,.7);flex:none}
 .fhead{display:flex;align-items:center;gap:24px}
-.people .role{color:var(--turq)}
+.people .role{color:var(--green)}
 .creds .xp{color:var(--muted)}
 .terms .big{color:var(--purple)}
 .terms > div{display:flex;flex-direction:column}
@@ -448,11 +448,11 @@ html[data-mode="portrait"] .close .contact{font-size:40px;margin-top:64px}
 .uop .amt{color:var(--muted);white-space:nowrap}
 .uop .track{background:var(--faint);border-radius:999px;overflow:hidden}
 .uop .fill{display:block;height:100%;width:var(--p);background:rgba(252,250,247,.86);border-radius:999px}
-.ms-date{display:block;color:var(--turq)}
-.close .contact a{color:var(--turq);text-decoration:none;border-bottom:1px solid rgba(80,227,255,.5)}
+.ms-date{display:block;color:var(--green)}
+.close .contact a{color:var(--green);text-decoration:none;border-bottom:1px solid rgba(128,252,167,.5)}
 
 
-.cover-kind{font-family:var(--mono);text-transform:uppercase;color:var(--turq)}
+.cover-kind{font-family:var(--mono);text-transform:uppercase;color:var(--green)}
 .pains li{color:var(--ink)}
 .demo-frame{margin:0}
 .df-screen{position:relative;aspect-ratio:16/9;width:100%;border-radius:16px;overflow:hidden;border:1px solid rgba(252,250,247,.18);
@@ -461,10 +461,10 @@ html[data-mode="portrait"] .close .contact{font-size:40px;margin-top:64px}
 .df-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;border:2px solid var(--turq);background:rgba(6,14,25,.4)}
 .df-play::after{content:"";position:absolute;left:54%;top:50%;transform:translate(-50%,-50%);border-style:solid;border-color:transparent transparent transparent var(--ink);border-width:var(--pw,18px) 0 var(--pw,18px) calc(var(--pw,18px) * 1.6)}
 .df-cap{display:block;color:var(--muted)}
-.df-cap a{color:var(--turq)}
+.df-cap a{color:var(--green)}
 .founder{display:flex;flex-direction:column}
 .fname{display:block;color:var(--ink)}
-.founder .role{display:block;color:var(--turq)}
+.founder .role{display:block;color:var(--green)}
 .fstats{display:grid}
 .fstats b{display:block;color:var(--purple)}
 .fstats .d{display:block;color:var(--muted)}
@@ -486,7 +486,7 @@ html[data-mode="portrait"] .close .contact{font-size:40px;margin-top:64px}
 .orion{border-top:1px solid rgba(252,250,247,.3)}
 .orion-line{color:var(--ink)}
 .orion-sub{color:var(--muted)}
-.horizon{color:var(--turq)}
+.horizon{color:var(--green)}
 
 /* line chart (Problem slide) */
 .lc{display:grid;grid-template-columns:var(--yw) 1fr}
@@ -512,7 +512,7 @@ html[data-mode="portrait"] .close .contact{font-size:40px;margin-top:64px}
 .tip.t{top:0}.tip.b{bottom:0}
 .hit.first .tip{left:calc(50% - 16px);transform:none}.hit.last .tip{left:auto;right:calc(50% - 16px);transform:none}
 .hit:hover .tip,.hit:focus-visible .tip,.hit.on .tip{display:block}
-.tip strong{display:block;font-family:var(--mono);font-weight:400;text-transform:uppercase;color:var(--turq)}
+.tip strong{display:block;font-family:var(--mono);font-weight:400;text-transform:uppercase;color:var(--green)}
 .tip span{display:flex;align-items:center;gap:10px;white-space:nowrap}
 .tip .share{color:var(--muted)}
 html[data-mode="deck"] .lc{--yw:64px;--ph:330px;--pt:16px;margin-top:28px;font-size:20px}
@@ -541,7 +541,7 @@ html[data-mode="portrait"] .dots button{width:28px}
   <div class="shade"></div>
   <div class="cover">
     <img class="lockup" src="media/logos/imxp-primary-lockup-white.png" alt="IMXP, Immersive Experiences">
-    <h1 class="tagline">Scaling <span class="nw">real-world</span> experience.</h1>
+    <h1 class="tagline">Scaling <span class="nw">real-world</span> Experience.</h1>
     <p class="cover-kind">Project Orion · Fundraise deck</p>
   </div>
   <p class="cover-foot">Confidential · October 2026</p>
