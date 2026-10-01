@@ -111,6 +111,13 @@
     color:rgba(239,231,214,.62);max-width:none}
   .dk .cite{color:rgba(239,231,214,.6)}
   .cite.bright{color:rgba(239,231,214,.92);text-shadow:0 1px 6px rgba(0,0,0,.85)}
+  .pains{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.5em}
+  .pains li{font-family:var(--sans);font-weight:400;font-size:clamp(.86rem,1.3cqw,1.08rem);
+    line-height:1.4;color:var(--dim-d);padding-left:1.2em;position:relative;max-width:46ch}
+  .pains li::before{content:'';position:absolute;left:0;top:.55em;width:.6em;height:2px;background:var(--gold)}
+  .fmore{list-style:none;margin:.6em 0 0;padding:0;display:flex;flex-direction:column;gap:.35em}
+  .fmore li{font-family:var(--sans);font-weight:400;font-size:clamp(.62rem,.84cqw,.76rem);
+    line-height:1.4;color:var(--dim-d);max-width:48ch}
 
   .figs{display:flex;flex-wrap:wrap;gap:clamp(22px,3.8cqh,46px) clamp(24px,4.2cqw,66px);align-items:flex-start}
   .fig{position:relative}
@@ -400,6 +407,8 @@
   .coverlogo{height:clamp(40px,6cqh,72px);width:auto;margin-bottom:clamp(14px,2.4cqh,28px);filter:brightness(0) invert(1)}
   .cover-lockup{height:clamp(90px,13.5cqh,170px);width:auto;margin-bottom:clamp(18px,2.8cqh,32px)}
   .cover-h1{font-size:clamp(1.6rem,4cqw,3.4rem)}
+  .cover-kind{font-family:var(--sans);font-weight:500;letter-spacing:.1em;text-transform:uppercase;
+    font-size:clamp(.6rem,.85cqw,.78rem);color:var(--gold-2);margin-top:clamp(10px,1.8cqh,20px)}
   .cover-subtitle{position:absolute;left:0;right:0;bottom:clamp(28px,5cqh,56px);text-align:center;
     font-family:var(--sans);font-weight:500;letter-spacing:.16em;text-transform:uppercase;
     font-size:clamp(.62rem,.9cqw,.8rem);color:var(--paper);opacity:.72;z-index:5}
@@ -507,9 +516,10 @@
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
     <div class="pad mid" style="align-items:center;text-align:center">
       <img class="r cover-lockup" src="media/logos/imxp-primary-lockup-white.png" alt="IMXP - Immersive Experiences" />
-      <h1 class="r cover-h1">Scaling real&#8209;world experience.</h1>
+      <h1 class="r cover-h1">Scaling Real&#8209;World Experience</h1>
+      <div class="r cover-kind">The Orion Product Fundraise Deck</div>
     </div>
-    <div class="cover-subtitle r">PROJECT ORION · CONFIDENTIAL · OCT 2026</div>
+    <div class="cover-subtitle r">Confidential · October 2026</div>
   </section>
 
   <!-- 2 · MISSION -->
@@ -518,10 +528,9 @@
     <div class="tone"></div><div class="veil"></div><div class="grain"></div>
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad">
-      <div class="r kick">Mission</div>
-      <h2 class="r sm mt-xs" style="max-width:none">Project Orion is end&#8209;to&#8209;end AI for event production.</h2>
-      <div class="r sub mt-s one-line" style="max-width:none">It plans, tracks and remembers the details every event depends on.</div>
-      <div class="r lead mt-s">Built by IMXP, the team behind Texas Eclipse and Iceland Eclipse.</div>
+      <div class="r kick">The mission</div>
+      <h2 class="r sm mt-xs" style="max-width:none">IMXP will make it possible to create real&#8209;world experiences in close to real time.</h2>
+      <div class="r sub mt-s" style="max-width:none">Orion will enable the ability to go from idea to event similarly to how Cursor revolutionized app development.</div>
     </div>
   </section>
 
@@ -531,26 +540,26 @@
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad anchor-top">
       <div class="r kick">Market</div>
-      <h2 class="r sm mt-xs" style="max-width:none">Travelers spend over $1.1 trillion a year on experiences.</h2>
+      <h2 class="r sm mt-xs" style="max-width:none">People spend over $1.1 trillion a year on experiences.</h2>
       <div class="r sub mt-s" style="max-width:none">In the midst of a loneliness epidemic, people want to spend more time IRL.</div>
       <div class="r split" style="margin-top:clamp(16px,2.4cqh,26px);align-items:start">
         <div>
           <div class="lab">How big</div>
           <div class="rings" style="max-width:max(275px,min(clamp(220px,28cqw,340px),30cqh));margin:0">
-            <div class="ring tam"><div class="rl2 rl2-outer"><div class="rn">$1.1-1.3T</div><div class="rt">All traveler experiences</div></div></div>
-            <div class="ring som"><div class="rl2"><div class="rn">$250-310B</div><div class="rt">Paid, like concerts</div></div></div>
+            <div class="ring tam"><div class="rl2 rl2-outer"><div class="rn">$1.1-1.3T</div><div class="rt">Destination experiences</div></div></div>
+            <div class="ring som"><div class="rl2"><div class="rn">$250-310B</div><div class="rt">Paid experiences, like concerts</div></div></div>
             <div class="ring core"></div>
           </div>
           <div class="ringcaps-mobile">
-            <div class="ringcap"><div class="rcn">$1.1-1.3T</div><div class="rct">All traveler experiences</div></div>
-            <div class="ringcap"><div class="rcn">$250-310B</div><div class="rct">Paid, like concerts</div></div>
+            <div class="ringcap"><div class="rcn">$1.1-1.3T</div><div class="rct">Destination experiences</div></div>
+            <div class="ringcap"><div class="rcn">$250-310B</div><div class="rct">Paid experiences, like concerts</div></div>
           </div>
           <div class="ringcap"><div class="rcn">Destination festivals</div><div class="rct">Where IMXP starts</div></div>
         </div>
         <div style="padding-top:clamp(6px,1cqh,10px)">
           <div class="lab">How fast</div>
           <div class="mktbars">
-            <div class="mktbarlabel">Live music revenue, $B</div>
+            <div class="mktbarlabel">Live music revenue ($B)</div>
             <div class="mktbarrow"><div class="mbky">2024</div><div class="mbktrack"><div class="mbkfill" style="width:51%"></div></div><div class="mbkv">34.6</div></div>
             <div class="mktbarrow"><div class="mbky">2025</div><div class="mbktrack"><div class="mbkfill" style="width:57%"></div></div><div class="mbkv">38.2</div></div>
             <div class="mktbarrow"><div class="mbky">2030E</div><div class="mbktrack"><div class="mbkfill hi" style="width:78%"></div></div><div class="mbkv">52.6</div></div>
@@ -558,13 +567,8 @@
           </div>
         </div>
       </div>
-      <div class="r mkticons mt-s">
-        <div class="mki"><svg class="mkiico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v1.5a1.5 1.5 0 0 0 0 3V15a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1.5a1.5 1.5 0 0 0 0-3V9Z"/><path d="M9 7v10" stroke-dasharray="1.6 1.6"/></svg><div class="mkin">159M</div><div class="mkil">Record fans at live shows, 2025</div></div>
-        <div class="mki"><svg class="mkiico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 20V11a8 8 0 0 1 16 0v9"/><path d="M2 20h20"/><path d="M9 11a3 3 0 0 1 6 0"/></svg><div class="mkin">170M</div><div class="mkil">New jobs by 2030, led by frontline roles</div></div>
-        <div class="mki"><svg class="mkiico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 20s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 5c-2.5 4.5-9.5 9-9.5 9Z"/></svg><div class="mkin">1 in 6</div><div class="mkil">People affected by loneliness</div></div>
-      </div>
-      <div class="r cite mt-s">Recent deals: KKR bought Superstruct (~€1.3B) &nbsp;·&nbsp; Fever, owner of DICE, raised at a reported ~$5.2B &nbsp;·&nbsp; Penske took full control of SXSW</div>
-      <div class="r cite mt-s">McKinsey &amp; Skift, 2024 &middot; Goldman Sachs, 2025 &middot; Live Nation FY2025 &middot; WEF, 2025 &middot; WHO, 2025 &middot; KKR / MBW / TheWrap</div>
+      <div class="r cite mt-s">Recent deals: KKR bought Superstruct's 80+ festivals (~€1.3B) &nbsp;·&nbsp; Fever, owner of DICE, raised at a reported ~$5.2B valuation &nbsp;·&nbsp; Penske took full control of SXSW.</div>
+      <div class="r cite mt-s">Sources: McKinsey &amp; Skift (2024) &middot; Goldman Sachs (2025) &middot; Live Nation (2026) &middot; WEF (2025) &middot; WHO (2025) &middot; Billboard, MBW, TheWrap</div>
     </div>
   </section>
 
@@ -575,47 +579,40 @@
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad">
       <div class="r kick">The Problem</div>
-      <h2 class="r sm mt-xs" style="max-width:none">Multi&#8209;million&#8209;dollar events still run on group chats and spreadsheets.</h2>
-      <div class="r sub mt-s" style="max-width:62ch">Demand is a guess. The plan starts from zero. What the crew learns leaves with them.</div>
+      <h2 class="r sm mt-xs" style="max-width:none">The Entertainment Industry is stuck in the past.</h2>
+      <div class="r sub mt-s" style="max-width:62ch">Multi&#8209;million&#8209;dollar events still run on group chats and spreadsheets.</div>
+      <ul class="r pains mt-s">
+        <li>Demand is a guess.</li>
+        <li>The plan starts from zero.</li>
+        <li>What the crew learns leaves with them.</li>
+      </ul>
       <div class="r probchart mt">
-        <div class="pctitle">Record revenue. Costs still take 97 cents of every dollar.</div>
+        <div class="pctitle">Costs took 97&cent; of every dollar in 2025.</div>
         <div class="pclegend"><span class="lg-sw lg-rev"></span>Revenue<span class="lg-sw lg-cost"></span>Costs</div>
-        <svg viewBox="0 0 720 360" width="720" height="360" role="img" aria-label="Live Nation concerts revenue and costs, 2020 to 2025. Both climbed from under $2.2 billion to about $20 billion; in 2025 costs were 97% of revenue.">
-          <rect x="56.0" y="60" width="214.7" height="230" fill="rgba(255,255,255,.06)"/>
-          <text x="163.3" y="52" text-anchor="middle" class="pcband">Pandemic</text>
+        <svg viewBox="0 0 720 360" width="720" height="360" role="img" aria-label="Live Nation concerts revenue and costs, 2022 to 2025. Both climbed toward $20 billion; in 2025 costs were 97% of revenue.">
           <line x1="56" y1="290.0" x2="700" y2="290.0" stroke="rgba(239,231,214,.12)" stroke-width="1"/>
-          <text x="46" y="294.0" text-anchor="end" class="pcaxis">0</text>
-          <line x1="56" y1="237.7" x2="700" y2="237.7" stroke="rgba(239,231,214,.12)" stroke-width="1"/>
-          <text x="46" y="241.7" text-anchor="end" class="pcaxis">5</text>
-          <line x1="56" y1="185.5" x2="700" y2="185.5" stroke="rgba(239,231,214,.12)" stroke-width="1"/>
-          <text x="46" y="189.5" text-anchor="end" class="pcaxis">10</text>
-          <line x1="56" y1="133.2" x2="700" y2="133.2" stroke="rgba(239,231,214,.12)" stroke-width="1"/>
-          <text x="46" y="137.2" text-anchor="end" class="pcaxis">15</text>
-          <line x1="56" y1="80.9" x2="700" y2="80.9" stroke="rgba(239,231,214,.12)" stroke-width="1"/>
-          <text x="46" y="84.9" text-anchor="end" class="pcaxis">20</text>
-          <rect x="80.7" y="274.6" width="26" height="15.4" fill="var(--dim-d)" opacity=".6"/>
-          <rect x="112.7" y="267.9" width="26" height="22.1" fill="var(--gold)"/>
-          <text x="109.7" y="312" text-anchor="middle" class="pcaxis">2020</text>
-          <rect x="188.0" y="240.7" width="26" height="49.3" fill="var(--dim-d)" opacity=".6"/>
-          <rect x="220.0" y="238.4" width="26" height="51.6" fill="var(--gold)"/>
-          <text x="217.0" y="312" text-anchor="middle" class="pcaxis">2021</text>
-          <rect x="295.3" y="149.0" width="26" height="141.0" fill="var(--dim-d)" opacity=".6"/>
-          <rect x="327.3" y="150.7" width="26" height="139.3" fill="var(--gold)"/>
-          <text x="324.3" y="312" text-anchor="middle" class="pcaxis">2022</text>
-          <rect x="402.7" y="93.9" width="26" height="196.1" fill="var(--dim-d)" opacity=".6"/>
-          <rect x="434.7" y="97.2" width="26" height="192.8" fill="var(--gold)"/>
-          <text x="431.7" y="312" text-anchor="middle" class="pcaxis">2023</text>
-          <rect x="510.0" y="91.2" width="26" height="198.8" fill="var(--dim-d)" opacity=".6"/>
-          <rect x="542.0" y="96.7" width="26" height="193.3" fill="var(--gold)"/>
-          <text x="539.0" y="312" text-anchor="middle" class="pcaxis">2024</text>
-          <rect x="617.3" y="71.9" width="26" height="218.1" fill="var(--dim-d)" opacity=".6"/>
-          <rect x="649.3" y="79.1" width="26" height="210.9" fill="var(--gold)"/>
-          <text x="646.3" y="312" text-anchor="middle" class="pcaxis">2025</text>
-          <text x="580" y="48" text-anchor="end" class="pcval pcval-rev">Revenue $20.9B</text>
-          <text x="580" y="66" text-anchor="end" class="pcval pcval-cost">Costs $20.2B, 97% of revenue</text>
+          <text x="46" y="294.0" text-anchor="end" class="pcaxis">$12B</text>
+          <line x1="56" y1="170.0" x2="700" y2="170.0" stroke="rgba(239,231,214,.12)" stroke-width="1"/>
+          <text x="46" y="174.0" text-anchor="end" class="pcaxis">$16B</text>
+          <line x1="56" y1="50.0" x2="700" y2="50.0" stroke="rgba(239,231,214,.12)" stroke-width="1"/>
+          <text x="46" y="54.0" text-anchor="end" class="pcaxis">$20B</text>
+          <rect x="104.5" y="245.3" width="26" height="44.7" fill="var(--dim-d)" opacity=".6"/>
+          <rect x="142.5" y="250.4" width="26" height="39.6" fill="var(--gold)"/>
+          <text x="136.5" y="312" text-anchor="middle" class="pcaxis">2022</text>
+          <rect x="265.5" y="87.2" width="26" height="202.8" fill="var(--dim-d)" opacity=".6"/>
+          <rect x="303.5" y="96.8" width="26" height="193.2" fill="var(--gold)"/>
+          <text x="297.5" y="312" text-anchor="middle" class="pcaxis">2023</text>
+          <rect x="426.5" y="79.4" width="26" height="210.6" fill="var(--dim-d)" opacity=".6"/>
+          <rect x="464.5" y="95.3" width="26" height="194.7" fill="var(--gold)"/>
+          <text x="458.5" y="312" text-anchor="middle" class="pcaxis">2024</text>
+          <rect x="587.5" y="24.2" width="26" height="265.8" fill="var(--dim-d)" opacity=".6"/>
+          <rect x="625.5" y="44.9" width="26" height="245.1" fill="var(--gold)"/>
+          <text x="619.5" y="312" text-anchor="middle" class="pcaxis">2025</text>
+          <text x="660" y="20" text-anchor="end" class="pcval pcval-rev">Revenue $20.9B</text>
+          <text x="660" y="38" text-anchor="end" class="pcval pcval-cost">Costs $20.2B, 97% of revenue</text>
         </svg>
       </div>
-      <div class="r cite bright mt-s">IMXP &middot; Live Nation filings, Concerts segment, 2020-2025. Costs = revenue minus adjusted operating income.</div>
+      <div class="r cite bright mt-s">Source: Live Nation annual filings, Concerts segment, 2022&ndash;2025: a record 159M fans in 2025 at a 3.3% margin. Costs = revenue minus adjusted operating income. Axis starts at $12B.</div>
     </div>
   </section>
 
@@ -627,23 +624,21 @@
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad">
       <div class="r kick">The Solution</div>
-      <h2 class="r sm mt-xs" style="max-width:none">From idea to live, in one system.</h2>
+      <h2 class="r sm mt-xs" style="max-width:none">Project Orion is an end&#8209;to&#8209;end copilot for event production.</h2>
+      <div class="r sub mt-s" style="max-width:none">It plans, tracks and remembers the details every event depends on.</div>
       <div class="r solsplit">
         <div class="r solcards solcards-col">
           <div class="solcard">
             <div class="sct">Test demand first</div>
             <div class="scd">Pre&#8209;sales prove the event before the big spend.</div>
-            <div class="sctags">Ideate &middot; Validate &middot; Market</div>
           </div>
           <div class="solcard">
             <div class="sct">Plan from real numbers</div>
-            <div class="scd">Real lead times, and each team's work for today.</div>
-            <div class="sctags">Plan &middot; Coach &middot; Run</div>
+            <div class="scd">Real lead times and each team's work for today.</div>
           </div>
           <div class="solcard">
             <div class="sct">Keep what crews learn</div>
-            <div class="scd">Every decision kept with its reason and outcome.</div>
-            <div class="sctags">Capture &middot; Vault</div>
+            <div class="scd">Every decision saved with its reason and outcome.</div>
           </div>
         </div>
         <div class="democol">
@@ -651,7 +646,7 @@
             <button class="playbtn sm" id="playbtn" aria-label="Play Project Orion demo video"><span></span></button>
             <video id="fiab" src="media/fiab.mp4" playsinline preload="none" style="display:none"></video>
           </div>
-          <div class="demolabel-u">Project Orion demo &middot; 2 min</div>
+          <div class="demolabel-u">Project Orion demo</div>
         </div>
       </div>
     </div>
@@ -664,9 +659,9 @@
     <div class="hd"><img class="mk" src="imxp-logo.png" alt="IMXP" /></div>
     <div class="pad">
       <div class="r kick">Traction</div>
-      <h2 class="r sm mt-xs" style="max-width:none">Orion already runs at Immersive Experiences.</h2>
+      <h2 class="r sm mt-xs" style="max-width:none">Orion already runs at IMXP.</h2>
       <div class="r lead mt-s" style="max-width:62ch">First live test: Iceland Eclipse 2026, 4,200 participants from 75+ countries.</div>
-      <div class="r lead mt-xs" style="max-width:62ch;font-size:clamp(.78rem,1.1cqw,.98rem)">Ran live: support inbox · Slack approvals · meeting capture · decision log.</div>
+      <div class="r lead mt-xs" style="max-width:62ch;font-size:clamp(.78rem,1.1cqw,.98rem)">Ran live at Iceland Eclipse: Support inbox · Slack approvals · Meeting capture · Decision log.</div>
       <div class="r figs mt">
         <div class="fig"><div class="n">120+</div><div class="l">decisions on record</div></div>
         <div class="fig"><div class="n paper">2 of 4</div><div class="l">2027 events vetted by Orion</div></div>
@@ -682,7 +677,7 @@
     <div class="pad">
       <div class="r kick">Roadmap</div>
       <h2 class="r sm mt-xs" style="max-width:none">Four events in 2027. Four product deadlines.</h2>
-      <div class="r sub mt-s" style="max-width:none">Real users and hard dates force each part of Orion to ship and prove itself.</div>
+      <div class="r sub mt-s" style="max-width:none">Each one ships part of Orion and proves it on real users.</div>
       <div class="r gantt mt">
         <img src="media/people/product-gantt-dark.png" alt="Build calendar: Validate and insights engine, Plan, Market v1 and Coach build bars; Coherence live demand test, Midnight Sun memory test and Egypt full lifecycle prove bars; Iceland to template, Coherence, Atomika and Midnight Sun plus Egypt harvest learn bars; gates through the decision point after Egypt 2027; today marked late Sep 2026" />
       </div>
@@ -692,7 +687,7 @@
         <div class="rmcard"><div class="rmn">Midnight Sun</div><div class="rmp">Reykjavík</div><div class="rmd">Jul 9–11, 2027</div></div>
         <div class="rmcard"><div class="rmn">Egypt Eclipse</div><div class="rmp">Luxor &amp; Greater Egypt</div><div class="rmd">Jul 30–Aug 9, 2027</div></div>
       </div>
-      <div class="r cite mt-s">Beyond 2027: Australasia Eclipse 2028, Apophis 2029, South Africa Eclipse 2030, and the Antarctic Expedition.</div>
+      <div class="r cite mt-s">Beyond 2027: Australasia Eclipse 2028, Apophis 2029, South Africa Eclipse 2030, and the Antarctic Expedition. 2035: Watch Earth eclipse the Sun, from the Moon.</div>
     </div>
   </section>
 
@@ -709,7 +704,7 @@
         <div class="member"><img src="media/people/mitch-hs.jpg" alt="Mitch Morales"/><div class="nm">Mitch Morales</div><div class="rl">Founder &amp; CEO</div><div class="cr">Texas Eclipse, Unknown Ventures</div></div>
         <div class="member"><img src="media/people/maryliz-hs.jpg" alt="MaryLiz Bender"/><div class="nm">MaryLiz Bender</div><div class="rl">CXO</div><div class="cr">Cosmic Perspective, Everyday Astronaut</div></div>
         <div class="member"><img src="media/people/jon-hs.jpg" alt="Jon Shapiro"/><div class="nm">Jon Shapiro</div><div class="rl">CTO</div><div class="cr">PlantWave, Mantle, early multi&#8209;agent AI systems</div></div>
-        <div class="member"><img src="media/people/benjamin-hs.jpg" alt="Benjamin Hill"/><div class="nm">Benjamin Hill</div><div class="rl">Product Developer</div><div class="cr">Indeed</div></div>
+        <div class="member"><img src="media/people/benjamin-hs.jpg" alt="Benjamin Hill"/><div class="nm">Benjamin Hill</div><div class="rl">AI Product Developer</div><div class="cr">4 years at Indeed</div></div>
         <div class="member"><img src="media/people/ari.jpg" alt="Ari Eisenstat"/><div class="nm">Ari Eisenstat</div><div class="rl">Program Director</div><div class="cr">Space for Humanity</div></div>
         <div class="member"><img src="media/people/andrew.jpg" alt="Andrew Glenn"/><div class="nm">Andrew Glenn</div><div class="rl">Creative Director</div><div class="cr">KAMMOK</div></div>
         <div class="member"><img src="media/people/patrick.jpg" alt="Patrick Kronfli"/><div class="nm">Patrick Kronfli</div><div class="rl">Partnerships Director</div><div class="cr">Unify.org</div></div>
@@ -718,8 +713,12 @@
         <div class="member"><img src="media/people/tule-hs.jpg" alt="Tule Romeo"/><div class="nm">Tule Romeo</div><div class="rl">Lead Developer</div></div>
         <div class="member"><img src="media/people/lee-hs.jpg" alt="Lenette Cruz"/><div class="nm">Lenette Cruz</div><div class="rl">AI &amp; Tech Workflow Coordinator</div></div>
       </div>
+      <ul class="r fmore">
+        <li>Deployed a $10M entertainment fund with Unknown Ventures</li>
+        <li>Risk&#8209;managed a $50M asset portfolio with Kona Energy (acquired)</li>
+      </ul>
       <div class="r lead mt-s" style="max-width:70ch;font-size:clamp(.68rem,.92cqw,.8rem);color:var(--dim-d);line-height:1.6">Texas Eclipse: $20M revenue, 38,000 people&nbsp;&nbsp;·&nbsp;&nbsp;Euphoria: 20,000 a day&nbsp;&nbsp;·&nbsp;&nbsp;360training: grown $2M to $200M, exited</div>
-      <div class="r lead mt-xs" style="max-width:70ch;font-size:clamp(.56rem,.74cqw,.64rem);color:var(--dim-d)">Investors &amp; advisors: Whitney Kroenke Silverstein · JT Marino · Chris Boshuizen · Ravé Mehta</div>
+      <div class="r lead mt-xs" style="max-width:70ch;font-size:clamp(.56rem,.74cqw,.64rem);color:var(--dim-d)">Investors and advisors: Whitney Kroenke Silverstein · JT Marino · Chris Boshuizen · Ravé Mehta</div>
       <div class="explabel">Experience across</div>
       <div class="explogos">
         <img class="tall" src="media/people/exp/texas-eclipse.png" alt="Texas Eclipse" />
@@ -776,6 +775,7 @@
       <div class="r lead mt-s" style="font-size:clamp(.72rem,1cqw,.9rem)">We are building the systems to one day see a total solar eclipse from the Moon.</div>
       <div class="r contact mt">Mitch Morales · <a href="mailto:mitch@im-xp.com">mitch@im-xp.com</a></div>
     </div>
+    <div class="r cite" style="position:absolute;left:0;right:0;bottom:clamp(20px,3.6cqh,34px);text-align:center">Photos: Monica Cazes · Andrianna Kaimis · The Bailey Perspective · Kayla Pittman</div>
   </section>
 </div>
 </div></div>
