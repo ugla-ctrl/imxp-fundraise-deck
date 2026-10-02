@@ -562,6 +562,32 @@ html[data-mode="portrait"] .dots button{width:28px}
 .dots button{width:36px;height:24px;padding:0;border:0;background:transparent;cursor:pointer}
 .dots button::before{content:"";display:block;height:3px;margin:0 6px;border-radius:2px;background:rgba(255,255,255,.22)}
 .dots button[aria-current="true"]::before{background:var(--purple)}
+
+/* problem hero stat, event thumbs, ring tiers */
+.tier{font-family:var(--mono);color:var(--green);font-weight:400;margin-right:12px;font-size:.6em;vertical-align:.15em}
+.pb-hero .hero-n{color:var(--purple);font-weight:300;line-height:.9;letter-spacing:-.02em}
+.pb-hero .hero-l{color:var(--ink)}
+.pb-hero .hero-note{color:var(--muted)}
+.mbar{display:flex;border-radius:4px;overflow:hidden}
+.mbar .mc{flex:96.7;background:rgba(252,250,247,.22)}
+.mbar .mm{flex:3.3;background:var(--green)}
+.mbar-k{display:flex;justify-content:space-between;font-family:var(--mono);text-transform:uppercase;color:var(--muted)}
+.mbar-k .g{color:var(--green)}
+.ev-thumb{display:block;object-fit:cover;border-radius:8px;border:1px solid var(--faint);flex:none}
+html[data-mode="deck"] .pb-hero .cap{font-size:20px}
+html[data-mode="deck"] .pb-hero .hero-n{font-size:240px;margin-top:20px}
+html[data-mode="deck"] .pb-hero .hero-l{font-size:40px;line-height:1.2;margin-top:18px}
+html[data-mode="deck"] .mbar{height:26px;margin-top:44px}
+html[data-mode="deck"] .mbar-k{font-size:18px;margin-top:12px}
+html[data-mode="deck"] .pb-hero .hero-note{font-size:24px;margin-top:28px}
+html[data-mode="deck"] .events li{display:flex;gap:18px;align-items:center}
+html[data-mode="deck"] .ev-thumb{width:120px;height:80px}
+html[data-mode="portrait"] .pb-hero .cap{font-size:26px}
+html[data-mode="portrait"] .pb-hero .hero-n{font-size:220px;margin-top:16px}
+html[data-mode="portrait"] .pb-hero .hero-l{font-size:44px;line-height:1.2;margin-top:16px}
+html[data-mode="portrait"] .mbar{height:30px;margin-top:40px}
+html[data-mode="portrait"] .mbar-k{font-size:24px;margin-top:12px}
+html[data-mode="portrait"] .pb-hero .hero-note{font-size:32px;margin-top:24px}
 </style>
 </head>
 <body>
@@ -613,6 +639,7 @@ html[data-mode="portrait"] .dots button{width:28px}
           <circle cx="165" cy="165" r="160" fill="rgba(114,100,241,.08)" stroke="rgba(252,250,247,.30)" stroke-width="1.5"/>
           <circle cx="165" cy="165" r="92" fill="rgba(114,100,241,.30)" stroke="rgba(114,100,241,.9)" stroke-width="1.5"/>
           <circle cx="165" cy="165" r="38" fill="#7264F1"/>
+          <g font-family="ABC Monument Grotesk Mono,Geist Mono,ui-monospace,monospace" font-size="15" text-anchor="middle" letter-spacing="1"><text x="165" y="40" fill="rgba(252,250,247,.75)">TAM</text><text x="165" y="100" fill="rgba(252,250,247,.9)">SAM</text><text x="165" y="170" fill="#FCFAF7">SOM</text></g>
         </svg>
         <svg class="rings-leaders" viewBox="0 0 820 330" aria-hidden="true">
           <g stroke="rgba(252,250,247,.5)" stroke-width="1" fill="none">
@@ -621,9 +648,9 @@ html[data-mode="portrait"] .dots button{width:28px}
           <g fill="#FCFAF7"><circle cx="267" cy="42" r="3"/><circle cx="255" cy="146" r="3"/><circle cx="192" cy="192" r="3"/></g>
         </svg>
         <ul class="ring-labels">
-          <li class="rl rl1"><span class="sw sw1"></span><b>$1.1–1.3T</b><span class="d">Destination experiences</span></li>
-          <li class="rl rl2"><span class="sw sw2"></span><b>$250–310B</b><span class="d">Paid experiences, like concerts</span></li>
-          <li class="rl rl3"><span class="sw sw3"></span><b>Destination festivals</b><span class="d">Where IMXP starts</span></li>
+          <li class="rl rl1"><span class="sw sw1"></span><b><span class="tier">TAM</span>$1.1–1.3T</b><span class="d">Destination experiences</span></li>
+          <li class="rl rl2"><span class="sw sw2"></span><b><span class="tier">SAM</span>$250–310B</b><span class="d">Paid experiences, like concerts</span></li>
+          <li class="rl rl3"><span class="sw sw3"></span><b><span class="tier">SOM</span>Destination festivals</b><span class="d">Where IMXP starts</span></li>
         </ul>
       </div>
     </figure>
@@ -659,12 +686,15 @@ html[data-mode="portrait"] .dots button{width:28px}
     <li>The plan starts from zero.</li>
     <li>What the crew learns leaves with them.</li>
   </ul>
-  <figure class="pb-chart">
-    <figcaption><span class="cap">Live Nation concerts, revenue vs costs ($B)</span><span class="ctitle">Costs took 97¢ of every dollar in 2025.</span></figcaption>
-    <div class="legend"><span><i class="k k-r"></i>Revenue</span><span><i class="k k-c"></i>Costs</span></div>
-    <div class="lc" role="group" aria-label="Live Nation concerts revenue and costs, 2022 to 2025. Hover or tap a year for exact figures."><div class="lc-y" aria-hidden="true"><span style="top:100.00%">$12B</span><span style="top:60.00%">$16B</span><span style="top:20.00%">$20B</span></div><div class="lc-plot"><svg viewBox="0 0 1000 400" preserveAspectRatio="none" aria-hidden="true"><line x1="0" x2="1000" y1="400.0" y2="400.0" stroke="rgba(252,250,247,.10)" stroke-width="1" vector-effect="non-scaling-stroke"/><line x1="0" x2="1000" y1="240.0" y2="240.0" stroke="rgba(252,250,247,.10)" stroke-width="1" vector-effect="non-scaling-stroke"/><line x1="0" x2="1000" y1="80.0" y2="80.0" stroke="rgba(252,250,247,.10)" stroke-width="1" vector-effect="non-scaling-stroke"/><polyline points="80.0,340.4 360.0,129.6 640.0,119.2 920.0,45.6" fill="none" stroke="#8E8D93" stroke-width="3" vector-effect="non-scaling-stroke" stroke-linejoin="round"/><polyline points="80.0,347.2 360.0,142.4 640.0,140.4 920.0,73.2" fill="none" stroke="#7264F1" stroke-width="4" vector-effect="non-scaling-stroke" stroke-linejoin="round"/></svg><span class="pt r" style="left:8.00%;top:85.10%"></span><span class="pt c" style="left:8.00%;top:86.80%"></span><span class="pt r" style="left:36.00%;top:32.40%"></span><span class="pt c" style="left:36.00%;top:35.60%"></span><span class="pt r" style="left:64.00%;top:29.80%"></span><span class="pt c" style="left:64.00%;top:35.10%"></span><span class="pt r" style="left:92.00%;top:11.40%"></span><span class="pt c" style="left:92.00%;top:18.30%"></span><span class="val r" style="left:92.00%;top:11.40%">$20.9B</span><span class="val c" style="left:92.00%;top:18.30%">$20.2B</span><button type="button" class="hit first" style="left:8.00%" aria-label="2022: revenue $13.49 billion, costs $13.32 billion, costs 98.7% of revenue"><span class="tip t" aria-hidden="true"><strong>2022</strong><span><i class="k k-r"></i>Revenue $13.49B</span><span><i class="k k-c"></i>Costs $13.32B</span><span class="share">Costs: 98.7% of revenue</span></span></button><button type="button" class="hit" style="left:36.00%" aria-label="2023: revenue $18.76 billion, costs $18.44 billion, costs 98.3% of revenue"><span class="tip b" aria-hidden="true"><strong>2023</strong><span><i class="k k-r"></i>Revenue $18.76B</span><span><i class="k k-c"></i>Costs $18.44B</span><span class="share">Costs: 98.3% of revenue</span></span></button><button type="button" class="hit" style="left:64.00%" aria-label="2024: revenue $19.02 billion, costs $18.49 billion, costs 97.2% of revenue"><span class="tip b" aria-hidden="true"><strong>2024</strong><span><i class="k k-r"></i>Revenue $19.02B</span><span><i class="k k-c"></i>Costs $18.49B</span><span class="share">Costs: 97.2% of revenue</span></span></button><button type="button" class="hit last" style="left:92.00%" aria-label="2025: revenue $20.86 billion, costs $20.17 billion, costs 96.7% of revenue"><span class="tip b" aria-hidden="true"><strong>2025</strong><span><i class="k k-r"></i>Revenue $20.86B</span><span><i class="k k-c"></i>Costs $20.17B</span><span class="share">Costs: 96.7% of revenue</span></span></button></div><div class="lc-x" aria-hidden="true"><span style="left:8.00%">2022</span><span style="left:36.00%">2023</span><span style="left:64.00%">2024</span><span style="left:92.00%">2025</span></div></div>
-  </figure>
-  <p class="foot">Source: Live Nation annual filings, Concerts segment, 2022–2025: a record 159M fans in 2025 at a 3.3% margin. Costs = revenue minus adjusted operating income. Axis starts at $12B.</p>
+  <div class="pb-chart pb-hero">
+    <p class="cap">Live Nation concerts, 2025</p>
+    <p class="hero-n">97¢</p>
+    <p class="hero-l">of every concert dollar went to costs.</p>
+    <div class="mbar" role="img" aria-label="Costs 96.7 percent, margin 3.3 percent"><span class="mc"></span><span class="mm"></span></div>
+    <div class="mbar-k"><span>Costs 96.7%</span><span class="g">Margin 3.3%</span></div>
+    <p class="hero-note">Even at a record 159M fans.</p>
+  </div>
+  <p class="foot">Source: Live Nation annual filings, Concerts segment, 2025. Costs = revenue minus adjusted operating income.</p>
   <p class="conf">Confidential · October 2026</p>
   <p class="pnum">04 / 10</p>
 </section>
@@ -750,10 +780,10 @@ html[data-mode="portrait"] .dots button{width:28px}
   </ol>
   <p class="ptl-build">Building alongside: demand testing, planning, marketing and daily coaching.</p>
   <ul class="events">
-    <li><b>Coherence</b><span class="d">Austin, TX</span><span class="ev-date">Mar 19–22, 2027</span></li>
-    <li><b>Atomika</b><span class="d">Roswell, NM</span><span class="ev-date">May 7–9, 2027</span></li>
-    <li><b>Midnight Sun</b><span class="d">Reykjavík</span><span class="ev-date">Jul 9–11, 2027</span></li>
-    <li><b>Egypt Eclipse</b><span class="d">Luxor &amp; Greater Egypt</span><span class="ev-date">Jul 30–Aug 9, 2027</span></li>
+    <li><img class="ev-thumb" src="media/events/coherence.jpg" alt=""><div class="ev-txt"><b>Coherence</b><span class="d">Austin, TX</span><span class="ev-date">Mar 19–22, 2027</span></div></li>
+    <li><img class="ev-thumb" src="media/events/atomika.jpg" alt=""><div class="ev-txt"><b>Atomika</b><span class="d">Roswell, NM</span><span class="ev-date">May 7–9, 2027</span></div></li>
+    <li><img class="ev-thumb" src="media/events/midnight.jpg" alt=""><div class="ev-txt"><b>Midnight Sun</b><span class="d">Reykjavík</span><span class="ev-date">Jul 9–11, 2027</span></div></li>
+    <li><img class="ev-thumb" src="media/events/egypt.jpg" alt=""><div class="ev-txt"><b>Egypt Eclipse</b><span class="d">Luxor &amp; Greater Egypt</span><span class="ev-date">Jul 30–Aug 9, 2027</span></div></li>
   </ul>
   <p class="foot">Beyond 2027: Australasia Eclipse 2028, Apophis 2029, South Africa Eclipse 2030, and the Antarctic Expedition. <span class="horizon"><span class="nw">2035: Watch Earth eclipse the Sun,</span> <span class="nw">from the Moon.</span></span></p>
   <p class="conf">Confidential · October 2026</p>
@@ -829,9 +859,8 @@ html[data-mode="portrait"] .dots button{width:28px}
     <h2>Thank you.</h2>
     <p class="sub">Realigning our civilization with the Cosmos.</p>
     <p class="small">We are building the systems to one day see a total solar eclipse from the Moon.</p>
-    <p class="contact">Mitch Morales · <a href="mailto:mitch@im-xp.com">mitch@im-xp.com</a></p>
+    <p class="contact">Mitch Morales · <a href="mailto:mitch@imxp.org">mitch@imxp.org</a></p>
   </div>
-  <p class="credits">Photos: Monica Cazes · Andrianna Kaimis · The Bailey Perspective · Kayla Pittman</p>
   <p class="conf">Confidential · October 2026</p>
   <p class="pnum">10 / 10</p>
 </section>
