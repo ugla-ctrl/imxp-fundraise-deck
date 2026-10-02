@@ -40,12 +40,11 @@ h1,h2,h3{font-weight:400;letter-spacing:-0.01em;text-wrap:balance}
 .muted{color:var(--muted)}
 img{max-width:100%}
 
-/* ---------- Backgrounds: blurred brand gradients + grain + plus-mark grid ---------- */
+/* ---------- Backgrounds: blurred brand gradients + grain ---------- */
 .slide{position:relative;background:var(--bg);color:var(--ink)}
 .slide::before{content:"";position:absolute;inset:0;pointer-events:none}
 .bg-content::before{
   background:
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><path d='M80 74v12M74 80h12' stroke='%23FCFAF7' stroke-opacity='.09' stroke-width='1.5'/></svg>"),
     radial-gradient(900px 600px at 100% 0%, rgba(114,100,241,.14), transparent 70%),
     radial-gradient(700px 500px at 0% 100%, rgba(0,104,101,.16), transparent 70%);
 }
