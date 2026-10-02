@@ -565,7 +565,7 @@ html[data-mode="portrait"] .dots button{width:28px}
 
 /* problem hero stat, event thumbs, ring tiers */
 .tier{font-family:var(--mono);color:var(--green);font-weight:400;margin-right:12px;font-size:.6em;vertical-align:.15em}
-.pb-hero .hero-n{color:var(--purple);font-weight:300;line-height:.9;letter-spacing:-.02em}
+.pb-hero .hero-n{color:var(--ink);font-weight:300;line-height:.9;letter-spacing:-.02em}
 .pb-hero .hero-l{color:var(--ink)}
 .pb-hero .hero-note{color:var(--muted)}
 .mbar{display:flex;border-radius:4px;overflow:hidden}
@@ -588,6 +588,28 @@ html[data-mode="portrait"] .pb-hero .hero-l{font-size:44px;line-height:1.2;margi
 html[data-mode="portrait"] .mbar{height:30px;margin-top:40px}
 html[data-mode="portrait"] .mbar-k{font-size:24px;margin-top:12px}
 html[data-mode="portrait"] .pb-hero .hero-note{font-size:32px;margin-top:24px}
+
+.close .ccard{display:flex;align-items:center;text-align:left;border-top:1px solid var(--faint);border-bottom:1px solid var(--faint)}
+.close .ccard b{display:block;color:var(--ink);font-weight:400}
+.close .ccard .role{display:block;color:var(--green)}
+.close .ccard a{display:inline-block;color:var(--green);text-decoration:none;border-bottom:1px solid rgba(128,252,167,.5)}
+.close .tagline{font-family:var(--mono);text-transform:uppercase;color:var(--muted)}
+html[data-mode="deck"] .close .eyebrow{margin-bottom:24px}
+html[data-mode="deck"] .close h2{font-size:80px;line-height:1.08;max-width:1300px}
+html[data-mode="deck"] .close .ccard{gap:28px;margin-top:56px;padding:28px 40px}
+html[data-mode="deck"] .close .ccard .av{width:112px;height:112px}
+html[data-mode="deck"] .close .ccard b{font-size:34px}
+html[data-mode="deck"] .close .ccard .role{font-size:18px;margin-top:6px}
+html[data-mode="deck"] .close .ccard a{font-size:24px;margin-top:10px}
+html[data-mode="deck"] .close .tagline{font-size:18px;margin-top:44px}
+html[data-mode="portrait"] .close .eyebrow{font-size:30px;margin-bottom:28px}
+html[data-mode="portrait"] .close h2{font-size:96px;line-height:1.08}
+html[data-mode="portrait"] .close .ccard{gap:32px;margin-top:64px;padding:36px 8px}
+html[data-mode="portrait"] .close .ccard .av{width:150px;height:150px}
+html[data-mode="portrait"] .close .ccard b{font-size:48px}
+html[data-mode="portrait"] .close .ccard .role{font-size:28px;margin-top:8px}
+html[data-mode="portrait"] .close .ccard a{font-size:36px;margin-top:12px}
+html[data-mode="portrait"] .close .tagline{font-size:26px;margin-top:56px}
 </style>
 </head>
 <body>
@@ -629,7 +651,7 @@ html[data-mode="portrait"] .pb-hero .hero-note{font-size:32px;margin-top:24px}
   <header class="hd">
     <p class="eyebrow">Market</p>
     <h2>People spend over <span class="nw">$1.1 trillion</span> a year on experiences.</h2>
-    <p class="sub"><span class="line">In the midst of a loneliness epidemic, people want to spend more time IRL.</span></p>
+    <p class="sub"><span class="line">People want to spend more time IRL.</span></p>
   </header>
   <div class="mk-band">
     <figure class="mk-size">
@@ -666,7 +688,7 @@ html[data-mode="portrait"] .pb-hero .hero-note{font-size:32px;margin-top:24px}
     </figure>
   </div>
   <p class="deals"><span class="lx">Recent deals: KKR bought Superstruct's 80+ festivals (~€1.3B) · Fever, owner of DICE, raised at a reported ~$5.2B valuation · Penske took full control of SXSW.</span><span class="sx">Deals: KKR bought Superstruct (~€1.3B) · Fever raised at ~$5.2B · Penske took over SXSW.</span></p>
-  <p class="foot"><span class="lx">Sources: McKinsey &amp; Skift (2024) · Goldman Sachs (2025) · Live Nation (2026) · WEF (2025) · WHO (2025) · Billboard, MBW, TheWrap</span><span class="sx">Sources: McKinsey &amp; Skift · Goldman Sachs · Live Nation · WEF · WHO · Billboard · MBW · TheWrap</span></p>
+  <p class="foot"><span class="lx">Sources: McKinsey &amp; Skift (2024) · Goldman Sachs (2025) · Live Nation (2026) · WEF (2025) · Billboard, MBW, TheWrap</span><span class="sx">Sources: McKinsey &amp; Skift · Goldman Sachs · Live Nation · WEF · Billboard · MBW · TheWrap</span></p>
   <p class="conf">Confidential · October 2026</p>
   <p class="pnum">03 / 10</p>
 </section>
@@ -856,10 +878,11 @@ html[data-mode="portrait"] .pb-hero .hero-note{font-size:32px;margin-top:24px}
   <div class="shade"></div>
   <img class="logo-sm" src="media/logos/imxp-small.png" alt="IMXP">
   <div class="close">
-    <h2>Thank you.</h2>
-    <p class="sub">Realigning our civilization with the Cosmos.</p>
-    <p class="small">We are building the systems to one day see a total solar eclipse from the Moon.</p>
-    <p class="contact">Mitch Morales · <a href="mailto:mitch@imxp.org">mitch@imxp.org</a></p>
+    <p class="eyebrow">Thank you</p>
+    <h2>Let's build the operating system for <span class="nw">real-world</span> experiences.</h2>
+    <p class="sub">Every event makes Orion smarter. Next up: Coherence, March 2027.</p>
+    <div class="ccard"><img class="av" src="media/people/mitch-hs.jpg" alt=""><div><b>Mitch Morales</b><span class="role">Founder &amp; CEO</span><a href="mailto:mitch@imxp.org">mitch@imxp.org</a></div></div>
+    <p class="tagline">Realigning our civilization with the Cosmos.</p>
   </div>
   <p class="conf">Confidential · October 2026</p>
   <p class="pnum">10 / 10</p>
