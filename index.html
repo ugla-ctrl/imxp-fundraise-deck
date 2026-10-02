@@ -176,27 +176,26 @@ html[data-mode="deck"] .events b{font-size:32px;line-height:1.2}
 html[data-mode="deck"] .events .d,html[data-mode="deck"] .ev-date{font-size:20px;line-height:1.4}
 
 /* 8 team */
-html[data-mode="deck"] .founder{left:120px;top:350px;width:600px}
+html[data-mode="deck"] .founder{left:120px;top:386px;width:600px}
 html[data-mode="deck"] .fname{font-size:44px;line-height:1.15;margin-top:16px}
 html[data-mode="deck"] .founder .role{font-size:20px;margin-top:6px}
-html[data-mode="deck"] .fstats{margin-top:14px;gap:8px}
-html[data-mode="deck"] .fhead{display:flex;align-items:center;gap:28px;margin-top:8px}
+html[data-mode="deck"] .fstats{margin-top:30px;gap:0;border-bottom:1px solid var(--faint)}
+html[data-mode="deck"] .fstats li{display:grid;grid-template-columns:236px 1fr;column-gap:16px;align-items:center;min-height:68px;padding:8px 0;border-top:1px solid var(--faint)}
+html[data-mode="deck"] .fhead{display:flex;align-items:center;gap:32px;margin-top:0}
 html[data-mode="deck"] .founder .fav{width:176px;height:176px;margin:0;flex:none}
 html[data-mode="deck"] .fhead .fname{margin-top:0}
-html[data-mode="deck"] .fmore{margin-top:16px;display:grid;gap:4px}
-html[data-mode="deck"] .fmore li{font-size:18px;line-height:1.35}
 
-html[data-mode="deck"] .fstats b{font-size:40px;line-height:1.1}
-html[data-mode="deck"] .fstats .d{font-size:24px;margin-top:4px}
+html[data-mode="deck"] .fstats b{font-size:32px;line-height:1.1;white-space:nowrap}
+html[data-mode="deck"] .fstats .d{font-size:19px;line-height:1.3;margin-top:0}
 html[data-mode="deck"] .crew{left:740px;top:350px;width:1080px}
 html[data-mode="deck"] .crew .people{display:grid;grid-template-columns:repeat(5,1fr);gap:26px 26px;margin-top:24px}
 html[data-mode="deck"] .crew .av{width:150px;height:150px;margin-bottom:18px}
 html[data-mode="deck"] .people b{font-size:25px;line-height:1.2}
 html[data-mode="deck"] .people .role{font-size:18px;margin-top:4px}
 html[data-mode="deck"] .people .cred{font-size:18px;line-height:1.35;margin-top:4px}
-html[data-mode="deck"] .creds{left:120px;top:908px;width:1680px;display:flex;flex-direction:column;gap:8px}
+html[data-mode="deck"] .creds{left:740px;top:812px;width:1060px;display:flex;flex-direction:column;gap:14px;padding-top:28px;border-top:1px solid var(--faint)}
 html[data-mode="deck"] .creds p{font-size:24px;line-height:1.4}
-html[data-mode="deck"] .creds .xp{font-size:20px}
+html[data-mode="deck"] .creds .cap{font-size:20px;line-height:24px}
 
 /* 9 fundraise */
 html[data-mode="deck"] .terms{left:120px;top:340px;width:640px;display:flex;flex-direction:column;gap:28px}
@@ -229,7 +228,7 @@ html[data-mode="portrait"] .slide{position:absolute;left:50%;top:50%;width:1080p
 html[data-mode="portrait"] .slide.active{display:block;animation:fade .2s ease}
 @media (prefers-reduced-motion: reduce){html[data-mode="portrait"] .slide.active{animation:none}}
 html[data-mode="portrait"] .slide > *{position:absolute}
-html[data-mode="portrait"] .lx,html[data-mode="portrait"] .pnum,html[data-mode="portrait"] .gantt,html[data-mode="portrait"] .events,html[data-mode="portrait"] .rings-leaders,html[data-mode="portrait"] .people .cred,html[data-mode="portrait"] .creds .xp{display:none}
+html[data-mode="portrait"] .lx,html[data-mode="portrait"] .pnum,html[data-mode="portrait"] .gantt,html[data-mode="portrait"] .events,html[data-mode="portrait"] .rings-leaders,html[data-mode="portrait"] .people .cred{display:none}
 
 /* shared anchors */
 html[data-mode="portrait"] .hd{left:72px;top:120px;width:936px}
@@ -352,29 +351,28 @@ html[data-mode="portrait"] .ptl .what{font-size:38px;line-height:1.35}
 html[data-mode="portrait"] .ptl-build{left:72px;top:1536px;width:936px;font-size:38px;line-height:1.4;color:var(--muted)}
 
 /* 8 team */
-html[data-mode="portrait"] .founder{left:72px;top:520px;width:936px}
+html[data-mode="portrait"] .founder{left:72px;top:540px;width:936px}
 html[data-mode="portrait"] .fname{font-size:60px;line-height:1.1;margin-top:24px}
 html[data-mode="portrait"] .founder .role{font-size:36px;margin-top:8px}
-html[data-mode="portrait"] .fstats{margin-top:28px;gap:14px}
-html[data-mode="portrait"] .fhead{display:flex;align-items:center;gap:32px;margin-top:24px}
+html[data-mode="portrait"] .fstats{margin-top:36px;gap:0;border-bottom:1px solid var(--faint)}
+html[data-mode="portrait"] .fhead{display:flex;align-items:center;gap:32px;margin-top:0}
 html[data-mode="portrait"] .av{width:72px;height:72px;font-size:28px;margin-bottom:12px}
 html[data-mode="portrait"] .founder .fav{display:block;width:170px;height:170px;margin:0;flex:none}
 html[data-mode="portrait"] .crew .av{display:none}
 html[data-mode="portrait"] .fhead .fname{margin-top:0}
-html[data-mode="portrait"] .fmore{margin-top:18px;display:grid;gap:6px}
-html[data-mode="portrait"] .fmore li{font-size:32px;line-height:1.35}
 
-html[data-mode="portrait"] .fstats li{display:grid;grid-template-columns:420px 1fr;column-gap:24px;align-items:baseline}
+html[data-mode="portrait"] .fstats li{display:grid;grid-template-columns:330px 1fr;column-gap:24px;align-items:center;min-height:96px;padding:10px 0;border-top:1px solid var(--faint)}
 html[data-mode="portrait"] .fstats b{white-space:nowrap}
-html[data-mode="portrait"] .fstats b{font-size:60px;line-height:1.1}
-html[data-mode="portrait"] .fstats .d{font-size:36px;line-height:1.3}
-html[data-mode="portrait"] .crew{left:72px;top:1230px;width:936px}
+html[data-mode="portrait"] .fstats b{font-size:48px;line-height:1.1}
+html[data-mode="portrait"] .fstats .d{font-size:28px;line-height:1.3}
+html[data-mode="portrait"] .crew{left:72px;top:1300px;width:936px}
 html[data-mode="portrait"] .crew .people{display:grid;grid-template-columns:repeat(3,1fr);gap:24px 20px;margin-top:20px}
 html[data-mode="portrait"] .people b{font-size:30px;line-height:1.15}
 html[data-mode="portrait"] .people .role{font-family:var(--sans);text-transform:none;font-size:22px;margin-top:4px}
 html[data-mode="portrait"] .people .cred{font-size:22px;line-height:1.3;margin-top:4px}
-html[data-mode="portrait"] .creds{left:72px;top:1700px;width:936px;display:grid;gap:16px}
+html[data-mode="portrait"] .creds{left:72px;top:1640px;width:936px;display:grid;gap:16px}
 html[data-mode="portrait"] .creds p{font-size:30px;line-height:1.35}
+html[data-mode="portrait"] .creds .cap{font-size:26px}
 
 /* 9 fundraise */
 html[data-mode="portrait"] .terms{left:72px;top:380px;width:936px;display:grid;grid-template-columns:1fr 1fr;gap:28px 40px}
@@ -467,7 +465,7 @@ html[data-mode="portrait"] .close .contact{font-size:40px;margin-top:64px}
 .people li{display:flex;flex-direction:column;align-items:flex-start}
 .av{display:block;border-radius:50%;object-fit:cover;object-position:center top;background:var(--shade);border:1.5px solid rgba(114,100,241,.7);flex:none}
 .people .role{color:var(--green)}
-.creds .xp{color:var(--muted)}
+.creds .inv{color:var(--ink)}
 .terms .big{color:var(--purple)}
 .terms > div{display:flex;flex-direction:column}
 .terms b{display:block}
@@ -493,10 +491,8 @@ html[data-mode="portrait"] .close .contact{font-size:40px;margin-top:64px}
 .fname{display:block;color:var(--ink)}
 .founder .role{display:block;color:var(--green)}
 .fstats{display:grid}
-.fstats b{display:block;color:var(--purple)}
+.fstats b{display:block;color:var(--ink);font-weight:400}
 .fstats .d{display:block;color:var(--muted)}
-.fmore{list-style:none;padding:0;color:var(--muted)}
-.fmore li::before{content:"+ ";color:var(--green)}
 .fhead .role{display:block;color:var(--green)}
 .crew .people b{display:block}
 
@@ -775,16 +771,13 @@ html[data-mode="portrait"] .dots button{width:28px}
     <p class="sub"><span class="line">A product-first team that runs its own events.</span> <span class="line">Orion's first customer is us.</span></p>
   </header>
   <div class="founder">
-    <p class="cap">Founder</p>
     <div class="fhead"><img class="av fav" src="media/people/mitch-hs.jpg" alt=""><div><b class="fname">Mitch Morales</b><span class="role">Founder &amp; CEO</span></div></div>
     <ul class="fstats">
       <li><b>$20M</b><span class="d">Texas Eclipse revenue, 38,000 people</span></li>
       <li><b>20,000</b><span class="d">people a day at Euphoria</span></li>
       <li><b>$2M → $200M</b><span class="d">360training, grown and exited</span></li>
-    </ul>
-    <ul class="fmore">
-      <li>Deployed a $10M entertainment fund with Unknown Ventures</li>
-      <li>Risk-managed a $50M asset portfolio with Kona Energy (acquired)</li>
+      <li><b>$10M</b><span class="d">entertainment fund deployed with Unknown Ventures</span></li>
+      <li><b>$50M</b><span class="d">asset portfolio risk-managed with Kona Energy (acquired)</span></li>
     </ul>
   </div>
   <div class="crew">
@@ -792,8 +785,8 @@ html[data-mode="portrait"] .dots button{width:28px}
     <ul class="people"><li><img class="av" src="media/people/jon-hs.jpg" alt=""><b>Jon Shapiro</b><span class="role">CTO</span><span class="cred">PlantWave, Mantle, early multi-agent AI systems</span></li><li><img class="av" src="media/people/benjamin-hs.jpg" alt=""><b>Benjamin Hill</b><span class="role">Product Developer</span><span class="cred">4 years at Indeed</span></li><li><img class="av" src="media/people/regan-hs.jpg" alt=""><b>Regan Heckscher</b><span class="role">Systems Admin</span></li><li><img class="av" src="media/people/tule-hs.jpg" alt=""><b>Tule Romeo</b><span class="role">Lead Developer</span></li><li><img class="av" src="media/people/lee-hs.jpg" alt=""><b>Lee Cruz</b><span class="role">AI & Tech Coordinator</span></li></ul>
   </div>
   <div class="creds">
-    <p class="muted">Investors and advisors: Whitney Kroenke Silverstein · JT Marino · Chris Boshuizen · Ravé Mehta</p>
-    <p class="xp">Experience across: Texas Eclipse · Electric Forest · Trail Blazers · Euphoria · Everfest</p>
+    <p class="cap">Investors and advisors</p>
+    <p class="inv">Whitney Kroenke Silverstein · JT Marino · Chris Boshuizen · Ravé Mehta</p>
   </div>
   <p class="conf">Confidential · October 2026</p>
   <p class="pnum">08 / 10</p>
