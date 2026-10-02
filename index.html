@@ -6,7 +6,7 @@
 <title>Project Orion · IMXP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400&family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400&family=Geist+Mono:wght@400&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <script>(function(){var w=innerWidth,h=innerHeight;document.documentElement.dataset.mode=(w/h>=1)?'deck':'portrait';})();</script>
 <style>
 /* ---------- IMXP brand tokens (IMXP Brand Guidelines v1.0) ---------- */
@@ -16,6 +16,7 @@
   --purple:#7264F1; --turq:#50E3FF; --green:#80FCA7;
   --sans:"ABC Monument Grotesk","Geist Embedded","Geist",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   --mono:"ABC Monument Grotesk Mono","Geist Mono Embedded","Geist Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --hand:"Caveat","Segoe Script",cursive;
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
   padding-bottom:env(safe-area-inset-bottom,0px);
@@ -93,6 +94,9 @@ html[data-mode="deck"] .h-hero{font-size:76px;line-height:1.06}
 html[data-mode="deck"] .orion{margin-top:48px;padding-top:32px;width:1280px}
 html[data-mode="deck"] .orion-line{font-size:40px;line-height:1.3}
 html[data-mode="deck"] .orion-sub{font-size:28px;line-height:1.4;margin-top:10px}
+html[data-mode="deck"] .sticky{right:150px;top:186px;width:340px;padding:28px 26px 30px}
+html[data-mode="deck"] .sticky .st-h{font-size:36px;line-height:1}
+html[data-mode="deck"] .sticky .st-b{font-size:28px;line-height:1.25;margin-top:10px}
 html[data-mode="deck"] .small{font-size:24px;line-height:1.45;color:var(--muted);margin-top:48px}
 
 /* 3 market */
@@ -255,6 +259,9 @@ html[data-mode="portrait"] .h-hero{font-size:84px;line-height:1.07}
 html[data-mode="portrait"] .orion{margin-top:48px;padding-top:36px}
 html[data-mode="portrait"] .orion-line{font-size:46px;line-height:1.3}
 html[data-mode="portrait"] .orion-sub{font-size:38px;line-height:1.4;margin-top:14px}
+html[data-mode="portrait"] .sticky{right:72px;top:220px;width:380px;padding:30px 28px 34px}
+html[data-mode="portrait"] .sticky .st-h{font-size:40px;line-height:1}
+html[data-mode="portrait"] .sticky .st-b{font-size:32px;line-height:1.3;margin-top:12px}
 html[data-mode="portrait"] .hero .sub{font-size:48px}
 html[data-mode="portrait"] .small{font-size:40px;line-height:1.4;color:var(--muted);margin-top:40px}
 
@@ -518,6 +525,10 @@ html[data-mode="portrait"] .close .contact{font-size:40px;margin-top:64px}
 .orion{border-top:1px solid rgba(252,250,247,.3)}
 .orion-line{color:var(--ink)}
 .orion-sub{color:var(--muted)}
+.sticky{position:absolute;background:linear-gradient(160deg,#9CFFBC,#6FE89A);color:#0B2E1C;transform:rotate(-4deg);box-shadow:0 18px 34px rgba(0,0,0,.35),0 2px 6px rgba(0,0,0,.25);border-radius:3px}
+.sticky::before{content:"";position:absolute;top:-14px;left:50%;transform:translateX(-50%) rotate(2deg);width:84px;height:28px;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.4);box-shadow:0 2px 4px rgba(0,0,0,.15)}
+.sticky .st-h{font-family:var(--hand);font-weight:700;text-transform:none;letter-spacing:0}
+.sticky .st-b{font-family:var(--hand);font-weight:500;letter-spacing:0}
 .horizon{color:var(--green)}
 
 /* line chart (Problem slide) */
@@ -666,6 +677,10 @@ html[data-mode="portrait"] .close .tagline{font-size:38px}
   <img class="bg-photo" src="media/photos/eclipse-sky.jpg" alt="">
   <div class="shade"></div>
   <img class="logo-sm" src="media/logos/imxp-small.png" alt="IMXP">
+  <div class="sticky" aria-label="Sticky note: Vision">
+    <p class="st-h">Vision</p>
+    <p class="st-b">Orion will power experience at the edges of this planet and beyond</p>
+  </div>
   <div class="hero">
     <p class="eyebrow">The mission</p>
     <h2 class="h-hero">IMXP will make it possible to create <span class="nw">real-world</span> experiences in close to real time.</h2>
