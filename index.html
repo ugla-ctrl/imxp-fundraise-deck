@@ -156,6 +156,10 @@ html[data-mode="deck"] .n .d{font-size:24px;margin-top:14px}
 html[data-mode="deck"] .s-cover .bg-photo{object-position:50% 38%}
 html[data-mode="deck"] .s-open .bg-photo{object-position:50% 45%}
 html[data-mode="deck"] .s-problem .bg-photo{object-position:50% 40%}
+html[data-mode="deck"] .s-solution .bg-photo{object-position:50% 50%}
+html[data-mode="deck"] .s-team .bg-photo{object-position:50% 58%}
+html[data-mode="deck"] .s-fund .bg-photo{object-position:50% 60%}
+html[data-mode="deck"] .s-close .bg-photo{object-position:50% 38%}
 html[data-mode="deck"] .tr-photo{left:auto;right:0;top:0;width:720px;height:1080px;object-position:50% 72%}
 html[data-mode="deck"] .tr-shade{left:auto;right:0;top:0;width:720px;height:1080px;background:linear-gradient(90deg, #060E19 0%, rgba(6,14,25,.55) 20%, rgba(6,14,25,.12) 48%, rgba(6,14,25,0) 70%),linear-gradient(180deg, rgba(6,14,25,.5) 0%, rgba(6,14,25,0) 20%, rgba(6,14,25,0) 80%, rgba(6,14,25,.6) 100%)}
 html[data-mode="deck"] .s-traction .hd{width:1040px}
@@ -326,6 +330,10 @@ html[data-mode="portrait"] .n .d{font-size:38px;line-height:1.35;margin-top:14px
 html[data-mode="portrait"] .s-cover .bg-photo{object-position:74% 50%}
 html[data-mode="portrait"] .s-open .bg-photo{object-position:28% 50%}
 html[data-mode="portrait"] .s-problem .bg-photo{object-position:30% 50%}
+html[data-mode="portrait"] .s-solution .bg-photo{object-position:55% 50%}
+html[data-mode="portrait"] .s-team .bg-photo{object-position:48% 60%}
+html[data-mode="portrait"] .s-fund .bg-photo{object-position:78% 50%}
+html[data-mode="portrait"] .s-close .bg-photo{object-position:40% 50%}
 html[data-mode="portrait"] .tr-photo{left:0;top:1080px;width:1080px;height:840px;object-position:50% 70%}
 html[data-mode="portrait"] .tr-shade{left:0;top:1080px;width:1080px;height:840px;background:linear-gradient(180deg, #060E19 0%, rgba(6,14,25,0) 38%, rgba(6,14,25,.6) 100%)}
 html[data-mode="portrait"] .credits{left:72px;right:72px;bottom:150px;text-align:center;font-size:36px;line-height:1.35}
@@ -495,6 +503,10 @@ html[data-mode="portrait"] .close .contact{font-size:40px;margin-top:64px}
 .s-cover .shade{background:radial-gradient(56% 50% at 50% 44%, rgba(6,14,25,.66), rgba(6,14,25,.26) 72%),linear-gradient(180deg, rgba(6,14,25,.35), rgba(6,14,25,.12) 45%, rgba(6,14,25,.85))}
 .s-open .shade{background:linear-gradient(0deg, rgba(6,14,25,.96) 0%, rgba(6,14,25,.72) 40%, rgba(6,14,25,.30) 72%, rgba(6,14,25,.55) 100%),linear-gradient(90deg, rgba(6,14,25,.55), rgba(6,14,25,0) 65%)}
 .s-problem .shade{background:linear-gradient(90deg, rgba(6,14,25,.94) 0%, rgba(6,14,25,.84) 45%, rgba(6,14,25,.91) 100%)}
+.s-solution .shade{background:linear-gradient(90deg, rgba(6,14,25,.95) 0%, rgba(6,14,25,.82) 55%, rgba(6,14,25,.90) 100%)}
+.s-team .shade{background:linear-gradient(180deg, rgba(6,14,25,.80), rgba(6,14,25,.90))}
+.s-fund .shade{background:linear-gradient(180deg, rgba(6,14,25,.74), rgba(6,14,25,.88))}
+.s-close .shade{background:radial-gradient(60% 55% at 50% 42%, rgba(6,14,25,.82), rgba(6,14,25,.52) 80%),linear-gradient(180deg, rgba(6,14,25,.40), rgba(6,14,25,.90))}
 .slide > .tr-photo{object-fit:cover}
 .slide > .tr-shade{pointer-events:none}
 .df-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#0B1424}
@@ -654,7 +666,9 @@ html[data-mode="portrait"] .dots button{width:28px}
 </section>
 
 <!-- 5 SOLUTION -->
-<section class="slide bg-content" data-slide="5" aria-label="The solution">
+<section class="slide bg-content has-photo s-solution" data-slide="5" aria-label="The solution">
+  <img class="bg-photo" src="media/solution-bg-poster.jpg" alt="">
+  <div class="shade"></div>
   <img class="logo-sm" src="media/logos/imxp-small.png" alt="IMXP">
   <header class="hd">
     <p class="eyebrow">The solution</p>
@@ -741,7 +755,9 @@ html[data-mode="portrait"] .dots button{width:28px}
 </section>
 
 <!-- 8 TEAM -->
-<section class="slide bg-content" data-slide="8" aria-label="The team">
+<section class="slide bg-content has-photo s-team" data-slide="8" aria-label="The team">
+  <img class="bg-photo" src="media/photos/founder-interview.jpg" alt="">
+  <div class="shade"></div>
   <img class="logo-sm" src="media/logos/imxp-small.png" alt="IMXP">
   <header class="hd">
     <p class="eyebrow">The team</p>
@@ -763,7 +779,7 @@ html[data-mode="portrait"] .dots button{width:28px}
   </div>
   <div class="crew">
     <p class="cap">The IMXP team: small and product-first</p>
-    <ul class="people"><li><img class="av" src="media/people/maryliz-hs.jpg" alt=""><b>MaryLiz Bender</b><span class="role">CXO</span><span class="cred">Cosmic Perspective, Everyday Astronaut</span></li><li><img class="av" src="media/people/jon-hs.jpg" alt=""><b>Jon Shapiro</b><span class="role">CTO</span><span class="cred">PlantWave, Mantle, early multi-agent AI systems</span></li><li><img class="av" src="media/people/benjamin-hs.jpg" alt=""><b>Benjamin Hill</b><span class="role">Product Developer</span><span class="cred">4 years at Indeed</span></li><li><img class="av" src="media/people/ari.jpg" alt=""><b>Ari Eisenstat</b><span class="role">Program Director</span><span class="cred">Space for Humanity</span></li><li><img class="av" src="media/people/andrew.jpg" alt=""><b>Andrew Glenn</b><span class="role">Creative Director</span><span class="cred">KAMMOK</span></li><li><img class="av" src="media/people/patrick.jpg" alt=""><b>Patrick Kronfli</b><span class="role">Partnerships Director</span><span class="cred">Unify.org</span></li><li><img class="av" src="media/people/holly.jpg" alt=""><b>Holly Wood</b><span class="role">Admin Director</span><span class="cred">Texas Eclipse</span></li><li><img class="av" src="media/people/regan-hs.jpg" alt=""><b>Regan Heckscher</b><span class="role">Systems Admin</span></li><li><img class="av" src="media/people/tule-hs.jpg" alt=""><b>Tule Romeo</b><span class="role">Lead Developer</span></li><li><img class="av" src="media/people/lee-hs.jpg" alt=""><b>Lenette Cruz</b><span class="role">AI & Tech Workflow Coordinator</span></li></ul>
+    <ul class="people"><li><img class="av" src="media/people/maryliz-hs.jpg" alt=""><b>MaryLiz Bender</b><span class="role">CXO</span><span class="cred">Cosmic Perspective, Everyday Astronaut</span></li><li><img class="av" src="media/people/jon-hs.jpg" alt=""><b>Jon Shapiro</b><span class="role">CTO</span><span class="cred">PlantWave, Mantle, early multi-agent AI systems</span></li><li><img class="av" src="media/people/benjamin-hs.jpg" alt=""><b>Benjamin Hill</b><span class="role">Product Developer</span><span class="cred">4 years at Indeed</span></li><li><img class="av" src="media/people/ari.jpg" alt=""><b>Ari Eisenstat</b><span class="role">Program Director</span><span class="cred">Space for Humanity</span></li><li><img class="av" src="media/people/andrew.jpg" alt=""><b>Andrew Glenn</b><span class="role">Creative Director</span><span class="cred">KAMMOK</span></li><li><img class="av" src="media/people/patrick.jpg" alt=""><b>Patrick Kronfli</b><span class="role">Partnerships Director</span><span class="cred">Unify.org</span></li><li><img class="av" src="media/people/holly.jpg" alt=""><b>Holly Wood</b><span class="role">Admin Director</span><span class="cred">Texas Eclipse</span></li><li><img class="av" src="media/people/regan-hs.jpg" alt=""><b>Regan Heckscher</b><span class="role">Systems Admin</span></li><li><img class="av" src="media/people/tule-hs.jpg" alt=""><b>Tule Romeo</b><span class="role">Lead Developer</span></li><li><img class="av" src="media/people/lee-hs.jpg" alt=""><b>Lee Cruz</b><span class="role">AI & Tech Coordinator</span></li></ul>
   </div>
   <div class="creds">
     <p class="muted">Investors and advisors: Whitney Kroenke Silverstein · JT Marino · Chris Boshuizen · Ravé Mehta</p>
@@ -774,7 +790,9 @@ html[data-mode="portrait"] .dots button{width:28px}
 </section>
 
 <!-- 9 FUNDRAISE -->
-<section class="slide bg-content" data-slide="9" aria-label="Fundraise">
+<section class="slide bg-content has-photo s-fund" data-slide="9" aria-label="Fundraise">
+  <img class="bg-photo" src="media/photos/panorama.jpg" alt="">
+  <div class="shade"></div>
   <img class="logo-sm" src="media/logos/imxp-small.png" alt="IMXP">
   <header class="hd">
     <p class="eyebrow">Fundraise</p>
@@ -800,7 +818,9 @@ html[data-mode="portrait"] .dots button{width:28px}
 </section>
 
 <!-- 10 CLOSE -->
-<section class="slide bg-close" data-slide="10" aria-label="Close">
+<section class="slide bg-close has-photo s-close" data-slide="10" aria-label="Close">
+  <img class="bg-photo" src="media/photos/golden-hug.jpg" alt="">
+  <div class="shade"></div>
   <img class="logo-sm" src="media/logos/imxp-small.png" alt="IMXP">
   <div class="close">
     <h2>Thank you.</h2>
