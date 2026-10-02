@@ -157,6 +157,8 @@ html[data-mode="deck"] .s-cover .bg-photo{object-position:50% 38%}
 html[data-mode="deck"] .s-open .bg-photo{object-position:50% 45%}
 html[data-mode="deck"] .s-problem .bg-photo{object-position:50% 40%}
 html[data-mode="deck"] .s-solution .bg-photo{object-position:50% 50%}
+html[data-mode="deck"] .s-market .bg-photo{object-position:50% 28%}
+html[data-mode="deck"] .s-road .bg-photo{object-position:50% 45%}
 html[data-mode="deck"] .s-team .bg-photo{object-position:50% 58%}
 html[data-mode="deck"] .s-fund .bg-photo{object-position:50% 60%}
 html[data-mode="deck"] .s-close .bg-photo{object-position:50% 38%}
@@ -331,6 +333,8 @@ html[data-mode="portrait"] .s-cover .bg-photo{object-position:74% 50%}
 html[data-mode="portrait"] .s-open .bg-photo{object-position:28% 50%}
 html[data-mode="portrait"] .s-problem .bg-photo{object-position:30% 50%}
 html[data-mode="portrait"] .s-solution .bg-photo{object-position:55% 50%}
+html[data-mode="portrait"] .s-market .bg-photo{object-position:30% 40%}
+html[data-mode="portrait"] .s-road .bg-photo{object-position:42% 50%}
 html[data-mode="portrait"] .s-team .bg-photo{object-position:48% 60%}
 html[data-mode="portrait"] .s-fund .bg-photo{object-position:78% 50%}
 html[data-mode="portrait"] .s-close .bg-photo{object-position:40% 50%}
@@ -504,6 +508,8 @@ html[data-mode="portrait"] .close .contact{font-size:40px;margin-top:64px}
 .s-open .shade{background:linear-gradient(0deg, rgba(6,14,25,.96) 0%, rgba(6,14,25,.72) 40%, rgba(6,14,25,.30) 72%, rgba(6,14,25,.55) 100%),linear-gradient(90deg, rgba(6,14,25,.55), rgba(6,14,25,0) 65%)}
 .s-problem .shade{background:linear-gradient(90deg, rgba(6,14,25,.94) 0%, rgba(6,14,25,.84) 45%, rgba(6,14,25,.91) 100%)}
 .s-solution .shade{background:linear-gradient(90deg, rgba(6,14,25,.95) 0%, rgba(6,14,25,.82) 55%, rgba(6,14,25,.90) 100%)}
+.s-market .shade{background:linear-gradient(180deg, rgba(6,14,25,.84), rgba(6,14,25,.92))}
+.s-road .shade{background:linear-gradient(180deg, rgba(6,14,25,.80), rgba(6,14,25,.92))}
 .s-team .shade{background:linear-gradient(180deg, rgba(6,14,25,.80), rgba(6,14,25,.90))}
 .s-fund .shade{background:linear-gradient(180deg, rgba(6,14,25,.74), rgba(6,14,25,.88))}
 .s-close .shade{background:radial-gradient(60% 55% at 50% 42%, rgba(6,14,25,.82), rgba(6,14,25,.52) 80%),linear-gradient(180deg, rgba(6,14,25,.40), rgba(6,14,25,.90))}
@@ -594,7 +600,9 @@ html[data-mode="portrait"] .dots button{width:28px}
 </section>
 
 <!-- 3 MARKET -->
-<section class="slide bg-content" data-slide="3" aria-label="Market">
+<section class="slide bg-content has-photo s-market" data-slide="3" aria-label="Market">
+  <img class="bg-photo" src="media/photos/demand.jpg" alt="">
+  <div class="shade"></div>
   <img class="logo-sm" src="media/logos/imxp-small.png" alt="IMXP">
   <header class="hd">
     <p class="eyebrow">Market</p>
@@ -717,7 +725,9 @@ html[data-mode="portrait"] .dots button{width:28px}
 </section>
 
 <!-- 7 ROADMAP -->
-<section class="slide bg-content" data-slide="7" aria-label="Roadmap">
+<section class="slide bg-content has-photo s-road" data-slide="7" aria-label="Roadmap">
+  <img class="bg-photo" src="media/photos/egypt.jpg" alt="">
+  <div class="shade"></div>
   <img class="logo-sm" src="media/logos/imxp-small.png" alt="IMXP">
   <header class="hd">
     <p class="eyebrow">Roadmap</p>
