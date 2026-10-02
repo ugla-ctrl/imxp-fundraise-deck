@@ -610,6 +610,40 @@ html[data-mode="portrait"] .close .ccard b{font-size:48px}
 html[data-mode="portrait"] .close .ccard .role{font-size:28px;margin-top:8px}
 html[data-mode="portrait"] .close .ccard a{font-size:36px;margin-top:12px}
 html[data-mode="portrait"] .close .tagline{font-size:26px;margin-top:56px}
+
+/* phone legibility floor (portrait canvas renders at ~0.33x on phones: 40px here = ~13px on screen) */
+html[data-mode="portrait"] .slide{top:calc(50% - 20px)}
+html[data-mode="portrait"] .eyebrow{font-size:40px;line-height:1.2}
+html[data-mode="portrait"] .cap{font-size:38px}
+html[data-mode="portrait"] .conf{font-size:38px}
+html[data-mode="portrait"] .foot{font-size:38px;line-height:1.35}
+html[data-mode="portrait"] .cover-kind{font-size:42px}
+html[data-mode="portrait"] .cover-foot{font-size:38px}
+html[data-mode="portrait"] .rl .d{font-size:38px}
+html[data-mode="portrait"] .cols .y,html[data-mode="portrait"] .cols .tag{font-size:38px}
+html[data-mode="portrait"] .deals .sx{font-size:38px;line-height:1.35}
+html[data-mode="portrait"] .pb-hero .cap{font-size:38px}
+html[data-mode="portrait"] .mbar-k{font-size:38px}
+html[data-mode="portrait"] .pb-hero .hero-note{font-size:40px}
+html[data-mode="portrait"] .df-cap{font-size:38px}
+html[data-mode="portrait"] .rings-svg text{font-size:24px}
+html[data-mode="portrait"] .ptl-build{top:1410px}
+html[data-mode="portrait"] .founder{top:520px}
+html[data-mode="portrait"] .crew{top:1300px}
+html[data-mode="portrait"] .crew .people{grid-template-columns:repeat(2,1fr);gap:22px 32px}
+html[data-mode="portrait"] .creds{top:1640px}
+html[data-mode="portrait"] .ptl .when{font-size:38px}
+html[data-mode="portrait"] .founder .role{font-size:38px}
+html[data-mode="portrait"] .fstats .d{font-size:38px;line-height:1.25}
+html[data-mode="portrait"] .crew .people b{font-size:40px}
+html[data-mode="portrait"] .people .role{font-size:38px}
+html[data-mode="portrait"] .creds .cap{font-size:38px}
+html[data-mode="portrait"] .creds .inv{font-size:38px}
+html[data-mode="portrait"] .ms-date{font-size:38px}
+html[data-mode="portrait"] .close .eyebrow{font-size:40px}
+html[data-mode="portrait"] .close .ccard .role{font-size:38px}
+html[data-mode="portrait"] .close .ccard a{font-size:40px}
+html[data-mode="portrait"] .close .tagline{font-size:38px}
 </style>
 </head>
 <body>
@@ -926,7 +960,7 @@ const DEMO_URL = "";
   let cur = Math.min(Math.max((parseInt(q.get('slide') || '1', 10) || 1) - 1, 0), slides.length - 1);
 
   const wantMode = () => (innerWidth / innerHeight >= 1) ? 'deck' : 'portrait';
-  const fit = () => { const p = root.dataset.mode === 'portrait'; const margin = Math.min(stage.clientWidth, stage.clientHeight) < 700 ? 0.94 : 0.88; stage.style.setProperty('--s', Math.min(stage.clientWidth / (p ? 1080 : 1920), stage.clientHeight / (p ? 1920 : 1080)) * margin); };
+  const fit = () => { const p = root.dataset.mode === 'portrait'; const margin = Math.min(stage.clientWidth, stage.clientHeight) < 700 ? 0.94 : 0.88; stage.style.setProperty('--s', p ? Math.min(stage.clientWidth * 0.96 / 1080, (stage.clientHeight - 44) * 0.99 / 1920) : Math.min(stage.clientWidth / 1920, stage.clientHeight / 1080) * margin); };
 
   function show(i, remember) {
     cur = Math.max(0, Math.min(slides.length - 1, i));
