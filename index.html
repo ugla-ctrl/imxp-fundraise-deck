@@ -707,9 +707,59 @@ html[data-mode="portrait"] .close .eyebrow{font-size:40px}
 html[data-mode="portrait"] .close .ccard .role{font-size:38px}
 html[data-mode="portrait"] .close .ccard a{font-size:40px}
 html[data-mode="portrait"] .close .tagline{font-size:38px}
+
+/* ---------- Email gate ---------- */
+#egate{position:fixed;inset:0;z-index:999;display:flex;align-items:center;justify-content:center;background:var(--bg);padding:24px}
+#egate.hide{display:none}
+#egate .ecard{width:min(420px,92vw);text-align:center}
+#egate .elogo{height:28px;width:auto;display:block;margin:0 auto 22px}
+#egate .esub{font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;font-size:12px;color:var(--muted);margin-bottom:28px}
+#egate h2{font-size:21px;font-weight:400;color:var(--ink);margin-bottom:8px}
+#egate p.ebody{color:var(--muted);font-size:14px;line-height:1.5;margin-bottom:22px}
+#egate form{display:flex;flex-direction:column;gap:12px}
+#egate input{width:100%;padding:13px 15px;border-radius:9px;border:1px solid var(--faint);background:rgba(252,250,247,.06);color:var(--ink);font-size:15px;font-family:var(--sans);outline:none}
+#egate input:focus{border-color:rgba(252,250,247,.5)}
+#egate input::placeholder{color:var(--muted)}
+#egate button{width:100%;padding:13px;border-radius:9px;border:none;cursor:pointer;background:var(--ink);color:var(--bg);font-size:15px;font-weight:400;font-family:var(--sans);transition:opacity .15s}
+#egate button:hover{opacity:.85}
+#egate .eerr{color:#ff6b6b;font-size:13px;min-height:16px;text-align:left;font-family:var(--sans)}
+#egate .efine{color:var(--muted);opacity:.7;font-size:11px;margin-top:16px;line-height:1.5;font-family:var(--sans)}
 </style>
 </head>
 <body>
+<div id="egate">
+  <div class="ecard">
+    <img class="elogo" src="media/logos/imxp-wide.png" alt="IMXP">
+    <div class="esub">Orion Fundraise Deck</div>
+    <h2>View the deck</h2>
+    <p class="ebody">Enter your email to continue.</p>
+    <form id="egateForm" novalidate>
+      <input id="egateEmail" type="email" placeholder="you@company.com" autocomplete="email">
+      <div class="eerr" id="egateErr"></div>
+      <button type="submit">View deck →</button>
+    </form>
+    <div class="efine">Private draft for advisors &amp; friends.</div>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY='orion_deck_unlocked';
+  var gate=document.getElementById('egate');
+  if(localStorage.getItem(KEY)){gate.classList.add('hide');return;}
+  var form=document.getElementById('egateForm');
+  var email=document.getElementById('egateEmail');
+  var err=document.getElementById('egateErr');
+  var re=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=email.value.trim();
+    if(!re.test(v)){err.textContent='Please enter a valid email address.';email.focus();return;}
+    try{localStorage.setItem(KEY,'1');}catch(_){} 
+    gate.classList.add('hide');
+  });
+  email.focus();
+})();
+</script>
 <main class="stage" aria-roledescription="presentation" aria-label="Project Orion">
 
 <!-- 1 COVER -->
