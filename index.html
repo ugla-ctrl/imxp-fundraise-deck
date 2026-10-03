@@ -156,12 +156,14 @@ html[data-mode="deck"] .df-play{width:112px;height:112px}
 html[data-mode="deck"] .df-cap{font-size:20px;margin-top:16px}
 
 /* 6 traction */
-html[data-mode="deck"] .tr-left{left:120px;top:480px;width:1000px}
-html[data-mode="deck"] .live{display:grid;grid-template-columns:repeat(2,380px);gap:20px 40px;margin-top:20px}
-html[data-mode="deck"] .live li{font-size:28px;gap:14px}
-html[data-mode="deck"] .nums{display:flex;gap:120px;margin-top:80px}
-html[data-mode="deck"] .n b{font-size:96px;line-height:1}
-html[data-mode="deck"] .n .d{font-size:24px;margin-top:14px}
+html[data-mode="deck"] .tr-left{left:500px;top:480px;width:700px}
+html[data-mode="deck"] .live{display:grid;grid-template-columns:repeat(2,320px);gap:20px 32px;margin-top:20px}
+html[data-mode="deck"] .live li{font-size:26px;gap:14px}
+html[data-mode="deck"] .nums{display:flex;gap:80px;margin-top:70px}
+html[data-mode="deck"] .n b{font-size:86px;line-height:1}
+html[data-mode="deck"] .n .d{font-size:22px;margin-top:12px}
+html[data-mode="deck"] .tr-photo-l{left:0;top:0;width:380px;height:1080px;object-position:64% 50%}
+html[data-mode="deck"] .tr-shade-l{left:0;top:0;width:380px;height:1080px;background:linear-gradient(270deg, #060E19 0%, rgba(6,14,25,.55) 20%, rgba(6,14,25,.12) 48%, rgba(6,14,25,0) 70%),linear-gradient(180deg, rgba(6,14,25,.5) 0%, rgba(6,14,25,0) 20%, rgba(6,14,25,0) 80%, rgba(6,14,25,.6) 100%)}
 html[data-mode="deck"] .s-cover .bg-photo{object-position:50% 38%}
 html[data-mode="deck"] .s-open .bg-photo{object-position:50% 50%}
 html[data-mode="deck"] .s-problem .bg-photo{object-position:50% 50%}
@@ -173,7 +175,7 @@ html[data-mode="deck"] .s-fund .bg-photo{object-position:50% 50%}
 html[data-mode="deck"] .s-close .bg-photo{object-position:50% 50%}
 html[data-mode="deck"] .tr-photo{left:auto;right:0;top:0;width:720px;height:1080px;object-position:40% 50%}
 html[data-mode="deck"] .tr-shade{left:auto;right:0;top:0;width:720px;height:1080px;background:linear-gradient(90deg, #060E19 0%, rgba(6,14,25,.55) 20%, rgba(6,14,25,.12) 48%, rgba(6,14,25,0) 70%),linear-gradient(180deg, rgba(6,14,25,.5) 0%, rgba(6,14,25,0) 20%, rgba(6,14,25,0) 80%, rgba(6,14,25,.6) 100%)}
-html[data-mode="deck"] .s-traction .hd{width:1040px}
+html[data-mode="deck"] .s-traction .hd{left:500px;width:700px}
 html[data-mode="deck"] .s-traction .hd .line{white-space:normal}
 html[data-mode="deck"] .credits{left:0;right:0;bottom:96px;text-align:center;font-size:18px}
 
@@ -238,7 +240,7 @@ html[data-mode="portrait"] .slide{position:absolute;left:50%;top:50%;width:1080p
 html[data-mode="portrait"] .slide.active{display:block;animation:fade .2s ease}
 @media (prefers-reduced-motion: reduce){html[data-mode="portrait"] .slide.active{animation:none}}
 html[data-mode="portrait"] .slide > *{position:absolute}
-html[data-mode="portrait"] .lx,html[data-mode="portrait"] .pnum,html[data-mode="portrait"] .gantt,html[data-mode="portrait"] .events,html[data-mode="portrait"] .rings-leaders,html[data-mode="portrait"] .people .cred{display:none}
+html[data-mode="portrait"] .lx,html[data-mode="portrait"] .pnum,html[data-mode="portrait"] .gantt,html[data-mode="portrait"] .events,html[data-mode="portrait"] .rings-leaders,html[data-mode="portrait"] .people .cred,html[data-mode="portrait"] .tr-photo-l,html[data-mode="portrait"] .tr-shade-l{display:none}
 
 /* shared anchors */
 html[data-mode="portrait"] .hd{left:72px;top:120px;width:936px}
@@ -547,6 +549,8 @@ html[data-mode="portrait"] .close .contact{font-size:40px;margin-top:64px}
 .s-close .shade{background:radial-gradient(40% 36% at 50% 50%, rgba(6,14,25,.74), transparent 78%),linear-gradient(180deg, rgba(6,14,25,.10), rgba(6,14,25,.20) 35%, rgba(6,14,25,.30) 60%, rgba(6,14,25,.88) 100%)}
 .slide > .tr-photo{object-fit:cover}
 .slide > .tr-shade{pointer-events:none}
+.slide > .tr-photo-l{object-fit:cover}
+.slide > .tr-shade-l{pointer-events:none}
 .df-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#0B1424}
 .df-play{cursor:pointer;padding:0}
 .df-play[hidden]{display:none}
@@ -837,6 +841,8 @@ html[data-mode="portrait"] .close .tagline{font-size:38px}
 
 <!-- 6 TRACTION -->
 <section class="slide bg-content s-traction" data-slide="6" aria-label="Traction">
+  <img class="tr-photo-l" src="media/photos/aurora-streak.jpg" alt="Aurora over Iceland">
+  <div class="tr-shade-l"></div>
   <img class="tr-photo" src="media/photos/ceremony.jpg" alt="Iceland Eclipse guests watching totality">
   <div class="tr-shade"></div>
   <img class="logo-sm" src="media/logos/imxp-small.png" alt="IMXP">
