@@ -763,19 +763,65 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
 </div>
 <script>
 (function(){
-  var KEY='orion_deck_unlocked';
+  var KEY='orion_deck_unlocked', EMAIL_KEY='orion_deck_email';
+  var SUPA_URL='https://qmxhsendoepqeyeolzil.supabase.co';
+  var SUPA_KEY='sb_publishable_qU4HH0buJWQW3_RJk3QlYg_5r84ZfdP';
   var gate=document.getElementById('egate');
-  if(localStorage.getItem(KEY)){gate.classList.add('hide');return;}
+
+  /* View-duration tracking: active-tab time per visit, recorded through the deck_view_beat() database
+     function into orion_deck_views. Every visit carries the viewer's email (entered at the gate, or
+     remembered from this browser), so the daily report can always name the viewer. Uses fetch(keepalive)
+     because Supabase's REST API needs headers that sendBeacon cannot send. */
+  function trackViews(email){
+    try{
+      var SID=(crypto.randomUUID?crypto.randomUUID():(Date.now()+'-'+Math.random().toString(16).slice(2)));
+      var activeMs=0,lastTick=(document.visibilityState==='visible'?Date.now():null),lastSent=-1;
+      function tick(){if(lastTick!==null){activeMs+=Math.min(Date.now()-lastTick,60000);lastTick=Date.now();}}
+      document.addEventListener('visibilitychange',function(){tick();lastTick=document.visibilityState==='visible'?Date.now():null;if(document.visibilityState==='hidden')send(true);});
+      function send(keepalive){
+        tick();
+        var seconds=Math.round(activeMs/1000);
+        if(seconds<3||seconds===lastSent)return;
+        lastSent=seconds;
+        fetch(SUPA_URL+'/rest/v1/rpc/deck_view_beat',{
+          method:'POST',keepalive:!!keepalive,
+          headers:{'apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY,'Content-Type':'application/json'},
+          body:JSON.stringify({p_deck:'orion',p_session_id:SID,p_email:email||null,p_seconds:seconds})
+        }).catch(function(){});
+      }
+      setInterval(function(){send(false);},20000);
+      addEventListener('pagehide',function(){send(true);});
+    }catch(_){}
+  }
+
+  var seen=false,saved=null;
+  try{seen=!!localStorage.getItem(KEY);saved=localStorage.getItem(EMAIL_KEY);}catch(_){}
+  /* unlocked before emails were captured: ask once, so every recorded view has an email address */
+  var returning=seen&&!saved;
+  if(seen&&saved){gate.classList.add('hide');trackViews(saved);return;}
   var form=document.getElementById('egateForm');
   var email=document.getElementById('egateEmail');
   var err=document.getElementById('egateErr');
+  var btn=form.querySelector('button[type=submit]');
   var re=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if(returning){var h=gate.querySelector('h2'),bd=gate.querySelector('.ebody');if(h)h.textContent='Welcome back.';if(bd)bd.textContent='Please confirm your email to continue.';if(btn)btn.textContent='Continue';}
+  function unlock(v){
+    try{localStorage.setItem(KEY,'1');localStorage.setItem(EMAIL_KEY,v);}catch(_){}
+    gate.classList.add('hide');
+    trackViews(v);
+  }
   form.addEventListener('submit',function(e){
     e.preventDefault();
     var v=email.value.trim();
     if(!re.test(v)){err.textContent='Please enter a valid email address.';email.focus();return;}
-    try{localStorage.setItem(KEY,'1');}catch(_){} 
-    gate.classList.add('hide');
+    err.textContent='';
+    if(btn){btn.disabled=true;btn.textContent='Opening\u2026';}
+    var payload={email:v,name:null,source:'orion-deck-gate',referrer:document.referrer||null,user_agent:navigator.userAgent};
+    fetch(SUPA_URL+'/rest/v1/orion_deck_leads',{
+      method:'POST',
+      headers:{'apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY,'Content-Type':'application/json','Prefer':'return=minimal'},
+      body:JSON.stringify(payload)
+    }).then(function(){unlock(v);},function(){unlock(v);});   /* never trap a real viewer behind a network hiccup */
   });
   email.focus();
 })();

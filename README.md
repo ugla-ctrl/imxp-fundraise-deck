@@ -68,3 +68,9 @@ Flagged in the source as "blanks you must fill" — **not** invented here:
 - IMXP's own presale curve, repeat-purchase rate, blended acquisition cost
   (Business).
 - The before-picture: production hours / headcount for Texas Eclipse (Problem).
+
+## Visitor tracking
+
+The email gate saves each visitor's email as a lead (`orion_deck_leads`) and remembers it in the browser. Every visit
+is recorded with that email (`orion_deck_views`, active reading time), so the daily report always names the viewer.
+Visitors who unlocked the deck before emails were captured see a one-time "Welcome back, confirm your email" step.
