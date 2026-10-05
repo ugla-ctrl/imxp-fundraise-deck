@@ -39,7 +39,7 @@ A slide changes only on a deliberate action. Tapping or clicking the page does n
 
 - **Phone:** swipe left for the next slide and right for the previous one. Scroll down on any slide to read all of it. First-time visitors see a short hand tutorial with a Skip button (add `?tour=1` to the address to replay it, `?tour=0` to hide it).
 - **Desktop:** **← / →**, **Space / Page Down / Page Up**, a two-finger trackpad swipe, or a mouse drag. **Home / End** jump to the first or last slide.
-- The small dots at the bottom show progress and jump to any slide; deep-link with `?slide=<n>`.
+- The small dots show progress and jump to any slide. On phones they appear once you have scrolled to the end of a slide, so they never cover content. Deep-link with `?slide=<n>`.
 
 ## Slide order
 
