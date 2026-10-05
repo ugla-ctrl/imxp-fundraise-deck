@@ -805,7 +805,9 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
   var btn=form.querySelector('button[type=submit]');
   var re=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if(returning){var h=gate.querySelector('h2'),bd=gate.querySelector('.ebody');if(h)h.textContent='Welcome back.';if(bd)bd.textContent='Please confirm your email to continue.';if(btn)btn.textContent='Continue';}
+  var opened=false;
   function unlock(v){
+    if(opened)return;opened=true;
     try{localStorage.setItem(KEY,'1');localStorage.setItem(EMAIL_KEY,v);}catch(_){}
     gate.classList.add('hide');
     trackViews(v);
@@ -816,6 +818,7 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
     if(!re.test(v)){err.textContent='Please enter a valid email address.';email.focus();return;}
     err.textContent='';
     if(btn){btn.disabled=true;btn.textContent='Opening\u2026';}
+    setTimeout(function(){unlock(v);},4000);   /* a stalled request must not trap the viewer */
     var payload={email:v,name:null,source:'orion-deck-gate',referrer:document.referrer||null,user_agent:navigator.userAgent};
     fetch(SUPA_URL+'/rest/v1/orion_deck_leads',{
       method:'POST',
