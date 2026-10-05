@@ -35,11 +35,11 @@ https://ugla-ctrl.github.io/imxp-fundraise-deck/
 
 ## Navigation
 
-A slide changes only on a deliberate action. Tapping or clicking the page does nothing.
+A slide changes only on a deliberate action. Tapping or clicking the page does nothing, and there are no on-screen arrow buttons.
 
-- **Phone:** swipe left for the next slide and right for the previous one. Scroll down on any slide to read all of it.
-- **Desktop:** the arrow buttons by the dots, **← / →**, **Space / Page Down / Page Up**, a two-finger trackpad swipe, or a mouse drag. **Home / End** jump to the first or last slide.
-- The dot rail jumps to any slide; deep-link with `?slide=<n>`.
+- **Phone:** swipe left for the next slide and right for the previous one. Scroll down on any slide to read all of it. First-time visitors see a short hand tutorial with a Skip button (add `?tour=1` to the address to replay it, `?tour=0` to hide it).
+- **Desktop:** **← / →**, **Space / Page Down / Page Up**, a two-finger trackpad swipe, or a mouse drag. **Home / End** jump to the first or last slide.
+- The small dots at the bottom show progress and jump to any slide; deep-link with `?slide=<n>`.
 
 ## Slide order
 

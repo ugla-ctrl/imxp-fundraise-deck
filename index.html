@@ -457,11 +457,6 @@ html[data-mode="deck"] .tip strong{font-size:20px;margin-bottom:6px}
 .dots .dot{width:30px;height:28px;padding:0;border:0;background:transparent;cursor:pointer}
 .dots .dot::before{content:"";display:block;height:3px;margin:0 6px;border-radius:2px;background:rgba(255,255,255,.22)}
 .dots .dot[aria-current="true"]::before{background:var(--purple)}
-.dots .navbtn{display:flex;align-items:center;justify-content:center;width:36px;height:36px;padding:0;border:1px solid rgba(252,250,247,.18);border-radius:50%;background:rgba(6,14,25,.55);color:var(--ink);cursor:pointer;transition:opacity .2s,background .2s}
-.dots .navbtn:hover:not(:disabled){background:rgba(252,250,247,.14)}
-.dots .navbtn:focus-visible{outline:2px solid var(--turq);outline-offset:2px}
-.dots .navbtn:disabled{opacity:.25;cursor:default}
-.dots .navbtn svg{width:18px;height:18px}
 
 /* problem hero stat, event thumbs, ring tiers */
 .tier{font-family:var(--mono);color:var(--green);font-weight:400;margin-right:12px;font-size:.6em;vertical-align:.15em}
@@ -678,8 +673,51 @@ html[data-mode="portrait"] .photo-credit{font-size:13px;text-align:center;color:
 html[data-mode="portrait"] .dots{bottom:calc(12px + env(safe-area-inset-bottom,0px));padding:4px 6px;background:rgba(6,14,25,.72);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(252,250,247,.14);border-radius:999px}
 html[data-mode="portrait"] .dots .dot{width:20px;height:40px}
 html[data-mode="portrait"] .dots .dot::before{margin:0 3px}
-html[data-mode="portrait"] .dots .navbtn{width:40px;height:40px}
 
+
+/* ---------- First-visit hand tutorial (phones). Skippable, shown once. ---------- */
+#tour{position:fixed;top:0;left:0;right:0;bottom:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(6,14,25,.88);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);touch-action:none;overscroll-behavior:contain}
+#tour[hidden]{display:none}
+#tour .tour-skip{position:absolute;top:max(14px,env(safe-area-inset-top,0px));right:max(14px,env(safe-area-inset-right,0px));min-width:64px;height:44px;padding:0 18px;border:1px solid rgba(252,250,247,.28);border-radius:999px;background:rgba(252,250,247,.06);color:var(--ink);font:inherit;font-size:15px;cursor:pointer}
+#tour .tour-skip:focus-visible,#tour .tour-next:focus-visible{outline:2px solid var(--turq);outline-offset:3px}
+#tour .tour-card{width:min(340px,100%);text-align:center}
+#tour .tour-card:focus{outline:none}
+#tour .tour-demo{position:relative;height:300px;display:flex;align-items:center;justify-content:center}
+#tour .tour-frame{position:relative;width:150px;height:200px}
+#tour .tour-screen{position:relative;width:150px;height:200px;border-radius:22px;border:2px solid rgba(252,250,247,.4);overflow:hidden;background:#0B1424;box-shadow:0 18px 50px rgba(0,0,0,.5)}
+#tour .tour-track{display:flex;width:200%;height:100%}
+#tour .tour-slide{width:50%;height:100%;padding:16px 14px;box-sizing:border-box;overflow:hidden}
+#tour .tour-lines{display:block}
+#tour .tour-slide i{display:block;height:8px;margin-bottom:11px;border-radius:4px;background:rgba(252,250,247,.28)}
+#tour .tour-slide i.w{width:68%}
+#tour .tour-slide i.h{height:14px;width:56%;background:rgba(80,227,255,.7)}
+#tour .tour-slide.s2 i.h{background:rgba(128,252,167,.8)}
+#tour .tour-slide.s2 i{background:rgba(252,250,247,.36)}
+#tour .tour-finger{position:absolute;left:50%;top:56%;width:0;height:0;z-index:3;opacity:0}
+#tour .tour-dot{position:absolute;left:-17px;top:-17px;width:34px;height:34px;border-radius:50%;background:rgba(80,227,255,.35);border:2px solid rgba(80,227,255,.9)}
+#tour .tour-hand{position:absolute;left:-30px;top:-4px;width:64px;height:auto;filter:drop-shadow(0 6px 10px rgba(0,0,0,.45))}
+#tour .tour-chev{position:absolute;width:26px;height:26px;color:var(--turq);opacity:0}
+#tour .tc-u{left:50%;top:-34px;margin-left:-13px}
+#tour .tc-d{left:50%;bottom:-34px;margin-left:-13px}
+#tour .tc-l{left:-40px;top:50%;margin-top:-13px}
+#tour .tc-r{right:-40px;top:50%;margin-top:-13px}
+#tour .tour-demo[data-mode="v"] .tc-u,#tour .tour-demo[data-mode="v"] .tc-d,#tour .tour-demo[data-mode="h"] .tc-l,#tour .tour-demo[data-mode="h"] .tc-r{opacity:.9}
+#tour .tour-demo[data-mode="v"] .s2{display:none}
+#tour .tour-demo[data-mode="v"] .tour-finger{animation:tourFingerV 2.9s ease-in-out infinite}
+#tour .tour-demo[data-mode="v"] .tour-lines{animation:tourLines 2.9s ease-in-out infinite}
+#tour .tour-demo[data-mode="h"] .tour-finger{animation:tourFingerH 2.9s ease-in-out infinite}
+#tour .tour-demo[data-mode="h"] .tour-track{animation:tourTrack 2.9s ease-in-out infinite}
+@keyframes tourFingerV{0%{opacity:0;transform:translate(0,56px)}10%{opacity:1;transform:translate(0,56px)}18%{transform:translate(0,56px)}56%{transform:translate(0,-56px)}74%{opacity:1;transform:translate(0,-56px)}88%{opacity:0;transform:translate(0,-56px)}100%{opacity:0;transform:translate(0,56px)}}
+@keyframes tourLines{0%,18%{transform:translateY(0)}56%,78%{transform:translateY(-92px)}100%{transform:translateY(0)}}
+@keyframes tourFingerH{0%{opacity:0;transform:translate(52px,0)}10%{opacity:1;transform:translate(52px,0)}18%{transform:translate(52px,0)}58%{transform:translate(-52px,0)}74%{opacity:1;transform:translate(-52px,0)}88%{opacity:0;transform:translate(-52px,0)}100%{opacity:0;transform:translate(52px,0)}}
+@keyframes tourTrack{0%,18%{transform:translateX(0)}58%,86%{transform:translateX(-50%)}87%,100%{transform:translateX(0)}}
+#tour h2{margin:6px 0 8px;font-size:24px;line-height:1.15;font-weight:400;color:var(--ink)}
+#tour p{margin:0 auto 18px;max-width:300px;font-size:16px;line-height:1.45;color:var(--muted)}
+#tour .tour-steps{display:flex;justify-content:center;gap:8px;margin-bottom:18px}
+#tour .tour-steps i{display:block;width:8px;height:8px;border-radius:50%;background:rgba(252,250,247,.25)}
+#tour .tour-steps i.on{background:var(--turq)}
+#tour .tour-next{min-width:180px;height:48px;padding:0 28px;border:0;border-radius:12px;background:var(--ink);color:var(--bg);font:inherit;font-size:16px;cursor:pointer}
+@media (prefers-reduced-motion:reduce){#tour .tour-demo .tour-finger,#tour .tour-demo .tour-lines,#tour .tour-demo .tour-track{animation:none!important}#tour .tour-finger{opacity:1}}
 </style>
 </head>
 <body>
@@ -1019,6 +1057,40 @@ html[data-mode="portrait"] .dots .navbtn{width:40px;height:40px}
 
 </main>
 <nav class="dots" aria-label="Slides"></nav>
+<div id="tour" role="dialog" aria-modal="true" aria-labelledby="tourTitle" hidden>
+  <button type="button" class="tour-skip" id="tourSkip">Skip</button>
+  <div class="tour-card" tabindex="-1" id="tourCard">
+    <div class="tour-demo" id="tourDemo" data-mode="v" aria-hidden="true">
+      <div class="tour-frame">
+        <svg class="tour-chev tc-u" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/></svg>
+        <svg class="tour-chev tc-d" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        <svg class="tour-chev tc-l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+        <svg class="tour-chev tc-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+        <div class="tour-screen">
+          <div class="tour-track">
+            <div class="tour-slide s1"><div class="tour-lines"><i class="h"></i><i></i><i class="w"></i><i></i><i></i><i class="w"></i><i class="h"></i><i></i><i class="w"></i><i></i><i></i><i class="w"></i><i></i><i class="w"></i></div></div>
+            <div class="tour-slide s2"><i class="h"></i><i></i><i class="w"></i><i></i><i class="w"></i></div>
+          </div>
+        </div>
+        <div class="tour-finger">
+          <span class="tour-dot"></span>
+          <svg class="tour-hand" viewBox="0 0 56 68" aria-hidden="true">
+            <g fill="#FCFAF7" stroke="#0B1424" stroke-width="1.8" stroke-linejoin="round">
+              <rect x="41" y="29" width="10" height="16" rx="5"/>
+              <rect x="32" y="26" width="10" height="17" rx="5"/>
+              <path d="M16 34h26a10 10 0 0 1 10 10v9c0 8-6 14-14 14H26c-7 0-12-4-15-9L3 44a4.2 4.2 0 0 1 7-4.6l6 5z"/>
+              <rect x="20" y="2" width="12" height="38" rx="6"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <h2 id="tourTitle">Scroll up and down</h2>
+    <p id="tourBody">Each slide can be longer than the screen. Drag up to keep reading.</p>
+    <div class="tour-steps" aria-hidden="true"><i class="on"></i><i></i></div>
+    <button type="button" class="tour-next" id="tourNext">Next</button>
+  </div>
+</div>
 
 <script>
 /* Paste the demo video link here to show the "Watch the 2-minute demo" button on the Solution slide. */
@@ -1066,7 +1138,6 @@ const DEMO_URL = "";
       else { v.pause(); v.classList.remove('on'); }
     });
     dotEls.forEach((d, k) => d.setAttribute('aria-current', k === cur ? 'true' : 'false'));
-    prevBtn.disabled = cur === 0; nextBtn.disabled = cur === slides.length - 1;
     slides.forEach(x => { x.classList.remove('dragging'); x.style.removeProperty('--dx'); });
     slides[cur].scrollTop = 0;
     if (remember) { const u = new URL(location.href); u.searchParams.set('slide', cur + 1); history.replaceState(null, '', u); }
@@ -1077,11 +1148,6 @@ const DEMO_URL = "";
     fit(); show(cur, false);
   }
 
-  const chev = d => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="' + d + '"/></svg>';
-  const mkNav = (cls, label, d) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'navbtn ' + cls; b.setAttribute('aria-label', label); b.innerHTML = chev(d); return b; };
-  const prevBtn = mkNav('prev', 'Previous slide', 'M15 5l-7 7 7 7');
-  const nextBtn = mkNav('next', 'Next slide', 'M9 5l7 7-7 7');
-  dots.appendChild(prevBtn);
   const dotEls = slides.map((s, i) => {
     const b = document.createElement('button');
     b.type = 'button';
@@ -1091,11 +1157,10 @@ const DEMO_URL = "";
     dots.appendChild(b);
     return b;
   });
-  dots.appendChild(nextBtn);
 
   /* ---- Navigation: a slide changes only on a deliberate action. ----
      Phone: a clear left swipe goes forward, a right swipe goes back. Taps and vertical moves never change the slide.
-     Desktop: arrow buttons, keys, a trackpad swipe or a mouse drag. Clicking the page does nothing. */
+     Desktop: keys, a trackpad swipe or a mouse drag. Clicking the page does nothing. */
   const blocked = el => !!(el && el.closest && el.closest('[data-prevent-swipe],video[controls],input,textarea,select,.hit'));
   let lockUntil = 0;
   function go(delta, cool) {
@@ -1106,11 +1171,9 @@ const DEMO_URL = "";
     lockUntil = now + cool;
     show(n, true);
   }
-  prevBtn.addEventListener('click', e => { e.stopPropagation(); show(cur - 1, true); });
-  nextBtn.addEventListener('click', e => { e.stopPropagation(); show(cur + 1, true); });
 
   addEventListener('keydown', e => {
-    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.metaKey || e.ctrlKey || e.altKey || root.classList.contains('tour-open')) return;
     const tag = (e.target && e.target.tagName) || '';
     if (/^(INPUT|TEXTAREA|SELECT)$/.test(tag)) return;
     if ((e.key === ' ' || e.key === 'Enter') && e.target.closest && e.target.closest('button,a')) return;
@@ -1191,6 +1254,48 @@ const DEMO_URL = "";
   addEventListener('resize', apply);
   addEventListener('orientationchange', apply);
   apply();
+})();
+</script>
+<script>
+/* First-visit tutorial for touch phones: scroll up and down, then swipe left and right. Skippable, shown once.
+   ?tour=1 replays it, ?tour=0 hides it. */
+(function () {
+  var root = document.documentElement, tour = document.getElementById('tour');
+  if (!tour) return;
+  var KEY = 'orion_tour_seen_v1';
+  var q = new URLSearchParams(location.search).get('tour');
+  var force = q === '1';
+  if (q === '0') return;
+  var seen = function () { try { return !!localStorage.getItem(KEY); } catch (e) { return false; } };
+  var mark = function () { try { localStorage.setItem(KEY, '1'); } catch (e) {} };
+  var touch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+  if (!force && (seen() || !touch)) return;
+  var demo = document.getElementById('tourDemo'), title = document.getElementById('tourTitle'), body = document.getElementById('tourBody');
+  var next = document.getElementById('tourNext'), skip = document.getElementById('tourSkip'), dots = tour.querySelectorAll('.tour-steps i');
+  var steps = [
+    { mode: 'v', t: 'Scroll up and down', b: 'Each slide can be longer than the screen. Drag up to keep reading.' },
+    { mode: 'h', t: 'Swipe to change slides', b: 'Swipe left for the next slide and right to go back. Tapping the page does nothing.' }
+  ];
+  var i = 0, open = false;
+  function render() {
+    demo.setAttribute('data-mode', steps[i].mode);
+    title.textContent = steps[i].t; body.textContent = steps[i].b;
+    next.textContent = i < steps.length - 1 ? 'Next' : 'Got it';
+    dots.forEach(function (d, k) { d.className = k === i ? 'on' : ''; });
+  }
+  function close() { if (!open) return; open = false; tour.hidden = true; root.classList.remove('tour-open'); mark(); }
+  function show() {
+    if (open) return;
+    if (root.dataset.mode !== 'portrait' && !force) return;
+    open = true; i = 0; render(); tour.hidden = false; root.classList.add('tour-open');
+    try { document.getElementById('tourCard').focus({ preventScroll: true }); } catch (e) {}
+  }
+  skip.addEventListener('click', close);
+  next.addEventListener('click', function () { if (i < steps.length - 1) { i++; render(); } else close(); });
+  addEventListener('keydown', function (e) { if (open && e.key === 'Escape') close(); });
+  var gate = document.getElementById('egate');
+  if (!gate || gate.classList.contains('hide')) setTimeout(show, 700);
+  else new MutationObserver(function (m, o) { if (gate.classList.contains('hide')) { o.disconnect(); setTimeout(show, 700); } }).observe(gate, { attributes: true, attributeFilter: ['class'] });
 })();
 </script>
 <script>
