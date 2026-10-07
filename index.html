@@ -794,39 +794,76 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
     }catch(_){}
   }
 
+  /* Access check against orion_deck_leads.status via the check_orion_access() RPC:
+     'approved' -> unlock, 'denied' -> blocked message, anything else (pending / no row yet) -> pending message. */
+  function checkAccess(email){
+    return fetch(SUPA_URL+'/rest/v1/rpc/check_orion_access',{
+      method:'POST',
+      headers:{'apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY,'Content-Type':'application/json'},
+      body:JSON.stringify({p_email:email})
+    }).then(function(r){return r.json();});
+  }
+
   var seen=false,saved=null;
   try{seen=!!localStorage.getItem(KEY);saved=localStorage.getItem(EMAIL_KEY);}catch(_){}
-  /* unlocked before emails were captured: ask once, so every recorded view has an email address */
-  var returning=seen&&!saved;
-  if(seen&&saved){gate.classList.add('hide');trackViews(saved);return;}
   var form=document.getElementById('egateForm');
   var email=document.getElementById('egateEmail');
   var err=document.getElementById('egateErr');
   var btn=form.querySelector('button[type=submit]');
   var re=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if(returning){var h=gate.querySelector('h2'),bd=gate.querySelector('.ebody');if(h)h.textContent='Welcome back.';if(bd)bd.textContent='Please confirm your email to continue.';if(btn)btn.textContent='Continue';}
-  var opened=false;
+
   function unlock(v){
-    if(opened)return;opened=true;
     try{localStorage.setItem(KEY,'1');localStorage.setItem(EMAIL_KEY,v);}catch(_){}
     gate.classList.add('hide');
     trackViews(v);
   }
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    var v=email.value.trim();
-    if(!re.test(v)){err.textContent='Please enter a valid email address.';email.focus();return;}
-    err.textContent='';
-    if(btn){btn.disabled=true;btn.textContent='Opening\u2026';}
-    setTimeout(function(){unlock(v);},4000);   /* a stalled request must not trap the viewer */
-    var payload={email:v,name:null,source:'orion-deck-gate',referrer:document.referrer||null,user_agent:navigator.userAgent};
-    fetch(SUPA_URL+'/rest/v1/orion_deck_leads',{
-      method:'POST',
-      headers:{'apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY,'Content-Type':'application/json','Prefer':'return=minimal'},
-      body:JSON.stringify(payload)
-    }).then(function(){unlock(v);},function(){unlock(v);});   /* never trap a real viewer behind a network hiccup */
-  });
-  email.focus();
+  function showPending(){
+    try{localStorage.removeItem(KEY);}catch(_){}
+    var h=gate.querySelector('h2'),bd=gate.querySelector('.ebody');
+    if(h)h.textContent='Request sent.';
+    if(bd)bd.textContent='Thanks \u2014 we\'ll let you in as soon as it\'s approved.';
+    if(form)form.style.display='none';
+  }
+  function showDenied(){
+    try{localStorage.removeItem(KEY);localStorage.removeItem(EMAIL_KEY);}catch(_){}
+    var h=gate.querySelector('h2'),bd=gate.querySelector('.ebody');
+    if(h)h.textContent='Access not available.';
+    if(bd)bd.textContent='This email doesn\'t have access to this draft.';
+    if(form)form.style.display='none';
+  }
+
+  /* unlocked before emails were captured: ask once, so every recorded view has an email address */
+  var returning=seen&&!saved;
+  if(seen&&saved){
+    checkAccess(saved).then(function(status){
+      if(status==='denied'){showDenied();}
+      else{unlock(saved);}
+    },function(){unlock(saved);});   /* fail open on a verify hiccup for an already-approved returning viewer */
+  } else {
+    if(returning){var h=gate.querySelector('h2'),bd=gate.querySelector('.ebody');if(h)h.textContent='Welcome back.';if(bd)bd.textContent='Please confirm your email to continue.';if(btn)btn.textContent='Continue';}
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var v=email.value.trim();
+      if(!re.test(v)){err.textContent='Please enter a valid email address.';email.focus();return;}
+      err.textContent='';
+      if(btn){btn.disabled=true;btn.textContent='Checking\u2026';}
+      var payload={email:v,name:null,source:'orion-deck-gate',referrer:document.referrer||null,user_agent:navigator.userAgent};
+      fetch(SUPA_URL+'/rest/v1/orion_deck_leads',{
+        method:'POST',
+        headers:{'apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY,'Content-Type':'application/json','Prefer':'return=minimal'},
+        body:JSON.stringify(payload)
+      }).catch(function(){});
+      checkAccess(v).then(function(status){
+        if(status==='approved'){unlock(v);}
+        else if(status==='denied'){showDenied();}
+        else{try{localStorage.setItem(EMAIL_KEY,v);}catch(_){}showPending();}
+      },function(){
+        if(btn){btn.disabled=false;btn.textContent='View deck \u2192';}
+        err.textContent='Something went wrong \u2014 please try again.';
+      });
+    });
+    email.focus();
+  }
 })();
 </script>
 <main class="stage" aria-roledescription="presentation" aria-label="Project Orion">
