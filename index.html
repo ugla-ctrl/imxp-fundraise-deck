@@ -226,7 +226,9 @@ html[data-mode="deck"] .creds p{font-size:24px;line-height:1.4}
 html[data-mode="deck"] .creds .cap{font-size:20px;line-height:24px}
 
 /* 9 fundraise */
-html[data-mode="deck"] .terms{left:120px;top:340px;width:640px;display:flex;flex-direction:column;gap:28px}
+html[data-mode="deck"] .terms{left:120px;top:340px;width:640px;display:flex;flex-direction:column;gap:28px;position:absolute}
+html[data-mode="deck"] .terms-veil{inset:-16px}
+html[data-mode="deck"] .terms-veil span{font-size:26px;letter-spacing:.06em;transform:rotate(-16deg)}
 html[data-mode="deck"] .terms b{font-size:44px;line-height:1.1;margin-top:8px}
 html[data-mode="deck"] .terms .big{font-size:88px;line-height:1}
 html[data-mode="deck"] .terms .d{font-size:20px;line-height:1.4;margin-top:8px}
@@ -348,6 +350,8 @@ html[data-mode="deck"] .close .contact{font-size:24px;margin-top:56px}
 .terms .big{color:var(--purple)}
 .terms > div{display:flex;flex-direction:column}
 .terms b{display:block}
+.terms-veil{position:absolute;display:flex;align-items:center;justify-content:center;background:rgba(6,14,25,.32);-webkit-backdrop-filter:blur(9px);backdrop-filter:blur(9px);border-radius:14px;overflow:hidden;z-index:2}
+.terms-veil span{color:var(--green);font-family:var(--mono);text-transform:uppercase;white-space:nowrap;font-weight:400}
 .uop .row{display:flex;justify-content:space-between;gap:24px}
 .uop .amt{color:var(--muted);white-space:nowrap}
 .uop .track{background:var(--faint);border-radius:999px;overflow:hidden}
@@ -658,7 +662,9 @@ html[data-mode="portrait"] .people .role{font-size:13px;margin-top:4px}
 html[data-mode="portrait"] .creds{display:grid;gap:6px}
 html[data-mode="portrait"] .creds .inv{font-size:15px;line-height:1.45}
 /* 9 fundraise */
-html[data-mode="portrait"] .terms{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+html[data-mode="portrait"] .terms{display:grid;grid-template-columns:1fr 1fr;gap:16px;position:relative}
+html[data-mode="portrait"] .terms-veil{inset:-10px}
+html[data-mode="portrait"] .terms-veil span{font-size:14px;letter-spacing:.05em;transform:rotate(-16deg)}
 html[data-mode="portrait"] .terms .big{font-size:48px;line-height:1}
 html[data-mode="portrait"] .terms b{font-size:22px;line-height:1.15;margin-top:4px}
 html[data-mode="portrait"] .uop-text{font-size:20px;line-height:1.35;margin-top:6px}
@@ -1135,15 +1141,16 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
   </div>
   <header class="hd">
     <p class="eyebrow">Fundraise</p>
-    <h2>Product Pre-Seed Round</h2>
+    <h2>Product Company Fundraise</h2>
   </header>
   <div class="terms">
     <div><p class="cap">Raise</p><b class="big">$500K</b></div>
     <div><p class="cap">Terms</p><b>$5M post SAFE Note</b></div>
+    <div class="terms-veil"><span>Socializing Terms Now</span></div>
   </div>
   <div class="uop">
     <p class="cap">Use of proceeds</p>
-    <p class="uop-text">10 months of platform development &amp; model training, with the goal of fully deploying v1 of the copilot by Egypt Eclipse.</p>
+    <p class="uop-text">12 months of platform development &amp; model training, with the goal of fully deploying v1 of the copilot by Egypt Eclipse.</p>
   </div>
   <ol class="ms">
     <li><span class="ms-date">Mar 2027</span><p>Orion beta at Coherence</p></li>
