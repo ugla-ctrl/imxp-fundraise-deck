@@ -198,6 +198,8 @@ html[data-mode="deck"] .credits{left:0;right:0;bottom:96px;text-align:center;fon
 .comp-col{background:rgba(252,250,247,.05);border:1px solid var(--faint);border-radius:16px;display:flex;flex-direction:column}
 .comp-col.comp-orion{background:linear-gradient(160deg, rgba(114,100,241,.38), rgba(0,104,101,.30));border:1px solid rgba(114,100,241,.55);position:relative}
 .comp-logo{font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--ink);font-weight:400}
+.comp-logo-img{display:block;height:auto;width:auto;object-fit:contain}
+.comp-logo-chip{display:inline-flex;align-items:center;background:var(--ink);border-radius:8px}
 .comp-niche{color:var(--muted);font-style:italic}
 .comp-stat{color:var(--ink);font-weight:400}
 .comp-stat .sep{color:var(--muted)}
@@ -215,12 +217,16 @@ html[data-mode="deck"] .comp-grid{left:120px;top:296px;width:1680px;display:flex
 html[data-mode="deck"] .comp-col{flex:1;padding:26px 22px;gap:14px}
 html[data-mode="deck"] .comp-col.comp-orion{flex:1.14;margin-top:-26px;padding-top:40px;box-shadow:0 24px 64px rgba(114,100,241,.35),0 4px 16px rgba(0,0,0,.4)}
 html[data-mode="deck"] .comp-logo{font-size:21px}
+html[data-mode="deck"] .comp-logo-img{height:26px;max-width:220px}
+html[data-mode="deck"] .comp-logo-chip{padding:8px 14px}
+html[data-mode="deck"] .comp-logo-chip .comp-logo-img{height:22px}
 html[data-mode="deck"] .comp-niche{font-size:15px;line-height:1.35;min-height:58px}
-html[data-mode="deck"] .comp-stat{font-size:26px;line-height:1.2;min-height:34px}
-html[data-mode="deck"] .comp-list{gap:11px;margin-top:6px}
-html[data-mode="deck"] .comp-list li{font-size:14px;line-height:1.35;padding-left:24px}
-html[data-mode="deck"] .comp-list-orion{gap:9px}
-html[data-mode="deck"] .comp-list-orion li{font-size:13.5px;line-height:1.4;padding-left:34px}
+html[data-mode="deck"] .comp-stat{font-size:17px;line-height:1.35;min-height:0;font-weight:400;margin-top:2px}
+html[data-mode="deck"] .comp-list{gap:12px;margin-top:8px}
+html[data-mode="deck"] .comp-list li{font-size:16px;line-height:1.4;padding-left:26px}
+html[data-mode="deck"] .comp-list-orion{gap:11px}
+html[data-mode="deck"] .comp-list-orion li{font-size:14.5px;line-height:1.4;padding-left:36px}
+html[data-mode="deck"] .comp-list-orion li b{display:inline;font-size:15.5px}
 html[data-mode="deck"] .comp-ribbon{top:-14px;right:22px;font-size:13px;padding:6px 16px;border-radius:999px}
 html[data-mode="deck"] .s-compete .foot{bottom:96px}
 /* 8 roadmap */
@@ -677,11 +683,15 @@ html[data-mode="portrait"] .comp-grid{display:flex;flex-direction:column;gap:16p
 html[data-mode="portrait"] .comp-col{padding:16px 15px;gap:9px}
 html[data-mode="portrait"] .comp-col.comp-orion{margin-top:4px}
 html[data-mode="portrait"] .comp-logo{font-size:16px}
+html[data-mode="portrait"] .comp-logo-img{height:18px;max-width:150px}
+html[data-mode="portrait"] .comp-logo-chip{padding:6px 10px}
+html[data-mode="portrait"] .comp-logo-chip .comp-logo-img{height:16px}
 html[data-mode="portrait"] .comp-niche{font-size:13px;line-height:1.4}
-html[data-mode="portrait"] .comp-stat{font-size:18px;line-height:1.25}
-html[data-mode="portrait"] .comp-list{gap:8px;margin-top:4px}
-html[data-mode="portrait"] .comp-list li{font-size:13px;line-height:1.4;padding-left:20px}
-html[data-mode="portrait"] .comp-list-orion li{padding-left:28px}
+html[data-mode="portrait"] .comp-stat{font-size:14px;line-height:1.35;font-weight:400;margin-top:0}
+html[data-mode="portrait"] .comp-list{gap:9px;margin-top:5px}
+html[data-mode="portrait"] .comp-list li{font-size:14px;line-height:1.4;padding-left:20px}
+html[data-mode="portrait"] .comp-list-orion li{padding-left:22px;font-size:13.5px}
+html[data-mode="portrait"] .comp-list-orion li b{font-size:14.5px}
 html[data-mode="portrait"] .comp-ribbon{top:-10px;right:14px;font-size:11px;padding:4px 11px}
 
 /* 9 team */
@@ -1103,7 +1113,7 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
   </header>
   <div class="comp-grid">
     <div class="comp-col">
-      <p class="comp-logo">Momentus</p>
+      <img class="comp-logo-img" src="media/logos/momentus-logo.png" alt="Momentus">
       <p class="comp-niche">Venue operating system for convention centers, stadiums, campuses. Global.</p>
       <p class="comp-stat">4,000+ venues <span class="sep">&middot;</span> 1.5M events a year</p>
       <ul class="comp-list">
@@ -1115,7 +1125,7 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
       </ul>
     </div>
     <div class="comp-col">
-      <p class="comp-logo">Tripleseat</p>
+      <img class="comp-logo-img" src="media/logos/tripleseat-logo.png" alt="Tripleseat">
       <p class="comp-niche">Private-event sales for restaurants and hotels. US-centric.</p>
       <p class="comp-stat">20,000+ venues</p>
       <ul class="comp-list">
@@ -1127,7 +1137,7 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
       </ul>
     </div>
     <div class="comp-col">
-      <p class="comp-logo">Prism.fm</p>
+      <span class="comp-logo-chip"><img class="comp-logo-img" src="media/logos/prism-logo.png" alt="Prism.fm"></span>
       <p class="comp-niche">Booking and settlement for live-music venues and promoters. US-focused.</p>
       <p class="comp-stat">3,000+ venues <span class="sep">&middot;</span> $1B+ box office tracked</p>
       <ul class="comp-list">
@@ -1144,11 +1154,11 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
       <p class="comp-niche">The only platform that plans, validates, and runs festivals, and learns from the ones we produce.</p>
       <p class="comp-stat">One event record, idea to live</p>
       <ul class="comp-list comp-list-orion">
-        <li class="plus3"><b>End-to-end festival planning.</b> Idea, validation, plan, launch, and live operations in one system.</li>
-        <li class="plus3"><b>AI-enabled go/no-go decisions.</b> Demand evidence and kill criteria decide whether an event earns its spend before the money goes out.</li>
-        <li class="plus3"><b>AI-powered detail checking.</b> The platform flags gaps, conflicts, and missed lead times across the whole plan, with qualified humans signing off on safety, structural, and permit calls.</li>
-        <li class="plus3"><b>We host our own festivals.</b> Built and tested by operators, on live events.</li>
-        <li class="plus3"><b>Learns from every event we run.</b> Lessons and outcomes feed the next plan.</li>
+        <li class="plus3"><b>End-to-end festival planning.</b><br>Idea, validation, plan, launch, and live operations in one system.</li>
+        <li class="plus3"><b>AI-enabled go/no-go decisions.</b><br>Demand evidence and kill criteria decide whether an event earns its spend before the money goes out.</li>
+        <li class="plus3"><b>AI-powered detail checking.</b><br>The platform flags gaps, conflicts, and missed lead times across the whole plan, with qualified humans signing off on safety, structural, and permit calls.</li>
+        <li class="plus3"><b>We host our own festivals.</b><br>Built and tested by operators, on live events.</li>
+        <li class="plus3"><b>Learns from every event we run.</b><br>Lessons and outcomes feed the next plan.</li>
       </ul>
     </div>
   </div>
