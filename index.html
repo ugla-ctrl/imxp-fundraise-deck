@@ -197,38 +197,50 @@ html[data-mode="deck"] .credits{left:0;right:0;bottom:96px;text-align:center;fon
 /* ---------- Competitive analysis (slide 7) ---------- */
 .comp-col{background:rgba(252,250,247,.05);border:1px solid var(--faint);border-radius:16px;display:flex;flex-direction:column}
 .comp-col.comp-orion{background:linear-gradient(160deg, rgba(114,100,241,.38), rgba(0,104,101,.30));border:1px solid rgba(114,100,241,.55);position:relative}
+.comp-row-logo{display:flex;align-items:center}
 .comp-logo{font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--ink);font-weight:400}
 .comp-logo-img{display:block;height:auto;width:auto;object-fit:contain}
 .comp-logo-chip{display:inline-flex;align-items:center;background:var(--ink);border-radius:8px}
 .comp-niche{color:var(--muted);font-style:italic}
-.comp-stat{color:var(--ink);font-weight:400}
-.comp-stat .sep{color:var(--muted)}
-.comp-list{display:flex;flex-direction:column;list-style:none;padding:0;margin:0}
+.comp-stat{color:var(--ink);font-weight:400;display:flex;flex-direction:column;justify-content:center}
+.comp-stat .stat-line{display:block}
+.comp-div{border-top:1px solid var(--faint)}
+.comp-list{display:flex;flex-direction:column;flex:1}
+.comp-list ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column}
 .comp-list li{position:relative;color:var(--muted)}
 .comp-list li.plus::before{content:"+";color:var(--green);position:absolute;left:0}
 .comp-list li.minus::before{content:"\2013";color:#ff9a9a;position:absolute;left:0}
-.comp-list li.plus3::before{content:"+++";color:var(--green);position:absolute;left:0;font-size:.85em}
-.comp-list li.plus3{color:var(--ink)}
-.comp-list li.plus3 b{color:var(--green);font-weight:400}
+.comp-list-orion{flex:1;list-style:none;padding:0;margin:0;justify-content:space-between}
+.comp-list-orion li.plus3::before{content:"+++";color:var(--green);position:absolute;left:0}
+.comp-list-orion li.plus3{color:var(--ink)}
+.comp-list-orion li.plus3 b{color:var(--green);font-weight:400;display:block}
 .comp-ribbon{position:absolute;background:var(--green);color:var(--bg);font-family:var(--mono);text-transform:uppercase;font-weight:400;white-space:nowrap}
-
 /* 7 compete */
-html[data-mode="deck"] .comp-grid{left:120px;top:296px;width:1680px;display:flex;align-items:stretch;gap:24px}
-html[data-mode="deck"] .comp-col{flex:1;padding:26px 22px;gap:14px}
-html[data-mode="deck"] .comp-col.comp-orion{flex:1.14;margin-top:-26px;padding-top:40px;box-shadow:0 24px 64px rgba(114,100,241,.35),0 4px 16px rgba(0,0,0,.4)}
-html[data-mode="deck"] .comp-logo{font-size:21px}
-html[data-mode="deck"] .comp-logo-img{height:26px;max-width:220px}
-html[data-mode="deck"] .comp-logo-chip{padding:8px 14px}
-html[data-mode="deck"] .comp-logo-chip .comp-logo-img{height:22px}
-html[data-mode="deck"] .comp-niche{font-size:15px;line-height:1.35;min-height:58px}
-html[data-mode="deck"] .comp-stat{font-size:17px;line-height:1.35;min-height:0;font-weight:400;margin-top:2px}
-html[data-mode="deck"] .comp-list{gap:12px;margin-top:8px}
-html[data-mode="deck"] .comp-list li{font-size:16px;line-height:1.4;padding-left:26px}
-html[data-mode="deck"] .comp-list-orion{gap:11px}
-html[data-mode="deck"] .comp-list-orion li{font-size:14.5px;line-height:1.4;padding-left:36px}
-html[data-mode="deck"] .comp-list-orion li b{display:inline;font-size:15.5px}
-html[data-mode="deck"] .comp-ribbon{top:-14px;right:22px;font-size:13px;padding:6px 16px;border-radius:999px}
-html[data-mode="deck"] .s-compete .foot{bottom:96px}
+html[data-mode="deck"] .comp-grid{left:120px;top:260px;width:1680px;height:700px;display:flex;align-items:stretch;gap:24px}
+html[data-mode="deck"] .comp-col{flex:1;padding:24px 22px;gap:0}
+html[data-mode="deck"] .comp-col.comp-orion{flex:1.22;box-shadow:0 24px 64px rgba(114,100,241,.35),0 4px 16px rgba(0,0,0,.4)}
+html[data-mode="deck"] .comp-row-logo{height:44px}
+html[data-mode="deck"] .comp-logo{font-size:26px}
+html[data-mode="deck"] .comp-logo-img{height:36px;max-width:230px}
+html[data-mode="deck"] .comp-logo-chip{padding:7px 14px}
+html[data-mode="deck"] .comp-logo-chip .comp-logo-img{height:24px}
+html[data-mode="deck"] .comp-niche{font-size:19px;line-height:1.4;height:86px}
+html[data-mode="deck"] .comp-stat{font-size:25px;line-height:1.18;height:68px}
+html[data-mode="deck"] .comp-stat .stat-line{margin-bottom:5px}
+html[data-mode="deck"] .comp-div{margin:14px 0 16px}
+html[data-mode="deck"] .comp-list ul{gap:16px}
+html[data-mode="deck"] .comp-list .comp-minusgrp{margin-top:auto;padding-top:20px}
+html[data-mode="deck"] .comp-list li{font-size:19px;line-height:1.45;padding-left:34px}
+html[data-mode="deck"] .comp-list li.plus::before,html[data-mode="deck"] .comp-list li.minus::before{font-size:26px;line-height:1;top:-2px}
+html[data-mode="deck"] .comp-list-orion{display:block}
+html[data-mode="deck"] .comp-list-orion li{font-size:15px;line-height:1.35;padding-left:34px;margin-bottom:14px}
+html[data-mode="deck"] .comp-list-orion li:last-child{margin-bottom:0}
+html[data-mode="deck"] .comp-list-orion li::before{font-size:19px;top:0}
+html[data-mode="deck"] .comp-list-orion li b{font-size:21px;line-height:1.2;margin-bottom:4px}
+html[data-mode="deck"] .comp-ribbon{top:-14px;right:24px;font-size:14px;padding:7px 18px;border-radius:999px}
+html[data-mode="deck"] .s-compete .foot{bottom:88px;font-size:22px;line-height:1.4}
+html[data-mode="deck"] .s-compete .conf{bottom:44px}
+html[data-mode="deck"] .s-compete .pnum{bottom:44px}
 /* 8 roadmap */
 html[data-mode="deck"] .gantt{left:120px;top:420px;width:1680px;height:390px}
 html[data-mode="deck"] .ptl,html[data-mode="deck"] .ptl-build,html[data-mode="deck"] .sx{display:none}
@@ -679,21 +691,27 @@ html[data-mode="portrait"] .ev-thumb{width:100%;height:84px}
 html[data-mode="portrait"] .events b{font-size:17px;line-height:1.2}
 html[data-mode="portrait"] .events .d,html[data-mode="portrait"] .ev-date{font-size:13px;line-height:1.4}
 /* 7 compete */
-html[data-mode="portrait"] .comp-grid{display:flex;flex-direction:column;gap:16px}
-html[data-mode="portrait"] .comp-col{padding:16px 15px;gap:9px}
-html[data-mode="portrait"] .comp-col.comp-orion{margin-top:4px}
-html[data-mode="portrait"] .comp-logo{font-size:16px}
-html[data-mode="portrait"] .comp-logo-img{height:18px;max-width:150px}
-html[data-mode="portrait"] .comp-logo-chip{padding:6px 10px}
-html[data-mode="portrait"] .comp-logo-chip .comp-logo-img{height:16px}
-html[data-mode="portrait"] .comp-niche{font-size:13px;line-height:1.4}
-html[data-mode="portrait"] .comp-stat{font-size:14px;line-height:1.35;font-weight:400;margin-top:0}
-html[data-mode="portrait"] .comp-list{gap:9px;margin-top:5px}
-html[data-mode="portrait"] .comp-list li{font-size:14px;line-height:1.4;padding-left:20px}
-html[data-mode="portrait"] .comp-list-orion li{padding-left:22px;font-size:13.5px}
-html[data-mode="portrait"] .comp-list-orion li b{font-size:14.5px}
-html[data-mode="portrait"] .comp-ribbon{top:-10px;right:14px;font-size:11px;padding:4px 11px}
-
+html[data-mode="portrait"] .comp-grid{display:flex;flex-direction:column;gap:18px}
+html[data-mode="portrait"] .comp-col{padding:18px 17px;gap:0}
+html[data-mode="portrait"] .comp-row-logo{height:30px}
+html[data-mode="portrait"] .comp-logo{font-size:17px}
+html[data-mode="portrait"] .comp-logo-img{height:22px;max-width:160px}
+html[data-mode="portrait"] .comp-logo-chip{padding:5px 10px}
+html[data-mode="portrait"] .comp-logo-chip .comp-logo-img{height:18px}
+html[data-mode="portrait"] .comp-niche{font-size:15px;line-height:1.4}
+html[data-mode="portrait"] .comp-stat{font-size:19px;line-height:1.2;margin-top:8px}
+html[data-mode="portrait"] .comp-stat .stat-line{margin-bottom:4px}
+html[data-mode="portrait"] .comp-div{margin:14px 0 16px}
+html[data-mode="portrait"] .comp-list ul{gap:12px}
+html[data-mode="portrait"] .comp-list .comp-minusgrp{margin-top:18px}
+html[data-mode="portrait"] .comp-list li{font-size:15px;line-height:1.4;padding-left:26px}
+html[data-mode="portrait"] .comp-list li.plus::before,html[data-mode="portrait"] .comp-list li.minus::before{font-size:19px}
+html[data-mode="portrait"] .comp-list-orion li{font-size:15px;line-height:1.4;padding-left:30px;margin-bottom:14px}
+html[data-mode="portrait"] .comp-list-orion li:last-child{margin-bottom:0}
+html[data-mode="portrait"] .comp-list-orion li::before{font-size:17px}
+html[data-mode="portrait"] .comp-list-orion li b{font-size:18px}
+html[data-mode="portrait"] .comp-ribbon{top:-10px;right:14px;font-size:12px;padding:4px 11px}
+html[data-mode="portrait"] .s-compete .foot{font-size:16px;line-height:1.5}
 /* 9 team */
 html[data-mode="portrait"] .founder{display:block}
 html[data-mode="portrait"] .fhead{display:flex;align-items:center;gap:16px}
@@ -1113,46 +1131,62 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
   </header>
   <div class="comp-grid">
     <div class="comp-col">
-      <img class="comp-logo-img" src="media/logos/momentus-logo.png" alt="Momentus">
+      <div class="comp-row-logo"><img class="comp-logo-img" src="media/logos/momentus-logo.png" alt="Momentus"></div>
       <p class="comp-niche">Venue operating system for convention centers, stadiums, campuses. Global.</p>
-      <p class="comp-stat">4,000+ venues <span class="sep">&middot;</span> 1.5M events a year</p>
-      <ul class="comp-list">
-        <li class="plus">Runs the venue business: booking, billing, finance</li>
-        <li class="plus">Enterprise scale and integrations</li>
-        <li class="plus">New AI for sales and admin</li>
-        <li class="minus">Starts after the event exists: no go/no-go validation</li>
-        <li class="minus">Sells software to operators: no first-hand festival experience</li>
-      </ul>
+      <p class="comp-stat"><span class="stat-line">4,000+ venues</span><span class="stat-line">1.5M events a year</span></p>
+      <div class="comp-div"></div>
+      <div class="comp-list">
+        <ul class="comp-plusgrp">
+          <li class="plus">Runs the venue business: booking, billing, finance</li>
+          <li class="plus">Enterprise scale and integrations</li>
+          <li class="plus">New AI for sales and admin</li>
+        </ul>
+        <ul class="comp-minusgrp">
+          <li class="minus">Starts after the event exists: no go/no-go validation</li>
+          <li class="minus">Sells software to operators: no first-hand festival experience</li>
+        </ul>
+      </div>
     </div>
     <div class="comp-col">
-      <img class="comp-logo-img" src="media/logos/tripleseat-logo.png" alt="Tripleseat">
+      <div class="comp-row-logo"><img class="comp-logo-img" src="media/logos/tripleseat-logo.png" alt="Tripleseat"></div>
       <p class="comp-niche">Private-event sales for restaurants and hotels. US-centric.</p>
-      <p class="comp-stat">20,000+ venues</p>
-      <ul class="comp-list">
-        <li class="plus">Fast lead-to-contract sales workflow</li>
-        <li class="plus">Payments built in</li>
-        <li class="minus">Built for single-room events, not multi-day festivals</li>
-        <li class="minus">No validation of whether the event should happen</li>
-        <li class="minus">No learning loop from the events it books</li>
-      </ul>
+      <p class="comp-stat"><span class="stat-line">20,000+ venues</span></p>
+      <div class="comp-div"></div>
+      <div class="comp-list">
+        <ul class="comp-plusgrp">
+          <li class="plus">Fast lead-to-contract sales workflow</li>
+          <li class="plus">Payments built in</li>
+        </ul>
+        <ul class="comp-minusgrp">
+          <li class="minus">Built for single-room events, not multi-day festivals</li>
+          <li class="minus">No validation of whether the event should happen</li>
+          <li class="minus">No learning loop from the events it books</li>
+        </ul>
+      </div>
     </div>
     <div class="comp-col">
-      <span class="comp-logo-chip"><img class="comp-logo-img" src="media/logos/prism-logo.png" alt="Prism.fm"></span>
+      <div class="comp-row-logo"><span class="comp-logo-chip"><img class="comp-logo-img" src="media/logos/prism-logo.png" alt="Prism.fm"></span></div>
       <p class="comp-niche">Booking and settlement for live-music venues and promoters. US-focused.</p>
-      <p class="comp-stat">3,000+ venues <span class="sep">&middot;</span> $1B+ box office tracked</p>
-      <ul class="comp-list">
-        <li class="plus">Show booking, offers, and settlement</li>
-        <li class="plus">Artist demand data from pooled box office</li>
-        <li class="minus">Covers one show at a time, with no festival-scale planning</li>
-        <li class="minus">Demand data looks backward and does not test demand for a new event</li>
-        <li class="minus">Does not produce events or learn from running them</li>
-      </ul>
+      <p class="comp-stat"><span class="stat-line">3,000+ venues</span><span class="stat-line">$1B+ box office tracked</span></p>
+      <div class="comp-div"></div>
+      <div class="comp-list">
+        <ul class="comp-plusgrp">
+          <li class="plus">Show booking, offers, and settlement</li>
+          <li class="plus">Artist demand data from pooled box office</li>
+        </ul>
+        <ul class="comp-minusgrp">
+          <li class="minus">Covers one show at a time, with no festival-scale planning</li>
+          <li class="minus">Demand data looks backward and does not test demand for a new event</li>
+          <li class="minus">Does not produce events or learn from running them</li>
+        </ul>
+      </div>
     </div>
     <div class="comp-col comp-orion">
       <p class="comp-ribbon">Full lifecycle</p>
-      <p class="comp-logo">Orion</p>
+      <div class="comp-row-logo"><p class="comp-logo">Orion</p></div>
       <p class="comp-niche">The only platform that plans, validates, and runs festivals, and learns from the ones we produce.</p>
-      <p class="comp-stat">One event record, idea to live</p>
+      <p class="comp-stat"><span class="stat-line">One event record, idea to live</span></p>
+      <div class="comp-div"></div>
       <ul class="comp-list comp-list-orion">
         <li class="plus3"><b>End-to-end festival planning.</b><br>Idea, validation, plan, launch, and live operations in one system.</li>
         <li class="plus3"><b>AI-enabled go/no-go decisions.</b><br>Demand evidence and kill criteria decide whether an event earns its spend before the money goes out.</li>
