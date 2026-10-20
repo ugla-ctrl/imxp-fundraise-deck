@@ -210,24 +210,23 @@ html[data-mode="deck"] .credits{left:0;right:0;bottom:96px;text-align:center;fon
 .cl-chart{position:relative}
 .cl-plot{position:relative}
 .cl-subtitle{color:var(--muted);margin:0}
-.cl-topright-zone{position:absolute;left:50%;right:0;top:0;height:50%;background:var(--purple);opacity:.08;pointer-events:none}
-.cl-tier-h{position:absolute;left:0;right:0;height:1px;background:var(--faint);opacity:.15}
-.cl-tier-v{position:absolute;top:0;bottom:0;width:1px;background:var(--faint);opacity:.15}
 .cl-axis-l-x{position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--faint)}
 .cl-axis-l-x::after{content:"";position:absolute;right:-2px;top:50%;transform:translateY(-50%);width:0;height:0;border-style:solid;border-width:6px 0 6px 11px;border-color:transparent transparent transparent var(--faint)}
 .cl-axis-l-y{position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--faint)}
 .cl-axis-l-y::after{content:"";position:absolute;top:-2px;left:50%;transform:translateX(-50%);width:0;height:0;border-style:solid;border-width:0 6px 11px 6px;border-color:transparent transparent var(--faint) transparent}
+.cl-tick-x{position:absolute;top:100%;width:1px;background:var(--faint);transform:translateX(-50%)}
+.cl-tick-y{position:absolute;right:100%;height:1px;background:var(--faint);transform:translateY(50%)}
 .cl-axis-title-x{text-align:center;font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
 .cl-axis-caption-x{text-align:center;color:var(--muted)}
 .cl-xtick-row{position:relative}
-.cl-xtick{position:absolute;top:0;text-align:center;color:var(--muted);transform:translateX(-50%);white-space:nowrap}
+.cl-xtick{position:absolute;text-align:center;color:var(--muted);transform:translateX(-50%);white-space:nowrap}
 .cl-axis-title-y{position:absolute;left:0;top:0;bottom:0;writing-mode:vertical-rl;transform:rotate(180deg);display:flex;align-items:center;justify-content:center;font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
-.cl-ytick{position:absolute;right:0;text-align:right;color:var(--muted);transform:translateY(50%)}
+.cl-ytick{position:absolute;text-align:right;color:var(--muted);transform:translateY(50%)}
 .cl-dot{position:absolute;display:flex;align-items:center}
 .cl-dot.lbl-l{flex-direction:row-reverse}
 .cl-mark{border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;flex:none;overflow:hidden}
 .cl-mark img{width:66%;height:66%;object-fit:contain}
-.cl-name{color:var(--muted);white-space:nowrap}
+.cl-name{color:var(--ink);white-space:nowrap}
 .cl-dot.lbl-l .cl-name{text-align:right}
 .cl-dot.cl-orion{transform:translate(-50%,50%)}
 .cl-orion-pill{display:flex;align-items:center;justify-content:center;border-radius:999px;background:linear-gradient(160deg, var(--purple), var(--teal));box-shadow:0 0 0 3px rgba(114,100,241,.22),0 10px 22px rgba(114,100,241,.48)}
@@ -259,29 +258,32 @@ html[data-mode="deck"] .s-value .pnum{bottom:44px}
 /* 8 compete */
 html[data-mode="deck"] .s-compete .hd{left:120px;top:120px;width:1680px}
 html[data-mode="deck"] .s-compete h2{font-size:46px;line-height:1.15;max-width:1680px;white-space:nowrap}
-html[data-mode="deck"] .s-compete .cl-subtitle{font-size:15px;line-height:1.4;margin-top:8px;max-width:1680px}
+html[data-mode="deck"] .s-compete .cl-subtitle{font-size:15px;line-height:1.4;margin-top:20px;max-width:1680px}
 html[data-mode="deck"] .s-compete .foot{bottom:88px;font-size:20px;line-height:1.4}
 html[data-mode="deck"] .s-compete .conf{bottom:44px}
 html[data-mode="deck"] .s-compete .pnum{bottom:44px}
-html[data-mode="deck"] .cl-wrap{left:120px;top:281px;width:1680px;height:652px;gap:66px}
-html[data-mode="deck"] .cl-chart{width:980px;height:652px}
-html[data-mode="deck"] .cl-panel{width:634px;height:652px;padding:30px 32px}
+html[data-mode="deck"] .cl-wrap{left:120px;top:330px;width:1680px;height:606px;gap:66px}
+html[data-mode="deck"] .cl-chart{width:980px;height:606px}
+html[data-mode="deck"] .cl-panel{width:634px;height:606px;padding:30px 32px}
+html[data-mode="deck"] .s-compete .foot{bottom:88px}
 html[data-mode="deck"] .cl-panel-eyebrow{font-size:14px;margin-bottom:20px}
 html[data-mode="deck"] .cl-panel-list li b{font-size:19px;line-height:1.25;margin-bottom:6px}
 html[data-mode="deck"] .cl-stage-comp{font-size:15px;line-height:1.4}
 html[data-mode="deck"] .cl-stage-orion{font-size:15px;line-height:1.4;margin-top:4px}
-html[data-mode="deck"] .cl-yaxis-strip{position:absolute;left:0;bottom:76px;width:152px;height:576px}
-html[data-mode="deck"] .cl-plot{left:152px;bottom:76px;width:828px;height:576px}
-html[data-mode="deck"] .cl-xaxis-strip{position:absolute;left:152px;bottom:0;width:828px;height:76px}
-html[data-mode="deck"] .cl-axis-title-y{width:22px;font-size:15px}
-html[data-mode="deck"] .cl-ytick{width:130px;font-size:15px;line-height:1.3}
-html[data-mode="deck"] .cl-xtick-row{height:22px}
-html[data-mode="deck"] .cl-xtick{font-size:15px}
-html[data-mode="deck"] .cl-axis-title-x{font-size:15px;margin:6px 0 0}
-html[data-mode="deck"] .cl-axis-caption-x{font-size:15px;margin:4px 0 0}
+html[data-mode="deck"] .cl-yaxis-strip{position:absolute;left:0;bottom:96px;width:191px;height:510px}
+html[data-mode="deck"] .cl-plot{left:191px;bottom:96px;width:789px;height:510px}
+html[data-mode="deck"] .cl-xaxis-strip{position:absolute;left:191px;bottom:0;width:789px;height:96px}
+html[data-mode="deck"] .cl-tick-x{height:8px}
+html[data-mode="deck"] .cl-tick-y{width:8px}
+html[data-mode="deck"] .cl-axis-title-y{width:22px;font-size:16px}
+html[data-mode="deck"] .cl-ytick{right:12px;width:132px;font-size:17px;line-height:1.3}
+html[data-mode="deck"] .cl-xtick-row{height:32px}
+html[data-mode="deck"] .cl-xtick{top:8px;font-size:17px;line-height:1.3}
+html[data-mode="deck"] .cl-axis-title-x{font-size:16px;margin:11px 0 0}
+html[data-mode="deck"] .cl-axis-caption-x{font-size:15px;margin:11px 0 0}
 html[data-mode="deck"] .cl-dot{gap:10px}
 html[data-mode="deck"] .cl-mark{width:40px;height:40px}
-html[data-mode="deck"] .cl-name{font-size:16px}
+html[data-mode="deck"] .cl-name{font-size:18px}
 html[data-mode="deck"] .cl-orion-pill{width:104px;height:44px;padding:0 12px}
 html[data-mode="deck"] .cl-orion-pill img{width:100%;height:auto}
 /* 9 roadmap */
@@ -1233,18 +1235,21 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
     <div class="cl-chart" role="img" aria-label="Scatter chart. X axis: lifecycle steps covered, from 1 step to all 5 steps (validate, plan, sell, run, learn). Y axis: biggest event it's built for, from one room or show to multi-day greenfield festival. Orion sits alone in the top right, covering all five steps at festival scale. Competitor tools cluster lower and left, each covering fewer steps or smaller events.">
       <div class="cl-yaxis-strip">
         <p class="cl-axis-title-y">Biggest event it's built for</p>
-        <p class="cl-ytick" style="bottom:0%">One room or show</p>
+        <p class="cl-ytick" style="bottom:10%">One room or show</p>
         <p class="cl-ytick" style="bottom:50%">Large venue or conference</p>
-        <p class="cl-ytick" style="bottom:100%">Multi-day greenfield festival</p>
+        <p class="cl-ytick" style="bottom:70%">Multi-day festival</p>
+        <p class="cl-ytick" style="bottom:90%">Multi-day greenfield festival</p>
       </div>
       <div class="cl-plot">
-        <div class="cl-topright-zone"></div>
-        <div class="cl-tier-h" style="bottom:50%"></div>
-        <div class="cl-tier-h" style="bottom:100%"></div>
-        <div class="cl-tier-v" style="left:50%"></div>
-        <div class="cl-tier-v" style="left:100%"></div>
         <div class="cl-axis-l-x"></div>
         <div class="cl-axis-l-y"></div>
+        <div class="cl-tick-x" style="left:10%"></div>
+        <div class="cl-tick-x" style="left:50%"></div>
+        <div class="cl-tick-x" style="left:90%"></div>
+        <div class="cl-tick-y" style="bottom:10%"></div>
+        <div class="cl-tick-y" style="bottom:50%"></div>
+        <div class="cl-tick-y" style="bottom:70%"></div>
+        <div class="cl-tick-y" style="bottom:90%"></div>
         <div class="cl-dot cl-orion" style="left:88%;bottom:88%">
           <span class="cl-orion-pill"><img src="media/logos/orion-wordmark.png" alt="Orion"></span>
         </div>
@@ -1283,9 +1288,9 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
       </div>
       <div class="cl-xaxis-strip">
         <div class="cl-xtick-row">
-          <p class="cl-xtick" style="left:0%">1 step</p>
+          <p class="cl-xtick" style="left:10%">1 step</p>
           <p class="cl-xtick" style="left:50%">2 to 4 steps</p>
-          <p class="cl-xtick" style="left:100%">All 5 steps</p>
+          <p class="cl-xtick" style="left:90%">All 5 steps</p>
         </div>
         <p class="cl-axis-title-x">Lifecycle steps covered</p>
         <p class="cl-axis-caption-x">The five steps: Validate, Plan, Sell, Run, Learn.</p>
