@@ -194,7 +194,17 @@ html[data-mode="deck"] .s-traction .hd{left:500px;width:700px}
 html[data-mode="deck"] .s-traction .hd .line{white-space:normal}
 html[data-mode="deck"] .credits{left:0;right:0;bottom:96px;text-align:center;font-size:18px}
 
-/* ---------- Competitive analysis (slide 7) ---------- */
+/* ---------- Value proposition (slide 7) ---------- */
+.val-col{background:rgba(252,250,247,.05);border:1px solid var(--faint);border-radius:16px;display:flex;flex-direction:column}
+.val-col.val-hero{background:linear-gradient(160deg, rgba(114,100,241,.38), rgba(0,104,101,.30));border:2px solid rgba(114,100,241,.65);box-shadow:0 24px 64px rgba(114,100,241,.35),0 4px 16px rgba(0,0,0,.4)}
+.val-h{color:var(--ink);font-weight:400}
+.val-lead{color:var(--muted)}
+.val-beats{list-style:none;padding:0;margin:0;display:flex;flex-direction:column}
+.val-beats li{position:relative;color:var(--muted)}
+.val-beats li::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--green)}
+.s-value .foot{text-align:center;border-top:1px solid var(--faint)}
+
+/* ---------- Competitive analysis (slide 8) ---------- */
 .comp-col{background:rgba(252,250,247,.05);border:1px solid var(--faint);border-radius:16px;display:flex;flex-direction:column}
 .comp-col.comp-orion{background:linear-gradient(160deg, rgba(114,100,241,.38), rgba(0,104,101,.30));border:1px solid rgba(114,100,241,.55);position:relative}
 .comp-row-logo{display:flex;align-items:center}
@@ -215,7 +225,21 @@ html[data-mode="deck"] .credits{left:0;right:0;bottom:96px;text-align:center;fon
 .comp-list-orion li.plus3{color:var(--ink)}
 .comp-list-orion li.plus3 b{color:var(--green);font-weight:400;display:block}
 .comp-ribbon{position:absolute;background:var(--green);color:var(--bg);font-family:var(--mono);text-transform:uppercase;font-weight:400;white-space:nowrap}
-/* 7 compete */
+/* 7 value */
+html[data-mode="deck"] .s-value .hd{left:120px;top:120px;width:1680px}
+html[data-mode="deck"] .s-value h2{font-size:72px;line-height:1.05;max-width:1560px}
+html[data-mode="deck"] .s-value .sub{font-size:28px;line-height:1.35;margin-top:20px;font-weight:300}
+html[data-mode="deck"] .val-grid{left:120px;top:300px;width:1680px;height:560px;display:flex;align-items:stretch;gap:28px}
+html[data-mode="deck"] .val-col{flex:1;padding:40px 36px}
+html[data-mode="deck"] .val-col.val-hero{flex:1.18}
+html[data-mode="deck"] .val-h{font-size:38px;line-height:1.1}
+html[data-mode="deck"] .val-lead{font-size:22px;line-height:1.4;margin-top:16px}
+html[data-mode="deck"] .val-beats{margin-top:36px;gap:20px}
+html[data-mode="deck"] .val-beats li{font-size:20px;line-height:1.4;padding-left:20px}
+html[data-mode="deck"] .s-value .foot{bottom:88px;font-size:20px;line-height:1.4;padding-top:24px}
+html[data-mode="deck"] .s-value .conf{bottom:44px}
+html[data-mode="deck"] .s-value .pnum{bottom:44px}
+/* 8 compete */
 html[data-mode="deck"] .comp-grid{left:120px;top:260px;width:1680px;height:676px;display:flex;align-items:stretch;gap:24px}
 html[data-mode="deck"] .comp-col{flex:1;padding:20px 20px;gap:0}
 html[data-mode="deck"] .comp-col.comp-orion{flex:1.32;box-shadow:0 24px 64px rgba(114,100,241,.35),0 4px 16px rgba(0,0,0,.4)}
@@ -239,7 +263,7 @@ html[data-mode="deck"] .comp-ribbon{top:-14px;right:24px;font-size:14px;padding:
 html[data-mode="deck"] .s-compete .foot{bottom:88px;font-size:22px;line-height:1.4}
 html[data-mode="deck"] .s-compete .conf{bottom:44px}
 html[data-mode="deck"] .s-compete .pnum{bottom:44px}
-/* 8 roadmap */
+/* 9 roadmap */
 html[data-mode="deck"] .gantt{left:120px;top:420px;width:1680px;height:390px}
 html[data-mode="deck"] .ptl,html[data-mode="deck"] .ptl-build,html[data-mode="deck"] .sx{display:none}
 html[data-mode="deck"] .events{left:120px;top:824px;width:1680px;display:grid;grid-template-columns:repeat(4,1fr);column-gap:40px}
@@ -247,7 +271,7 @@ html[data-mode="deck"] .events li{padding-top:16px;border-top:2px solid var(--tu
 html[data-mode="deck"] .events b{font-size:32px;line-height:1.2}
 html[data-mode="deck"] .events .d,html[data-mode="deck"] .ev-date{font-size:20px;line-height:1.4}
 
-/* 9 team */
+/* 10 team */
 html[data-mode="deck"] .founder{left:120px;top:386px;width:600px}
 html[data-mode="deck"] .fname{font-size:44px;line-height:1.15;margin-top:16px}
 html[data-mode="deck"] .founder .role{font-size:20px;margin-top:6px}
@@ -270,7 +294,7 @@ html[data-mode="deck"] .creds{left:740px;top:812px;width:1060px;display:flex;fle
 html[data-mode="deck"] .creds p{font-size:24px;line-height:1.4}
 html[data-mode="deck"] .creds .cap{font-size:20px;line-height:24px}
 
-/* 10 fundraise */
+/* 11 fundraise */
 html[data-mode="deck"] .terms{left:120px;top:340px;width:640px;display:flex;flex-direction:column;gap:28px;position:absolute}
 html[data-mode="deck"] .terms-veil{inset:-16px}
 html[data-mode="deck"] .terms-veil span{font-size:26px;letter-spacing:.06em;transform:rotate(-16deg)}
@@ -287,7 +311,7 @@ html[data-mode="deck"] .ms{left:120px;top:740px;width:1680px;display:grid;grid-t
 html[data-mode="deck"] .ms-date{font-size:20px}
 html[data-mode="deck"] .ms p{font-size:24px;line-height:1.4;margin-top:8px}
 
-/* 11 close */
+/* 12 close */
 html[data-mode="deck"] .close{left:0;right:0;top:0;height:1000px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
 html[data-mode="deck"] .close h2{font-size:80px}
 html[data-mode="deck"] .close .sub{margin-top:28px}
@@ -571,6 +595,7 @@ html[data-mode="deck"] .close .tagline{font-size:18px;margin-top:44px}
 /* roadmap hint is for phones only */
 .gantt-hint{display:none}
 html[data-mode="portrait"] .gantt-hint{display:block;font-size:13px;line-height:1.4;color:var(--muted);margin:0 0 -6px}
+/* roadmap hint stays flagged for the roadmap slide only; value-slide comment numbering updated above */
 html[data-mode="portrait"] body{overflow:hidden;overscroll-behavior:none;height:100vh;height:100dvh;min-height:0}
 html[data-mode="portrait"] .stage{position:fixed;top:0;left:0;right:0;bottom:0;height:100vh;height:100dvh;overflow:hidden}
 html[data-mode="portrait"] .slide{position:absolute;top:0;left:0;right:0;bottom:0;display:none;flex-direction:column;gap:18px;padding:max(22px,env(safe-area-inset-top,0px)) max(20px,calc((100vw - 640px)/2),env(safe-area-inset-right,0px)) calc(96px + env(safe-area-inset-bottom,0px)) max(20px,calc((100vw - 640px)/2),env(safe-area-inset-left,0px));overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;touch-action:pan-y pinch-zoom;border:0;box-shadow:none;transform:none}
@@ -688,7 +713,15 @@ html[data-mode="portrait"] .events li{display:flex;flex-direction:column;gap:8px
 html[data-mode="portrait"] .ev-thumb{width:100%;height:84px}
 html[data-mode="portrait"] .events b{font-size:17px;line-height:1.2}
 html[data-mode="portrait"] .events .d,html[data-mode="portrait"] .ev-date{font-size:13px;line-height:1.4}
-/* 7 compete */
+/* 7 value */
+html[data-mode="portrait"] .val-grid{display:flex;flex-direction:column;gap:16px}
+html[data-mode="portrait"] .val-col{padding:20px 18px}
+html[data-mode="portrait"] .val-h{font-size:21px;line-height:1.15}
+html[data-mode="portrait"] .val-lead{font-size:15px;line-height:1.4;margin-top:8px}
+html[data-mode="portrait"] .val-beats{margin-top:14px;gap:9px}
+html[data-mode="portrait"] .val-beats li{font-size:15px;line-height:1.4;padding-left:16px}
+html[data-mode="portrait"] .s-value .foot{font-size:14px;line-height:1.5;padding-top:14px}
+/* 8 compete */
 html[data-mode="portrait"] .comp-grid{display:flex;flex-direction:column;gap:18px}
 html[data-mode="portrait"] .comp-col{padding:18px 17px;gap:0}
 html[data-mode="portrait"] .comp-row-logo{height:30px}
@@ -710,7 +743,7 @@ html[data-mode="portrait"] .comp-list-orion li::before{font-size:17px}
 html[data-mode="portrait"] .comp-list-orion li b{font-size:17px}
 html[data-mode="portrait"] .comp-ribbon{top:-10px;right:14px;font-size:12px;padding:4px 11px}
 html[data-mode="portrait"] .s-compete .foot{font-size:16px;line-height:1.5}
-/* 9 team */
+/* 10 team */
 html[data-mode="portrait"] .founder{display:block}
 html[data-mode="portrait"] .fhead{display:flex;align-items:center;gap:16px}
 html[data-mode="portrait"] .founder .fav{width:84px;height:84px}
@@ -728,7 +761,7 @@ html[data-mode="portrait"] .people b{font-size:17px;line-height:1.2}
 html[data-mode="portrait"] .people .role{font-size:13px;margin-top:4px}
 html[data-mode="portrait"] .creds{display:grid;gap:6px}
 html[data-mode="portrait"] .creds .inv{font-size:15px;line-height:1.45}
-/* 10 fundraise */
+/* 11 fundraise */
 html[data-mode="portrait"] .terms{display:grid;grid-template-columns:1fr 1fr;gap:16px;position:relative}
 html[data-mode="portrait"] .terms-veil{inset:-10px}
 html[data-mode="portrait"] .terms-veil span{font-size:14px;letter-spacing:.05em;transform:rotate(-16deg)}
@@ -738,7 +771,7 @@ html[data-mode="portrait"] .uop-text{font-size:20px;line-height:1.35;margin-top:
 html[data-mode="portrait"] .ms{list-style:none;padding:16px 0 0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:16px 14px;border-top:1px solid var(--faint)}
 html[data-mode="portrait"] .ms-date{font-size:13px}
 html[data-mode="portrait"] .ms p{font-size:16px;line-height:1.35;margin-top:4px}
-/* 11 close */
+/* 12 close */
 html[data-mode="portrait"] .close{display:flex;flex-direction:column;align-items:center;text-align:center;margin:auto 0}
 html[data-mode="portrait"] .close .eyebrow{font-size:13px;margin-bottom:14px}
 html[data-mode="portrait"] .close h2{font-size:34px;line-height:1.1}
@@ -976,7 +1009,7 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
     </div>
   </div>
   <p class="conf">Confidential · October 2026</p>
-  <p class="pnum">02 / 10</p>
+  <p class="pnum">02 / 12</p>
 </section>
 
 <!-- 3 MARKET -->
@@ -1032,7 +1065,7 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
   <p class="deals"><span class="lx">Recent deals: KKR bought Superstruct's 80+ festivals (~€1.3B) · Fever, owner of DICE, raised at a reported ~$5.2B valuation · Penske took full control of SXSW.</span><span class="sx">Deals: KKR bought Superstruct (~€1.3B) · Fever raised at ~$5.2B · Penske took over SXSW.</span></p>
   <p class="foot"><span class="lx">Sources: McKinsey &amp; Skift (2024) · Goldman Sachs (2025) · Live Nation (2026) · WEF (2025) · Billboard, MBW, TheWrap</span><span class="sx">Sources: McKinsey &amp; Skift · Goldman Sachs · Live Nation · WEF · Billboard · MBW · TheWrap</span></p>
   <p class="conf">Confidential · October 2026</p>
-  <p class="pnum">03 / 10</p>
+  <p class="pnum">03 / 12</p>
 </section>
 
 <!-- 4 PROBLEM -->
@@ -1062,7 +1095,7 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
   </div>
   <p class="foot">Source: Live Nation annual filings, Concerts segment, 2025. Costs = revenue minus adjusted operating income.</p>
   <p class="conf">Confidential · October 2026</p>
-  <p class="pnum">04 / 10</p>
+  <p class="pnum">04 / 12</p>
 </section>
 
 <!-- 5 SOLUTION -->
@@ -1087,7 +1120,7 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
     <figcaption class="df-cap"><a data-demo-link hidden target="_blank" rel="noopener">Open the demo in a new tab</a><span data-demo-label>Project Orion demo</span></figcaption>
   </figure>
   <p class="conf">Confidential · October 2026</p>
-  <p class="pnum">05 / 10</p>
+  <p class="pnum">05 / 12</p>
 </section>
 
 <!-- 6 TRACTION -->
@@ -1117,11 +1150,52 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
   </div>
   <p class="foot">Source: IMXP, as of Sep 2026.</p>
   <p class="conf">Confidential · October 2026</p>
-  <p class="pnum">06 / 11</p>
+  <p class="pnum">06 / 12</p>
 </section>
 
-<!-- 7 COMPETITIVE ANALYSIS -->
-<section class="slide bg-content s-compete" data-slide="7" aria-label="Competitive analysis">
+<!-- 7 VALUE PROPOSITION -->
+<section class="slide bg-content s-value" data-slide="7" aria-label="Value proposition">
+  <img class="logo-sm" src="media/logos/imxp-small.png" alt="IMXP">
+  <header class="hd">
+    <h2>Run events with less risk and more profit</h2>
+    <p class="sub">FiaB turns event planning into a repeatable, de-risked system.</p>
+  </header>
+  <div class="val-grid">
+    <div class="val-col">
+      <p class="val-h">More efficient</p>
+      <p class="val-lead">One collaborative event record.</p>
+      <ul class="val-beats">
+        <li>Faster handoffs</li>
+        <li>Clearer priorities</li>
+        <li>A next best task for every operator</li>
+      </ul>
+    </div>
+    <div class="val-col">
+      <p class="val-h">Higher profit</p>
+      <p class="val-lead">Leaner overhead on every event.</p>
+      <ul class="val-beats">
+        <li>Fewer hours on coordination</li>
+        <li>Less rework</li>
+        <li>Avoided budget overruns</li>
+      </ul>
+    </div>
+    <div class="val-col val-hero">
+      <p class="val-h">Lower risk</p>
+      <p class="val-lead">Built-in checks on every event.</p>
+      <ul class="val-beats">
+        <li>Problems flagged before money moves</li>
+        <li>Big spend gated on proven demand</li>
+        <li>Licensed experts sign off on safety and permits</li>
+      </ul>
+    </div>
+  </div>
+  <p class="foot">Code computes the math and the gates. The model judges and drafts. People approve.</p>
+  <p class="conf">Confidential &middot; October 2026</p>
+  <p class="pnum">07 / 12</p>
+</section>
+
+<!-- 8 COMPETITIVE ANALYSIS -->
+<section class="slide bg-content s-compete" data-slide="8" aria-label="Competitive analysis">
   <img class="logo-sm" src="media/logos/imxp-small.png" alt="IMXP">
   <header class="hd">
     <p class="eyebrow">Competitive landscape</p>
@@ -1196,11 +1270,11 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
   </div>
   <p class="foot">Event management software: $16.4B (2025) &rarr; $36.8B (2031), MarketsandMarkets. Live Nation alone hosted 159M fans in 2025.</p>
   <p class="conf">Confidential &middot; October 2026</p>
-  <p class="pnum">07 / 11</p>
+  <p class="pnum">08 / 12</p>
 </section>
 
-<!-- 8 ROADMAP -->
-<section class="slide bg-content has-photo s-road" data-slide="8" aria-label="Roadmap">
+<!-- 9 ROADMAP -->
+<section class="slide bg-content has-photo s-road" data-slide="9" aria-label="Roadmap">
   <img class="bg-photo cine" src="media/photos/roadmap-partners-build.jpg" alt="Build crew constructing Iceland Eclipse infrastructure">
   <div class="shade"></div>
   <div class="grain"></div>
@@ -1238,11 +1312,11 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
   </ul>
   <p class="foot">Beyond 2027: Australasia Eclipse 2028, Apophis 2029, South Africa Eclipse 2030, and the Antarctic Expedition. <span class="horizon"><span class="nw">2035: Watch Earth eclipse the Sun,</span> <span class="nw">from the Moon.</span></span></p>
   <p class="conf">Confidential · October 2026</p>
-  <p class="pnum">08 / 11</p>
+  <p class="pnum">09 / 12</p>
 </section>
 
-<!-- 9 TEAM -->
-<section class="slide bg-content has-photo s-team" data-slide="9" aria-label="The team">
+<!-- 10 TEAM -->
+<section class="slide bg-content has-photo s-team" data-slide="10" aria-label="The team">
   <img class="bg-photo cine" src="media/photos/founder-interview.jpg" alt="Mitch Morales being interviewed in the field">
   <div class="shade"></div>
   <div class="grain"></div>
@@ -1272,11 +1346,11 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
     <p class="inv">Chris Boshuizen · Whitney Kroenke Silverstein · JT Marino · Ravé Mehta · Josh Whiton · Ravi Muti</p>
   </div>
   <p class="conf">Confidential · October 2026</p>
-  <p class="pnum">09 / 11</p>
+  <p class="pnum">10 / 12</p>
 </section>
 
-<!-- 10 FUNDRAISE -->
-<section class="slide bg-content has-photo s-fund" data-slide="10" aria-label="Fundraise">
+<!-- 11 FUNDRAISE -->
+<section class="slide bg-content has-photo s-fund" data-slide="11" aria-label="Fundraise">
   <img class="bg-photo cine" src="media/photos/fundraise-midnight-sun-tents.jpg" alt="Aerial view of the Iceland Eclipse tented village at golden hour">
   <div class="shade"></div>
   <div class="grain"></div>
@@ -1306,11 +1380,11 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
   </ol>
   <p class="foot">Investment in IMXP Product (DE C-corp), currently a wholly owned subsidiary of Immersive Experiences, LLC.</p>
   <p class="conf">Confidential · October 2026</p>
-  <p class="pnum">10 / 11</p>
+  <p class="pnum">11 / 12</p>
 </section>
 
-<!-- 11 CLOSE -->
-<section class="slide bg-close has-photo s-close" data-slide="11" aria-label="Close">
+<!-- 12 CLOSE -->
+<section class="slide bg-close has-photo s-close" data-slide="12" aria-label="Close">
   <img class="bg-photo" src="media/photos/dorothy-space-eclipse.jpg" alt="Total solar eclipse photographed from the stratosphere above Earth's curvature, by The Dorothy Project">
   <div class="shade"></div>
   <img class="logo-sm" src="media/logos/imxp-small.png" alt="IMXP">
@@ -1320,7 +1394,7 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
     <div class="ccard"><img class="av" src="media/people/mitch-hs.jpg" alt=""><div><b>Mitch Morales</b><span class="role">Founder &amp; CEO of IMXP</span><a href="mailto:mitch@imxp.org">mitch@imxp.org</a></div></div>
   </div>
   <p class="conf">Confidential · October 2026</p>
-  <p class="pnum">11 / 11</p>
+  <p class="pnum">12 / 12</p>
   <p class="photo-credit">Stratosphere eclipse photo · The Dorothy Project</p>
 </section>
 
