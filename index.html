@@ -209,28 +209,32 @@ html[data-mode="deck"] .credits{left:0;right:0;bottom:96px;text-align:center;fon
 .cl-chart{position:relative}
 .cl-plot{position:relative}
 .cl-axis-x{position:absolute;left:0;right:0;top:50%;height:1px;background:var(--faint)}
+.cl-axis-x::after{content:"";position:absolute;right:-2px;top:50%;transform:translateY(-50%);width:0;height:0;border-style:solid;border-width:6px 0 6px 11px;border-color:transparent transparent transparent var(--faint)}
 .cl-axis-y{position:absolute;top:0;bottom:0;left:50%;width:1px;background:var(--faint)}
+.cl-axis-y::after{content:"";position:absolute;top:-2px;left:50%;transform:translateX(-50%);width:0;height:0;border-style:solid;border-width:0 6px 11px 6px;border-color:transparent transparent var(--faint) transparent}
 .cl-qlabel{position:absolute;font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--muted);opacity:.5}
 .cl-q-tr{color:var(--ink);opacity:.92}
-.cl-axis-title-x{position:absolute;left:0;right:0;bottom:0;text-align:center;font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
-.cl-axis-end-left{position:absolute;left:0;top:0;color:var(--muted)}
-.cl-axis-end-right{position:absolute;right:0;top:0;text-align:right;color:var(--muted)}
+.cl-axis-title-x{position:absolute;top:50%;left:0;right:0;transform:translateY(-50%);text-align:center;font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.cl-axis-end-left{position:absolute;top:50%;left:0;transform:translateY(-50%);color:var(--muted)}
+.cl-axis-end-right{position:absolute;top:50%;right:0;transform:translateY(-50%);text-align:right;color:var(--muted)}
 .cl-axis-title-y{position:absolute;left:0;top:0;writing-mode:vertical-rl;transform:rotate(180deg);display:flex;align-items:center;justify-content:center;font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
 .cl-axis-end-top{position:absolute;top:0;right:0;text-align:right;color:var(--muted)}
 .cl-axis-end-bottom{position:absolute;bottom:0;right:0;text-align:right;color:var(--muted)}
 .cl-dot{position:absolute;display:flex;align-items:center}
 .cl-dot.lbl-l{flex-direction:row-reverse}
-.cl-dot.lbl-t{flex-direction:column-reverse;align-items:center;text-align:center}
-.cl-dot.lbl-b{flex-direction:column;align-items:center;text-align:center}
 .cl-mark{border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;flex:none;overflow:hidden}
 .cl-mark img{width:66%;height:66%;object-fit:contain}
 .cl-name{color:var(--muted);white-space:nowrap}
 .cl-dot.lbl-l .cl-name{text-align:right}
-.cl-dot.cl-orion .cl-mark{background:linear-gradient(160deg, var(--purple), var(--teal));box-shadow:0 0 0 5px rgba(114,100,241,.22),0 14px 34px rgba(114,100,241,.42)}
-.cl-dot.cl-orion .cl-name{color:var(--ink)}
-.cl-panel{display:flex;flex-direction:column}
-.cl-call{background:rgba(252,250,247,.05);border:1px solid var(--faint);border-left:3px solid var(--purple);border-radius:12px;display:flex;align-items:center}
-.cl-call p{color:var(--ink);margin:0}
+.cl-dot.cl-orion{transform:translate(-50%,50%)}
+.cl-orion-pill{display:flex;align-items:center;justify-content:center;border-radius:999px;background:linear-gradient(160deg, var(--purple), var(--teal));box-shadow:0 0 0 6px rgba(114,100,241,.22),0 20px 44px rgba(114,100,241,.48)}
+.cl-orion-pill img{display:block;width:auto;object-fit:contain}
+.cl-panel{display:flex;flex-direction:column;background:linear-gradient(160deg, rgba(114,100,241,.38), rgba(0,104,101,.30));border:1px solid rgba(114,100,241,.55);border-radius:16px;box-shadow:0 24px 64px rgba(114,100,241,.35),0 4px 16px rgba(0,0,0,.4)}
+.cl-panel-eyebrow{font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--green)}
+.cl-panel-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;flex:1;justify-content:space-between}
+.cl-panel-list li{position:relative;color:var(--ink)}
+.cl-panel-list li::before{content:"+++";color:var(--green);position:absolute;left:0;top:0}
+.cl-panel-list li b{color:var(--green);font-weight:400;display:block}
 /* 7 value */
 html[data-mode="deck"] .s-value .hd{left:120px;top:120px;width:1680px}
 html[data-mode="deck"] .s-value h2{font-size:72px;line-height:1.05;max-width:1560px}
@@ -246,29 +250,35 @@ html[data-mode="deck"] .s-value .foot{bottom:88px;font-size:20px;line-height:1.4
 html[data-mode="deck"] .s-value .conf{bottom:44px}
 html[data-mode="deck"] .s-value .pnum{bottom:44px}
 /* 8 compete */
-html[data-mode="deck"] .cl-wrap{left:120px;top:340px;width:1680px;height:596px;gap:56px}
-html[data-mode="deck"] .cl-chart{width:1168px;height:596px}
-html[data-mode="deck"] .cl-panel{width:456px;height:596px;justify-content:space-evenly}
-html[data-mode="deck"] .cl-call{padding:24px 26px}
-html[data-mode="deck"] .cl-call p{font-size:22px;line-height:1.4}
-html[data-mode="deck"] .cl-yaxis-strip{position:absolute;left:0;bottom:78px;width:140px;height:498px}
-html[data-mode="deck"] .cl-plot{left:156px;bottom:78px;width:498px;height:498px}
-html[data-mode="deck"] .cl-xaxis-strip{position:absolute;left:156px;bottom:0;width:498px;height:70px}
-html[data-mode="deck"] .cl-qlabel{font-size:13px;max-width:130px;line-height:1.3}
-html[data-mode="deck"] .cl-q-tl{top:8px}
-html[data-mode="deck"] .cl-q-tr{top:118px}
-html[data-mode="deck"] .cl-q-bl,html[data-mode="deck"] .cl-q-br{bottom:8px}
-html[data-mode="deck"] .cl-q-tl,html[data-mode="deck"] .cl-q-bl{left:8px}
-html[data-mode="deck"] .cl-q-tr,html[data-mode="deck"] .cl-q-br{right:8px;text-align:right}
-html[data-mode="deck"] .cl-axis-end-left,html[data-mode="deck"] .cl-axis-end-right{font-size:16px;line-height:1.3;width:170px}
-html[data-mode="deck"] .cl-axis-title-x{font-size:14px;bottom:2px}
-html[data-mode="deck"] .cl-axis-end-top,html[data-mode="deck"] .cl-axis-end-bottom{font-size:16px;line-height:1.3;width:116px}
-html[data-mode="deck"] .cl-axis-title-y{top:0;width:22px;height:498px;font-size:14px}
+html[data-mode="deck"] .s-compete .hd{left:120px;top:120px;width:1680px}
+html[data-mode="deck"] .s-compete h2{font-size:46px;line-height:1.15;max-width:1680px;white-space:nowrap}
+html[data-mode="deck"] .s-compete .foot{bottom:88px;font-size:20px;line-height:1.4}
+html[data-mode="deck"] .s-compete .conf{bottom:44px}
+html[data-mode="deck"] .s-compete .pnum{bottom:44px}
+html[data-mode="deck"] .cl-wrap{left:120px;top:252px;width:1680px;height:680px;gap:66px}
+html[data-mode="deck"] .cl-chart{width:980px;height:680px}
+html[data-mode="deck"] .cl-panel{width:634px;height:680px;padding:30px 32px}
+html[data-mode="deck"] .cl-panel-eyebrow{font-size:14px;margin-bottom:20px}
+html[data-mode="deck"] .cl-panel-list li{font-size:15px;line-height:1.4;padding-left:54px}
+html[data-mode="deck"] .cl-panel-list li::before{font-size:19px}
+html[data-mode="deck"] .cl-panel-list li b{font-size:19px;line-height:1.2;margin-bottom:4px}
+html[data-mode="deck"] .cl-yaxis-strip{position:absolute;left:0;bottom:40px;width:92px;height:640px}
+html[data-mode="deck"] .cl-plot{left:92px;bottom:40px;width:888px;height:640px}
+html[data-mode="deck"] .cl-xaxis-strip{position:absolute;left:92px;bottom:0;width:888px;height:40px}
+html[data-mode="deck"] .cl-qlabel{font-size:13px;max-width:140px;line-height:1.3}
+html[data-mode="deck"] .cl-q-tl{top:10px;left:10px}
+html[data-mode="deck"] .cl-q-tr{top:10px;right:10px}
+html[data-mode="deck"] .cl-q-bl{bottom:10px;left:10px}
+html[data-mode="deck"] .cl-q-br{bottom:10px;right:10px}
+html[data-mode="deck"] .cl-axis-end-left,html[data-mode="deck"] .cl-axis-end-right{font-size:15px;line-height:1.3}
+html[data-mode="deck"] .cl-axis-title-x{font-size:14px}
+html[data-mode="deck"] .cl-axis-end-top,html[data-mode="deck"] .cl-axis-end-bottom{font-size:14px;line-height:1.3;width:92px}
+html[data-mode="deck"] .cl-axis-title-y{top:0;width:22px;height:640px;font-size:14px}
 html[data-mode="deck"] .cl-dot{gap:10px}
 html[data-mode="deck"] .cl-mark{width:40px;height:40px}
-html[data-mode="deck"] .cl-name{font-size:17px}
-html[data-mode="deck"] .cl-dot.cl-orion .cl-mark{width:66px;height:66px}
-html[data-mode="deck"] .cl-dot.cl-orion .cl-name{font-size:21px}
+html[data-mode="deck"] .cl-name{font-size:16px}
+html[data-mode="deck"] .cl-orion-pill{width:208px;height:88px;padding:0 26px}
+html[data-mode="deck"] .cl-orion-pill img{height:40px}
 /* 9 roadmap */
 html[data-mode="deck"] .gantt{left:120px;top:420px;width:1680px;height:390px}
 html[data-mode="deck"] .ptl,html[data-mode="deck"] .ptl-build,html[data-mode="deck"] .sx{display:none}
@@ -729,27 +739,30 @@ html[data-mode="portrait"] .val-beats li{font-size:15px;line-height:1.4;padding-
 html[data-mode="portrait"] .s-value .foot{font-size:14px;line-height:1.5;padding-top:14px}
 /* 8 compete */
 html[data-mode="portrait"] .cl-wrap{flex-direction:column;gap:22px}
-html[data-mode="portrait"] .cl-chart{width:100%;aspect-ratio:1/1.1}
-html[data-mode="portrait"] .cl-panel{flex-direction:column;gap:12px}
-html[data-mode="portrait"] .cl-call{padding:16px 18px}
-html[data-mode="portrait"] .cl-call p{font-size:15px;line-height:1.4}
+html[data-mode="portrait"] .cl-chart{width:100%;aspect-ratio:1.4/1}
+html[data-mode="portrait"] .cl-panel{padding:18px 20px}
+html[data-mode="portrait"] .cl-panel-eyebrow{font-size:11px;margin-bottom:12px}
+html[data-mode="portrait"] .cl-panel-list{gap:14px}
+html[data-mode="portrait"] .cl-panel-list li{font-size:13px;line-height:1.4;padding-left:40px}
+html[data-mode="portrait"] .cl-panel-list li::before{font-size:15px}
+html[data-mode="portrait"] .cl-panel-list li b{font-size:15px}
 html[data-mode="portrait"] .cl-yaxis-strip{position:absolute;left:0;top:4px;bottom:50px;width:58px}
 html[data-mode="portrait"] .cl-plot{left:62px;right:2px;top:4px;bottom:50px}
 html[data-mode="portrait"] .cl-xaxis-strip{position:absolute;left:62px;right:2px;bottom:0;height:46px}
 html[data-mode="portrait"] .cl-qlabel{font-size:9px}
-html[data-mode="portrait"] .cl-q-tl,html[data-mode="portrait"] .cl-q-tr{top:6px}
-html[data-mode="portrait"] .cl-q-bl,html[data-mode="portrait"] .cl-q-br{bottom:6px}
-html[data-mode="portrait"] .cl-q-tl,html[data-mode="portrait"] .cl-q-bl{left:6px}
-html[data-mode="portrait"] .cl-q-tr,html[data-mode="portrait"] .cl-q-br{right:6px}
+html[data-mode="portrait"] .cl-q-tl{top:6px;left:6px}
+html[data-mode="portrait"] .cl-q-tr{top:6px;right:6px}
+html[data-mode="portrait"] .cl-q-bl{bottom:6px;left:6px}
+html[data-mode="portrait"] .cl-q-br{bottom:6px;right:6px}
 html[data-mode="portrait"] .cl-axis-end-left,html[data-mode="portrait"] .cl-axis-end-right{font-size:10px;line-height:1.25;width:80px}
-html[data-mode="portrait"] .cl-axis-title-x{font-size:9px;bottom:0}
+html[data-mode="portrait"] .cl-axis-title-x{font-size:9px}
 html[data-mode="portrait"] .cl-axis-end-top,html[data-mode="portrait"] .cl-axis-end-bottom{font-size:10px;line-height:1.25;width:50px}
 html[data-mode="portrait"] .cl-axis-title-y{width:14px;height:100%;font-size:9px}
 html[data-mode="portrait"] .cl-dot{gap:4px}
 html[data-mode="portrait"] .cl-mark{width:22px;height:22px}
 html[data-mode="portrait"] .cl-name{font-size:10px}
-html[data-mode="portrait"] .cl-dot.cl-orion .cl-mark{width:36px;height:36px}
-html[data-mode="portrait"] .cl-dot.cl-orion .cl-name{font-size:12px}
+html[data-mode="portrait"] .cl-orion-pill{width:110px;height:46px;padding:0 14px}
+html[data-mode="portrait"] .cl-orion-pill img{height:20px}
 /* 10 team */
 html[data-mode="portrait"] .founder{display:block}
 html[data-mode="portrait"] .fhead{display:flex;align-items:center;gap:16px}
@@ -1222,43 +1235,42 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
         <span class="cl-qlabel cl-q-tr">Idea-to-live, any scale</span>
         <span class="cl-qlabel cl-q-bl">Booking tools</span>
         <span class="cl-qlabel cl-q-br">Venue suites</span>
-        <div class="cl-dot cl-orion lbl-b" style="left:88%;bottom:88%">
-          <span class="cl-mark"><img src="media/logos/imxp-small.png" alt=""></span>
-          <span class="cl-name">Orion</span>
+        <div class="cl-dot cl-orion" style="left:82%;bottom:84%">
+          <span class="cl-orion-pill"><img src="media/logos/orion-wordmark.png" alt="Orion"></span>
         </div>
-        <div class="cl-dot lbl-b" style="left:30%;bottom:88%">
+        <div class="cl-dot" style="left:30%;bottom:80%">
           <span class="cl-mark"><img src="media/logos/oneplan-logo.png" alt=""></span>
           <span class="cl-name">OnePlan</span>
         </div>
-        <div class="cl-dot lbl-r" style="left:28%;bottom:68%">
+        <div class="cl-dot" style="left:24%;bottom:68%">
           <span class="cl-mark"><img src="media/logos/tixr-logo.png" alt=""></span>
           <span class="cl-name">Tixr</span>
         </div>
-        <div class="cl-dot lbl-r" style="left:52%;bottom:68%">
+        <div class="cl-dot lbl-l" style="left:40%;bottom:60%">
           <span class="cl-mark"><img src="media/logos/eventeny-logo.png" alt=""></span>
           <span class="cl-name">Eventeny</span>
         </div>
-        <div class="cl-dot lbl-r" style="left:10%;bottom:56%">
+        <div class="cl-dot" style="left:12%;bottom:54%">
           <span class="cl-mark"><img src="media/logos/audiencerepublic-logo.png" alt=""></span>
           <span class="cl-name">Audience Republic</span>
         </div>
-        <div class="cl-dot lbl-r" style="left:74%;bottom:34%">
+        <div class="cl-dot" style="left:70%;bottom:34%">
           <span class="cl-mark"><img src="media/logos/cvent-logo.png" alt=""></span>
           <span class="cl-name">Cvent</span>
         </div>
-        <div class="cl-dot lbl-l" style="left:58%;bottom:24%">
+        <div class="cl-dot" style="left:58%;bottom:26%">
           <span class="cl-mark"><img src="media/logos/momentus-icon.png" alt=""></span>
           <span class="cl-name">Momentus</span>
         </div>
-        <div class="cl-dot lbl-r" style="left:32%;bottom:36%">
+        <div class="cl-dot" style="left:34%;bottom:38%">
           <span class="cl-mark"><img src="media/logos/prism-icon.png" alt=""></span>
           <span class="cl-name">Prism.fm</span>
         </div>
-        <div class="cl-dot lbl-b" style="left:16%;bottom:20%">
+        <div class="cl-dot" style="left:16%;bottom:30%">
           <span class="cl-mark"><img src="media/logos/eventbrite-logo.png" alt=""></span>
           <span class="cl-name">Eventbrite</span>
         </div>
-        <div class="cl-dot lbl-r" style="left:30%;bottom:12%">
+        <div class="cl-dot" style="left:30%;bottom:12%">
           <span class="cl-mark"><img src="media/logos/tripleseat-icon.png" alt=""></span>
           <span class="cl-name">Tripleseat</span>
         </div>
@@ -1270,9 +1282,14 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
       </div>
     </div>
     <div class="cl-panel">
-      <div class="cl-call"><p>The only tool covering idea to live.</p></div>
-      <div class="cl-call"><p>AI-enabled go/no-go decisions.</p></div>
-      <div class="cl-call"><p>Learns from festivals we run ourselves.</p></div>
+      <p class="cl-panel-eyebrow">What sets Orion apart</p>
+      <ul class="cl-panel-list">
+        <li><b>End-to-end festival planning.</b>Idea, validation, planning, sales, and live operations in one system.</li>
+        <li><b>AI-enabled go/no-go decisions.</b>Demand evidence and kill criteria decide whether an event earns its spend before the money goes out.</li>
+        <li><b>AI-powered guardrails and detail checking.</b>The platform flags gaps, conflicts, and missed lead times across the whole plan, with qualified humans signing off on safety, structural, and permit calls.</li>
+        <li><b>We host our own festivals.</b>Built and tested by operators, on live events.</li>
+        <li><b>Learns from every event we run.</b>Lessons and outcomes feed the next plan.</li>
+      </ul>
     </div>
   </div>
   <p class="foot">Orion assessment, October 2026, based on public product documentation.</p>
