@@ -227,14 +227,19 @@ html[data-mode="deck"] .credits{left:0;right:0;bottom:96px;text-align:center;fon
 .cl-name{color:var(--muted);white-space:nowrap}
 .cl-dot.lbl-l .cl-name{text-align:right}
 .cl-dot.cl-orion{transform:translate(-50%,50%)}
-.cl-orion-pill{display:flex;align-items:center;justify-content:center;border-radius:999px;background:linear-gradient(160deg, var(--purple), var(--teal));box-shadow:0 0 0 6px rgba(114,100,241,.22),0 20px 44px rgba(114,100,241,.48)}
+.cl-orion-pill{display:flex;align-items:center;justify-content:center;border-radius:999px;background:linear-gradient(160deg, var(--purple), var(--teal));box-shadow:0 0 0 3px rgba(114,100,241,.22),0 10px 22px rgba(114,100,241,.48)}
 .cl-orion-pill img{display:block;width:auto;object-fit:contain}
 .cl-panel{display:flex;flex-direction:column;background:linear-gradient(160deg, rgba(114,100,241,.38), rgba(0,104,101,.30));border:1px solid rgba(114,100,241,.55);border-radius:16px;box-shadow:0 24px 64px rgba(114,100,241,.35),0 4px 16px rgba(0,0,0,.4)}
+.cl-panel-head{display:flex;align-items:center;justify-content:space-between}
 .cl-panel-eyebrow{font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--green)}
 .cl-panel-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;flex:1;justify-content:space-between}
-.cl-panel-list li{position:relative;color:var(--ink)}
+.cl-panel-list li{position:relative;color:var(--ink);display:flex;align-items:center;justify-content:space-between}
 .cl-panel-list li::before{content:"+++";color:var(--green);position:absolute;left:0;top:0}
+.cl-row-text{display:flex;flex-direction:column;flex:1;min-width:0}
 .cl-panel-list li b{color:var(--green);font-weight:400;display:block}
+.cl-desc{display:block;color:var(--ink)}
+.cl-closest{display:block;color:var(--muted);font-weight:400;margin:0}
+.cl-badge{flex:none;border:1px solid rgba(114,100,241,.55);color:var(--ink);border-radius:999px;font-family:var(--mono);white-space:nowrap;text-align:center}
 /* 7 value */
 html[data-mode="deck"] .s-value .hd{left:120px;top:120px;width:1680px}
 html[data-mode="deck"] .s-value h2{font-size:72px;line-height:1.05;max-width:1560px}
@@ -258,10 +263,14 @@ html[data-mode="deck"] .s-compete .pnum{bottom:44px}
 html[data-mode="deck"] .cl-wrap{left:120px;top:252px;width:1680px;height:680px;gap:66px}
 html[data-mode="deck"] .cl-chart{width:980px;height:680px}
 html[data-mode="deck"] .cl-panel{width:634px;height:680px;padding:30px 32px}
-html[data-mode="deck"] .cl-panel-eyebrow{font-size:14px;margin-bottom:20px}
-html[data-mode="deck"] .cl-panel-list li{font-size:15px;line-height:1.4;padding-left:54px}
+html[data-mode="deck"] .cl-panel-head{margin-bottom:22px}
+html[data-mode="deck"] .cl-panel-eyebrow{font-size:14px}
+html[data-mode="deck"] .cl-panel-list li{padding-left:54px;gap:16px}
 html[data-mode="deck"] .cl-panel-list li::before{font-size:19px}
-html[data-mode="deck"] .cl-panel-list li b{font-size:19px;line-height:1.2;margin-bottom:4px}
+html[data-mode="deck"] .cl-panel-list li b{font-size:19px;line-height:1.2;margin-bottom:5px}
+html[data-mode="deck"] .cl-desc{font-size:15px;line-height:1.4}
+html[data-mode="deck"] .cl-closest{font-size:15px;line-height:1.4;margin-top:8px}
+html[data-mode="deck"] .cl-badge{font-size:15px;padding:6px 16px}
 html[data-mode="deck"] .cl-yaxis-strip{position:absolute;left:0;bottom:40px;width:92px;height:640px}
 html[data-mode="deck"] .cl-plot{left:92px;bottom:40px;width:888px;height:640px}
 html[data-mode="deck"] .cl-xaxis-strip{position:absolute;left:92px;bottom:0;width:888px;height:40px}
@@ -277,8 +286,8 @@ html[data-mode="deck"] .cl-axis-title-y{top:0;width:22px;height:640px;font-size:
 html[data-mode="deck"] .cl-dot{gap:10px}
 html[data-mode="deck"] .cl-mark{width:40px;height:40px}
 html[data-mode="deck"] .cl-name{font-size:16px}
-html[data-mode="deck"] .cl-orion-pill{width:208px;height:88px;padding:0 26px}
-html[data-mode="deck"] .cl-orion-pill img{height:40px}
+html[data-mode="deck"] .cl-orion-pill{width:104px;height:44px;padding:0 12px}
+html[data-mode="deck"] .cl-orion-pill img{width:100%;height:auto}
 /* 9 roadmap */
 html[data-mode="deck"] .gantt{left:120px;top:420px;width:1680px;height:390px}
 html[data-mode="deck"] .ptl,html[data-mode="deck"] .ptl-build,html[data-mode="deck"] .sx{display:none}
@@ -1246,7 +1255,7 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
           <span class="cl-mark"><img src="media/logos/tixr-logo.png" alt=""></span>
           <span class="cl-name">Tixr</span>
         </div>
-        <div class="cl-dot lbl-l" style="left:40%;bottom:60%">
+        <div class="cl-dot" style="left:36%;bottom:60%">
           <span class="cl-mark"><img src="media/logos/eventeny-logo.png" alt=""></span>
           <span class="cl-name">Eventeny</span>
         </div>
@@ -1282,17 +1291,47 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
       </div>
     </div>
     <div class="cl-panel">
-      <p class="cl-panel-eyebrow">What sets Orion apart</p>
+      <div class="cl-panel-head">
+        <p class="cl-panel-eyebrow">What sets Orion apart</p>
+        <p class="cl-panel-eyebrow">Competitors with it</p>
+      </div>
       <ul class="cl-panel-list">
-        <li><b>End-to-end festival planning.</b>Idea, validation, planning, sales, and live operations in one system.</li>
-        <li><b>AI-enabled go/no-go decisions.</b>Demand evidence and kill criteria decide whether an event earns its spend before the money goes out.</li>
-        <li><b>AI-powered guardrails and detail checking.</b>The platform flags gaps, conflicts, and missed lead times across the whole plan, with qualified humans signing off on safety, structural, and permit calls.</li>
-        <li><b>We host our own festivals.</b>Built and tested by operators, on live events.</li>
-        <li><b>Learns from every event we run.</b>Lessons and outcomes feed the next plan.</li>
+        <li>
+          <div class="cl-row-text">
+            <b>We host our own festivals and learn from every one.</b>
+            <span class="cl-desc">Event-level detail from our own events, including real lead times, costs, and outcomes, feeds the next plan.</span>
+            <p class="cl-closest">Closest: Prism.fm, Tripleseat (customer data only)</p>
+          </div>
+          <span class="cl-badge">0 of 9</span>
+        </li>
+        <li>
+          <div class="cl-row-text">
+            <b>AI-enabled go/no-go decisions.</b>
+            <span class="cl-desc">Demand evidence and kill criteria decide whether an event earns its spend before the money goes out.</span>
+            <p class="cl-closest">Closest: Prism.fm (past box office only)</p>
+          </div>
+          <span class="cl-badge">0 of 9</span>
+        </li>
+        <li>
+          <div class="cl-row-text">
+            <b>Greenfield build planning.</b>
+            <span class="cl-desc">Dependency-driven schedules for temporary sites: power, water, sanitation, and containers.</span>
+            <p class="cl-closest">Closest: OnePlan (site layout only)</p>
+          </div>
+          <span class="cl-badge">0 of 9</span>
+        </li>
+        <li>
+          <div class="cl-row-text">
+            <b>AI-powered guardrails and detail checking.</b>
+            <span class="cl-desc">The platform flags gaps, conflicts, and missed lead times across the whole plan, with qualified humans signing off on safety, structural, and permit calls.</span>
+            <p class="cl-closest">Closest: Momentus (announced, not released)</p>
+          </div>
+          <span class="cl-badge">0 of 9</span>
+        </li>
       </ul>
     </div>
   </div>
-  <p class="foot">Orion assessment, October 2026, based on public product documentation.</p>
+  <p class="foot">Orion assessment, October 2026, based on public product documentation. Counts cover the nine companies on this map.</p>
   <p class="conf">Confidential &middot; October 2026</p>
   <p class="pnum">08 / 12</p>
 </section>
