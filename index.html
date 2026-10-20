@@ -230,16 +230,13 @@ html[data-mode="deck"] .credits{left:0;right:0;bottom:96px;text-align:center;fon
 .cl-orion-pill{display:flex;align-items:center;justify-content:center;border-radius:999px;background:linear-gradient(160deg, var(--purple), var(--teal));box-shadow:0 0 0 3px rgba(114,100,241,.22),0 10px 22px rgba(114,100,241,.48)}
 .cl-orion-pill img{display:block;width:auto;object-fit:contain}
 .cl-panel{display:flex;flex-direction:column;background:linear-gradient(160deg, rgba(114,100,241,.38), rgba(0,104,101,.30));border:1px solid rgba(114,100,241,.55);border-radius:16px;box-shadow:0 24px 64px rgba(114,100,241,.35),0 4px 16px rgba(0,0,0,.4)}
-.cl-panel-head{display:flex;align-items:center;justify-content:space-between}
 .cl-panel-eyebrow{font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--green)}
 .cl-panel-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;flex:1;justify-content:space-between}
-.cl-panel-list li{position:relative;color:var(--ink);display:flex;align-items:center;justify-content:space-between}
-.cl-panel-list li::before{content:"+++";color:var(--green);position:absolute;left:0;top:0}
-.cl-row-text{display:flex;flex-direction:column;flex:1;min-width:0}
+.cl-panel-list li{color:var(--ink);display:flex;flex-direction:column}
 .cl-panel-list li b{color:var(--green);font-weight:400;display:block}
-.cl-desc{display:block;color:var(--ink)}
-.cl-closest{display:block;color:var(--muted);font-weight:400;margin:0}
-.cl-badge{flex:none;border:1px solid rgba(114,100,241,.55);color:var(--ink);border-radius:999px;font-family:var(--mono);white-space:nowrap;text-align:center}
+.cl-stage-comp{display:block;color:var(--muted);font-weight:300}
+.cl-stage-comp i{font-style:italic}
+.cl-stage-orion{display:block;color:var(--ink);font-weight:400}
 /* 7 value */
 html[data-mode="deck"] .s-value .hd{left:120px;top:120px;width:1680px}
 html[data-mode="deck"] .s-value h2{font-size:72px;line-height:1.05;max-width:1560px}
@@ -263,14 +260,10 @@ html[data-mode="deck"] .s-compete .pnum{bottom:44px}
 html[data-mode="deck"] .cl-wrap{left:120px;top:252px;width:1680px;height:680px;gap:66px}
 html[data-mode="deck"] .cl-chart{width:980px;height:680px}
 html[data-mode="deck"] .cl-panel{width:634px;height:680px;padding:30px 32px}
-html[data-mode="deck"] .cl-panel-head{margin-bottom:22px}
-html[data-mode="deck"] .cl-panel-eyebrow{font-size:14px}
-html[data-mode="deck"] .cl-panel-list li{padding-left:54px;gap:16px}
-html[data-mode="deck"] .cl-panel-list li::before{font-size:19px}
-html[data-mode="deck"] .cl-panel-list li b{font-size:19px;line-height:1.2;margin-bottom:5px}
-html[data-mode="deck"] .cl-desc{font-size:15px;line-height:1.4}
-html[data-mode="deck"] .cl-closest{font-size:15px;line-height:1.4;margin-top:8px}
-html[data-mode="deck"] .cl-badge{font-size:15px;padding:6px 16px}
+html[data-mode="deck"] .cl-panel-eyebrow{font-size:14px;margin-bottom:20px}
+html[data-mode="deck"] .cl-panel-list li b{font-size:19px;line-height:1.25;margin-bottom:6px}
+html[data-mode="deck"] .cl-stage-comp{font-size:15px;line-height:1.4}
+html[data-mode="deck"] .cl-stage-orion{font-size:15px;line-height:1.4;margin-top:4px}
 html[data-mode="deck"] .cl-yaxis-strip{position:absolute;left:0;bottom:40px;width:92px;height:640px}
 html[data-mode="deck"] .cl-plot{left:92px;bottom:40px;width:888px;height:640px}
 html[data-mode="deck"] .cl-xaxis-strip{position:absolute;left:92px;bottom:0;width:888px;height:40px}
@@ -1291,47 +1284,37 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
       </div>
     </div>
     <div class="cl-panel">
-      <div class="cl-panel-head">
-        <p class="cl-panel-eyebrow">What sets Orion apart</p>
-        <p class="cl-panel-eyebrow">Competitors with it</p>
-      </div>
+      <p class="cl-panel-eyebrow">What sets Orion apart</p>
       <ul class="cl-panel-list">
         <li>
-          <div class="cl-row-text">
-            <b>We host our own festivals and learn from every one.</b>
-            <span class="cl-desc">Event-level detail from our own events, including real lead times, costs, and outcomes, feeds the next plan.</span>
-            <p class="cl-closest">Closest: Prism.fm, Tripleseat (customer data only)</p>
-          </div>
-          <span class="cl-badge">0 of 9</span>
+          <b>Validate: Go or no-go before the spend.</b>
+          <span class="cl-stage-comp"><i>Prism.fm</i> forecasts artist demand from past box office.</span>
+          <span class="cl-stage-orion">Orion sets kill criteria first, then scores the evidence.</span>
         </li>
         <li>
-          <div class="cl-row-text">
-            <b>AI-enabled go/no-go decisions.</b>
-            <span class="cl-desc">Demand evidence and kill criteria decide whether an event earns its spend before the money goes out.</span>
-            <p class="cl-closest">Closest: Prism.fm (past box office only)</p>
-          </div>
-          <span class="cl-badge">0 of 9</span>
+          <b>Plan: Schedules for sites that don't exist yet.</b>
+          <span class="cl-stage-comp"><i>OnePlan</i> maps site layouts and capacity.</span>
+          <span class="cl-stage-orion">Orion turns the layout into a build schedule, sequenced by dependencies and lead times.</span>
         </li>
         <li>
-          <div class="cl-row-text">
-            <b>Greenfield build planning.</b>
-            <span class="cl-desc">Dependency-driven schedules for temporary sites: power, water, sanitation, and containers.</span>
-            <p class="cl-closest">Closest: OnePlan (site layout only)</p>
-          </div>
-          <span class="cl-badge">0 of 9</span>
+          <b>Sell: Pre-sales that feed the decision.</b>
+          <span class="cl-stage-comp"><i>Tixr</i> and <i>Eventbrite</i> sell tickets.</span>
+          <span class="cl-stage-orion">Orion reads pre-sales as evidence for the go/no-go call.</span>
         </li>
         <li>
-          <div class="cl-row-text">
-            <b>AI-powered guardrails and detail checking.</b>
-            <span class="cl-desc">The platform flags gaps, conflicts, and missed lead times across the whole plan, with qualified humans signing off on safety, structural, and permit calls.</span>
-            <p class="cl-closest">Closest: Momentus (announced, not released)</p>
-          </div>
-          <span class="cl-badge">0 of 9</span>
+          <b>Run: Live operations from the same record.</b>
+          <span class="cl-stage-comp"><i>Momentus</i> runs venues. <i>Eventeny</i> manages vendors.</span>
+          <span class="cl-stage-orion">Orion runs tasks, vendors, and incidents from the plan that built the event.</span>
+        </li>
+        <li>
+          <b>Learn: Lessons from festivals we run ourselves.</b>
+          <span class="cl-stage-comp"><i>Tripleseat</i> reports on bookings and revenue.</span>
+          <span class="cl-stage-orion">Orion logs every decision and its outcome, so the next event starts smarter.</span>
         </li>
       </ul>
     </div>
   </div>
-  <p class="foot">Orion assessment, October 2026, based on public product documentation. Counts cover the nine companies on this map.</p>
+  <p class="foot">Orion assessment, October 2026, based on public product documentation.</p>
   <p class="conf">Confidential &middot; October 2026</p>
   <p class="pnum">08 / 12</p>
 </section>
