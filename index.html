@@ -200,8 +200,9 @@ html[data-mode="deck"] .credits{left:0;right:0;bottom:96px;text-align:center;fon
 .val-h{color:var(--ink);font-weight:400}
 .val-lead{color:var(--muted)}
 .val-beats{list-style:none;padding:0;margin:0;display:flex;flex-direction:column}
-.val-beats li{position:relative;color:var(--muted)}
-.val-beats li::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--green)}
+.val-beats li{display:flex;align-items:flex-start;color:var(--muted)}
+.val-ic{flex:none;color:var(--green)}
+.val-tag{margin-top:auto;border-top:1px solid var(--faint);color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:0}
 .s-value .foot{text-align:center;border-top:1px solid var(--faint)}
 
 /* ---------- Competitive analysis quadrant (slide 8) ---------- */
@@ -247,7 +248,9 @@ html[data-mode="deck"] .val-col.val-hero{flex:1.18}
 html[data-mode="deck"] .val-h{font-size:38px;line-height:1.1}
 html[data-mode="deck"] .val-lead{font-size:22px;line-height:1.4;margin-top:16px}
 html[data-mode="deck"] .val-beats{margin-top:36px;gap:20px}
-html[data-mode="deck"] .val-beats li{font-size:20px;line-height:1.4;padding-left:20px}
+html[data-mode="deck"] .val-beats li{font-size:20px;line-height:1.4;gap:14px}
+html[data-mode="deck"] .val-ic{width:22px;height:22px;margin-top:2px}
+html[data-mode="deck"] .val-tag{margin-top:28px;padding-top:18px;font-size:16px;line-height:1.3}
 html[data-mode="deck"] .s-value .foot{bottom:88px;font-size:20px;line-height:1.4;padding-top:24px}
 html[data-mode="deck"] .s-value .conf{bottom:44px}
 html[data-mode="deck"] .s-value .pnum{bottom:44px}
@@ -737,7 +740,9 @@ html[data-mode="portrait"] .val-col{padding:20px 18px}
 html[data-mode="portrait"] .val-h{font-size:21px;line-height:1.15}
 html[data-mode="portrait"] .val-lead{font-size:15px;line-height:1.4;margin-top:8px}
 html[data-mode="portrait"] .val-beats{margin-top:14px;gap:9px}
-html[data-mode="portrait"] .val-beats li{font-size:15px;line-height:1.4;padding-left:16px}
+html[data-mode="portrait"] .val-beats li{font-size:15px;line-height:1.4;gap:10px}
+html[data-mode="portrait"] .val-ic{width:16px;height:16px;margin-top:1px}
+html[data-mode="portrait"] .val-tag{margin-top:12px;padding-top:10px;font-size:11px;line-height:1.3}
 html[data-mode="portrait"] .s-value .foot{font-size:14px;line-height:1.5;padding-top:14px}
 /* 8 compete */
 html[data-mode="portrait"] .cl-wrap{flex-direction:column;gap:22px}
@@ -1183,32 +1188,35 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
     <p class="sub">FiaB turns event planning into a repeatable, de-risked system.</p>
   </header>
   <div class="val-grid">
-    <div class="val-col">
-      <p class="val-h">More efficient</p>
-      <p class="val-lead">One collaborative event record.</p>
+    <div class="val-col val-hero">
+      <p class="val-h">Lower risk</p>
+      <p class="val-lead">Built-in checks on every event.</p>
       <ul class="val-beats">
-        <li>Faster handoffs</li>
-        <li>Clearer priorities</li>
-        <li>A next best task for every operator</li>
+        <li><svg class="val-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 21V3"/><path d="M6 4h12l-3 4 3 4H6"/></svg><span>Five-dimension vet before big spend</span></li>
+        <li><svg class="val-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M20 20V10"/><rect x="4" y="9" width="16" height="2.4" rx="1.2" fill="currentColor" stroke="none"/><path d="M8 9V6a1 1 0 011-1h6a1 1 0 011 1v3"/></svg><span>Go/no-go gate, kill threshold set up front</span></li>
+        <li><svg class="val-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z"/><path d="M8.5 12.3l2.6 2.6 4.4-4.9"/></svg><span>Licensed experts sign off on safety and permits</span></li>
       </ul>
+      <p class="val-tag">Aligned with ISO 31000 &middot; ANSI E1.21 &middot; ANSI ES1.9</p>
     </div>
     <div class="val-col">
       <p class="val-h">Higher profit</p>
       <p class="val-lead">Leaner overhead on every event.</p>
       <ul class="val-beats">
-        <li>Fewer hours on coordination</li>
-        <li>Less rework</li>
-        <li>Avoided budget overruns</li>
+        <li><svg class="val-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg><span>Fewer hours on coordination</span></li>
+        <li><svg class="val-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 2l4 4-4 4"/><path d="M21 6H8a4 4 0 00-4 4v1"/><path d="M7 22l-4-4 4-4"/><path d="M3 18h13a4 4 0 004-4v-1"/></svg><span>Less rework</span></li>
+        <li><svg class="val-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20"/><path d="M17 7c0-2-2.2-3-5-3s-5 1.4-5 3.3 2.2 2.8 5 3.3 5 1.4 5 3.4-2.2 3-5 3-5-1-5-3"/></svg><span>Avoided budget overruns</span></li>
       </ul>
+      <p class="val-tag">Line-item budget vs. actuals</p>
     </div>
-    <div class="val-col val-hero">
-      <p class="val-h">Lower risk</p>
-      <p class="val-lead">Built-in checks on every event.</p>
+    <div class="val-col">
+      <p class="val-h">More efficient</p>
+      <p class="val-lead">One collaborative event record.</p>
       <ul class="val-beats">
-        <li>Problems flagged before money moves</li>
-        <li>Big spend gated on proven demand</li>
-        <li>Licensed experts sign off on safety and permits</li>
+        <li><svg class="val-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 15l6-6"/><path d="M13 5l1.4-1.4a3.5 3.5 0 015 5L18 10"/><path d="M11 19l-1.4 1.4a3.5 3.5 0 01-5-5L6 14"/></svg><span>Faster handoffs</span></li>
+        <li><svg class="val-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg><span>A next best task for every operator</span></li>
+        <li><svg class="val-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c.6 3 2 4.4 5 5-3 .6-4.4 2-5 5-.6-3-2-4.4-5-5 3-.6 4.4-2 5-5z"/><path d="M19 15c.3 1.4.9 2 2.2 2.3-1.3.3-1.9.9-2.2 2.3-.3-1.4-.9-2-2.2-2.3 1.3-.3 1.9-.9 2.2-2.3z"/></svg><span>AI drafts the work, handles routine tasks</span></li>
       </ul>
+      <p class="val-tag">Critical-path scheduling &middot; Agent task delegation</p>
     </div>
   </div>
   <p class="foot">Code computes the math and the gates. The model judges and drafts. People approve.</p>
