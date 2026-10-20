@@ -209,18 +209,20 @@ html[data-mode="deck"] .credits{left:0;right:0;bottom:96px;text-align:center;fon
 .cl-wrap{display:flex}
 .cl-chart{position:relative}
 .cl-plot{position:relative}
-.cl-axis-x{position:absolute;left:0;right:0;top:50%;height:1px;background:var(--faint)}
-.cl-axis-x::after{content:"";position:absolute;right:-2px;top:50%;transform:translateY(-50%);width:0;height:0;border-style:solid;border-width:6px 0 6px 11px;border-color:transparent transparent transparent var(--faint)}
-.cl-axis-y{position:absolute;top:0;bottom:0;left:50%;width:1px;background:var(--faint)}
-.cl-axis-y::after{content:"";position:absolute;top:-2px;left:50%;transform:translateX(-50%);width:0;height:0;border-style:solid;border-width:0 6px 11px 6px;border-color:transparent transparent var(--faint) transparent}
-.cl-qlabel{position:absolute;font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--muted);opacity:.5}
-.cl-q-tr{color:var(--ink);opacity:.92}
-.cl-axis-title-x{position:absolute;top:50%;left:0;right:0;transform:translateY(-50%);text-align:center;font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
-.cl-axis-end-left{position:absolute;top:50%;left:0;transform:translateY(-50%);color:var(--muted)}
-.cl-axis-end-right{position:absolute;top:50%;right:0;transform:translateY(-50%);text-align:right;color:var(--muted)}
-.cl-axis-title-y{position:absolute;left:0;top:0;writing-mode:vertical-rl;transform:rotate(180deg);display:flex;align-items:center;justify-content:center;font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
-.cl-axis-end-top{position:absolute;top:0;right:0;text-align:right;color:var(--muted)}
-.cl-axis-end-bottom{position:absolute;bottom:0;right:0;text-align:right;color:var(--muted)}
+.cl-subtitle{color:var(--muted);margin:0}
+.cl-topright-zone{position:absolute;left:50%;right:0;top:0;height:50%;background:var(--purple);opacity:.08;pointer-events:none}
+.cl-tier-h{position:absolute;left:0;right:0;height:1px;background:var(--faint);opacity:.15}
+.cl-tier-v{position:absolute;top:0;bottom:0;width:1px;background:var(--faint);opacity:.15}
+.cl-axis-l-x{position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--faint)}
+.cl-axis-l-x::after{content:"";position:absolute;right:-2px;top:50%;transform:translateY(-50%);width:0;height:0;border-style:solid;border-width:6px 0 6px 11px;border-color:transparent transparent transparent var(--faint)}
+.cl-axis-l-y{position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--faint)}
+.cl-axis-l-y::after{content:"";position:absolute;top:-2px;left:50%;transform:translateX(-50%);width:0;height:0;border-style:solid;border-width:0 6px 11px 6px;border-color:transparent transparent var(--faint) transparent}
+.cl-axis-title-x{text-align:center;font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.cl-axis-caption-x{text-align:center;color:var(--muted)}
+.cl-xtick-row{position:relative}
+.cl-xtick{position:absolute;top:0;text-align:center;color:var(--muted);transform:translateX(-50%);white-space:nowrap}
+.cl-axis-title-y{position:absolute;left:0;top:0;bottom:0;writing-mode:vertical-rl;transform:rotate(180deg);display:flex;align-items:center;justify-content:center;font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.cl-ytick{position:absolute;right:0;text-align:right;color:var(--muted);transform:translateY(50%)}
 .cl-dot{position:absolute;display:flex;align-items:center}
 .cl-dot.lbl-l{flex-direction:row-reverse}
 .cl-mark{border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;flex:none;overflow:hidden}
@@ -257,28 +259,26 @@ html[data-mode="deck"] .s-value .pnum{bottom:44px}
 /* 8 compete */
 html[data-mode="deck"] .s-compete .hd{left:120px;top:120px;width:1680px}
 html[data-mode="deck"] .s-compete h2{font-size:46px;line-height:1.15;max-width:1680px;white-space:nowrap}
+html[data-mode="deck"] .s-compete .cl-subtitle{font-size:15px;line-height:1.4;margin-top:8px;max-width:1680px}
 html[data-mode="deck"] .s-compete .foot{bottom:88px;font-size:20px;line-height:1.4}
 html[data-mode="deck"] .s-compete .conf{bottom:44px}
 html[data-mode="deck"] .s-compete .pnum{bottom:44px}
-html[data-mode="deck"] .cl-wrap{left:120px;top:252px;width:1680px;height:680px;gap:66px}
-html[data-mode="deck"] .cl-chart{width:980px;height:680px}
-html[data-mode="deck"] .cl-panel{width:634px;height:680px;padding:30px 32px}
+html[data-mode="deck"] .cl-wrap{left:120px;top:281px;width:1680px;height:652px;gap:66px}
+html[data-mode="deck"] .cl-chart{width:980px;height:652px}
+html[data-mode="deck"] .cl-panel{width:634px;height:652px;padding:30px 32px}
 html[data-mode="deck"] .cl-panel-eyebrow{font-size:14px;margin-bottom:20px}
 html[data-mode="deck"] .cl-panel-list li b{font-size:19px;line-height:1.25;margin-bottom:6px}
 html[data-mode="deck"] .cl-stage-comp{font-size:15px;line-height:1.4}
 html[data-mode="deck"] .cl-stage-orion{font-size:15px;line-height:1.4;margin-top:4px}
-html[data-mode="deck"] .cl-yaxis-strip{position:absolute;left:0;bottom:40px;width:92px;height:640px}
-html[data-mode="deck"] .cl-plot{left:92px;bottom:40px;width:888px;height:640px}
-html[data-mode="deck"] .cl-xaxis-strip{position:absolute;left:92px;bottom:0;width:888px;height:40px}
-html[data-mode="deck"] .cl-qlabel{font-size:13px;max-width:140px;line-height:1.3}
-html[data-mode="deck"] .cl-q-tl{top:10px;left:10px}
-html[data-mode="deck"] .cl-q-tr{top:10px;right:10px}
-html[data-mode="deck"] .cl-q-bl{bottom:10px;left:10px}
-html[data-mode="deck"] .cl-q-br{bottom:10px;right:10px}
-html[data-mode="deck"] .cl-axis-end-left,html[data-mode="deck"] .cl-axis-end-right{font-size:15px;line-height:1.3}
-html[data-mode="deck"] .cl-axis-title-x{font-size:14px}
-html[data-mode="deck"] .cl-axis-end-top,html[data-mode="deck"] .cl-axis-end-bottom{font-size:14px;line-height:1.3;width:92px}
-html[data-mode="deck"] .cl-axis-title-y{top:0;width:22px;height:640px;font-size:14px}
+html[data-mode="deck"] .cl-yaxis-strip{position:absolute;left:0;bottom:76px;width:152px;height:576px}
+html[data-mode="deck"] .cl-plot{left:152px;bottom:76px;width:828px;height:576px}
+html[data-mode="deck"] .cl-xaxis-strip{position:absolute;left:152px;bottom:0;width:828px;height:76px}
+html[data-mode="deck"] .cl-axis-title-y{width:22px;font-size:15px}
+html[data-mode="deck"] .cl-ytick{width:130px;font-size:15px;line-height:1.3}
+html[data-mode="deck"] .cl-xtick-row{height:22px}
+html[data-mode="deck"] .cl-xtick{font-size:15px}
+html[data-mode="deck"] .cl-axis-title-x{font-size:15px;margin:6px 0 0}
+html[data-mode="deck"] .cl-axis-caption-x{font-size:15px;margin:4px 0 0}
 html[data-mode="deck"] .cl-dot{gap:10px}
 html[data-mode="deck"] .cl-mark{width:40px;height:40px}
 html[data-mode="deck"] .cl-name{font-size:16px}
@@ -753,18 +753,15 @@ html[data-mode="portrait"] .cl-panel-list{gap:14px}
 html[data-mode="portrait"] .cl-panel-list li{font-size:13px;line-height:1.4;padding-left:40px}
 html[data-mode="portrait"] .cl-panel-list li::before{font-size:15px}
 html[data-mode="portrait"] .cl-panel-list li b{font-size:15px}
-html[data-mode="portrait"] .cl-yaxis-strip{position:absolute;left:0;top:4px;bottom:50px;width:58px}
-html[data-mode="portrait"] .cl-plot{left:62px;right:2px;top:4px;bottom:50px}
-html[data-mode="portrait"] .cl-xaxis-strip{position:absolute;left:62px;right:2px;bottom:0;height:46px}
-html[data-mode="portrait"] .cl-qlabel{font-size:9px}
-html[data-mode="portrait"] .cl-q-tl{top:6px;left:6px}
-html[data-mode="portrait"] .cl-q-tr{top:6px;right:6px}
-html[data-mode="portrait"] .cl-q-bl{bottom:6px;left:6px}
-html[data-mode="portrait"] .cl-q-br{bottom:6px;right:6px}
-html[data-mode="portrait"] .cl-axis-end-left,html[data-mode="portrait"] .cl-axis-end-right{font-size:10px;line-height:1.25;width:80px}
-html[data-mode="portrait"] .cl-axis-title-x{font-size:9px}
-html[data-mode="portrait"] .cl-axis-end-top,html[data-mode="portrait"] .cl-axis-end-bottom{font-size:10px;line-height:1.25;width:50px}
-html[data-mode="portrait"] .cl-axis-title-y{width:14px;height:100%;font-size:9px}
+html[data-mode="portrait"] .cl-yaxis-strip{position:absolute;left:0;top:4px;bottom:62px;width:72px}
+html[data-mode="portrait"] .cl-plot{left:76px;right:2px;top:4px;bottom:62px}
+html[data-mode="portrait"] .cl-xaxis-strip{position:absolute;left:76px;right:2px;bottom:0;height:58px}
+html[data-mode="portrait"] .cl-axis-title-y{width:12px;font-size:8px}
+html[data-mode="portrait"] .cl-ytick{width:60px;font-size:8px;line-height:1.2}
+html[data-mode="portrait"] .cl-xtick-row{height:16px}
+html[data-mode="portrait"] .cl-xtick{font-size:8px}
+html[data-mode="portrait"] .cl-axis-title-x{font-size:8px;margin:4px 0 0}
+html[data-mode="portrait"] .cl-axis-caption-x{font-size:8px;margin:2px 0 0}
 html[data-mode="portrait"] .cl-dot{gap:4px}
 html[data-mode="portrait"] .cl-mark{width:22px;height:22px}
 html[data-mode="portrait"] .cl-name{font-size:10px}
@@ -1230,65 +1227,68 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
   <header class="hd">
     <p class="eyebrow">Competitive landscape</p>
     <h2>Only Orion covers idea to live at festival scale.</h2>
+    <p class="cl-subtitle">Right = covers more of the festival lifecycle. Up = built for bigger, more complex events.</p>
   </header>
   <div class="cl-wrap">
-    <div class="cl-chart" role="img" aria-label="Quadrant chart. X axis: lifecycle coverage, from starts at booking to idea to live. Y axis: event complexity, from single room or show to multi-day greenfield festival. Orion sits alone in the top right, the only tool covering idea to live at festival scale. Booking and venue tools cluster lower and left.">
+    <div class="cl-chart" role="img" aria-label="Scatter chart. X axis: lifecycle steps covered, from 1 step to all 5 steps (validate, plan, sell, run, learn). Y axis: biggest event it's built for, from one room or show to multi-day greenfield festival. Orion sits alone in the top right, covering all five steps at festival scale. Competitor tools cluster lower and left, each covering fewer steps or smaller events.">
       <div class="cl-yaxis-strip">
-        <p class="cl-axis-end-top">Multi-day greenfield festival</p>
-        <p class="cl-axis-title-y">Event complexity</p>
-        <p class="cl-axis-end-bottom">Single room or show</p>
+        <p class="cl-axis-title-y">Biggest event it's built for</p>
+        <p class="cl-ytick" style="bottom:0%">One room or show</p>
+        <p class="cl-ytick" style="bottom:50%">Large venue or conference</p>
+        <p class="cl-ytick" style="bottom:100%">Multi-day greenfield festival</p>
       </div>
       <div class="cl-plot">
-        <div class="cl-axis-x"></div>
-        <div class="cl-axis-y"></div>
-        <span class="cl-qlabel cl-q-tl">Single-purpose tools</span>
-        <span class="cl-qlabel cl-q-tr">Idea-to-live, any scale</span>
-        <span class="cl-qlabel cl-q-bl">Booking tools</span>
-        <span class="cl-qlabel cl-q-br">Venue suites</span>
-        <div class="cl-dot cl-orion" style="left:82%;bottom:84%">
+        <div class="cl-topright-zone"></div>
+        <div class="cl-tier-h" style="bottom:50%"></div>
+        <div class="cl-tier-h" style="bottom:100%"></div>
+        <div class="cl-tier-v" style="left:50%"></div>
+        <div class="cl-tier-v" style="left:100%"></div>
+        <div class="cl-axis-l-x"></div>
+        <div class="cl-axis-l-y"></div>
+        <div class="cl-dot cl-orion" style="left:88%;bottom:88%">
           <span class="cl-orion-pill"><img src="media/logos/orion-wordmark.png" alt="Orion"></span>
         </div>
-        <div class="cl-dot" style="left:30%;bottom:80%">
+        <div class="cl-dot" style="left:20%;bottom:88%">
           <span class="cl-mark"><img src="media/logos/oneplan-logo.png" alt=""></span>
           <span class="cl-name">OnePlan</span>
         </div>
-        <div class="cl-dot" style="left:24%;bottom:68%">
+        <div class="cl-dot" style="left:18%;bottom:70%">
           <span class="cl-mark"><img src="media/logos/tixr-logo.png" alt=""></span>
           <span class="cl-name">Tixr</span>
         </div>
-        <div class="cl-dot" style="left:36%;bottom:60%">
+        <div class="cl-dot lbl-l" style="left:40%;bottom:66%">
           <span class="cl-mark"><img src="media/logos/eventeny-logo.png" alt=""></span>
           <span class="cl-name">Eventeny</span>
         </div>
-        <div class="cl-dot" style="left:12%;bottom:54%">
-          <span class="cl-mark"><img src="media/logos/audiencerepublic-logo.png" alt=""></span>
-          <span class="cl-name">Audience Republic</span>
-        </div>
-        <div class="cl-dot" style="left:70%;bottom:34%">
-          <span class="cl-mark"><img src="media/logos/cvent-logo.png" alt=""></span>
-          <span class="cl-name">Cvent</span>
-        </div>
-        <div class="cl-dot" style="left:58%;bottom:26%">
+        <div class="cl-dot" style="left:64%;bottom:48%">
           <span class="cl-mark"><img src="media/logos/momentus-icon.png" alt=""></span>
           <span class="cl-name">Momentus</span>
         </div>
-        <div class="cl-dot" style="left:34%;bottom:38%">
+        <div class="cl-dot" style="left:72%;bottom:40%">
+          <span class="cl-mark"><img src="media/logos/cvent-logo.png" alt=""></span>
+          <span class="cl-name">Cvent</span>
+        </div>
+        <div class="cl-dot" style="left:34%;bottom:24%">
           <span class="cl-mark"><img src="media/logos/prism-icon.png" alt=""></span>
           <span class="cl-name">Prism.fm</span>
         </div>
-        <div class="cl-dot" style="left:16%;bottom:30%">
+        <div class="cl-dot" style="left:16%;bottom:26%">
           <span class="cl-mark"><img src="media/logos/eventbrite-logo.png" alt=""></span>
           <span class="cl-name">Eventbrite</span>
         </div>
-        <div class="cl-dot" style="left:30%;bottom:12%">
+        <div class="cl-dot" style="left:28%;bottom:10%">
           <span class="cl-mark"><img src="media/logos/tripleseat-icon.png" alt=""></span>
           <span class="cl-name">Tripleseat</span>
         </div>
       </div>
       <div class="cl-xaxis-strip">
-        <p class="cl-axis-end-left">Starts at booking</p>
-        <p class="cl-axis-title-x">Lifecycle coverage</p>
-        <p class="cl-axis-end-right">Idea to live</p>
+        <div class="cl-xtick-row">
+          <p class="cl-xtick" style="left:0%">1 step</p>
+          <p class="cl-xtick" style="left:50%">2 to 4 steps</p>
+          <p class="cl-xtick" style="left:100%">All 5 steps</p>
+        </div>
+        <p class="cl-axis-title-x">Lifecycle steps covered</p>
+        <p class="cl-axis-caption-x">The five steps: Validate, Plan, Sell, Run, Learn.</p>
       </div>
     </div>
     <div class="cl-panel">
