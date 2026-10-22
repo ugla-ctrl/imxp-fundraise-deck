@@ -194,98 +194,6 @@ html[data-mode="deck"] .s-traction .hd{left:500px;width:700px}
 html[data-mode="deck"] .s-traction .hd .line{white-space:normal}
 html[data-mode="deck"] .credits{left:0;right:0;bottom:96px;text-align:center;font-size:18px}
 
-/* ---------- Value proposition (slide 7) ---------- */
-.val-col{background:rgba(252,250,247,.05);border:1px solid var(--faint);border-radius:16px;display:flex;flex-direction:column}
-.val-col.val-hero{background:linear-gradient(160deg, rgba(114,100,241,.38), rgba(0,104,101,.30));border:2px solid rgba(114,100,241,.65);box-shadow:0 24px 64px rgba(114,100,241,.35),0 4px 16px rgba(0,0,0,.4)}
-.val-h{color:var(--ink);font-weight:400}
-.val-lead{color:var(--muted)}
-.val-beats{list-style:none;padding:0;margin:0;display:flex;flex-direction:column}
-.val-beats li{display:flex;align-items:flex-start;color:var(--muted)}
-.val-ic{flex:none;color:var(--green)}
-.val-tag{margin-top:auto;border-top:1px solid var(--faint);color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:0}
-.s-value .foot{text-align:center;border-top:1px solid var(--faint)}
-
-/* ---------- Competitive analysis quadrant (slide 8) ---------- */
-.cl-wrap{display:flex}
-.cl-chart{position:relative}
-.cl-plot{position:relative}
-.cl-subtitle{color:var(--muted);margin:0}
-.cl-axis-l-x{position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--faint)}
-.cl-axis-l-x::after{content:"";position:absolute;right:-2px;top:50%;transform:translateY(-50%);width:0;height:0;border-style:solid;border-width:6px 0 6px 11px;border-color:transparent transparent transparent var(--faint)}
-.cl-axis-l-y{position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--faint)}
-.cl-axis-l-y::after{content:"";position:absolute;top:-2px;left:50%;transform:translateX(-50%);width:0;height:0;border-style:solid;border-width:0 6px 11px 6px;border-color:transparent transparent var(--faint) transparent}
-.cl-tick-x{position:absolute;top:100%;width:1px;background:var(--faint);transform:translateX(-50%)}
-.cl-tick-y{position:absolute;right:100%;height:1px;background:var(--faint);transform:translateY(50%)}
-.cl-axis-title-x{text-align:center;font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
-.cl-axis-caption-x{text-align:center;color:var(--muted)}
-.cl-xtick-row{position:relative}
-.cl-xtick{position:absolute;text-align:center;color:var(--muted);transform:translateX(-50%);white-space:nowrap}
-.cl-axis-title-y{position:absolute;left:0;top:0;bottom:0;writing-mode:vertical-rl;transform:rotate(180deg);display:flex;align-items:center;justify-content:center;font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
-.cl-ytick{position:absolute;text-align:right;color:var(--muted);transform:translateY(50%)}
-.cl-dot{position:absolute;display:flex;align-items:center}
-.cl-dot.lbl-l{flex-direction:row-reverse}
-.cl-mark{border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;flex:none;overflow:hidden}
-.cl-mark img{width:66%;height:66%;object-fit:contain}
-.cl-name{color:var(--ink);white-space:nowrap}
-.cl-dot.lbl-l .cl-name{text-align:right}
-.cl-dot.cl-orion{transform:translate(-50%,50%)}
-.cl-orion-pill{display:flex;align-items:center;justify-content:center;border-radius:999px;background:linear-gradient(160deg, var(--purple), var(--teal));box-shadow:0 0 0 3px rgba(114,100,241,.22),0 10px 22px rgba(114,100,241,.48)}
-.cl-orion-pill img{display:block;width:auto;object-fit:contain}
-.cl-panel{display:flex;flex-direction:column;background:linear-gradient(160deg, rgba(114,100,241,.38), rgba(0,104,101,.30));border:1px solid rgba(114,100,241,.55);border-radius:16px;box-shadow:0 24px 64px rgba(114,100,241,.35),0 4px 16px rgba(0,0,0,.4)}
-.cl-panel-eyebrow{font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--green)}
-.cl-panel-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;flex:1;justify-content:space-between}
-.cl-panel-list li{color:var(--ink);display:flex;flex-direction:column}
-.cl-panel-list li b{color:var(--green);font-weight:400;display:block}
-.cl-stage-comp{display:block;color:var(--muted);font-weight:300}
-.cl-stage-comp i{font-style:italic}
-.cl-stage-orion{display:block;color:var(--ink);font-weight:400}
-/* 7 value */
-html[data-mode="deck"] .s-value .hd{left:120px;top:120px;width:1680px}
-html[data-mode="deck"] .s-value h2{font-size:72px;line-height:1.05;max-width:1560px}
-html[data-mode="deck"] .s-value .sub{font-size:28px;line-height:1.35;margin-top:20px;font-weight:300}
-html[data-mode="deck"] .val-grid{left:120px;top:300px;width:1680px;height:560px;display:flex;align-items:stretch;gap:28px}
-html[data-mode="deck"] .val-col{flex:1;padding:40px 36px}
-html[data-mode="deck"] .val-col.val-hero{flex:1.18}
-html[data-mode="deck"] .val-h{font-size:38px;line-height:1.1}
-html[data-mode="deck"] .val-lead{font-size:22px;line-height:1.4;margin-top:16px}
-html[data-mode="deck"] .val-beats{margin-top:36px;gap:20px}
-html[data-mode="deck"] .val-beats li{font-size:20px;line-height:1.4;gap:14px}
-html[data-mode="deck"] .val-ic{width:22px;height:22px;margin-top:2px}
-html[data-mode="deck"] .val-tag{margin-top:28px;padding-top:18px;font-size:16px;line-height:1.3}
-html[data-mode="deck"] .s-value .foot{bottom:88px;font-size:20px;line-height:1.4;padding-top:24px}
-html[data-mode="deck"] .s-value .conf{bottom:44px}
-html[data-mode="deck"] .s-value .pnum{bottom:44px}
-/* 8 compete */
-html[data-mode="deck"] .s-compete .hd{left:120px;top:120px;width:1680px}
-html[data-mode="deck"] .s-compete h2{font-size:46px;line-height:1.15;max-width:1680px;white-space:nowrap}
-html[data-mode="deck"] .s-compete .cl-subtitle{font-size:15px;line-height:1.4;margin-top:20px;max-width:1680px}
-html[data-mode="deck"] .s-compete .foot{bottom:88px;font-size:20px;line-height:1.4}
-html[data-mode="deck"] .s-compete .conf{bottom:44px}
-html[data-mode="deck"] .s-compete .pnum{bottom:44px}
-html[data-mode="deck"] .cl-wrap{left:120px;top:330px;width:1680px;height:606px;gap:66px}
-html[data-mode="deck"] .cl-chart{width:980px;height:606px}
-html[data-mode="deck"] .cl-panel{width:634px;height:606px;padding:30px 32px}
-html[data-mode="deck"] .s-compete .foot{bottom:88px}
-html[data-mode="deck"] .cl-panel-eyebrow{font-size:14px;margin-bottom:20px}
-html[data-mode="deck"] .cl-panel-list li b{font-size:19px;line-height:1.25;margin-bottom:6px}
-html[data-mode="deck"] .cl-stage-comp{font-size:15px;line-height:1.4}
-html[data-mode="deck"] .cl-stage-orion{font-size:15px;line-height:1.4;margin-top:4px}
-html[data-mode="deck"] .cl-yaxis-strip{position:absolute;left:0;bottom:96px;width:191px;height:510px}
-html[data-mode="deck"] .cl-plot{left:191px;bottom:96px;width:789px;height:510px}
-html[data-mode="deck"] .cl-xaxis-strip{position:absolute;left:191px;bottom:0;width:789px;height:96px}
-html[data-mode="deck"] .cl-tick-x{height:8px}
-html[data-mode="deck"] .cl-tick-y{width:8px}
-html[data-mode="deck"] .cl-axis-title-y{width:22px;font-size:16px}
-html[data-mode="deck"] .cl-ytick{right:12px;width:132px;font-size:17px;line-height:1.3}
-html[data-mode="deck"] .cl-xtick-row{height:32px}
-html[data-mode="deck"] .cl-xtick{top:8px;font-size:17px;line-height:1.3}
-html[data-mode="deck"] .cl-axis-title-x{font-size:16px;margin:11px 0 0}
-html[data-mode="deck"] .cl-axis-caption-x{font-size:15px;margin:11px 0 0}
-html[data-mode="deck"] .cl-dot{gap:10px}
-html[data-mode="deck"] .cl-mark{width:40px;height:40px}
-html[data-mode="deck"] .cl-name{font-size:18px}
-html[data-mode="deck"] .cl-orion-pill{width:104px;height:44px;padding:0 12px}
-html[data-mode="deck"] .cl-orion-pill img{width:100%;height:auto}
 /* 9 roadmap */
 html[data-mode="deck"] .gantt{left:120px;top:420px;width:1680px;height:390px}
 html[data-mode="deck"] .ptl,html[data-mode="deck"] .ptl-build,html[data-mode="deck"] .sx{display:none}
@@ -736,39 +644,6 @@ html[data-mode="portrait"] .events li{display:flex;flex-direction:column;gap:8px
 html[data-mode="portrait"] .ev-thumb{width:100%;height:84px}
 html[data-mode="portrait"] .events b{font-size:17px;line-height:1.2}
 html[data-mode="portrait"] .events .d,html[data-mode="portrait"] .ev-date{font-size:13px;line-height:1.4}
-/* 7 value */
-html[data-mode="portrait"] .val-grid{display:flex;flex-direction:column;gap:16px}
-html[data-mode="portrait"] .val-col{padding:20px 18px}
-html[data-mode="portrait"] .val-h{font-size:21px;line-height:1.15}
-html[data-mode="portrait"] .val-lead{font-size:15px;line-height:1.4;margin-top:8px}
-html[data-mode="portrait"] .val-beats{margin-top:14px;gap:9px}
-html[data-mode="portrait"] .val-beats li{font-size:15px;line-height:1.4;gap:10px}
-html[data-mode="portrait"] .val-ic{width:16px;height:16px;margin-top:1px}
-html[data-mode="portrait"] .val-tag{margin-top:12px;padding-top:10px;font-size:11px;line-height:1.3}
-html[data-mode="portrait"] .s-value .foot{font-size:14px;line-height:1.5;padding-top:14px}
-/* 8 compete */
-html[data-mode="portrait"] .cl-wrap{flex-direction:column;gap:22px}
-html[data-mode="portrait"] .cl-chart{width:100%;aspect-ratio:1.4/1}
-html[data-mode="portrait"] .cl-panel{padding:18px 20px}
-html[data-mode="portrait"] .cl-panel-eyebrow{font-size:11px;margin-bottom:12px}
-html[data-mode="portrait"] .cl-panel-list{gap:14px}
-html[data-mode="portrait"] .cl-panel-list li{font-size:13px;line-height:1.4;padding-left:40px}
-html[data-mode="portrait"] .cl-panel-list li::before{font-size:15px}
-html[data-mode="portrait"] .cl-panel-list li b{font-size:15px}
-html[data-mode="portrait"] .cl-yaxis-strip{position:absolute;left:0;top:4px;bottom:62px;width:72px}
-html[data-mode="portrait"] .cl-plot{left:76px;right:2px;top:4px;bottom:62px}
-html[data-mode="portrait"] .cl-xaxis-strip{position:absolute;left:76px;right:2px;bottom:0;height:58px}
-html[data-mode="portrait"] .cl-axis-title-y{width:12px;font-size:8px}
-html[data-mode="portrait"] .cl-ytick{width:60px;font-size:8px;line-height:1.2}
-html[data-mode="portrait"] .cl-xtick-row{height:16px}
-html[data-mode="portrait"] .cl-xtick{font-size:8px}
-html[data-mode="portrait"] .cl-axis-title-x{font-size:8px;margin:4px 0 0}
-html[data-mode="portrait"] .cl-axis-caption-x{font-size:8px;margin:2px 0 0}
-html[data-mode="portrait"] .cl-dot{gap:4px}
-html[data-mode="portrait"] .cl-mark{width:22px;height:22px}
-html[data-mode="portrait"] .cl-name{font-size:10px}
-html[data-mode="portrait"] .cl-orion-pill{width:110px;height:46px;padding:0 14px}
-html[data-mode="portrait"] .cl-orion-pill img{height:20px}
 /* 10 team */
 html[data-mode="portrait"] .founder{display:block}
 html[data-mode="portrait"] .fhead{display:flex;align-items:center;gap:16px}
@@ -1035,7 +910,7 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
     </div>
   </div>
   <p class="conf">Confidential · October 2026</p>
-  <p class="pnum">02 / 12</p>
+  <p class="pnum">02 / 10</p>
 </section>
 
 <!-- 3 MARKET -->
@@ -1091,7 +966,7 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
   <p class="deals"><span class="lx">Recent deals: KKR bought Superstruct's 80+ festivals (~€1.3B) · Fever, owner of DICE, raised at a reported ~$5.2B valuation · Penske took full control of SXSW.</span><span class="sx">Deals: KKR bought Superstruct (~€1.3B) · Fever raised at ~$5.2B · Penske took over SXSW.</span></p>
   <p class="foot"><span class="lx">Sources: McKinsey &amp; Skift (2024) · Goldman Sachs (2025) · Live Nation (2026) · WEF (2025) · Billboard, MBW, TheWrap</span><span class="sx">Sources: McKinsey &amp; Skift · Goldman Sachs · Live Nation · WEF · Billboard · MBW · TheWrap</span></p>
   <p class="conf">Confidential · October 2026</p>
-  <p class="pnum">03 / 12</p>
+  <p class="pnum">03 / 10</p>
 </section>
 
 <!-- 4 PROBLEM -->
@@ -1121,7 +996,7 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
   </div>
   <p class="foot">Source: Live Nation annual filings, Concerts segment, 2025. Costs = revenue minus adjusted operating income.</p>
   <p class="conf">Confidential · October 2026</p>
-  <p class="pnum">04 / 12</p>
+  <p class="pnum">04 / 10</p>
 </section>
 
 <!-- 5 SOLUTION -->
@@ -1146,7 +1021,7 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
     <figcaption class="df-cap"><a data-demo-link hidden target="_blank" rel="noopener">Open the demo in a new tab</a><span data-demo-label>Project Orion demo</span></figcaption>
   </figure>
   <p class="conf">Confidential · October 2026</p>
-  <p class="pnum">05 / 12</p>
+  <p class="pnum">05 / 10</p>
 </section>
 
 <!-- 6 TRACTION -->
@@ -1176,164 +1051,11 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
   </div>
   <p class="foot">Source: IMXP, as of Sep 2026.</p>
   <p class="conf">Confidential · October 2026</p>
-  <p class="pnum">06 / 12</p>
+  <p class="pnum">06 / 10</p>
 </section>
 
-<!-- 7 VALUE PROPOSITION -->
-<section class="slide bg-content s-value" data-slide="7" aria-label="Value proposition">
-  <img class="logo-sm" src="media/logos/imxp-small.png" alt="IMXP">
-  <header class="hd">
-    <h2>Run events with less risk and more profit</h2>
-    <p class="sub">FiaB turns event planning into a repeatable, de-risked system.</p>
-  </header>
-  <div class="val-grid">
-    <div class="val-col val-hero">
-      <p class="val-h">Lower risk</p>
-      <p class="val-lead">Built-in checks on every event.</p>
-      <ul class="val-beats">
-        <li><svg class="val-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 21V3"/><path d="M6 4h12l-3 4 3 4H6"/></svg><span>Five-dimension vet before big spend</span></li>
-        <li><svg class="val-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M20 20V10"/><rect x="4" y="9" width="16" height="2.4" rx="1.2" fill="currentColor" stroke="none"/><path d="M8 9V6a1 1 0 011-1h6a1 1 0 011 1v3"/></svg><span>Go/no-go gate, kill threshold set up front</span></li>
-        <li><svg class="val-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z"/><path d="M8.5 12.3l2.6 2.6 4.4-4.9"/></svg><span>Licensed experts sign off on safety and permits</span></li>
-      </ul>
-      <p class="val-tag">Aligned with ISO 31000 &middot; ANSI E1.21 &middot; ANSI ES1.9</p>
-    </div>
-    <div class="val-col">
-      <p class="val-h">Higher profit</p>
-      <p class="val-lead">Leaner overhead on every event.</p>
-      <ul class="val-beats">
-        <li><svg class="val-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg><span>Fewer hours on coordination</span></li>
-        <li><svg class="val-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 2l4 4-4 4"/><path d="M21 6H8a4 4 0 00-4 4v1"/><path d="M7 22l-4-4 4-4"/><path d="M3 18h13a4 4 0 004-4v-1"/></svg><span>Less rework</span></li>
-        <li><svg class="val-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20"/><path d="M17 7c0-2-2.2-3-5-3s-5 1.4-5 3.3 2.2 2.8 5 3.3 5 1.4 5 3.4-2.2 3-5 3-5-1-5-3"/></svg><span>Avoided budget overruns</span></li>
-      </ul>
-      <p class="val-tag">Line-item budget vs. actuals</p>
-    </div>
-    <div class="val-col">
-      <p class="val-h">More efficient</p>
-      <p class="val-lead">One collaborative event record.</p>
-      <ul class="val-beats">
-        <li><svg class="val-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 15l6-6"/><path d="M13 5l1.4-1.4a3.5 3.5 0 015 5L18 10"/><path d="M11 19l-1.4 1.4a3.5 3.5 0 01-5-5L6 14"/></svg><span>Faster handoffs</span></li>
-        <li><svg class="val-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg><span>A next best task for every operator</span></li>
-        <li><svg class="val-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c.6 3 2 4.4 5 5-3 .6-4.4 2-5 5-.6-3-2-4.4-5-5 3-.6 4.4-2 5-5z"/><path d="M19 15c.3 1.4.9 2 2.2 2.3-1.3.3-1.9.9-2.2 2.3-.3-1.4-.9-2-2.2-2.3 1.3-.3 1.9-.9 2.2-2.3z"/></svg><span>AI drafts the work, handles routine tasks</span></li>
-      </ul>
-      <p class="val-tag">Critical-path scheduling &middot; Agent task delegation</p>
-    </div>
-  </div>
-  <p class="foot">Code computes the math and the gates. The model judges and drafts. People approve.</p>
-  <p class="conf">Confidential &middot; October 2026</p>
-  <p class="pnum">07 / 12</p>
-</section>
-
-<!-- 8 COMPETITIVE ANALYSIS -->
-<section class="slide bg-content s-compete" data-slide="8" aria-label="Competitive analysis">
-  <img class="logo-sm" src="media/logos/imxp-small.png" alt="IMXP">
-  <header class="hd">
-    <p class="eyebrow">Competitive landscape</p>
-    <h2>Only Orion covers idea to live at festival scale.</h2>
-    <p class="cl-subtitle">Right = covers more of the festival lifecycle. Up = built for bigger, more complex events.</p>
-  </header>
-  <div class="cl-wrap">
-    <div class="cl-chart" role="img" aria-label="Scatter chart. X axis: lifecycle steps covered, from 1 step to all 5 steps (validate, plan, sell, run, learn). Y axis: biggest event it's built for, from one room or show to multi-day greenfield festival. Orion sits alone in the top right, covering all five steps at festival scale. Competitor tools cluster lower and left, each covering fewer steps or smaller events.">
-      <div class="cl-yaxis-strip">
-        <p class="cl-axis-title-y">Biggest event it's built for</p>
-        <p class="cl-ytick" style="bottom:10%">One room or show</p>
-        <p class="cl-ytick" style="bottom:50%">Large venue or conference</p>
-        <p class="cl-ytick" style="bottom:70%">Multi-day festival</p>
-        <p class="cl-ytick" style="bottom:90%">Multi-day greenfield festival</p>
-      </div>
-      <div class="cl-plot">
-        <div class="cl-axis-l-x"></div>
-        <div class="cl-axis-l-y"></div>
-        <div class="cl-tick-x" style="left:10%"></div>
-        <div class="cl-tick-x" style="left:50%"></div>
-        <div class="cl-tick-x" style="left:90%"></div>
-        <div class="cl-tick-y" style="bottom:10%"></div>
-        <div class="cl-tick-y" style="bottom:50%"></div>
-        <div class="cl-tick-y" style="bottom:70%"></div>
-        <div class="cl-tick-y" style="bottom:90%"></div>
-        <div class="cl-dot cl-orion" style="left:88%;bottom:88%">
-          <span class="cl-orion-pill"><img src="media/logos/orion-wordmark.png" alt="Orion"></span>
-        </div>
-        <div class="cl-dot" style="left:20%;bottom:88%">
-          <span class="cl-mark"><img src="media/logos/oneplan-logo.png" alt=""></span>
-          <span class="cl-name">OnePlan</span>
-        </div>
-        <div class="cl-dot" style="left:18%;bottom:70%">
-          <span class="cl-mark"><img src="media/logos/tixr-logo.png" alt=""></span>
-          <span class="cl-name">Tixr</span>
-        </div>
-        <div class="cl-dot lbl-l" style="left:40%;bottom:66%">
-          <span class="cl-mark"><img src="media/logos/eventeny-logo.png" alt=""></span>
-          <span class="cl-name">Eventeny</span>
-        </div>
-        <div class="cl-dot" style="left:64%;bottom:48%">
-          <span class="cl-mark"><img src="media/logos/momentus-icon.png" alt=""></span>
-          <span class="cl-name">Momentus</span>
-        </div>
-        <div class="cl-dot" style="left:72%;bottom:40%">
-          <span class="cl-mark"><img src="media/logos/cvent-logo.png" alt=""></span>
-          <span class="cl-name">Cvent</span>
-        </div>
-        <div class="cl-dot" style="left:34%;bottom:24%">
-          <span class="cl-mark"><img src="media/logos/prism-icon.png" alt=""></span>
-          <span class="cl-name">Prism.fm</span>
-        </div>
-        <div class="cl-dot" style="left:16%;bottom:26%">
-          <span class="cl-mark"><img src="media/logos/eventbrite-logo.png" alt=""></span>
-          <span class="cl-name">Eventbrite</span>
-        </div>
-        <div class="cl-dot" style="left:28%;bottom:10%">
-          <span class="cl-mark"><img src="media/logos/tripleseat-icon.png" alt=""></span>
-          <span class="cl-name">Tripleseat</span>
-        </div>
-      </div>
-      <div class="cl-xaxis-strip">
-        <div class="cl-xtick-row">
-          <p class="cl-xtick" style="left:10%">1 step</p>
-          <p class="cl-xtick" style="left:50%">2 to 4 steps</p>
-          <p class="cl-xtick" style="left:90%">All 5 steps</p>
-        </div>
-        <p class="cl-axis-title-x">Lifecycle steps covered</p>
-        <p class="cl-axis-caption-x">The five steps: Validate, Plan, Sell, Run, Learn.</p>
-      </div>
-    </div>
-    <div class="cl-panel">
-      <p class="cl-panel-eyebrow">What sets Orion apart</p>
-      <ul class="cl-panel-list">
-        <li>
-          <b>Validate: Go or no-go before the spend.</b>
-          <span class="cl-stage-comp"><i>Prism.fm</i> forecasts artist demand from past box office.</span>
-          <span class="cl-stage-orion">Orion sets kill criteria first, then scores the evidence.</span>
-        </li>
-        <li>
-          <b>Plan: Schedules for sites that don't exist yet.</b>
-          <span class="cl-stage-comp"><i>OnePlan</i> maps site layouts and capacity.</span>
-          <span class="cl-stage-orion">Orion turns the layout into a build schedule, sequenced by dependencies and lead times.</span>
-        </li>
-        <li>
-          <b>Sell: Pre-sales that feed the decision.</b>
-          <span class="cl-stage-comp"><i>Tixr</i> and <i>Eventbrite</i> sell tickets.</span>
-          <span class="cl-stage-orion">Orion reads pre-sales as evidence for the go/no-go call.</span>
-        </li>
-        <li>
-          <b>Run: Live operations from the same record.</b>
-          <span class="cl-stage-comp"><i>Momentus</i> runs venues. <i>Eventeny</i> manages vendors.</span>
-          <span class="cl-stage-orion">Orion runs tasks, vendors, and incidents from the plan that built the event.</span>
-        </li>
-        <li>
-          <b>Learn: Lessons from festivals we run ourselves.</b>
-          <span class="cl-stage-comp"><i>Tripleseat</i> reports on bookings and revenue.</span>
-          <span class="cl-stage-orion">Orion logs every decision and its outcome, so the next event starts smarter.</span>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <p class="foot">Orion assessment, October 2026, based on public product documentation.</p>
-  <p class="conf">Confidential &middot; October 2026</p>
-  <p class="pnum">08 / 12</p>
-</section>
-
-<!-- 9 ROADMAP -->
-<section class="slide bg-content has-photo s-road" data-slide="9" aria-label="Roadmap">
+<!-- 7 ROADMAP -->
+<section class="slide bg-content has-photo s-road" data-slide="7" aria-label="Roadmap">
   <img class="bg-photo cine" src="media/photos/roadmap-partners-build.jpg" alt="Build crew constructing Iceland Eclipse infrastructure">
   <div class="shade"></div>
   <div class="grain"></div>
@@ -1371,11 +1093,11 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
   </ul>
   <p class="foot">Beyond 2027: Australasia Eclipse 2028, Apophis 2029, South Africa Eclipse 2030, and the Antarctic Expedition. <span class="horizon"><span class="nw">2035: Watch Earth eclipse the Sun,</span> <span class="nw">from the Moon.</span></span></p>
   <p class="conf">Confidential · October 2026</p>
-  <p class="pnum">09 / 12</p>
+  <p class="pnum">07 / 10</p>
 </section>
 
-<!-- 10 TEAM -->
-<section class="slide bg-content has-photo s-team" data-slide="10" aria-label="The team">
+<!-- 8 TEAM -->
+<section class="slide bg-content has-photo s-team" data-slide="8" aria-label="The team">
   <img class="bg-photo cine" src="media/photos/founder-interview.jpg" alt="Mitch Morales being interviewed in the field">
   <div class="shade"></div>
   <div class="grain"></div>
@@ -1405,11 +1127,11 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
     <p class="inv">Chris Boshuizen · Whitney Kroenke Silverstein · JT Marino · Ravé Mehta · Josh Whiton · Ravi Muti</p>
   </div>
   <p class="conf">Confidential · October 2026</p>
-  <p class="pnum">10 / 12</p>
+  <p class="pnum">08 / 10</p>
 </section>
 
-<!-- 11 FUNDRAISE -->
-<section class="slide bg-content has-photo s-fund" data-slide="11" aria-label="Fundraise">
+<!-- 9 FUNDRAISE -->
+<section class="slide bg-content has-photo s-fund" data-slide="9" aria-label="Fundraise">
   <img class="bg-photo cine" src="media/photos/fundraise-midnight-sun-tents.jpg" alt="Aerial view of the Iceland Eclipse tented village at golden hour">
   <div class="shade"></div>
   <div class="grain"></div>
@@ -1439,11 +1161,11 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
   </ol>
   <p class="foot">Investment in IMXP Product (DE C-corp), currently a wholly owned subsidiary of Immersive Experiences, LLC.</p>
   <p class="conf">Confidential · October 2026</p>
-  <p class="pnum">11 / 12</p>
+  <p class="pnum">09 / 10</p>
 </section>
 
-<!-- 12 CLOSE -->
-<section class="slide bg-close has-photo s-close" data-slide="12" aria-label="Close">
+<!-- 10 CLOSE -->
+<section class="slide bg-close has-photo s-close" data-slide="10" aria-label="Close">
   <img class="bg-photo" src="media/photos/dorothy-space-eclipse.jpg" alt="Total solar eclipse photographed from the stratosphere above Earth's curvature, by The Dorothy Project">
   <div class="shade"></div>
   <img class="logo-sm" src="media/logos/imxp-small.png" alt="IMXP">
@@ -1453,7 +1175,7 @@ html[data-mode="portrait"] .dots.away:focus-within{opacity:1;pointer-events:auto
     <div class="ccard"><img class="av" src="media/people/mitch-hs.jpg" alt=""><div><b>Mitch Morales</b><span class="role">Founder &amp; CEO of IMXP</span><a href="mailto:mitch@imxp.org">mitch@imxp.org</a></div></div>
   </div>
   <p class="conf">Confidential · October 2026</p>
-  <p class="pnum">12 / 12</p>
+  <p class="pnum">10 / 10</p>
   <p class="photo-credit">Stratosphere eclipse photo · The Dorothy Project</p>
 </section>
 
